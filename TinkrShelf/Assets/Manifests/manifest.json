@@ -1,0 +1,75 @@
+{
+    "manifestName": "first_grade_english_us_curriculum",
+    "books":[
+    {
+    "bookId": 1,
+    "title": "Baby Duck Story",
+    "author": "",
+    "language": "English (U.S.)",
+    "readingLevel": 1, 
+    "tags" : [
+            "duck", 
+            "babyD"
+        ],
+"fileName": "BabyD",
+"pathToThumbnail": "Thumbnail/duck",
+"version": 1
+    },
+    {
+        "bookId": 2,
+        "title": "Frog B story",
+        "author": "",
+        "language": "English (U.S.)",
+        "readingLevel": 1, 
+        "tags" : [
+                "frog", 
+                "jump"
+            ],
+"fileName": "FrogB",
+"pathToThumbnail": "Thumbnail/duck",
+"version": 1
+        },
+        {
+            "bookId": 3,
+            "title": "Jungle story",
+            "author": "",
+            "language": "English (U.S.)",
+            "readingLevel": 1, 
+            "tags" : [
+                    "ducks", 
+                    "jungle"
+                ],
+    "fileName": "JungleBook",
+    "pathToThumbnail": "Thumbnail/duck",
+    "version": 1
+        },
+        {
+            "bookId": 4,
+            "title": "Brave lion",
+            "author": "",
+            "language": "English (U.S.)",
+            "readingLevel": 1, 
+            "tags" : [
+                    "lion", 
+                    "eats"
+                ],
+    "fileName": "Lion",
+    "pathToThumbnail": "Thumbnail/duck",
+    "version": 1
+        },
+        {
+            "bookId": 5,
+            "title": "Some other story",
+            "author": "",
+            "language": "English (U.S.)",
+            "readingLevel": 1, 
+            "tags" : [
+                    "some animals", 
+                    "some actions"
+                ],
+    "fileName": "OtherFile",
+    "pathToThumbnail": "Thumbnail/duck",
+    "version": 1
+        }
+]
+}
