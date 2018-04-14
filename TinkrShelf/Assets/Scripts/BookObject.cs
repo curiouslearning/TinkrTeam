@@ -10,11 +10,12 @@ public class BookObject : MonoBehaviour {
     public int position;
     public GameObject cover;
 
-
 	public void SetCoverThumbnail(){
-		
+        
 		Sprite sprite = Resources.Load<Sprite> (book.pathToThumbnail);
+        
 		if (sprite) {
+            Debug.Log("sprite loaded");
 			cover.GetComponent<Image>().sprite = sprite;
 		}
 

@@ -167,7 +167,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 99d6fa4b74d6c6847a1a2fdb4d40635c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf1ac1d3b18e0a844a8066905efb0bf1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -254,7 +254,6 @@ GameObject:
   - component: {fileID: 738070005}
   - component: {fileID: 738070004}
   - component: {fileID: 738070003}
-  - component: {fileID: 738070002}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -262,17 +261,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &738070002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 738070001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19498e87e492d2c469550d65f473deb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &738070003
 AudioListener:
   m_ObjectHideFlags: 0
@@ -348,6 +336,7 @@ GameObject:
   - component: {fileID: 1234887419}
   - component: {fileID: 1234887418}
   - component: {fileID: 1234887417}
+  - component: {fileID: 1234887420}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -433,6 +422,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1234887420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234887415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19498e87e492d2c469550d65f473deb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1668854161
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,9 +500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Jungle book
-
-'
+  m_Text: JUNGLE
 --- !u!222 &1668854164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -563,7 +561,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 0bb090969dfb1c641aeb4b606472d2a7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 94d3f3232301559479d4964cff8a2a26, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
