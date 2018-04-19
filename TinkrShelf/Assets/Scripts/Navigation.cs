@@ -7,6 +7,7 @@ public class Navigation : MonoBehaviour{
     bool check = false;
     int count = 0;
     string name = "";
+    public static bool arrowleft = false;
     public void Update()
     {
         if(check==true)
@@ -33,6 +34,7 @@ public class Navigation : MonoBehaviour{
         count = 0;
         check = true;
         name = "left";
+        arrowleft = true;
     }
     public void right()
     {

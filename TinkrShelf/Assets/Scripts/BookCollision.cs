@@ -47,8 +47,17 @@ public class BookCollision : ShelfManager
         }
         if (count == 2)
         {
-            loadbookdata(bookenter, bookexit);
+            if (Navigation.arrowleft == false)
+            {
+                loadbookdata(bookenter, bookexit);
+            }
+            else
+            {
+                loadbookdata(bookexit, bookenter);
+                Navigation.arrowleft = false;
+            }
             count = 0;
+
         }
 
 

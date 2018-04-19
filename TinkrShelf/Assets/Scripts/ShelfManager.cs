@@ -13,8 +13,16 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public List<BookObject> bookInfos;
     private string[] allBookJsons;
     public static int i = 0;
-	// load the shelf with data before game starts!
-	void Awake () {
+
+    public GameObject one;
+    public GameObject two;
+    public GameObject three;
+
+
+
+
+    // load the shelf with data before game starts!
+    void Awake () {
         Image = GameObject.Find("Image");
         Title = GameObject.Find("Title");
        
@@ -96,7 +104,17 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		}
 
 	}
-    private void ShiftBookToCenter(BookObject bo)
+    public void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log(other.gameObject.name);
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.collider.name);
+    }
+
+        private void ShiftBookToCenter(BookObject bo)
     {   //change center text with title
         Title.GetComponent<Text>().text = bo.book.title;
         //change center image with character
