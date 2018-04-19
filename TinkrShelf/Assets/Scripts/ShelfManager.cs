@@ -11,9 +11,18 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private GameObject Title;
 	private string manifestFileName;
 	public List<BookObject> bookInfos;
+    private string[] allBookJsons;
+    public static int i = 0;
 
-	// load the shelf with data before game starts!
-	void Awake () {
+    public GameObject one;
+    public GameObject two;
+    public GameObject three;
+
+
+
+
+    // load the shelf with data before game starts!
+    void Awake () {
         Image = GameObject.Find("Image");
         Title = GameObject.Find("Title");
        
@@ -80,8 +89,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             // Read the json from the file into a string
             string dataAsJson = file.ToString();
             //gets array of json string objects
-            string[] allBookJsons = JsonHelper.GetJsonObjectArray(dataAsJson, "books");
-			int i=0;
+            allBookJsons = JsonHelper.GetJsonObjectArray(dataAsJson, "books");
 			foreach (string jsonObj in allBookJsons)
 			{
                 bookInfos[i].book = JsonUtility.FromJson<Book>(jsonObj);  //add string object as JSONObject to array of books
@@ -96,7 +104,17 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		}
 
 	}
-    private void ShiftBookToCenter(BookObject bo)
+    public void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log(other.gameObject.name);
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.collider.name);
+    }
+
+        private void ShiftBookToCenter(BookObject bo)
     {   //change center text with title
         Title.GetComponent<Text>().text = bo.book.title;
         //change center image with character
@@ -133,5 +151,20 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         string filePath = Path.Combine("Books/", bookName);
         string finalPath = Path.Combine(filePath, "Scenes/Scene01");
         SceneManager.LoadScene(finalPath);
+    }
+    public void loadbookdata(GameObject entry, GameObject leaving)
+    {
+        
+        Debug.Log(entry+ "  "+leaving);
+        Debug.Log(i + " " + allBookJsons.Length);
+        
+        if (i == allBookJsons.Length)
+        {
+            Debug.Log("loadbookenter_ifenter");
+            entry.GetComponent<BookObject>().book = leaving.GetComponent<BookObject>().book;
+            entry.GetComponent<BookObject>().SetCoverThumbnail();
+            leaving.GetComponent<BookObject>().book = null;
+            
+        }
     }
 }

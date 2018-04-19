@@ -15,7 +15,6 @@ public class BookObject : MonoBehaviour {
 		Sprite sprite = Resources.Load<Sprite> (book.pathToThumbnail);
         
 		if (sprite) {
-            Debug.Log("sprite loaded");
 			cover.GetComponent<Image>().sprite = sprite;
 		}
 
