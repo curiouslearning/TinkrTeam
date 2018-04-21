@@ -13,73 +13,123 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public List<BookObject> bookInfos;
     private string[] allBookJsons;
     public static int i = 0;
+    public GameObject bookwheel;
+    bool check = false;
+    int count = 0;
+    string name1 = "";
+    int degree = 0;
+    public static bool arrowright = false;
+    public static bool arrowright60 = false;
+    public static bool arrowleft = false;
+    public static bool arrowleft60 = false;
+    public void Update()
+    {
+        if (check == true)
+        {
+            if (name == "left")
+            {
+                bookwheel.transform.Rotate(0, 0, 1);
+            }
+            else
+            {
+                bookwheel.transform.Rotate(0, 0, -1);
+            }
+            count++;
+            if (count == degree)
+            {
+                check = false;
+               
+            }
+        }
+    }
 
-    public GameObject one;
-    public GameObject two;
-    public GameObject three;
 
-
-
-
+    public void left()
+    {
+        count = 0;
+        check = true;
+        name = "left";
+        degree = 30;
+        arrowleft60 = false;
+        arrowleft = true;
+        arrowright = false;
+        arrowright60 = false;
+    }
+    public void right()
+    {
+        Debug.Log("rightin");
+        count = 0;
+        check = true;
+        name = "right";
+        degree = 30;
+        arrowleft60 = false;
+        arrowleft = false;
+        arrowright = true;
+        arrowright60 = false;
+    }
+    public void right60()
+    {
+        count = 0;
+        check = true;
+        name = "right";
+        degree = 60;
+        arrowleft60 = false;
+        arrowleft = false;
+        arrowright = false;
+        arrowright60 = true;
+    }
+    public void left60()
+    {  
+            count = 0;
+            check = true;
+            name = "left";
+            degree = 60;
+            arrowleft60 = true;
+        arrowleft = false;
+        arrowright = false;
+        arrowright60 = false;
+    }
     // load the shelf with data before game starts!
     void Awake () {
         Image = GameObject.Find("Image");
         Title = GameObject.Find("Title");
        
-        manifestFileName = "Manifests/manifest";  //set to passed file name
+        manifestFileName = "Manifests/manifest";  //set to passed file name1
 		LoadShelfData();
         //loading appropriate center image 
-        foreach (var bookVar in bookInfos)
-        {
-            if (bookVar.position == 3)
-            {
-                Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bookVar.book.pathToThumbnail);
-            }
-        }
-      
+        Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bookInfos[2].book.pathToThumbnail);
+
     }
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject go = eventData.pointerCurrentRaycast.gameObject;
-        Debug.Log(go);
-
-        if (go.name == "Shelf Test")
-        {
-            BackToShelf();
-
-        }
+        //Debug.Log(go);
         if (go.name == "Cover")
         {
             if (go.GetComponentInParent<BookObject>() != null)
             {
-                if (go.GetComponentInParent<BookObject>().position == 3)
-                {
-                    LoadCenterBook();
-                }
-                else
-                {
-                    // shift book to center
-                    ShiftBookToCenter(go.GetComponentInParent<BookObject>());
-                }
-            }
-        }
-        else if (go.GetComponent<BookObject>() != null)
-        {
-            if (go.GetComponent<BookObject>().position == 3)
-            {
-                LoadCenterBook();
-            }
-            else
-            {
-                // shift book to center
-                ShiftBookToCenter(go.GetComponent<BookObject>());
-            }
-        }
-        else if (go.name == "Image" || go.name == "Title")
-        {
-            LoadCenterBook();
-        }
+                
 
+                if (go.GetComponentInParent<BookObject>().position==1)
+                {
+                   
+                    right60();
+                }
+                else if(go.GetComponentInParent<BookObject>().position==2)
+                {
+                    right();
+                }
+                else if(go.GetComponentInParent<BookObject>().position==4)
+                {
+                    left();
+                }
+                else if(go.GetComponentInParent<BookObject>().position==5)
+                {
+                    left60();
+                }
+            }
+        }
+       
     }
     private void LoadShelfData()
 	{
@@ -93,9 +143,13 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 			foreach (string jsonObj in allBookJsons)
 			{
                 bookInfos[i].book = JsonUtility.FromJson<Book>(jsonObj);  //add string object as JSONObject to array of books
-                bookInfos[i].position = i + 1;
+               
                 bookInfos[i].SetCoverThumbnail();
                 i++;
+                if(i==5)
+                {
+                    break;
+                }
             }
 		}
 		else
@@ -104,54 +158,14 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		}
 
 	}
-    public void OnTriggerEnter(Collider other)
-    {
-
-        Debug.Log(other.gameObject.name);
-    }
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.collider.name);
-    }
-
-        private void ShiftBookToCenter(BookObject bo)
-    {   //change center text with title
-        Title.GetComponent<Text>().text = bo.book.title;
-        //change center image with character
-        Image.GetComponent<SpriteRenderer>().sprite= Resources.Load<Sprite>(bo.book.pathToThumbnail);
-
-        //swap book with this position with book at center.
-        Book temp = new Book();
-        temp = bo.book;
-        bo.book = bookInfos[2].book;
-        bookInfos[2].book = temp;
-
-        //set cover thumbnail again 
-        bo.SetCoverThumbnail();
-        bookInfos[2].SetCoverThumbnail();
-    }
+   
+     
     public void BackToShelf()
     {
         SceneManager.LoadScene("Shelf");
 
     }
-    private void LoadCenterBook()
-    {
-        string bookName = "";
-        //finding bookname
-        foreach (var bookVar in bookInfos)
-        {
-            if (bookVar.position == 3)
-            {
-                bookName = bookVar.book.fileName;
-                Debug.Log(bookName);
-                bookName += "/";
-            }
-        }
-        string filePath = Path.Combine("Books/", bookName);
-        string finalPath = Path.Combine(filePath, "Scenes/Scene01");
-        SceneManager.LoadScene(finalPath);
-    }
+    
     public void loadbookdata(GameObject entry, GameObject leaving)
     {
         
@@ -166,5 +180,19 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             leaving.GetComponent<BookObject>().book = null;
             
         }
+        else if(i< allBookJsons.Length)
+        {
+            entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[i]);
+            i++;
+        }
+    }
+
+    public void loadImageandText(BookObject bo) {
+        
+        // change center text with title
+       Title.GetComponent<Text>().text = bo.book.title;
+        //change center image with character
+        Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bo.book.pathToThumbnail);
+
     }
 }

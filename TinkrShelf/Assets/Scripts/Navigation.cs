@@ -7,18 +7,19 @@ public class Navigation : MonoBehaviour{
     bool check = false;
     int count = 0;
     string name = "";
-    public static bool arrowleft = false;
+    public static bool arrowleft=false;
+    public GameObject bookwheel;
     public void Update()
     {
         if(check==true)
         {
             if(name=="left")
                 {
-                transform.Rotate(0, 0, 1);
+                bookwheel.transform.Rotate(0, 0, 1);
             }
             else
             {
-                transform.Rotate(0, 0, -1);
+                bookwheel.transform.Rotate(0, 0, -1);
             }
             count++;
             if(count==30)
