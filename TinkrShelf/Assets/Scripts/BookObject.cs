@@ -19,4 +19,9 @@ public class BookObject : MonoBehaviour {
 		}
 
 	}
+    public void RemoveThumbnail()
+    {
+ 
+            cover.GetComponent<Image>().sprite = null;
+    }
 }

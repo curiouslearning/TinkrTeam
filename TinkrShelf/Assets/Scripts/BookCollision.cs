@@ -14,7 +14,7 @@ public class BookCollision : ShelfManager
     public static int count = 0;
     // Use this for initialization
     void Start() {
-
+      
     }
 
     // Update is called once per frame
@@ -33,8 +33,8 @@ public class BookCollision : ShelfManager
             bookenter = this.gameObject;
             count++;
             Debug.Log(count);
-           
-            
+
+
 
         }
         else if (collider.gameObject.name == "Exit")
@@ -45,16 +45,41 @@ public class BookCollision : ShelfManager
             Debug.Log(count);
 
         }
+        else if (collider.gameObject.name == "one")
+        {
+            this.gameObject.GetComponent<BookObject>().position = 1;
+            
+        }
+        else if (collider.gameObject.name == "two")
+        {
+            this.gameObject.GetComponent<BookObject>().position = 2;
+            
+        }
+        else if (collider.gameObject.name == "three")
+        {
+            this.gameObject.GetComponent<BookObject>().position = 3;
+ 
+        }
+        else if (collider.gameObject.name == "four")
+        {
+            this.gameObject.GetComponent<BookObject>().position = 4;
+
+        }
+        else if(collider.gameObject.name == "five")
+        {
+            this.gameObject.GetComponent<BookObject>().position = 5;
+
+        }
         if (count == 2)
         {
-            if (Navigation.arrowleft == false)
+            if (arrowright==true || arrowright60==true)  //right arrow
             {
-                loadbookdata(bookenter, bookexit);
+                LoadBookRightArrow(bookenter, bookexit);
             }
-            else
+            else if(arrowleft==true || arrowleft60==true)   //left arrow
             {
-                loadbookdata(bookexit, bookenter);
-                Navigation.arrowleft = false;
+                LoadBookLeftArrow(bookexit, bookenter);
+               
             }
             count = 0;
 
