@@ -74,11 +74,11 @@ public class BookCollision : ShelfManager
         {
             if (arrowright==true || arrowright60==true)  //right arrow
             {
-                loadbookdata(bookenter, bookexit);
+                LoadBookRightArrow(bookenter, bookexit);
             }
             else if(arrowleft==true || arrowleft60==true)   //left arrow
             {
-                loadbookdata(bookexit, bookenter);
+                LoadBookLeftArrow(bookexit, bookenter);
                
             }
             count = 0;

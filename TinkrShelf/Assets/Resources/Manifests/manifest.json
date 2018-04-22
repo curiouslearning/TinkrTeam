@@ -70,6 +70,34 @@
     "fileName": "OtherFile",
     "pathToThumbnail": "Thumbnail/duck5",
     "version": 1
-        }
+        },
+		{
+    "bookId": 6,
+    "title": "Main Story",
+    "author": "",
+    "language": "English (U.S.)",
+    "readingLevel": 300, 
+    "tags" : [
+            "csk", 
+            "kxip"
+        ],
+"fileName": "Ipl",
+"pathToThumbnail": "Thumbnail/ipl",
+"version": 1
+    },
+	{
+    "bookId": 7,
+    "title": "Shubham Story",
+    "author": "",
+    "language": "English (U.S.)",
+    "readingLevel": 4, 
+    "tags" : [
+            "shubham", 
+            "Delhi"
+        ],
+"fileName": "shubham",
+"pathToThumbnail": "Thumbnail/shoe",
+"version": 1
+    }
 ]
 }

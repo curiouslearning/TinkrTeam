@@ -13,6 +13,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public List<BookObject> bookInfos;
     private string[] allBookJsons;
     public static int i = 0;
+    public static int j = 0;
     public GameObject bookwheel;
     bool check = false;
     int count = 0;
@@ -140,6 +141,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             string dataAsJson = file.ToString();
             //gets array of json string objects
             allBookJsons = JsonHelper.GetJsonObjectArray(dataAsJson, "books");
+            j = allBookJsons.Length-1;
 			foreach (string jsonObj in allBookJsons)
 			{
                 bookInfos[i].book = JsonUtility.FromJson<Book>(jsonObj);  //add string object as JSONObject to array of books
@@ -165,11 +167,39 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         SceneManager.LoadScene("Shelf");
 
     }
-    
-    public void loadbookdata(GameObject entry, GameObject leaving)
+    public void LoadBookLeftArrow(GameObject entry,GameObject leaving)
+    {
+        if (i == allBookJsons.Length)
+        {
+            i = 0;
+        }
+        entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[i]);
+        entry.GetComponent<BookObject>().SetCoverThumbnail();
+        leaving.GetComponent<BookObject>().RemoveThumbnail();
+        leaving.GetComponent<BookObject>().book = null;
+        i++;
+        
+        
+    }
+    public void LoadBookRightArrow(GameObject entry, GameObject leaving)
+    {
+        if (j<0)
+        {
+            j = allBookJsons.Length - 1;
+        }
+        entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[j]);
+        entry.GetComponent<BookObject>().SetCoverThumbnail();
+        leaving.GetComponent<BookObject>().RemoveThumbnail();
+        leaving.GetComponent<BookObject>().book = null;
+        j--;
+
+
+    }
+    /*public void loadbookdata(GameObject entry, GameObject leaving)
     {
         
-        Debug.Log(entry+ "  "+leaving);
+       Debug.Log(entry+ "  "+leaving);
+
         Debug.Log(i + " " + allBookJsons.Length);
         
         if (i == allBookJsons.Length)
@@ -177,15 +207,19 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             Debug.Log("loadbookenter_ifenter");
             entry.GetComponent<BookObject>().book = leaving.GetComponent<BookObject>().book;
             entry.GetComponent<BookObject>().SetCoverThumbnail();
+            leaving.GetComponent<BookObject>().RemoveThumbnail();
             leaving.GetComponent<BookObject>().book = null;
             
         }
         else if(i< allBookJsons.Length)
         {
+            Debug.Log("new 1");
             entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[i]);
+            entry.GetComponent<BookObject>().SetCoverThumbnail();
+            Debug.Log(entry.GetComponent<BookObject>().book.title);
             i++;
         }
-    }
+    }*/
 
     public void loadImageandText(BookObject bo) {
         
