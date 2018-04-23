@@ -1,0 +1,40 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="215" power="57">x</phn>
+<word msStart="215" msEnd="655">I</word>
+<phn msStart="215" msEnd="655" power="165">AY</phn>
+<phn msStart="655" msEnd="885" power="55">x</phn>
+<word msStart="885" msEnd="1315">am</word>
+<phn msStart="885" msEnd="1245" power="144">AE</phn>
+<phn msStart="1245" msEnd="1315" power="64">m</phn>
+<phn msStart="1315" msEnd="1555" power="47">x</phn>
+<word msStart="1555" msEnd="1655">a</word>
+<phn msStart="1555" msEnd="1655" power="74">AH</phn>
+<word msStart="1655" msEnd="2325">red</word>
+<phn msStart="1655" msEnd="1915" power="117">r</phn>
+<phn msStart="1915" msEnd="2135" power="105">EH</phn>
+<phn msStart="2135" msEnd="2325" power="56">d</phn>
+<phn msStart="2325" msEnd="2385" power="0">x</phn>
+<word msStart="2385" msEnd="2875">duck</word>
+<phn msStart="2385" msEnd="2455" power="75">d</phn>
+<phn msStart="2455" msEnd="2655" power="100">AH</phn>
+<phn msStart="2655" msEnd="2875" power="18">k</phn>
+<phn msStart="2875" msEnd="3005" power="0">x</phn>
+<phn msStart="3005" msEnd="3695" power="11">x</phn>
+<word msStart="3695" msEnd="3915">Where</word>
+<phn msStart="3695" msEnd="3785" power="72">w</phn>
+<phn msStart="3785" msEnd="3875" power="72">EH</phn>
+<phn msStart="3875" msEnd="3915" power="65">r</phn>
+<word msStart="3915" msEnd="4235">can</word>
+<phn msStart="3915" msEnd="4115" power="79">k</phn>
+<phn msStart="4115" msEnd="4175" power="65">AE</phn>
+<phn msStart="4175" msEnd="4235" power="95">n</phn>
+<word msStart="4235" msEnd="4435">I</word>
+<phn msStart="4235" msEnd="4435" power="99">AY</phn>
+<phn msStart="4435" msEnd="4515" power="0">x</phn>
+<word msStart="4515" msEnd="5305">play</word>
+<phn msStart="4515" msEnd="4675" power="68">p</phn>
+<phn msStart="4675" msEnd="4755" power="92">l</phn>
+<phn msStart="4755" msEnd="5305" power="193">EY</phn>
+<phn msStart="5305" msEnd="5555" power="0">x</phn>
+</lipsync>

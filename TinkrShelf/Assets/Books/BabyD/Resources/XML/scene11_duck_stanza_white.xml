@@ -1,0 +1,70 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="15" power="0">x</phn>
+<phn msStart="15" msEnd="25" power="0">x</phn>
+<phn msStart="25" msEnd="55" power="0">x</phn>
+<word msStart="55" msEnd="805">White</word>
+<phn msStart="55" msEnd="165" power="73">w</phn>
+<phn msStart="165" msEnd="225" power="65">w</phn>
+<phn msStart="225" msEnd="305" power="69">w</phn>
+<phn msStart="305" msEnd="315" power="65">AY</phn>
+<phn msStart="315" msEnd="405" power="72">AY</phn>
+<phn msStart="405" msEnd="535" power="81">AY</phn>
+<phn msStart="535" msEnd="765" power="18">t</phn>
+<phn msStart="765" msEnd="785" power="0">t</phn>
+<phn msStart="785" msEnd="805" power="0">t</phn>
+<word msStart="805" msEnd="1585">frog</word>
+<phn msStart="805" msEnd="855" power="0">f</phn>
+<phn msStart="855" msEnd="1005" power="35">f</phn>
+<phn msStart="1005" msEnd="1035" power="52">f</phn>
+<phn msStart="1035" msEnd="1125" power="72">r</phn>
+<phn msStart="1125" msEnd="1135" power="65">r</phn>
+<phn msStart="1135" msEnd="1145" power="65">r</phn>
+<phn msStart="1145" msEnd="1165" power="65">AA</phn>
+<phn msStart="1165" msEnd="1415" power="113">AA</phn>
+<phn msStart="1415" msEnd="1465" power="65">AA</phn>
+<phn msStart="1465" msEnd="1535" power="40">g</phn>
+<phn msStart="1535" msEnd="1555" power="30">g</phn>
+<phn msStart="1555" msEnd="1585" power="30">g</phn>
+<phn msStart="1585" msEnd="1635" power="0">x</phn>
+<phn msStart="1635" msEnd="1645" power="0">x</phn>
+<phn msStart="1645" msEnd="2505" power="0">x</phn>
+<word msStart="2505" msEnd="2905">take</word>
+<phn msStart="2505" msEnd="2515" power="27">t</phn>
+<phn msStart="2515" msEnd="2535" power="51">t</phn>
+<phn msStart="2535" msEnd="2705" power="76">t</phn>
+<phn msStart="2705" msEnd="2715" power="65">EY</phn>
+<phn msStart="2715" msEnd="2725" power="65">EY</phn>
+<phn msStart="2725" msEnd="2755" power="65">EY</phn>
+<phn msStart="2755" msEnd="2845" power="18">k</phn>
+<phn msStart="2845" msEnd="2865" power="35">k</phn>
+<phn msStart="2865" msEnd="2905" power="50">k</phn>
+<word msStart="2905" msEnd="3105">me</word>
+<phn msStart="2905" msEnd="2945" power="84">m</phn>
+<phn msStart="2945" msEnd="2985" power="93">m</phn>
+<phn msStart="2985" msEnd="2995" power="92">m</phn>
+<phn msStart="2995" msEnd="3005" power="65">IY</phn>
+<phn msStart="3005" msEnd="3065" power="65">IY</phn>
+<phn msStart="3065" msEnd="3105" power="65">IY</phn>
+<word msStart="3105" msEnd="3307">to</word>
+<phn msStart="3105" msEnd="3125" power="23">t</phn>
+<phn msStart="3125" msEnd="3135" power="47">t</phn>
+<phn msStart="3135" msEnd="3155" power="70">t</phn>
+<phn msStart="3155" msEnd="3165" power="65">AH</phn>
+<phn msStart="3165" msEnd="3185" power="65">AH</phn>
+<phn msStart="3185" msEnd="3205" power="65">AH</phn>
+<phn msStart="3205" msEnd="3265" power="0">x</phn>
+<phn msStart="3265" msEnd="3285" power="0">x</phn>
+<phn msStart="3285" msEnd="3315" power="0">x</phn>
+<word msStart="3315" msEnd="3975">play</word>
+<phn msStart="3315" msEnd="3325" power="18">p</phn>
+<phn msStart="3325" msEnd="3345" power="45">p</phn>
+<phn msStart="3345" msEnd="3455" power="49">p</phn>
+<phn msStart="3455" msEnd="3465" power="73">l</phn>
+<phn msStart="3465" msEnd="3535" power="82">l</phn>
+<phn msStart="3535" msEnd="3545" power="82">l</phn>
+<phn msStart="3545" msEnd="3555" power="65">EY</phn>
+<phn msStart="3555" msEnd="3715" power="89">EY</phn>
+<phn msStart="3715" msEnd="3975" power="115">EY</phn>
+<phn msStart="3975" msEnd="4025" power="0">x</phn>
+</lipsync>

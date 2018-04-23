@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: d60f3f759da3ca74d940dfc7c4b76353
+timeCreated: 1520319672
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Scene13.swf_Tex4_0
+    21300002: Scene13.swf_Tex4_1
+    21300004: Scene13.swf_Tex4_2
+    21300006: Scene13.swf_Tex4_3
+    21300008: Scene13.swf_Tex4_4
+    21300010: Scene13.swf_Tex4_5
+    21300012: Scene13.swf_Tex4_6
+    21300014: Scene13.swf_Tex4_7
+    21300016: Scene13.swf_Tex4_8
+    21300018: Scene13.swf_Tex4_9
+    21300020: Scene13.swf_Tex4_10
+    21300022: Scene13.swf_Tex4_11
+    21300024: Scene13.swf_Tex4_12
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 470
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 205
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 248
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_3
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 275
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 473
+        width: 36
+        height: 35
+      alignment: 9
+      pivot: {x: 0.76129997, y: 0.3802089}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 310
+        width: 32
+        height: 47
+      alignment: 9
+      pivot: {x: 0.62489706, y: 0.24206284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 372
+        width: 50
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 469
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 118
+        width: 34
+        height: 22
+      alignment: 9
+      pivot: {x: 0.8604745, y: 0.5928511}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 168
+        width: 30
+        height: 26
+      alignment: 9
+      pivot: {x: 0.1255071, y: 0.18574113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_10
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 442
+        width: 33
+        height: 24
+      alignment: 9
+      pivot: {x: 0.871398, y: 0.71278125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_11
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 414
+        width: 31
+        height: 22
+      alignment: 9
+      pivot: {x: 0.26937374, y: 0.22145358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene13.swf_Tex4_12
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 466
+        width: 34
+        height: 25
+      alignment: 9
+      pivot: {x: 0.9419493, y: 0.57923096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

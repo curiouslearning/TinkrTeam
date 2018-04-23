@@ -1,0 +1,28 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="355" power="0">x</phn>
+<word msStart="355" msEnd="655">Look</word>
+<phn msStart="355" msEnd="385" power="65">l</phn>
+<phn msStart="385" msEnd="515" power="82">UH</phn>
+<phn msStart="515" msEnd="655" power="59">k</phn>
+<word msStart="655" msEnd="795">at</word>
+<phn msStart="655" msEnd="755" power="73">AE</phn>
+<phn msStart="755" msEnd="795" power="11">t</phn>
+<word msStart="795" msEnd="1605">me</word>
+<phn msStart="795" msEnd="1025" power="72">m</phn>
+<phn msStart="1025" msEnd="1605" power="200">IY</phn>
+<phn msStart="1605" msEnd="2035" power="0">x</phn>
+<phn msStart="2035" msEnd="2525" power="0">x</phn>
+<phn msStart="2525" msEnd="2675" power="84">x</phn>
+<word msStart="2675" msEnd="3045">I</word>
+<phn msStart="2675" msEnd="3045" power="146">AY</phn>
+<word msStart="3045" msEnd="3305">am</word>
+<phn msStart="3045" msEnd="3245" power="99">AE</phn>
+<phn msStart="3245" msEnd="3305" power="0">m</phn>
+<word msStart="3305" msEnd="4255">green</word>
+<phn msStart="3305" msEnd="3365" power="56">g</phn>
+<phn msStart="3365" msEnd="3555" power="97">r</phn>
+<phn msStart="3555" msEnd="4035" power="175">IY</phn>
+<phn msStart="4035" msEnd="4255" power="54">n</phn>
+<phn msStart="4255" msEnd="4415" power="0">x</phn>
+</lipsync>

@@ -1,0 +1,82 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="15" power="0">x</phn>
+<phn msStart="15" msEnd="25" power="0">x</phn>
+<phn msStart="25" msEnd="155" power="33">x</phn>
+<word msStart="155" msEnd="195">I</word>
+<phn msStart="155" msEnd="175" power="65">AY</phn>
+<phn msStart="175" msEnd="185" power="65">AY</phn>
+<phn msStart="185" msEnd="195" power="65">AY</phn>
+<phn msStart="195" msEnd="205" power="23">x</phn>
+<phn msStart="205" msEnd="215" power="27">x</phn>
+<phn msStart="215" msEnd="235" power="65">x</phn>
+<word msStart="235" msEnd="765">am</word>
+<phn msStart="235" msEnd="265" power="65">AE</phn>
+<phn msStart="265" msEnd="325" power="65">AE</phn>
+<phn msStart="325" msEnd="445" power="78">AE</phn>
+<phn msStart="445" msEnd="455" power="72">m</phn>
+<phn msStart="455" msEnd="755" power="66">m</phn>
+<phn msStart="755" msEnd="765" power="56">m</phn>
+<phn msStart="765" msEnd="895" power="30">x</phn>
+<phn msStart="895" msEnd="965" power="0">x</phn>
+<phn msStart="965" msEnd="975" power="0">x</phn>
+<word msStart="975" msEnd="1695">done</word>
+<phn msStart="975" msEnd="995" power="27">d</phn>
+<phn msStart="995" msEnd="1005" power="35">d</phn>
+<phn msStart="1005" msEnd="1095" power="63">d</phn>
+<phn msStart="1095" msEnd="1105" power="65">AH</phn>
+<phn msStart="1105" msEnd="1115" power="65">AH</phn>
+<phn msStart="1115" msEnd="1495" power="148">AH</phn>
+<phn msStart="1495" msEnd="1505" power="65">n</phn>
+<phn msStart="1505" msEnd="1665" power="57">n</phn>
+<phn msStart="1665" msEnd="1695" power="0">n</phn>
+<phn msStart="1695" msEnd="1745" power="0">x</phn>
+<phn msStart="1745" msEnd="1765" power="0">x</phn>
+<phn msStart="1765" msEnd="1805" power="0">x</phn>
+<phn msStart="1805" msEnd="1855" power="0">x</phn>
+<phn msStart="1855" msEnd="1985" power="0">x</phn>
+<phn msStart="1985" msEnd="2835" power="0">x</phn>
+<word msStart="2835" msEnd="3695">That</word>
+<phn msStart="2835" msEnd="3025" power="35">DH</phn>
+<phn msStart="3025" msEnd="3035" power="71">DH</phn>
+<phn msStart="3035" msEnd="3085" power="93">DH</phn>
+<phn msStart="3085" msEnd="3165" power="68">AE</phn>
+<phn msStart="3165" msEnd="3175" power="65">AE</phn>
+<phn msStart="3175" msEnd="3575" power="152">AE</phn>
+<phn msStart="3575" msEnd="3595" power="11">t</phn>
+<phn msStart="3595" msEnd="3615" power="18">t</phn>
+<phn msStart="3615" msEnd="3695" power="35">t</phn>
+<phn msStart="3695" msEnd="3825" power="11">x</phn>
+<phn msStart="3825" msEnd="4025" power="0">x</phn>
+<phn msStart="4025" msEnd="4195" power="0">x</phn>
+<word msStart="4195" msEnd="4595">was</word>
+<phn msStart="4195" msEnd="4295" power="74">w</phn>
+<phn msStart="4295" msEnd="4305" power="65">w</phn>
+<phn msStart="4305" msEnd="4325" power="65">w</phn>
+<phn msStart="4325" msEnd="4335" power="65">AH</phn>
+<phn msStart="4335" msEnd="4345" power="65">AH</phn>
+<phn msStart="4345" msEnd="4475" power="80">AH</phn>
+<phn msStart="4475" msEnd="4485" power="46">z</phn>
+<phn msStart="4485" msEnd="4565" power="33">z</phn>
+<phn msStart="4565" msEnd="4595" power="33">z</phn>
+<phn msStart="4595" msEnd="4685" power="23">x</phn>
+<phn msStart="4685" msEnd="4695" power="18">x</phn>
+<phn msStart="4695" msEnd="4705" power="23">x</phn>
+<word msStart="4705" msEnd="5755">fun</word>
+<phn msStart="4705" msEnd="4715" power="23">f</phn>
+<phn msStart="4715" msEnd="5045" power="40">f</phn>
+<phn msStart="5045" msEnd="5065" power="49">f</phn>
+<phn msStart="5065" msEnd="5135" power="67">AH</phn>
+<phn msStart="5135" msEnd="5165" power="65">AH</phn>
+<phn msStart="5165" msEnd="5395" power="109">AH</phn>
+<phn msStart="5395" msEnd="5445" power="69">n</phn>
+<phn msStart="5445" msEnd="5745" power="65">n</phn>
+<phn msStart="5745" msEnd="5755" power="0">n</phn>
+<phn msStart="5755" msEnd="5795" power="0">x</phn>
+<phn msStart="5795" msEnd="5875" power="0">x</phn>
+<phn msStart="5875" msEnd="5895" power="0">x</phn>
+<phn msStart="5895" msEnd="5915" power="0">x</phn>
+<phn msStart="5915" msEnd="5965" power="0">x</phn>
+<phn msStart="5965" msEnd="5985" power="0">x</phn>
+<phn msStart="5985" msEnd="6335" power="0">x</phn>
+</lipsync>

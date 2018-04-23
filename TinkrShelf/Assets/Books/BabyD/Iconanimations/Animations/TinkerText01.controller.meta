@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Animations/eggcontroller.controller.meta
+guid: a31d0d0289921d9459e4b1619af7a95e
+timeCreated: 1517831996
+=======
+guid: e60c509e9825e3244b1b5591226a3385
+timeCreated: 1519122047
+>>>>>>> master:Assets/Animations/TinkerText01.controller.meta
+licenseType: Free
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

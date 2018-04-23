@@ -1,0 +1,51 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="175" power="0">x</phn>
+<word msStart="175" msEnd="565">Go</word>
+<phn msStart="175" msEnd="275" power="72">g</phn>
+<phn msStart="275" msEnd="565" power="124">OW</phn>
+<phn msStart="565" msEnd="785" power="0">x</phn>
+<word msStart="785" msEnd="1255">to</word>
+<phn msStart="785" msEnd="975" power="61">t</phn>
+<phn msStart="975" msEnd="1255" power="120">UW</phn>
+<phn msStart="1255" msEnd="1765" power="0">x</phn>
+<word msStart="1765" msEnd="1925">the</word>
+<phn msStart="1765" msEnd="1825" power="72">TH</phn>
+<phn msStart="1825" msEnd="1925" power="73">AH</phn>
+<phn msStart="1925" msEnd="2105" power="0">x</phn>
+<word msStart="2105" msEnd="2835">purple</word>
+<phn msStart="2105" msEnd="2355" power="51">p</phn>
+<phn msStart="2355" msEnd="2465" power="77">ER</phn>
+<phn msStart="2465" msEnd="2615" power="41">p</phn>
+<phn msStart="2615" msEnd="2655" power="65">AH</phn>
+<phn msStart="2655" msEnd="2835" power="70">l</phn>
+<phn msStart="2835" msEnd="3165" power="0">x</phn>
+<word msStart="3165" msEnd="4023">frog</word>
+<phn msStart="3165" msEnd="3435" power="43">f</phn>
+<phn msStart="3435" msEnd="3485" power="65">r</phn>
+<phn msStart="3485" msEnd="3965" power="65">AA</phn>
+<phn msStart="3965" msEnd="4006" power="80">g</phn>
+<phn msStart="4006" msEnd="4205" power="11">x</phn>
+<phn msStart="4205" msEnd="4785" power="0">x</phn>
+<word msStart="4785" msEnd="4985">He</word>
+<phn msStart="4785" msEnd="4895" power="72">h</phn>
+<phn msStart="4895" msEnd="4985" power="72">IY</phn>
+<word msStart="4985" msEnd="5175">will</word>
+<phn msStart="4985" msEnd="5055" power="65">w</phn>
+<phn msStart="5055" msEnd="5085" power="65">IH</phn>
+<phn msStart="5085" msEnd="5175" power="57">l</phn>
+<word msStart="5175" msEnd="5955">find</word>
+<phn msStart="5175" msEnd="5515" power="35">f</phn>
+<phn msStart="5515" msEnd="5715" power="100">AY</phn>
+<phn msStart="5715" msEnd="5915" power="69">n</phn>
+<phn msStart="5915" msEnd="5955" power="47">d</phn>
+<phn msStart="5955" msEnd="6065" power="18">x</phn>
+<word msStart="6065" msEnd="6165">the</word>
+<phn msStart="6065" msEnd="6105" power="59">TH</phn>
+<phn msStart="6105" msEnd="6165" power="65">AH</phn>
+<phn msStart="6165" msEnd="6315" power="18">x</phn>
+<word msStart="6315" msEnd="6435">way</word>
+<phn msStart="6315" msEnd="6395" power="65">w</phn>
+<phn msStart="6395" msEnd="6435" power="65">EY</phn>
+<phn msStart="6435" msEnd="6845" power="38">x</phn>
+</lipsync>

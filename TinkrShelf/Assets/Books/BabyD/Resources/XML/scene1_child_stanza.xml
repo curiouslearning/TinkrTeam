@@ -1,0 +1,31 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="125" power="0">x</phn>
+<word msStart="125" msEnd="335">Tap</word>
+<phn msStart="125" msEnd="225" power="49">t</phn>
+<phn msStart="225" msEnd="255" power="65">AE</phn>
+<phn msStart="255" msEnd="335" power="70">p</phn>
+<phn msStart="335" msEnd="655" power="55">x</phn>
+<phn msStart="655" msEnd="925" power="0">x</phn>
+<phn msStart="925" msEnd="1095" power="0">x</phn>
+<word msStart="1095" msEnd="1355">Tap</word>
+<phn msStart="1095" msEnd="1215" power="46">t</phn>
+<phn msStart="1215" msEnd="1325" power="76">AE</phn>
+<phn msStart="1325" msEnd="1355" power="54">p</phn>
+<phn msStart="1355" msEnd="1495" power="35">x</phn>
+<phn msStart="1495" msEnd="1575" power="0">x</phn>
+<phn msStart="1575" msEnd="1995" power="0">x</phn>
+<word msStart="1995" msEnd="2355">Tap</word>
+<phn msStart="1995" msEnd="2095" power="47">t</phn>
+<phn msStart="2095" msEnd="2325" power="107">AE</phn>
+<phn msStart="2325" msEnd="2355" power="0">p</phn>
+<phn msStart="2355" msEnd="2485" power="11">x</phn>
+<phn msStart="2485" msEnd="3775" power="0">x</phn>
+<word msStart="3775" msEnd="4005">Pop</word>
+<phn msStart="3775" msEnd="3925" power="91">p</phn>
+<phn msStart="3925" msEnd="3965" power="65">AA</phn>
+<phn msStart="3965" msEnd="4005" power="0">p</phn>
+<phn msStart="4005" msEnd="4155" power="0">x</phn>
+<phn msStart="4155" msEnd="4195" power="23">x</phn>
+<phn msStart="4195" msEnd="4565" power="0">x</phn>
+</lipsync>

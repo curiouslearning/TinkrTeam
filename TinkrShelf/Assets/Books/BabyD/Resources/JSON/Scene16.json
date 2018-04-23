@@ -1,0 +1,215 @@
+{
+    // "staticObjects": [{
+    //         "id": 0,
+    //         "fileName": "Scene03.swf_Tex1_1",
+    //         "position": {
+    //             "x": 15.40462,
+    //             "y": -3.9
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+    //         "orderinLayer": 0,
+    //         "inText": true,
+    //         "label": "blue-shadow"
+    //     },
+    //     {
+    //         "id": 1,
+    //         "fileName": "Scene03.swf_Tex1_2",
+    //         "position": {
+    //             "x": 19.6,
+    //             "y": -11.4
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc1"
+    //     }, {
+    //         "id": 2,
+    //         "fileName": "Scene03.swf_Tex1_0",
+    //         "position": {
+    //             "x": 9.7,
+    //             "y": -13.8
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc2"
+    //     }
+    // ],
+    // "animationObjects": [{
+    //     "id": 0,
+    //     "animName": "anim-name",
+    //     "parent": "attached object",
+    //     "loop": true,
+    //     "draggable": false,
+    //     "audio": {
+    //         "audioName": "audio-name",
+    //         "pngId": 1
+    //     },
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "pngs": [{
+    //         "id": 0,
+    //         "fileName": "png-name-1"
+    //     }, {
+    //         "id": 1,
+    //         "fileName": "png-name-2"
+    //     }]
+
+    // }],
+    "Text": [{
+            "id": 0,
+            "text": "Duck eat bugs."
+        }, {
+            "id": 1,
+            "text": "1 bug, 2 bugs, 3 bugs, 4."
+        },
+        {
+            "id": 2,
+            "text": "Eat 8 bugs."
+        }, {
+            "id": 3,
+            "text": "Do you want more?"
+        }
+    ],
+    "storyImageFile": null,
+    "audioFile": "scene16_child_stanza.mp3",
+    "timestamps": [{
+            "start": "165",
+            "wordIdx": "0",
+            "end": "715"
+        },
+        {
+            "start": "985",
+            "wordIdx": "1",
+            "end": "1395"
+        },
+        {
+            "start": "1735",
+            "wordIdx": "2",
+            "end": "2365"
+        },
+        {
+            "start": "3175",
+            "wordIdx": "3",
+            "end": "3555"
+        },
+        {
+            "start": "3855",
+            "wordIdx": "4",
+            "end": "3975"
+        },
+        {
+            "start": "4415",
+            "wordIdx": "5",
+            "end": "4875"
+        },
+        {
+            "start": "5155",
+            "wordIdx": "6",
+            "end": "5535"
+        },
+        {
+            "start": "6005",
+            "wordIdx": "7",
+            "end": "6415"
+        },
+        {
+            "start": "6415",
+            "wordIdx": "8",
+            "end": "7095"
+        },
+        {
+            "start": "7315",
+            "wordIdx": "9",
+            "end": "7725"
+        },
+        {
+            "start": "8925",
+            "wordIdx": "10",
+            "end": "9335"
+        },
+        {
+            "start": "9525",
+            "wordIdx": "11",
+            "end": "9945"
+        },
+        {
+            "start": "9945",
+            "wordIdx": "12",
+            "end": "10545"
+        },
+        {
+            "start": "11215",
+            "wordIdx": "13",
+            "end": "11315"
+        },
+        {
+            "start": "11315",
+            "wordIdx": "14",
+            "end": "11795"
+        },
+        {
+            "start": "11795",
+            "wordIdx": "15",
+            "end": "12225"
+        },
+        {
+            "start": "12495",
+            "wordIdx": "15",
+            "end": "12945"
+        }
+    ],
+
+    "triggers": [{
+        "args": {
+            "stnzaId": 0,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 1,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 2,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 1,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }],
+    "isTitle": false,
+    "fontColor": "font-color",
+    "textstartPosition": 120
+}

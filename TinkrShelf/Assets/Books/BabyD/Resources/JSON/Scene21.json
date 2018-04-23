@@ -1,0 +1,271 @@
+{
+    // "staticObjects": [{
+    //         "id": 0,
+    //         "fileName": "Scene03.swf_Tex1_1",
+    //         "position": {
+    //             "x": 15.40462,
+    //             "y": -3.9
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+    //         "orderinLayer": 0,
+    //         "inText": true,
+    //         "label": "blue-shadow"
+    //     },
+    //     {
+    //         "id": 1,
+    //         "fileName": "Scene03.swf_Tex1_2",
+    //         "position": {
+    //             "x": 19.6,
+    //             "y": -11.4
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc1"
+    //     }, {
+    //         "id": 2,
+    //         "fileName": "Scene03.swf_Tex1_0",
+    //         "position": {
+    //             "x": 9.7,
+    //             "y": -13.8
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc2"
+    //     }
+    // ],
+    // "animationObjects": [{
+    //     "id": 0,
+    //     "animName": "anim-name",
+    //     "parent": "attached object",
+    //     "loop": true,
+    //     "draggable": false,
+    //     "audio": {
+    //         "audioName": "audio-name",
+    //         "pngId": 1
+    //     },
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "pngs": [{
+    //         "id": 0,
+    //         "fileName": "png-name-1"
+    //     }, {
+    //         "id": 1,
+    //         "fileName": "png-name-2"
+    //     }]
+
+    // }],
+    "Text": [{
+            "id": 0,
+            "text": "I am a duck. A white duck."
+        }, {
+            "id": 1,
+            "text": "I can play and run all day."
+        },
+        {
+            "id": 2,
+            "text": "I eat bugs 2, 3, 4. How can I sleep?"
+        },
+        {
+            "id": 3,
+            "text": "Just one thing more?"
+        }
+    ],
+    "storyImageFile": null,
+    "audioFile": "scene21_child_stanza.mp3",
+    "timestamps": [{
+            "start": "65",
+            "wordIdx": "0",
+            "end": "115"
+        },
+        {
+            "start": "794",
+            "wordIdx": "1",
+            "end": "1170"
+        },
+        {
+            "start": "1242",
+            "wordIdx": "2",
+            "end": "1467"
+        },
+        {
+            "start": "1588",
+            "wordIdx": "3",
+            "end": "2346"
+        },
+        {
+            "start": "2895",
+            "wordIdx": "4",
+            "end": "2985"
+        },
+        {
+            "start": "2985",
+            "wordIdx": "5",
+            "end": "3795"
+        },
+        {
+            "start": "3885",
+            "wordIdx": "6",
+            "end": "4565"
+        },
+        {
+            "start": "4565",
+            "wordIdx": "7",
+            "end": "5535"
+        },
+        {
+            "start": "5589",
+            "wordIdx": "8",
+            "end": "5795"
+        },
+        {
+            "start": "5868",
+            "wordIdx": "9",
+            "end": "6577"
+        },
+        {
+            "start": "6602",
+            "wordIdx": "10",
+            "end": "6977"
+        },
+        {
+            "start": "7002",
+            "wordIdx": "11",
+            "end": "7602"
+        },
+        {
+            "start": "7645",
+            "wordIdx": "12",
+            "end": "7985"
+        },
+        {
+            "start": "7985",
+            "wordIdx": "13",
+            "end": "8735"
+        },
+        {
+            "start": "9555",
+            "wordIdx": "14",
+            "end": "9895"
+        },
+        {
+            "start": "10205",
+            "wordIdx": "15",
+            "end": "10445"
+        },
+        {
+            "start": "10555",
+            "wordIdx": "15",
+            "end": "10975"
+        },
+        {
+            "start": "11585",
+            "wordIdx": "15",
+            "end": "11985"
+        },
+        {
+            "start": "12175",
+            "wordIdx": "15",
+            "end": "12535"
+        },
+        {
+            "start": "12755",
+            "wordIdx": "15",
+            "end": "13185"
+        },
+        {
+            "start": "14225",
+            "wordIdx": "15",
+            "end": "14615"
+        },
+        {
+            "start": "14655",
+            "wordIdx": "15",
+            "end": "15005"
+        },
+        {
+            "start": "15005",
+            "wordIdx": "15",
+            "end": "15125"
+        },
+        {
+            "start": "15375",
+            "wordIdx": "15",
+            "end": "15985"
+        },
+        {
+            "start": "16775",
+            "wordIdx": "15",
+            "end": "17255"
+        },
+        {
+            "start": "17255",
+            "wordIdx": "15",
+            "end": "17905"
+        },
+        {
+            "start": "18065",
+            "wordIdx": "15",
+            "end": "18465"
+        },
+        {
+            "start": "18465",
+            "wordIdx": "15",
+            "end": "19085"
+        }
+    ],
+
+    "triggers": [{
+        "args": {
+            "stnzaId": 0,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 1,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 2,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 1,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }],
+    "isTitle": false,
+    "fontColor": "font-color",
+    "textstartPosition": 120
+}

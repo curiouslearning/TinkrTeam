@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 000032402ccd0664c861d9b80b1a7291
+timeCreated: 1520344057
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Scene07.swf_Tex3_0
+    21300002: Scene07.swf_Tex3_1
+    21300004: Scene07.swf_Tex3_2
+    21300006: Scene07.swf_Tex3_3
+    21300008: Scene07.swf_Tex3_4
+    21300010: Scene07.swf_Tex3_5
+    21300012: Scene07.swf_Tex3_6
+    21300014: Scene07.swf_Tex3_7
+    21300016: Scene07.swf_Tex3_8
+    21300018: Scene07.swf_Tex3_9
+    21300020: Scene07.swf_Tex3_10
+    21300022: Scene07.swf_Tex3_11
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 668
+        width: 365
+        height: 352
+      alignment: 9
+      pivot: {x: 0.6857933, y: 0.11040878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_1
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 668
+        width: 380
+        height: 247
+      alignment: 9
+      pivot: {x: 0.9838233, y: 0.95758826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 426
+        width: 502
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_3
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 358
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 201
+        width: 403
+        height: 223
+      alignment: 9
+      pivot: {x: 0.4439085, y: 0.41890645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene07.swf_Tex3_9
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 113
+        width: 371
+        height: 236
+      alignment: 9
+      pivot: {x: 0.46344224, y: 0.35951796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

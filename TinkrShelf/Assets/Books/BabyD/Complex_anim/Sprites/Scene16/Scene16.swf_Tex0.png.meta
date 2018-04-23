@@ -1,0 +1,1097 @@
+fileFormatVersion: 2
+guid: 8d6415edb940ee048a1c2ab3d43a3a77
+timeCreated: 1520161338
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Scene16.swf_Tex0_0
+    21300002: Scene16.swf_Tex0_1
+    21300004: Scene16.swf_Tex0_3
+    21300006: Scene16.swf_Tex0_4
+    21300008: Scene16.swf_Tex0_5
+    21300010: Scene16.swf_Tex0_6
+    21300012: Scene16.swf_Tex0_7
+    21300014: Scene16.swf_Tex0_8
+    21300016: Scene16.swf_Tex0_9
+    21300018: Scene16.swf_Tex0_10
+    21300020: Scene16.swf_Tex0_15
+    21300022: Scene16.swf_Tex0_16
+    21300024: Scene16.swf_Tex0_17
+    21300026: Scene16.swf_Tex0_18
+    21300028: Scene16.swf_Tex0_19
+    21300030: Scene16.swf_Tex0_20
+    21300032: Scene16.swf_Tex0_21
+    21300034: Scene16.swf_Tex0_23
+    21300036: Scene16.swf_Tex0_25
+    21300038: Scene16.swf_Tex0_29
+    21300040: Scene16.swf_Tex0_30
+    21300042: Scene16.swf_Tex0_31
+    21300044: Scene16.swf_Tex0_33
+    21300046: Scene16.swf_Tex0_34
+    21300048: Scene16.swf_Tex0_35
+    21300050: Scene16.swf_Tex0_36
+    21300052: Scene16.swf_Tex0_37
+    21300054: Scene16.swf_Tex0_38
+    21300056: Scene16.swf_Tex0_43
+    21300058: Scene16.swf_Tex0_44
+    21300060: Scene16.swf_Tex0_45
+    21300062: Scene16.swf_Tex0_46
+    21300064: Scene16.swf_Tex0_47
+    21300066: Scene16.swf_Tex0_48
+    21300068: Scene16.swf_Tex0_49
+    21300070: Scene16.swf_Tex0_50
+    21300072: Scene16.swf_Tex0_51
+    21300074: Scene16.swf_Tex0_52
+    21300076: Scene16.swf_Tex0_54
+    21300078: Scene16.swf_Tex0_55
+    21300080: Scene16.swf_Tex0_56
+    21300082: Scene16.swf_Tex0_57
+    21300084: Scene16.swf_Tex0_58
+    21300086: Scene16.swf_Tex0_59
+    21300088: Scene16.swf_Tex0_60
+    21300090: Scene16.swf_Tex0_61
+    21300092: Scene16.swf_Tex0_62
+    21300094: Scene16.swf_Tex0_63
+    21300096: Scene16.swf_Tex0_64
+    21300098: Scene16.swf_Tex0_65
+    21300100: Scene16.swf_Tex0_67
+    21300102: Scene16.swf_Tex0_69
+    21300104: Scene16.swf_Tex0_70
+    21300106: Scene16.swf_Tex0_71
+    21300108: Scene16.swf_Tex0_72
+    21300110: Scene16.swf_Tex0_73
+    21300112: Scene16.swf_Tex0_74
+    21300114: Scene16.swf_Tex0_75
+    21300116: Scene16.swf_Tex0_76
+    21300118: Scene16.swf_Tex0_77
+    21300120: Scene16.swf_Tex0_78
+    21300122: Scene16.swf_Tex0_79
+    21300124: Scene16.swf_Tex0_80
+    21300126: Scene16.swf_Tex0_81
+    21300128: Scene16.swf_Tex0_82
+    21300130: Scene16.swf_Tex0_83
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 441
+        width: 67
+        height: 67
+      alignment: 9
+      pivot: {x: 0.49999988, y: 0.016413903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 494
+        width: 54
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 495
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 496
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 440
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_6
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 449
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 452
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_8
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 459
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_9
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 471
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_10
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 471
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_15
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 441
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 425
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_17
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 425
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_18
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 424
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_19
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 424
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 412
+        width: 78
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_21
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 391
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_23
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 393
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_25
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 390
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_29
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 391
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_30
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 333
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_31
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 342
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_33
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 333
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_34
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 349
+        width: 55
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_35
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 359
+        width: 39
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_36
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 356
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_37
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 356
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_38
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 356
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_43
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 335
+        width: 21
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_44
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 338
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_45
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 289
+        width: 72
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_46
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 299
+        width: 62
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_47
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 299
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_48
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 294
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 296
+        width: 55
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_50
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 303
+        width: 40
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_51
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 298
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_52
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 298
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_54
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 290
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_55
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 260
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_56
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 262
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_57
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 264
+        width: 61
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_58
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 264
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_59
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 269
+        width: 43
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_60
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 270
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_61
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 261
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_62
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 261
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_63
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 225
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_64
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 233
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_65
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 240
+        width: 53
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_67
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 244
+        width: 54
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_69
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 242
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_70
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 226
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_71
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 226
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_72
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 198
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_73
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 206
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_74
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 206
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_75
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 221
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_76
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 218
+        width: 31
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_77
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 190
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_78
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 172
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_79
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 185
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_80
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 185
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_81
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 182
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_82
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 191
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_83
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 191
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
