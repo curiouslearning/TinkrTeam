@@ -169,31 +169,40 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     }
     public void LoadBookLeftArrow(GameObject entry,GameObject leaving)
     {
-        if (i == allBookJsons.Length)
-        {
-            i = 0;
-        }
+        
         entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[i]);
         entry.GetComponent<BookObject>().SetCoverThumbnail();
         leaving.GetComponent<BookObject>().RemoveThumbnail();
         leaving.GetComponent<BookObject>().book = null;
         i++;
-        
-        
+        j++;
+        if (i > allBookJsons.Length - 1)
+        {
+            i = 0;
+        }
+        if (j > allBookJsons.Length - 1)
+        {
+            j = 0;
+        }
+
     }
     public void LoadBookRightArrow(GameObject entry, GameObject leaving)
     {
-        if (j<0)
-        {
-            j = allBookJsons.Length - 1;
-        }
+        
         entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[j]);
         entry.GetComponent<BookObject>().SetCoverThumbnail();
         leaving.GetComponent<BookObject>().RemoveThumbnail();
         leaving.GetComponent<BookObject>().book = null;
         j--;
-
-
+        i--;
+        if (j < 0)
+        {
+            j = allBookJsons.Length - 1;
+        }
+        if (i < 0)
+        {
+            i = allBookJsons.Length - 1;
+        }
     }
     /*public void loadbookdata(GameObject entry, GameObject leaving)
     {
