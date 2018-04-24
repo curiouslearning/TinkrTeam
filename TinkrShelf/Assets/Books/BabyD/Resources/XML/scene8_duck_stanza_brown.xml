@@ -1,0 +1,29 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="165" power="27">x</phn>
+<word msStart="165" msEnd="325">Look</word>
+<phn msStart="165" msEnd="205" power="59">l</phn>
+<phn msStart="205" msEnd="295" power="69">UH</phn>
+<phn msStart="295" msEnd="325" power="76">k</phn>
+<word msStart="325" msEnd="615">at</word>
+<phn msStart="325" msEnd="445" power="80">AE</phn>
+<phn msStart="445" msEnd="615" power="63">t</phn>
+<word msStart="615" msEnd="1715">me</word>
+<phn msStart="615" msEnd="845" power="53">m</phn>
+<phn msStart="845" msEnd="1715" power="280">IY</phn>
+<phn msStart="1715" msEnd="1835" power="52">x</phn>
+<phn msStart="1835" msEnd="2185" power="60">x</phn>
+<word msStart="2185" msEnd="2535">I</word>
+<phn msStart="2185" msEnd="2535" power="141">AY</phn>
+<phn msStart="2535" msEnd="2615" power="50">x</phn>
+<word msStart="2615" msEnd="2985">am</word>
+<phn msStart="2615" msEnd="2795" power="97">AE</phn>
+<phn msStart="2795" msEnd="2985" power="77">m</phn>
+<phn msStart="2985" msEnd="3045" power="50">x</phn>
+<word msStart="3045" msEnd="3895">Brown</word>
+<phn msStart="3045" msEnd="3095" power="66">b</phn>
+<phn msStart="3095" msEnd="3315" power="107">r</phn>
+<phn msStart="3315" msEnd="3815" power="181">AW</phn>
+<phn msStart="3815" msEnd="3895" power="71">n</phn>
+<phn msStart="3895" msEnd="4165" power="0">x</phn>
+</lipsync>

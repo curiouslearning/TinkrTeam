@@ -1,0 +1,31 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="155" power="11">x</phn>
+<word msStart="155" msEnd="435">Look</word>
+<phn msStart="155" msEnd="295" power="77">l</phn>
+<phn msStart="295" msEnd="325" power="65">UH</phn>
+<phn msStart="325" msEnd="435" power="65">k</phn>
+<word msStart="435" msEnd="595">at</word>
+<phn msStart="435" msEnd="525" power="71">AE</phn>
+<phn msStart="525" msEnd="595" power="23">t</phn>
+<phn msStart="595" msEnd="685" power="0">x</phn>
+<word msStart="685" msEnd="1545">me</word>
+<phn msStart="685" msEnd="715" power="0">m</phn>
+<phn msStart="715" msEnd="1545" power="264">IY</phn>
+<phn msStart="1545" msEnd="2025" power="0">x</phn>
+<phn msStart="2025" msEnd="2185" power="0">x</phn>
+<phn msStart="2185" msEnd="2315" power="61">x</phn>
+<word msStart="2315" msEnd="2845">I</word>
+<phn msStart="2315" msEnd="2845" power="189">AY</phn>
+<word msStart="2845" msEnd="3095">am</word>
+<phn msStart="2845" msEnd="3065" power="101">AE</phn>
+<phn msStart="3065" msEnd="3095" power="0">m</phn>
+<phn msStart="3095" msEnd="3305" power="30">x</phn>
+<word msStart="3305" msEnd="4175">orange</word>
+<phn msStart="3305" msEnd="3365" power="65">AO</phn>
+<phn msStart="3365" msEnd="3395" power="65">r</phn>
+<phn msStart="3395" msEnd="3885" power="178">AH</phn>
+<phn msStart="3885" msEnd="3915" power="52">n</phn>
+<phn msStart="3915" msEnd="4175" power="62">j</phn>
+<phn msStart="4175" msEnd="4335" power="0">x</phn>
+</lipsync>

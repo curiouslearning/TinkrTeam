@@ -1,0 +1,44 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="355" power="49">x</phn>
+<word msStart="355" msEnd="655">I</word>
+<phn msStart="355" msEnd="655" power="126">AY</phn>
+<phn msStart="655" msEnd="725" power="43">x</phn>
+<word msStart="725" msEnd="1145">am</word>
+<phn msStart="725" msEnd="1115" power="146">AE</phn>
+<phn msStart="1115" msEnd="1145" power="0">m</phn>
+<phn msStart="1145" msEnd="1225" power="45">x</phn>
+<word msStart="1225" msEnd="1445">a</word>
+<phn msStart="1225" msEnd="1445" power="103">AH</phn>
+<phn msStart="1445" msEnd="1795" power="0">x</phn>
+<word msStart="1795" msEnd="2305">purple</word>
+<phn msStart="1795" msEnd="1875" power="72">p</phn>
+<phn msStart="1875" msEnd="1965" power="70">ER</phn>
+<phn msStart="1965" msEnd="2075" power="53">p</phn>
+<phn msStart="2075" msEnd="2135" power="65">AH</phn>
+<phn msStart="2135" msEnd="2305" power="65">l</phn>
+<phn msStart="2305" msEnd="2405" power="11">x</phn>
+<word msStart="2405" msEnd="3035">duck</word>
+<phn msStart="2405" msEnd="2485" power="75">d</phn>
+<phn msStart="2485" msEnd="2605" power="78">AH</phn>
+<phn msStart="2605" msEnd="3035" power="11">k</phn>
+<phn msStart="3035" msEnd="3465" power="0">x</phn>
+<phn msStart="3465" msEnd="3505" power="30">x</phn>
+<word msStart="3505" msEnd="3785">Where</word>
+<phn msStart="3505" msEnd="3605" power="72">w</phn>
+<phn msStart="3605" msEnd="3755" power="85">EH</phn>
+<phn msStart="3755" msEnd="3785" power="0">r</phn>
+<phn msStart="3785" msEnd="3825" power="11">x</phn>
+<word msStart="3825" msEnd="4015">can</word>
+<phn msStart="3825" msEnd="3885" power="69">k</phn>
+<phn msStart="3885" msEnd="3955" power="67">AE</phn>
+<phn msStart="3955" msEnd="4015" power="92">n</phn>
+<word msStart="4015" msEnd="4285">I</word>
+<phn msStart="4015" msEnd="4285" power="118">AY</phn>
+<phn msStart="4285" msEnd="4375" power="0">x</phn>
+<word msStart="4375" msEnd="5085">play</word>
+<phn msStart="4375" msEnd="4525" power="72">p</phn>
+<phn msStart="4525" msEnd="4605" power="89">l</phn>
+<phn msStart="4605" msEnd="5085" power="175">EY</phn>
+<phn msStart="5085" msEnd="5285" power="0">x</phn>
+</lipsync>

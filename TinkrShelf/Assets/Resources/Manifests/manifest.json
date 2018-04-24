@@ -87,7 +87,7 @@
     },
 	{
     "bookId": 7,
-    "title": "Shubham Story",
+    "title": "Shoe Story",
     "author": "",
     "language": "English (U.S.)",
     "readingLevel": 4, 
@@ -95,7 +95,7 @@
             "shubham", 
             "Delhi"
         ],
-"fileName": "shubham",
+"fileName": "shoe",
 "pathToThumbnail": "Thumbnail/shoe",
 "version": 1
     }

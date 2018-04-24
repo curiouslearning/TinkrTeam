@@ -1,0 +1,63 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="245" power="30">x</phn>
+<word msStart="245" msEnd="1315">OK</word>
+<phn msStart="245" msEnd="595" power="140">OW</phn>
+<phn msStart="595" msEnd="965" power="62">k</phn>
+<phn msStart="965" msEnd="1315" power="140">EY</phn>
+<phn msStart="1315" msEnd="1345" power="59">x</phn>
+<word msStart="1345" msEnd="2225">Baby D</word>
+<phn msStart="1345" msEnd="1485" power="67">b</phn>
+<phn msStart="1485" msEnd="1665" power="95">EY</phn>
+<phn msStart="1665" msEnd="1745" power="50">b</phn>
+<phn msStart="1745" msEnd="1845" power="71">IY</phn>
+<phn msStart="1845" msEnd="2005" power="35">x</phn>
+
+<!-- <word msStart="2005" msEnd="2225">D</word> -->
+<phn msStart="2005" msEnd="2075" power="52">d</phn>
+<phn msStart="2075" msEnd="2225" power="85">IY</phn>
+<phn msStart="2225" msEnd="2535" power="45">x</phn>
+<phn msStart="2535" msEnd="2865" power="0">x</phn>
+<phn msStart="2865" msEnd="3385" power="0">x</phn>
+
+<word msStart="3385" msEnd="3785">You</word>
+<phn msStart="3385" msEnd="3645" power="116">y</phn>
+<phn msStart="3645" msEnd="3785" power="85">UW</phn>
+<phn msStart="3785" msEnd="3895" power="0">x</phn>
+<word msStart="3895" msEnd="4175">can</word>
+<phn msStart="3895" msEnd="3985" power="65">k</phn>
+<phn msStart="3985" msEnd="4015" power="65">AE</phn>
+<phn msStart="4015" msEnd="4175" power="76">n</phn>
+<phn msStart="4175" msEnd="4255" power="27">x</phn>
+<word msStart="4255" msEnd="4505">eat</word>
+<phn msStart="4255" msEnd="4475" power="105">IY</phn>
+<phn msStart="4475" msEnd="4505" power="0">t</phn>
+<phn msStart="4505" msEnd="4875" power="65">x</phn>
+<word msStart="4875" msEnd="5245">1</word>
+<phn msStart="4875" msEnd="4925" power="65">w</phn>
+<phn msStart="4925" msEnd="4975" power="65">AH</phn>
+<phn msStart="4975" msEnd="5245" power="86">n</phn>
+<phn msStart="5245" msEnd="5545" power="35">x</phn>
+<word msStart="5545" msEnd="5675">bug</word>
+<phn msStart="5545" msEnd="5605" power="65">b</phn>
+<phn msStart="5605" msEnd="5645" power="65">AH</phn>
+<phn msStart="5645" msEnd="5675" power="76">g</phn>
+<phn msStart="5675" msEnd="6325" power="49">x</phn>
+<word msStart="6325" msEnd="6565">And</word>
+<phn msStart="6325" msEnd="6405" power="66">AH</phn>
+<phn msStart="6405" msEnd="6465" power="79">n</phn>
+<phn msStart="6465" msEnd="6565" power="74">d</phn>
+<word msStart="6565" msEnd="6825">we</word>
+<phn msStart="6565" msEnd="6665" power="71">w</phn>
+<phn msStart="6665" msEnd="6825" power="85">IY</phn>
+<word msStart="6825" msEnd="6975">will</word>
+<phn msStart="6825" msEnd="6875" power="0">w</phn>
+<phn msStart="6875" msEnd="6905" power="18">IH</phn>
+<phn msStart="6905" msEnd="6975" power="41">l</phn>
+<phn msStart="6975" msEnd="7085" power="30">x</phn>
+<word msStart="7085" msEnd="7565">see</word>
+<phn msStart="7085" msEnd="7345" power="38">s</phn>
+<phn msStart="7345" msEnd="7565" power="101">IY</phn>
+<phn msStart="7565" msEnd="7745" power="11">x</phn>
+<phn msStart="7745" msEnd="8255" power="0">x</phn>
+</lipsync>

@@ -1,0 +1,216 @@
+{
+    // "staticObjects": [{
+    //         "id": 0,
+    //         "fileName": "Scene03.swf_Tex1_1",
+    //         "position": {
+    //             "x": 15.40462,
+    //             "y": -3.9
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+    //         "orderinLayer": 0,
+    //         "inText": true,
+    //         "label": "blue-shadow"
+    //     },
+    //     {
+    //         "id": 1,
+    //         "fileName": "Scene03.swf_Tex1_2",
+    //         "position": {
+    //             "x": 19.6,
+    //             "y": -11.4
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc1"
+    //     }, {
+    //         "id": 2,
+    //         "fileName": "Scene03.swf_Tex1_0",
+    //         "position": {
+    //             "x": 9.7,
+    //             "y": -13.8
+    //         },
+    //         "scale": {
+    //             "x": 3.617062,
+    //             "y": 3.617062
+    //         },
+
+    //         "orderinLayer": 1,
+    //         "inText": true,
+    //         "label": "shellc2"
+    //     }
+    // ],
+    // "animationObjects": [{
+    //     "id": 0,
+    //     "animName": "anim-name",
+    //     "parent": "attached object",
+    //     "loop": true,
+    //     "draggable": false,
+    //     "audio": {
+    //         "audioName": "audio-name",
+    //         "pngId": 1
+    //     },
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "pngs": [{
+    //         "id": 0,
+    //         "fileName": "png-name-1"
+    //     }, {
+    //         "id": 1,
+    //         "fileName": "png-name-2"
+    //     }]
+
+    // }],
+    "Text": [{
+            "id": 0,
+            "text": "Go to sleep, Baby D"
+        }, {
+            "id": 1,
+            "text": "Not a peep, Baby D"
+        },
+        {
+            "id": 2,
+            "text": "Good night little one"
+        },
+        {
+            "id": 3,
+            "text": " 'til a new day comes"
+        }
+    ],
+    "storyImageFile": null,
+    "audioFile": "scene24_child_stanza.mp3",
+    "timestamps": [{
+            "start": "5",
+            "wordIdx": "0",
+            "end": "245"
+        },
+        {
+            "start": "245",
+            "wordIdx": "1",
+            "end": "485"
+        },
+        {
+            "start": "515",
+            "wordIdx": "2",
+            "end": "1255"
+        },
+        {
+            "start": "1465",
+            "wordIdx": "3",
+            "end": "2245"
+        },
+        {
+            "start": "3385",
+            "wordIdx": "4",
+            "end": "3875"
+        },
+        {
+            "start": "3875",
+            "wordIdx": "5",
+            "end": "3925"
+        },
+        {
+            "start": "4155",
+            "wordIdx": "6",
+            "end": "4435"
+        },
+        {
+            "start": "5025",
+            "wordIdx": "7",
+            "end": "5775"
+        },
+        {
+            "start": "7145",
+            "wordIdx": "8",
+            "end": "7345"
+        },
+        {
+            "start": "7345",
+            "wordIdx": "9",
+            "end": "8185"
+        },
+        {
+            "start": "8375",
+            "wordIdx": "10",
+            "end": "8825"
+        },
+        {
+            "start": "8825",
+            "wordIdx": "11",
+            "end": "9055"
+        },
+        {
+            "start": "10465",
+            "wordIdx": "12",
+            "end": "10735"
+        },
+        {
+            "start": "10735",
+            "wordIdx": "13",
+            "end": "10845"
+        },
+        {
+            "start": "10845",
+            "wordIdx": "14",
+            "end": "11325"
+        },
+        {
+            "start": "11385",
+            "wordIdx": "15",
+            "end": "11745"
+        },
+        {
+            "start": "12065",
+            "wordIdx": "15",
+            "end": "12768"
+        }
+    ],
+
+    "triggers": [{
+        "args": {
+            "stnzaId": 0,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 1,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 2,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 1,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }],
+    "isTitle": false,
+    "fontColor": "font-color",
+    "textstartPosition": 120
+}

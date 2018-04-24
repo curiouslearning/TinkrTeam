@@ -7,22 +7,12 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class BookCollision : ShelfManager
-{
+{  public string bookName="";
     public static GameObject bookenter = null;
     public static GameObject bookexit = null;
 
     public static int count = 0;
-    // Use this for initialization
-    void Start() {
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-
-    }
+ 
     void OnTriggerEnter(Collider collider)
     {
 
@@ -36,6 +26,8 @@ public class BookCollision : ShelfManager
 
 
 
+
+
         }
         else if (collider.gameObject.name == "Exit")
         {
@@ -43,6 +35,8 @@ public class BookCollision : ShelfManager
             bookexit = this.gameObject;
             count++;
             Debug.Log(count);
+
+
 
         }
         else if (collider.gameObject.name == "one")
@@ -58,6 +52,13 @@ public class BookCollision : ShelfManager
         else if (collider.gameObject.name == "three")
         {
             this.gameObject.GetComponent<BookObject>().position = 3;
+			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (10, 10, 0);
+			loadImageandText (this.gameObject.GetComponent<BookObject> ());
+			var bookVar = this.gameObject.GetComponent<BookObject> ();
+			bookName = bookVar.book.fileName;
+			bookName += "/";
+			string filePath = Path.Combine ("Books/", bookName);
+			bookscenePath = Path.Combine(filePath,"Scenes");
  
         }
         else if (collider.gameObject.name == "four")
@@ -73,7 +74,7 @@ public class BookCollision : ShelfManager
         if (count == 2)
         {
             if (arrowright==true || arrowright60==true)  //right arrow
-            {
+            {   
                 LoadBookRightArrow(bookenter, bookexit);
             }
             else if(arrowleft==true || arrowleft60==true)   //left arrow
@@ -87,5 +88,14 @@ public class BookCollision : ShelfManager
 
 
     }
+
+	void OnTriggerExit(Collider collider)
+	{
+		if (collider.gameObject.name == "three") {
+
+			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (5, 5, 0);
+
+		}
+	}
     
 }

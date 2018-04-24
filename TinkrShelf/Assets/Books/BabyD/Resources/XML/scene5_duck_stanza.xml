@@ -1,0 +1,52 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="225" power="53">x</phn>
+<word msStart="225" msEnd="265">I</word>
+<phn msStart="225" msEnd="265" power="65">AY</phn>
+<word msStart="265" msEnd="803">am</word>
+<phn msStart="265" msEnd="592" power="96">AE</phn>
+<phn msStart="592" msEnd="783" power="80">m</phn>
+<phn msStart="783" msEnd="1151" power="40">x</phn>
+<word msStart="1151" msEnd="1287">a</word>
+<phn msStart="1151" msEnd="1328" power="70">AH</phn>
+<word msStart="1321" msEnd="1697">baby</word>
+<phn msStart="1328" msEnd="1395" power="70">b</phn>
+<phn msStart="1395" msEnd="1555" power="89">EY</phn>
+<phn msStart="1555" msEnd="1605" power="74">b</phn>
+<phn msStart="1605" msEnd="1725" power="78">IY</phn>
+<phn msStart="1725" msEnd="1775" power="0">x</phn>
+<word msStart="1775" msEnd="2404">duck</word>
+<phn msStart="1775" msEnd="1855" power="55">d</phn>
+<phn msStart="1855" msEnd="2282" power="65">AH</phn>
+<phn msStart="2282" msEnd="2418" power="65">k</phn>
+<phn msStart="2418" msEnd="2929" power="53">x</phn>
+<word msStart="2929" msEnd="2990">I</word>
+<phn msStart="2929" msEnd="2995" power="53">AY</phn>
+<word msStart="2995" msEnd="3365">am</word>
+<phn msStart="2995" msEnd="3235" power="111">AE</phn>
+<phn msStart="3235" msEnd="3365" power="73">m</phn>
+<phn msStart="3365" msEnd="3425" power="53">x</phn>
+
+<word msStart="3425" msEnd="4955">Baby D</word>
+<phn msStart="3425" msEnd="3475" power="79">b</phn>
+<phn msStart="3475" msEnd="3675" power="101">EY</phn>
+<phn msStart="3675" msEnd="3775" power="58">b</phn>
+<phn msStart="3775" msEnd="3985" power="100">IY</phn>
+<phn msStart="3985" msEnd="4315" power="0">x</phn>
+<phn msStart="4315" msEnd="4605" power="72">d</phn>
+<phn msStart="4605" msEnd="4955" power="140">IY</phn>
+<phn msStart="4955" msEnd="5145" power="0">x</phn>
+
+<!--
+<word msStart="3425" msEnd="3985">Baby</word>
+<phn msStart="3425" msEnd="3475" power="79">b</phn>
+<phn msStart="3475" msEnd="3675" power="101">EY</phn>
+<phn msStart="3675" msEnd="3775" power="58">b</phn>
+<phn msStart="3775" msEnd="3985" power="100">IY</phn>
+<phn msStart="3985" msEnd="4315" power="0">x</phn>
+<word msStart="4315" msEnd="4955">D</word>
+<phn msStart="4315" msEnd="4605" power="72">d</phn>
+<phn msStart="4605" msEnd="4955" power="140">IY</phn>
+<phn msStart="4955" msEnd="5145" power="0">x</phn>
+-->
+</lipsync>

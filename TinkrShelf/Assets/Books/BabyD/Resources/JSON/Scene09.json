@@ -1,0 +1,133 @@
+{
+    // "staticObjects": [{
+    //     "id": 1,
+    //     "imageName":"img-name",
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "orderinLayer":1,
+    //     "inText": true,
+    //     "label": "toad"}],
+    // "animationObjects": [{
+    //     "id": 0,
+    //     "animName": "anim-name",
+    //     "parent": "attached object",
+    //     "loop": true,
+    //     "draggable": false,
+    //     "audio": {
+    //         "audioName": "audio-name",
+    //         "pngId": 1
+    //     },
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "pngs": [{
+    //         "id": 0,
+    //         "fileName": "png-name-1"
+    //     }, {
+    //         "id": 1,
+    //         "fileName": "png-name-2"
+    //     }]
+
+    // }],
+     "Text": [{
+            "id": 0,
+            "text": "I am a white duck"
+        }, {
+            "id": 1,
+            "text": "Where can I play?"
+        }],
+    "storyImageFile": null,
+    "audioFile": "scene9_child_stanza.mp3",
+    "timestamps": [{
+            "start": "215",
+            "wordIdx": "0",
+            "end": "655"
+        },
+        {
+            "start": "885",
+            "wordIdx": "1",
+            "end": "1315"
+        },
+        {
+            "start": "1555",
+            "wordIdx": "2",
+            "end": "1655"
+        },
+        {
+            "start": "1655",
+            "wordIdx": "3",
+            "end": "2325"
+        },
+        {
+            "start": "2385",
+            "wordIdx": "4",
+            "end": "2875"
+        },
+        {
+            "start": "3695",
+            "wordIdx": "5",
+            "end": "3915"
+        },
+        {
+            "start": "3915",
+            "wordIdx": "6",
+            "end": "4235"
+        }, 
+        {
+            "start": "4235",
+            "wordIdx": "7",
+            "end": "4435"
+        }, 
+        {
+            "start": "4515",
+            "wordIdx": "7",
+            "end": "5305"
+        }
+    ],
+
+    "triggers": [{
+        "args": {
+            "stnzaId": 0,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 1,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stanzaId": 0,
+            "textId": 2,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stanzaId": 1,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }],
+    "isTitle": false,
+    "fontColor": "font-color",
+    "textstartPosition": 120
+}

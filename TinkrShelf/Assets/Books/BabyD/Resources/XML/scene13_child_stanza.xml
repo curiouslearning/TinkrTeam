@@ -1,0 +1,72 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="175" power="0">x</phn>
+<word msStart="175" msEnd="1275">Swim</word>
+<phn msStart="175" msEnd="535" power="45">s</phn>
+<phn msStart="535" msEnd="695" power="91">w</phn>
+<phn msStart="695" msEnd="885" power="99">IH</phn>
+<phn msStart="885" msEnd="1275" power="71">m</phn>
+<phn msStart="1275" msEnd="1415" power="18">x</phn>
+<phn msStart="1415" msEnd="1485" power="27">x</phn>
+<word msStart="1485" msEnd="2635">splash</word>
+<phn msStart="1485" msEnd="1555" power="23">s</phn>
+<phn msStart="1555" msEnd="1695" power="45">p</phn>
+<phn msStart="1695" msEnd="1835" power="82">l</phn>
+<phn msStart="1835" msEnd="2265" power="160">AE</phn>
+<phn msStart="2265" msEnd="2635" power="68">SH</phn>
+<phn msStart="2635" msEnd="2775" power="0">x</phn>
+<phn msStart="2775" msEnd="2975" power="0">x</phn>
+<word msStart="2975" msEnd="3755">dive</word>
+<phn msStart="2975" msEnd="3055" power="77">d</phn>
+<phn msStart="3055" msEnd="3565" power="182">AY</phn>
+<phn msStart="3565" msEnd="3755" power="69">v</phn>
+<phn msStart="3755" msEnd="3785" power="65">x</phn>
+<word msStart="3785" msEnd="4375">run</word>
+<phn msStart="3785" msEnd="4005" power="105">r</phn>
+<phn msStart="4005" msEnd="4035" power="65">AH</phn>
+<phn msStart="4035" msEnd="4375" power="75">n</phn>
+<phn msStart="4375" msEnd="4445" power="0">x</phn>
+<phn msStart="4445" msEnd="4845" power="0">x</phn>
+<phn msStart="4845" msEnd="5255" power="0">x</phn>
+
+<word msStart="5255" msEnd="6335">Baby D</word>
+<phn msStart="5255" msEnd="5295" power="77">b</phn>
+<phn msStart="5295" msEnd="5515" power="107">EY</phn>
+<phn msStart="5515" msEnd="5615" power="65">b</phn>
+<phn msStart="5615" msEnd="5745" power="81">IY</phn>
+<phn msStart="5745" msEnd="5955" power="52">x</phn>
+<phn msStart="5955" msEnd="6025" power="66">d</phn>
+<phn msStart="6025" msEnd="6335" power="127">IY</phn>
+<phn msStart="6335" msEnd="6605" power="0">x</phn>
+<phn msStart="6605" msEnd="6895" power="0">x</phn>
+<phn msStart="6895" msEnd="7085" power="0">x</phn>
+
+<!--
+<word msStart="5255" msEnd="5745">Baby</word>
+<phn msStart="5255" msEnd="5295" power="77">b</phn>
+<phn msStart="5295" msEnd="5515" power="107">EY</phn>
+<phn msStart="5515" msEnd="5615" power="65">b</phn>
+<phn msStart="5615" msEnd="5745" power="81">IY</phn>
+<phn msStart="5745" msEnd="5955" power="52">x</phn>
+<word msStart="5955" msEnd="6335">D</word>
+<phn msStart="5955" msEnd="6025" power="66">d</phn>
+<phn msStart="6025" msEnd="6335" power="127">IY</phn>
+<phn msStart="6335" msEnd="6605" power="0">x</phn>
+<phn msStart="6605" msEnd="6895" power="0">x</phn>
+<phn msStart="6895" msEnd="7085" power="0">x</phn>
+-->
+
+<word msStart="7085" msEnd="7485">go</word>
+<phn msStart="7085" msEnd="7205" power="75">g</phn>
+<phn msStart="7205" msEnd="7485" power="122">OW</phn>
+<word msStart="7485" msEnd="8215">have</word>
+<phn msStart="7485" msEnd="7915" power="74">h</phn>
+<phn msStart="7915" msEnd="8035" power="78">AE</phn>
+<phn msStart="8035" msEnd="8215" power="41">v</phn>
+<phn msStart="8215" msEnd="8355" power="0">x</phn>
+<word msStart="8355" msEnd="9115">fun</word>
+<phn msStart="8355" msEnd="8535" power="53">f</phn>
+<phn msStart="8535" msEnd="8695" power="91">AH</phn>
+<phn msStart="8695" msEnd="9115" power="82">n</phn>
+<phn msStart="9115" msEnd="9145" power="0">x</phn>
+</lipsync>

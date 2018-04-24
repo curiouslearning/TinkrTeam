@@ -4,9 +4,11 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections;
 
 public class ShelfManager : MonoBehaviour, IPointerClickHandler
-{
+{  
+	public static string bookscenePath="";
     private GameObject Image;
     private GameObject Title;
 	private string manifestFileName;
@@ -17,31 +19,61 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public GameObject bookwheel;
     bool check = false;
     int count = 0;
-    string name1 = "";
+    //string name1 = "";
     int degree = 0;
     public static bool arrowright = false;
     public static bool arrowright60 = false;
     public static bool arrowleft = false;
     public static bool arrowleft60 = false;
+	public Button Left;
+	public Button Right;
+	public static bool rotation=false;
+	//assetbundle
+	private AssetBundle myLoadedAssetBundle;
+	private string[] scenePaths;
+
+	void Start()
+	{    Image = GameObject.Find("Image");
+		Title = GameObject.Find("Title");
+
+
+		manifestFileName = "Manifests/manifest";  //set to passed file name1
+		LoadShelfData();
+		//loading appropriate center image 
+		Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bookInfos[2].book.pathToThumbnail);
+
+		myLoadedAssetBundle = AssetBundle.LoadFromFile (bookscenePath);
+
+		scenePaths = myLoadedAssetBundle.GetAllScenePaths ();
+		Debug.Log (bookscenePath[0]);
+		Debug.Log (scenePaths[0]);
+	}
+
+
     public void Update()
     {
         if (check == true)
         {
             if (name == "left")
-            {
-                bookwheel.transform.Rotate(0, 0, 1);
+			{  if (bookwheel.transform.position.z % 30 == 0) 
+					bookwheel.transform.Rotate (0, 0, 1);
             }
             else
-            {
-                bookwheel.transform.Rotate(0, 0, -1);
+			{ if (bookwheel.transform.position.z % 30 == 0) 
+					bookwheel.transform.Rotate (0, 0, -1);
+
             }
             count++;
             if (count == degree)
             {
                 check = false;
-               
+				Left.interactable = true;
+				Right.interactable = true;
+				rotation = true;
             }
         }
+
+
     }
 
 
@@ -55,10 +87,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         arrowleft = true;
         arrowright = false;
         arrowright60 = false;
+		Left.interactable = false;
+
     }
     public void right()
     {
-        Debug.Log("rightin");
         count = 0;
         check = true;
         name = "right";
@@ -67,6 +100,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         arrowleft = false;
         arrowright = true;
         arrowright60 = false;
+		Right.interactable = false;
     }
     public void right60()
     {
@@ -78,6 +112,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         arrowleft = false;
         arrowright = false;
         arrowright60 = true;
+
     }
     public void left60()
     {  
@@ -89,49 +124,66 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         arrowleft = false;
         arrowright = false;
         arrowright60 = false;
-    }
-    // load the shelf with data before game starts!
-    void Awake () {
-        Image = GameObject.Find("Image");
-        Title = GameObject.Find("Title");
-       
-        manifestFileName = "Manifests/manifest";  //set to passed file name1
-		LoadShelfData();
-        //loading appropriate center image 
-        Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bookInfos[2].book.pathToThumbnail);
 
     }
+
     public void OnPointerClick(PointerEventData eventData)
-    {
-        GameObject go = eventData.pointerCurrentRaycast.gameObject;
-        //Debug.Log(go);
-        if (go.name == "Cover")
-        {
-            if (go.GetComponentInParent<BookObject>() != null)
-            {
+	{    
+		GameObject go = eventData.pointerCurrentRaycast.gameObject;
+		Debug.Log (go.name);
+		if (go.name == "LeftArrow")
+			left ();
+		if (go.name == "RightArrow")
+			right ();
+
+		if (go.name == "Cover" )
+		 {
+			if (go.GetComponentInParent<BookObject> () != null) {
                 
 
-                if (go.GetComponentInParent<BookObject>().position==1)
-                {
-                   
-                    right60();
-                }
-                else if(go.GetComponentInParent<BookObject>().position==2)
-                {
-                    right();
-                }
-                else if(go.GetComponentInParent<BookObject>().position==4)
-                {
-                    left();
-                }
-                else if(go.GetComponentInParent<BookObject>().position==5)
-                {
-                    left60();
-                }
-            }
-        }
+				if (go.GetComponentInParent<BookObject> ().position == 1) {
+					if (rotation)
+						right60 ();
+				} else if (go.GetComponentInParent<BookObject> ().position == 2) {
+					if (rotation)
+						right ();
+				} 
+					
+				else if (go.GetComponentInParent<BookObject> ().position == 4) {
+					if (rotation)
+						left ();
+				} else if (go.GetComponentInParent<BookObject> ().position == 5) {
+					if (rotation)
+						left60 ();
+				}
+			} else if (go.GetComponents<BookObject> () != null) 
+			{if (go.GetComponent<BookObject> ().position == 1) {
+					if (rotation)
+						right60 ();
+				} else if (go.GetComponent<BookObject> ().position == 2) {
+					if (rotation)
+						right ();
+				} 
+			else if (go.GetComponent<BookObject> ().position == 4) {
+				if (rotation)
+					left ();
+			} else if (go.GetComponent<BookObject> ().position == 5) {
+				if (rotation)
+					left60 ();
+			}
+			}
+			
+	}
+		else if (go.name == "Image" || go.name == "Title") {
+			Debug.Log(bookscenePath);
+			LoadCentreBook ();
        
     }
+	}
+	public void LoadCentreBook()
+	{
+		SceneManager.LoadScene (bookscenePath+"/Scene00");
+	}
     private void LoadShelfData()
 	{
         TextAsset file = Resources.Load(manifestFileName) as TextAsset;
@@ -235,6 +287,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         // change center text with title
        Title.GetComponent<Text>().text = bo.book.title;
         //change center image with character
+		Debug.Log(bo.book.pathToThumbnail);
         Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bo.book.pathToThumbnail);
 
     }

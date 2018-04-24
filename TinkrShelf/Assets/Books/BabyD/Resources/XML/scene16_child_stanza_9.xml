@@ -1,0 +1,93 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="125" power="0">x</phn>
+<word msStart="125" msEnd="755">Ducks</word>
+<phn msStart="125" msEnd="215" power="62">d</phn>
+<phn msStart="215" msEnd="325" power="74">AH</phn>
+<phn msStart="325" msEnd="455" power="23">k</phn>
+<phn msStart="455" msEnd="755" power="33">s</phn>
+<phn msStart="755" msEnd="855" power="0">x</phn>
+<word msStart="855" msEnd="1315">eat</word>
+<phn msStart="855" msEnd="905" power="65">IY</phn>
+<phn msStart="905" msEnd="1315" power="46">t</phn>
+<phn msStart="1315" msEnd="1585" power="18">x</phn>
+<word msStart="1585" msEnd="2215">bugs</word>
+<phn msStart="1585" msEnd="1615" power="67">b</phn>
+<phn msStart="1615" msEnd="1805" power="96">AH</phn>
+<phn msStart="1805" msEnd="2015" power="45">g</phn>
+<phn msStart="2015" msEnd="2215" power="30">z</phn>
+<phn msStart="2215" msEnd="2895" power="0">x</phn>
+<word msStart="2895" msEnd="3385">1</word>
+<phn msStart="2895" msEnd="3045" power="88">w</phn>
+<phn msStart="3045" msEnd="3095" power="65">AH</phn>
+<phn msStart="3095" msEnd="3385" power="82">n</phn>
+<phn msStart="3385" msEnd="3815" power="40">x</phn>
+<word msStart="3815" msEnd="3935">bug</word>
+<phn msStart="3815" msEnd="3855" power="73">b</phn>
+<phn msStart="3855" msEnd="3905" power="65">AH</phn>
+<phn msStart="3905" msEnd="3935" power="64">g</phn>
+<phn msStart="3935" msEnd="4155" power="43">x</phn>
+<phn msStart="4155" msEnd="4445" power="0">x</phn>
+<word msStart="4445" msEnd="4965">2</word>
+<phn msStart="4445" msEnd="4655" power="69">t</phn>
+<phn msStart="4655" msEnd="4965" power="131">UW</phn>
+<word msStart="4965" msEnd="5675">bugs</word>
+<phn msStart="4965" msEnd="5205" power="65">b</phn>
+<phn msStart="5205" msEnd="5385" power="94">AH</phn>
+<phn msStart="5385" msEnd="5505" power="52">g</phn>
+<phn msStart="5505" msEnd="5675" power="49">z</phn>
+<phn msStart="5675" msEnd="5775" power="33">x</phn>
+<phn msStart="5775" msEnd="5855" power="27">x</phn>
+<word msStart="5855" msEnd="6525">3</word>
+<phn msStart="5855" msEnd="5945" power="55">TH</phn>
+<phn msStart="5945" msEnd="6145" power="100">r</phn>
+<phn msStart="6145" msEnd="6525" power="148">IY</phn>
+<phn msStart="6525" msEnd="6595" power="27">x</phn>
+<word msStart="6595" msEnd="7085">bugs</word>
+<phn msStart="6595" msEnd="6675" power="68">b</phn>
+<phn msStart="6675" msEnd="6845" power="92">AH</phn>
+<phn msStart="6845" msEnd="6955" power="52">g</phn>
+<phn msStart="6955" msEnd="7085" power="51">z</phn>
+<phn msStart="7085" msEnd="7155" power="23">x</phn>
+<phn msStart="7155" msEnd="7225" power="27">x</phn>
+<word msStart="7225" msEnd="7845">4</word>
+<phn msStart="7225" msEnd="7425" power="53">f</phn>
+<phn msStart="7425" msEnd="7545" power="81">OW</phn>
+<phn msStart="7545" msEnd="7845" power="127">r</phn>
+<phn msStart="7845" msEnd="8005" power="30">x</phn>
+<phn msStart="8005" msEnd="8045" power="0">x</phn>
+<phn msStart="8045" msEnd="9485" power="18">x</phn>
+<word msStart="9485" msEnd="9885">Eat</word>
+<phn msStart="9485" msEnd="9755" power="119">IY</phn>
+<phn msStart="9755" msEnd="9885" power="40">t</phn>
+<phn msStart="9885" msEnd="10035" power="0">x</phn>
+<word msStart="10035" msEnd="10845">9</word>
+<phn msStart="10035" msEnd="10265" power="87">n</phn>
+<phn msStart="10265" msEnd="10495" power="107">AY</phn>
+<phn msStart="10495" msEnd="10845" power="70">n</phn>
+<phn msStart="10845" msEnd="10955" power="0">x</phn>
+<word msStart="10955" msEnd="11625">bugs</word>
+<phn msStart="10955" msEnd="11005" power="54">b</phn>
+<phn msStart="11005" msEnd="11335" power="134">AH</phn>
+<phn msStart="11335" msEnd="11465" power="23">g</phn>
+<phn msStart="11465" msEnd="11625" power="30">z</phn>
+<phn msStart="11625" msEnd="11745" power="0">x</phn>
+<phn msStart="11745" msEnd="12365" power="0">x</phn>
+<word msStart="12365" msEnd="12555">Do</word>
+<phn msStart="12365" msEnd="12435" power="76">d</phn>
+<phn msStart="12435" msEnd="12555" power="80">UW</phn>
+<word msStart="12555" msEnd="13055">you</word>
+<phn msStart="12555" msEnd="12935" power="147">y</phn>
+<phn msStart="12935" msEnd="13055" power="79">UW</phn>
+<word msStart="13055" msEnd="13575">want</word>
+<phn msStart="13055" msEnd="13325" power="120">w</phn>
+<phn msStart="13325" msEnd="13355" power="65">AA</phn>
+<phn msStart="13355" msEnd="13455" power="52">n</phn>
+<phn msStart="13455" msEnd="13575" power="52">t</phn>
+<phn msStart="13575" msEnd="13725" power="0">x</phn>
+<word msStart="13725" msEnd="14425">more</word>
+<phn msStart="13725" msEnd="14195" power="83">m</phn>
+<phn msStart="14195" msEnd="14245" power="65">AO</phn>
+<phn msStart="14245" msEnd="14425" power="92">r</phn>
+<phn msStart="14425" msEnd="14515" power="0">x</phn>
+</lipsync>

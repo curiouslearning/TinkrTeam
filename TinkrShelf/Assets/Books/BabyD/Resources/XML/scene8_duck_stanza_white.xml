@@ -1,0 +1,53 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="15" power="0">x</phn>
+<phn msStart="15" msEnd="25" power="0">x</phn>
+<phn msStart="25" msEnd="105" power="30">x</phn>
+<word msStart="105" msEnd="347">Look</word>
+<phn msStart="105" msEnd="125" power="65">l</phn>
+<phn msStart="125" msEnd="195" power="84">l</phn>
+<phn msStart="195" msEnd="205" power="100">l</phn>
+<phn msStart="205" msEnd="215" power="65">UH</phn>
+<phn msStart="215" msEnd="225" power="65">UH</phn>
+<phn msStart="225" msEnd="265" power="65">UH</phn>
+<phn msStart="265" msEnd="335" power="18">k</phn>
+<phn msStart="335" msEnd="345" power="46">k</phn>
+<phn msStart="345" msEnd="376" power="70">k</phn>
+<phn msStart="376" msEnd="445" power="65">AE</phn>
+<word msStart="377" msEnd="595">at</word>
+<phn msStart="445" msEnd="475" power="65">AE</phn>
+<phn msStart="475" msEnd="535" power="65">AE</phn>
+<phn msStart="535" msEnd="575" power="0">t</phn>
+<phn msStart="575" msEnd="585" power="0">t</phn>
+<phn msStart="585" msEnd="595" power="0">t</phn>
+<word msStart="595" msEnd="1615">me</word>
+<phn msStart="595" msEnd="645" power="74">m</phn>
+<phn msStart="645" msEnd="895" power="89">m</phn>
+<phn msStart="895" msEnd="1195" power="65">m</phn>
+<phn msStart="1195" msEnd="1255" power="65">IY</phn>
+<phn msStart="1255" msEnd="1545" power="123">IY</phn>
+<phn msStart="1545" msEnd="1615" power="65">IY</phn>
+<phn msStart="1615" msEnd="1655" power="0">x</phn>
+<phn msStart="1655" msEnd="1685" power="0">x</phn>
+<phn msStart="1685" msEnd="2215" power="11">x</phn>
+<word msStart="2215" msEnd="2589">I</word>
+<phn msStart="2215" msEnd="2265" power="65">AY</phn>
+<phn msStart="2265" msEnd="2275" power="65">AY</phn>
+<phn msStart="2275" msEnd="2593" power="65">AY</phn>
+<phn msStart="2593" msEnd="2855" power="190">AE</phn>
+<word msStart="2598" msEnd="2955">am</word>
+<phn msStart="2855" msEnd="2875" power="70">m</phn>
+<phn msStart="2875" msEnd="2945" power="76">m</phn>
+<phn msStart="2945" msEnd="2955" power="78">m</phn>
+<word msStart="2955" msEnd="4075">white</word>
+<phn msStart="2955" msEnd="3355" power="152">w</phn>
+<phn msStart="3355" msEnd="3365" power="65">w</phn>
+<phn msStart="3365" msEnd="3535" power="91">w</phn>
+<phn msStart="3535" msEnd="3565" power="65">AY</phn>
+<phn msStart="3565" msEnd="3575" power="65">AY</phn>
+<phn msStart="3575" msEnd="3695" power="77">AY</phn>
+<phn msStart="3695" msEnd="3855" power="33">t</phn>
+<phn msStart="3855" msEnd="3915" power="11">t</phn>
+<phn msStart="3915" msEnd="4075" power="27">t</phn>
+<phn msStart="4075" msEnd="4205" power="0">x</phn>
+</lipsync>

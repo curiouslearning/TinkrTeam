@@ -1,0 +1,108 @@
+{
+    // "staticObjects": [{
+    //     "id": 1,
+    //     "imageName":"img-name",
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "orderinLayer":1,
+    //     "inText": true,
+    //     "label": "toad"}],
+    // "animationObjects": [{
+    //     "id": 0,
+    //     "animName": "anim-name",
+    //     "parent": "attached object",
+    //     "loop": true,
+    //     "draggable": false,
+    //     "audio": {
+    //         "audioName": "audio-name",
+    //         "pngId": 1
+    //     },
+    //     "position": {
+    //         "pivot": 123,
+    //         "width": 290,
+    //         "top": 14,
+    //         "height": 173,
+    //         "left": 24
+    //     },
+    //     "pngs": [{
+    //         "id": 0,
+    //         "fileName": "png-name-1"
+    //     }, {
+    //         "id": 1,
+    //         "fileName": "png-name-2"
+    //     }]
+
+    // }],
+    // "Text": [{
+        "id": 0,
+        "text": "Tap, tap, tap."
+    }, {
+        "id": 1,
+        "text": "Pop!"
+    }],
+    "storyImageFile": null,
+    "audioFile": "scene1_child_stanza.mp3",
+    "timestamps": [{
+            "start": "125",
+            "wordIdx": "0",
+            "end": "335"
+        },
+        {
+            "start": "1095",
+            "wordIdx": "1",
+            "end": "1355"
+        },
+        {
+            "start": "1995",
+            "wordIdx": "2",
+            "end": "2355"
+        },
+        {
+            "start": "3775",
+            "wordIdx": "3",
+            "end": "4005"
+        }
+    ],
+
+    "triggers": [{
+        "args": {
+            "stnzaId": 0,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 1,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId": 0,
+            "textId": 2,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }, {
+        "args": {
+            "stnzaId":1,
+            "textId": 0,
+            "timestamp": null,
+            "sceneObjectId": 0
+        },
+        "type": 0
+    }],
+    "isTitle": false,
+    "fontColor": "font-color",
+    "textstartPosition": 120
+}

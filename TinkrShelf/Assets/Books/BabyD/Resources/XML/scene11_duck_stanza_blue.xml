@@ -1,0 +1,82 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="15" power="0">x</phn>
+<phn msStart="15" msEnd="25" power="0">x</phn>
+<phn msStart="25" msEnd="135" power="0">x</phn>
+<word msStart="135" msEnd="705">Blue</word>
+<phn msStart="135" msEnd="165" power="51">b</phn>
+<phn msStart="165" msEnd="175" power="40">b</phn>
+<phn msStart="175" msEnd="185" power="33">b</phn>
+<phn msStart="185" msEnd="335" power="57">l</phn>
+<phn msStart="335" msEnd="345" power="60">l</phn>
+<phn msStart="345" msEnd="355" power="63">l</phn>
+<phn msStart="355" msEnd="365" power="65">UW</phn>
+<phn msStart="365" msEnd="385" power="65">UW</phn>
+<phn msStart="385" msEnd="705" power="132">UW</phn>
+<phn msStart="705" msEnd="735" power="46">x</phn>
+<phn msStart="735" msEnd="775" power="41">x</phn>
+<phn msStart="775" msEnd="795" power="41">x</phn>
+<word msStart="795" msEnd="1821">frog</word>
+<phn msStart="795" msEnd="805" power="40">f</phn>
+<phn msStart="805" msEnd="1035" power="30">f</phn>
+<phn msStart="1035" msEnd="1045" power="23">f</phn>
+<phn msStart="1045" msEnd="1055" power="23">r</phn>
+<phn msStart="1055" msEnd="1065" power="27">r</phn>
+<phn msStart="1065" msEnd="1085" power="65">r</phn>
+<phn msStart="1085" msEnd="1095" power="65">AA</phn>
+<phn msStart="1095" msEnd="1105" power="65">AA</phn>
+<phn msStart="1105" msEnd="1115" power="65">AA</phn>
+<phn msStart="1115" msEnd="1125" power="66">g</phn>
+<phn msStart="1125" msEnd="1135" power="64">g</phn>
+<phn msStart="1135" msEnd="1145" power="58">g</phn>
+<phn msStart="1145" msEnd="1665" power="47">x</phn>
+<phn msStart="1665" msEnd="1715" power="0">x</phn>
+<phn msStart="1715" msEnd="1745" power="30">x</phn>
+<phn msStart="1745" msEnd="1805" power="0">x</phn>
+<phn msStart="1805" msEnd="1825" power="0">x</phn>
+<phn msStart="1825" msEnd="2085" power="0">x</phn>
+<phn msStart="2085" msEnd="2165" power="0">x</phn>
+<phn msStart="2165" msEnd="2175" power="0">x</phn>
+<phn msStart="2175" msEnd="2585" power="0">x</phn>
+<word msStart="2585" msEnd="2975">take</word>
+<phn msStart="2585" msEnd="2595" power="18">t</phn>
+<phn msStart="2595" msEnd="2605" power="53">t</phn>
+<phn msStart="2605" msEnd="2735" power="65">t</phn>
+<phn msStart="2735" msEnd="2745" power="65">EY</phn>
+<phn msStart="2745" msEnd="2755" power="65">EY</phn>
+<phn msStart="2755" msEnd="2845" power="69">EY</phn>
+<phn msStart="2845" msEnd="2905" power="35">k</phn>
+<phn msStart="2905" msEnd="2915" power="56">k</phn>
+<phn msStart="2915" msEnd="2975" power="70">k</phn>
+<word msStart="2975" msEnd="3265">me</word>
+<phn msStart="2975" msEnd="2995" power="95">m</phn>
+<phn msStart="2995" msEnd="3025" power="99">m</phn>
+<phn msStart="3025" msEnd="3115" power="90">m</phn>
+<phn msStart="3115" msEnd="3125" power="65">IY</phn>
+<phn msStart="3125" msEnd="3205" power="67">IY</phn>
+<phn msStart="3205" msEnd="3265" power="65">IY</phn>
+<phn msStart="3265" msEnd="3295" power="0">x</phn>
+<phn msStart="3295" msEnd="3305" power="0">x</phn>
+<phn msStart="3305" msEnd="3335" power="0">x</phn>
+<word msStart="3335" msEnd="3475">to</word>
+<phn msStart="3335" msEnd="3345" power="0">t</phn>
+<phn msStart="3345" msEnd="3365" power="46">t</phn>
+<phn msStart="3365" msEnd="3425" power="57">t</phn>
+<phn msStart="3425" msEnd="3435" power="65">UW</phn>
+<phn msStart="3435" msEnd="3445" power="65">UW</phn>
+<phn msStart="3445" msEnd="3475" power="65">UW</phn>
+<phn msStart="3475" msEnd="3515" power="0">x</phn>
+<phn msStart="3515" msEnd="3525" power="0">x</phn>
+<phn msStart="3525" msEnd="3585" power="0">x</phn>
+<word msStart="3585" msEnd="4415">play</word>
+<phn msStart="3585" msEnd="3605" power="55">p</phn>
+<phn msStart="3605" msEnd="3615" power="63">p</phn>
+<phn msStart="3615" msEnd="3775" power="45">p</phn>
+<phn msStart="3775" msEnd="3785" power="52">l</phn>
+<phn msStart="3785" msEnd="3885" power="60">l</phn>
+<phn msStart="3885" msEnd="3895" power="65">l</phn>
+<phn msStart="3895" msEnd="3905" power="65">EY</phn>
+<phn msStart="3905" msEnd="3915" power="65">EY</phn>
+<phn msStart="3915" msEnd="4415" power="177">EY</phn>
+<phn msStart="4415" msEnd="4705" power="0">x</phn>
+</lipsync>

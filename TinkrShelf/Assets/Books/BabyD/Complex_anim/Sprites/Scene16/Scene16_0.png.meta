@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 0e113e51e2ad0c944a731fbc2a131459
+timeCreated: 1520330033
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: body
+    21300002: Scene16.swf_Tex0_1
+    21300004: Scene16.swf_Tex0_3
+    21300006: Scene16.swf_Tex0_4
+    21300008: Scene16.swf_Tex0_5
+    21300010: Scene16.swf_Tex0_6
+    21300012: Scene16.swf_Tex0_7
+    21300014: Scene16.swf_Tex0_8
+    21300016: Scene16.swf_Tex0_9
+    21300018: Scene16.swf_Tex0_10
+    21300020: Scene16.swf_Tex0_16
+    21300022: Scene16.swf_Tex0_17
+    21300024: Scene16.swf_Tex0_18
+    21300026: Scene16.swf_Tex0_19
+    21300028: Scene16.swf_Tex0_20
+    21300030: Scene16.swf_Tex0_21
+    21300032: Scene16.swf_Tex0_23
+    21300034: Scene16.swf_Tex0_24
+    21300036: eye3
+    21300038: Scene16.swf_Tex0_26
+    21300040: Scene16.swf_Tex0_27
+    21300042: Scene16.swf_Tex0_29
+    21300044: Scene16.swf_Tex0_30
+    21300046: Scene16.swf_Tex0_31
+    21300048: Scene16.swf_Tex0_33
+    21300050: eyes1
+    21300052: Scene16.swf_Tex0_35
+    21300054: Scene16.swf_Tex0_36
+    21300056: Scene16.swf_Tex0_37
+    21300058: Scene16.swf_Tex0_38
+    21300060: Scene16.swf_Tex0_43
+    21300062: Scene16.swf_Tex0_45
+    21300064: Scene16.swf_Tex0_46
+    21300066: Scene16.swf_Tex0_49
+    21300068: Scene16.swf_Tex0_50
+    21300070: Scene16.swf_Tex0_51
+    21300072: Scene16.swf_Tex0_52
+    21300074: eyes2
+    21300076: shadow
+    21300078: Scene16.swf_Tex0_58
+    21300080: Scene16.swf_Tex0_60
+    21300082: Scene16.swf_Tex0_61
+    21300084: Scene16.swf_Tex0_62
+    21300086: Scene16.swf_Tex0_63
+    21300088: nose
+    21300090: eyes3
+    21300092: eyes4
+    21300094: Scene16.swf_Tex0_69
+    21300096: Scene16.swf_Tex0_70
+    21300098: Scene16.swf_Tex0_71
+    21300100: Scene16.swf_Tex0_72
+    21300102: Scene16.swf_Tex0_73
+    21300104: Scene16.swf_Tex0_74
+    21300106: Scene16.swf_Tex0_75
+    21300108: Scene16.swf_Tex0_76
+    21300110: Scene16.swf_Tex0_77
+    21300112: Scene16.swf_Tex0_78
+    21300114: Scene16.swf_Tex0_79
+    21300116: Scene16.swf_Tex0_80
+    21300118: Scene16.swf_Tex0_81
+    21300120: Scene16.swf_Tex0_82
+    21300122: Scene16.swf_Tex0_83
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: body
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 441
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eye3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 389
+        width: 49
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scene16.swf_Tex0_33
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 333
+        width: 65
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eyes1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 349
+        width: 55
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eyes2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 259
+        width: 48
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: shadow
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 264
+        width: 61
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: nose
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 233
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eyes3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 241
+        width: 53
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: eyes4
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 244
+        width: 53
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

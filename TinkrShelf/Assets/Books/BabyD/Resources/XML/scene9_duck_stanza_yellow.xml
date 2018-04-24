@@ -1,0 +1,43 @@
+<?xml version= "1.0" encoding="UTF-8"?>
+<lipsync>
+<phn msStart="5" msEnd="165" power="62">x</phn>
+<word msStart="165" msEnd="495">I</word>
+<phn msStart="165" msEnd="495" power="136">AY</phn>
+<phn msStart="495" msEnd="595" power="57">x</phn>
+<word msStart="595" msEnd="985">am</word>
+<phn msStart="595" msEnd="945" power="140">AE</phn>
+<phn msStart="945" msEnd="985" power="38">m</phn>
+<phn msStart="985" msEnd="1445" power="56">x</phn>
+<word msStart="1445" msEnd="1775">a</word>
+<phn msStart="1445" msEnd="1775" power="134">EY</phn>
+<word msStart="1775" msEnd="2265">yellow</word>
+<phn msStart="1775" msEnd="1815" power="65">y</phn>
+<phn msStart="1815" msEnd="2165" power="140">EH</phn>
+<phn msStart="2165" msEnd="2215" power="79">l</phn>
+<phn msStart="2215" msEnd="2265" power="65">OW</phn>
+<phn msStart="2265" msEnd="2355" power="23">x</phn>
+<word msStart="2355" msEnd="2615">duck</word>
+<phn msStart="2355" msEnd="2445" power="77">d</phn>
+<phn msStart="2445" msEnd="2545" power="74">AH</phn>
+<phn msStart="2545" msEnd="2615" power="41">k</phn>
+<phn msStart="2615" msEnd="2765" power="23">x</phn>
+<phn msStart="2765" msEnd="3615" power="0">x</phn>
+<phn msStart="3615" msEnd="3675" power="45">x</phn>
+<word msStart="3675" msEnd="4045">Where</word>
+<phn msStart="3675" msEnd="3705" power="65">w</phn>
+<phn msStart="3705" msEnd="4015" power="130">EH</phn>
+<phn msStart="4015" msEnd="4045" power="0">r</phn>
+<phn msStart="4045" msEnd="4085" power="11">x</phn>
+<word msStart="4085" msEnd="4295">can</word>
+<phn msStart="4085" msEnd="4175" power="69">k</phn>
+<phn msStart="4175" msEnd="4215" power="65">AE</phn>
+<phn msStart="4215" msEnd="4295" power="67">n</phn>
+<word msStart="4295" msEnd="4445">I</word>
+<phn msStart="4295" msEnd="4445" power="87">AY</phn>
+<phn msStart="4445" msEnd="4525" power="18">x</phn>
+<word msStart="4525" msEnd="5215">play</word>
+<phn msStart="4525" msEnd="4895" power="71">p</phn>
+<phn msStart="4895" msEnd="4925" power="93">l</phn>
+<phn msStart="4925" msEnd="5215" power="124">EY</phn>
+<phn msStart="5215" msEnd="5475" power="0">x</phn>
+</lipsync>
