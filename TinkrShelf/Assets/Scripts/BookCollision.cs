@@ -52,7 +52,7 @@ public class BookCollision : ShelfManager
         else if (collider.gameObject.name == "three")
         {
             this.gameObject.GetComponent<BookObject>().position = 3;
-			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (10, 10, 0);
+			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (12, 12, 0);
 			loadImageandText (this.gameObject.GetComponent<BookObject> ());
 			var bookVar = this.gameObject.GetComponent<BookObject> ();
 			bookName = bookVar.book.fileName;
@@ -93,7 +93,7 @@ public class BookCollision : ShelfManager
 	{
 		if (collider.gameObject.name == "three") {
 
-			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (5, 5, 0);
+			this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (7, 7, 0);
 
 		}
 	}

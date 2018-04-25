@@ -8,6 +8,7 @@ using System.Collections;
 
 public class ShelfManager : MonoBehaviour, IPointerClickHandler
 {  
+	
 	public static string bookscenePath="";
     private GameObject Image;
     private GameObject Title;
@@ -38,15 +39,14 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
 
 		manifestFileName = "Manifests/manifest";  //set to passed file name1
-		LoadShelfData();
+        LoadShelfData();
 		//loading appropriate center image 
 		Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bookInfos[2].book.pathToThumbnail);
 
 		myLoadedAssetBundle = AssetBundle.LoadFromFile (bookscenePath);
 
 		scenePaths = myLoadedAssetBundle.GetAllScenePaths ();
-		Debug.Log (bookscenePath[0]);
-		Debug.Log (scenePaths[0]);
+
 	}
 
 
@@ -131,10 +131,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	{    
 		GameObject go = eventData.pointerCurrentRaycast.gameObject;
 		Debug.Log (go.name);
-		if (go.name == "LeftArrow")
-			left ();
-		if (go.name == "RightArrow")
-			right ();
 
 		if (go.name == "Cover" )
 		 {
@@ -142,21 +138,22 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
                 
 
 				if (go.GetComponentInParent<BookObject> ().position == 1) {
-					if (rotation)
+					//if (rotation)
 						right60 ();
 				} else if (go.GetComponentInParent<BookObject> ().position == 2) {
-					if (rotation)
+					//if (rotation)
 						right ();
 				} 
 					
 				else if (go.GetComponentInParent<BookObject> ().position == 4) {
-					if (rotation)
+					//if (rotation)
 						left ();
 				} else if (go.GetComponentInParent<BookObject> ().position == 5) {
-					if (rotation)
+					//if (rotation)
 						left60 ();
 				}
-			} else if (go.GetComponents<BookObject> () != null) 
+			} 
+			else if (go.GetComponents<BookObject> () != null) 
 			{if (go.GetComponent<BookObject> ().position == 1) {
 					if (rotation)
 						right60 ();
@@ -174,14 +171,14 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 			}
 			
 	}
-		else if (go.name == "Image" || go.name == "Title") {
-			Debug.Log(bookscenePath);
+		else if (go.name == "Image" || go.name=="Title" ) {
+			
 			LoadCentreBook ();
        
     }
 	}
 	public void LoadCentreBook()
-	{
+	{    
 		SceneManager.LoadScene (bookscenePath+"/Scene00");
 	}
     private void LoadShelfData()
@@ -291,4 +288,8 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         Image.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>(bo.book.pathToThumbnail);
 
     }
+
+
+
+
 }

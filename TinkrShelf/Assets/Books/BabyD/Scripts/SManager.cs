@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SManager :  MonoBehaviour {
 
@@ -75,6 +76,7 @@ public class SManager :  MonoBehaviour {
 
 	public void menuclick()
 	{
+		SceneManager.LoadScene ("scene2");
 
 	}
 	public void autonarrate()
