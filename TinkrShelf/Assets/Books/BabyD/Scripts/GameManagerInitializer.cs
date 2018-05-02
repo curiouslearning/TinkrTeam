@@ -15,11 +15,11 @@ public class GameManagerInitializer : MonoBehaviour {
             Debug.Log("NO GAME MANAGER INSTANCE FOUND - CREATING ONE!");
             GameManager instance = Instantiate(gameManager) as GameManager;
 
-            if (makePersistent)
-                DontDestroyOnLoad(instance.gameObject);
+            //if (makePersistent)
+              //  DontDestroyOnLoad(instance.gameObject);
         }
 
-        Destroy(this.gameObject);
+       //Destroy(this.gameObject);
     }
    
 }
