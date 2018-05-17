@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 2689521427
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: cdea566fcdff5d77385655102cafa870
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e8214c69729ed7b4e0f89bad6e44781a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Books/5pageProxy/AnimPNGs/A01/A01-1.png
+- Assets/Books/5pageProxy/Resources/5PageProxy.json
+- Assets/Books/5pageProxy/AnimPNGs/A01/A01-4.png
+- Assets/Resources/JSONBook/babyD.json
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-03.png
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-06.png
+- Assets/Books/5pageProxy/AnimPNGs/A01/A01-3.png
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-05.png
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-04.png
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-02.png
+- Assets/Books/5pageProxy/AnimPNGs/A01/A01-2.png
+- Assets/Books/5pageProxy/AnimPNGs/A02/A02-01.png
+Dependencies: []

@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1659341117
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: babyd
+      Dependencies: {}
+    Info_1:
+      Name: 5pageproxy
+      Dependencies: {}

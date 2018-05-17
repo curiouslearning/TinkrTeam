@@ -35,18 +35,24 @@
 
 			void Awake()
 			{    Image = GameObject.Find("Image");
-				Title = GameObject.Find("Title");
+			   	 Title = GameObject.Find("Title");
 
 
-				manifestFileName = "Manifests/manifest";  //set to passed file name1
+				manifestFileName = "Manifests/manifest";  //set to passed file name
 		        LoadShelfData();
 				
 
 			}
 
+	public void Start(){
+
+		Firebase.Analytics.FirebaseAnalytics
+			.LogEvent ("progress", "percent", 100f);
+	}
 
 		    public void Update()
 		    {
+		
 		        if (check == true)
 		        {
 		            if (name == "left")
@@ -175,9 +181,10 @@
 		    }
 			}
 			public void LoadCentreBook()
-		{   Debug.Log(bookscenePath);
+		    {   Debug.Log(bookscenePath);
 				SceneManager.LoadScene (bookscenePath+"/Scene00");
 			}
+
 		    private void LoadShelfData()
 			{
 		        TextAsset file = Resources.Load(manifestFileName) as TextAsset;
@@ -254,7 +261,7 @@
 		       Title.GetComponent<Text>().text = bo.book.title;
 		        //change center image with character
 			
-			Image.GetComponent<Image>().sprite=Resources.Load<Sprite> (bo.book.pathToThumbnail);;
+			Image.GetComponent<Image>().sprite=Resources.Load<Sprite> (bo.book.pathToThumbnail);
 
 		    }
 
