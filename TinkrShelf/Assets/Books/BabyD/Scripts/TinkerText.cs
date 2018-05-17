@@ -27,6 +27,7 @@ public class TinkerText : MonoBehaviour {
     }
 
 
+
     // Takes an xml word element and reads and sets the timing data
     public void SetupWordTiming(XmlNode wordNode)
     {
@@ -53,7 +54,9 @@ public class TinkerText : MonoBehaviour {
 		// Setup a trigger collider at runtime so it is the same bounds as the text
 		BoxCollider col = gameObject.AddComponent<BoxCollider>();
 		col.isTrigger = true;
-		col.size = new Vector2(gameObject.GetComponent<RectTransform>().sizeDelta.x , gameObject.GetComponent<RectTransform>().sizeDelta.y);
+		RectTransform trans= gameObject.GetComponent<RectTransform>();
+		col.size = new Vector2(trans.sizeDelta.x, trans.sizeDelta.y);
+		col.center = new Vector2( (trans.rect.x +trans.sizeDelta.x/2), (trans.rect.y +trans.sizeDelta.y/2) ) ;
 		// Check against a collider width that is too small (tough to tap on "I" or "1")
 		if (col.size.x <= 0.055f)
 		{

@@ -9,6 +9,7 @@ public class SceneManager01 : SManager {
 
 	public override void Start() {
 		base.Start ();
+		LoadAsset ("Scene01Asset");
 		noOfTaps = 0;
 	}
 	public override void Update() {

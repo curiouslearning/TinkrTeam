@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SManager :  MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class SManager :  MonoBehaviour {
 	public List<Stanza> stanzas;
 	public GameObject Lbutton;
 	public GameObject Rbutton;
+	AssetBundle bundleLoaded;
     // Whether to allow input on text/graphics during autoplay
     public bool inputAllowedDuringAutoplay = true;
 
@@ -73,6 +75,7 @@ public class SManager :  MonoBehaviour {
 			i = 1;
 		}
 	}
+
 
 	public void menuclick()
 	{
@@ -156,28 +159,7 @@ public class SManager :  MonoBehaviour {
         return sounds[i].clip.length;
     }
 
-    public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(startdelay);
-            if (!sounds[index].isPlaying)
-            {
-                sounds[index].Play();
-            }
-            yield return new WaitForSeconds(enddelay);
-        }
-    }
-    public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
-    { 
-            yield return new WaitForSeconds(startdelay);
-            if (!sounds[index].isPlaying)
-            {
-                sounds[index].Play();
-            //Debug.Log("abcd   "+sounds[index].name);
-            }
-            yield return new WaitForSeconds(enddelay);
-    }
+
 
     public virtual void Init(GameManager _gameManager)
 	{
@@ -213,6 +195,47 @@ public class SManager :  MonoBehaviour {
 		}
 
 		return true; // stanza manager must be null
+	}
+
+	public void LoadAsset(string name)
+	{
+		Debug.Log ("loaded");
+		if (!bundleLoaded)
+		{
+			bundleLoaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath,"AssetBundles/babyd"));
+			if (bundleLoaded == null)
+			{
+				Debug.Log("Failed to load AssetBundle!");
+				return;
+			}
+		}
+		var prefab = bundleLoaded.LoadAsset<GameObject>(name);
+		Instantiate(prefab);
+
+	}
+
+
+	public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(startdelay);
+			if (!sounds[index].isPlaying)
+			{
+				sounds[index].Play();
+			}
+			yield return new WaitForSeconds(enddelay);
+		}
+	}
+	public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
+	{ 
+		yield return new WaitForSeconds(startdelay);
+		if (!sounds[index].isPlaying)
+		{
+			sounds[index].Play();
+			//Debug.Log("abcd   "+sounds[index].name);
+		}
+		yield return new WaitForSeconds(enddelay);
 	}
 
 	// Here we have a superclass intercept for catching global GameObject mouse down events
