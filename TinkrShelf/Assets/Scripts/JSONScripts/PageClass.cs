@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class PageClass  {
     public int pageNumber;
+	public string script;
     public AudioClass audio;
     public GameObjectClass[] gameObjects;
     public TextClass[] texts;

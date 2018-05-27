@@ -18,7 +18,7 @@ public class GStanzaManager : MonoBehaviour {
 
 	public void LoadStanzaJSON()
 	{
-		//SetupWordTimings(LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps);
+		SetupWordTimings(LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps);
 	}
 
 	// Loads up a custom stanza audio mp3 and xml timing data
@@ -29,10 +29,10 @@ public class GStanzaManager : MonoBehaviour {
 		GetComponent<AudioSource>().clip = stanzaClip;
 
 
-		//SetupWordTimings(LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps);
+		SetupWordTimings(LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps);
 	}
 
-	/* Goes through all stanzas and tinkertexts assigning the word timings
+	// Goes through all stanzas and tinkertexts assigning the word timings
 	private void SetupWordTimings(TimeStampClass[] timeStamps)
 	{
 		int stanzaIndex = 0;
@@ -199,5 +199,5 @@ public class GStanzaManager : MonoBehaviour {
 		tinkerGraphic.MyOnMouseUp();
 	}
 
-*/
+
 }

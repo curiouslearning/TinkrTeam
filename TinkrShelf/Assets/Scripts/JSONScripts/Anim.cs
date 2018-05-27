@@ -7,4 +7,5 @@ public class Anim  {
     public string animName;
     public int numberOfImages;
     public bool isLooping;
+	public Movable movable;
 }

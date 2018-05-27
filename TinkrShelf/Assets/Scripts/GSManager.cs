@@ -9,12 +9,12 @@ public class GSManager :  MonoBehaviour {
 
 	[HideInInspector]
 	public GGameManager gameManager;
+	public Canvas myCanvas;
 
 	// Manager for all TinkerTexts and stanza
 	public GStanzaManager stanzaManager;
 	//public List<StanzaObject> stanzas;
-	public GameObject Lbutton;
-	public GameObject Rbutton;
+
     // Whether to allow input on text/graphics during autoplay
     public bool inputAllowedDuringAutoplay = true;
 
@@ -38,153 +38,23 @@ public class GSManager :  MonoBehaviour {
 
 
 	//for menubar drop down
-	public bool isOpen=false;
-	public Sprite down;
-	public Sprite up;
-	public Sprite narrateon;
-	public Sprite narrateoff;
-	public Button but; 
-	public Button but1;
-	public Button but2;
-	public GameObject dropcontainer;
-	public GameObject menucontainer;
+
 	public int i = 1;
 	public static int j = 1; 
+	static public Color blue = new Color(6.0f / 255.0f, 7.0f / 255.0f, 253.0f / 255.0f, 81.0f);
+	static public Color red = new Color(253.0f / 255.0f, 6.0f / 255.0f, 52.0f / 255.0f, 255.0f);
+	static public Color yellow = new Color(237.0f / 255.0f, 243.0f / 255.0f, 0.0f / 255.0f, 249.0f);
 
 
-    //override me
-    public virtual void Update() {
-        
-       
-    }
-	public void downclick()
-	{   dropcontainer.SetActive (false);
-		menucontainer.SetActive (true);
-		if (i == 1) {
-			isOpen = true;
-			but.image.sprite = up;
-			i = 0;
-		}
-		else{
-			isOpen = false;
-			but.image.sprite = down;
-			i = 1;
-		}
-	}
+	public GameObject Lbutton;
+	public GameObject Rbutton;
 
-	public void menuclick()
+
+ 
+
+	public virtual void Start() //GGameManager _gameManager
 	{
-		SceneManager.LoadScene ("scene2");
-
-	}
-	public void autonarrate()
-	{  if (j == 1) {
-			but2.image.sprite = narrateoff;
-			j = 0;
-			//stanzaManager.RequestCancelAutoPlay();
-			StartCoroutine (SetMenuContainer ());
-
-
-		}
-	else
-	{  but2.image.sprite=narrateon;
-		j = 1;
-		//stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
-		StartCoroutine (SetMenuContainer ());
-	}
-}     
-
-	public void uparrowclick()
-	{ menucontainer.SetActive (false);
-		dropcontainer.SetActive(true);
-	}
-	public IEnumerator SetMenuContainer()
-	{
-		yield return new WaitForSeconds (0.5f);
-		menucontainer.SetActive (false);
-		dropcontainer.SetActive(true);
-	}
-    public virtual void Start()
-    {
-
-        dropcontainer.SetActive(true);
-        menucontainer.SetActive(false);
-        if (gameObject != null)
-            sounds = gameObject.GetComponents<AudioSource>();
-
-        isOpen = false;
-
-
-        if (j == 1)
-        {
-            if (but2 != null)
-                but2.image.sprite = narrateon;
-
-
-        }
-        if (j == 0)
-        {
-            if (but2 != null)
-                but2.image.sprite = narrateoff;
-
-        }
-
-        //Color c = Lbutton.gameObject.GetComponent<Image>().color;
-
-        //c.a = 0.8f;
-        //Lbutton.gameObject.GetComponent<Image>().color = c;
-        Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
-
-        Color c = Rbutton.gameObject.GetComponent<Image>().color;
-        c.a = 0.8f;
-        Rbutton.gameObject.GetComponent<Image>().color = c;
-
-        //Lbutton.GetComponent<Button>().interactable = false;
-        Rbutton.GetComponent<Button>().interactable = false;
-
-        //auto play on start
-        if (stanzaManager != null && but2.image.sprite == narrateon)
-        {
-
-            //stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
-
-        }
-    }
-    
-
-
-    public float getAudioLength(int i)
-    {
-		
-        return sounds[i].clip.length;
-    }
-
-    public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(startdelay);
-            if (!sounds[index].isPlaying)
-            {
-                sounds[index].Play();
-            }
-            yield return new WaitForSeconds(enddelay);
-        }
-    }
-    public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
-    { 
-            yield return new WaitForSeconds(startdelay);
-            if (!sounds[index].isPlaying)
-            {
-                sounds[index].Play();
-            //Debug.Log("abcd   "+sounds[index].name);
-            }
-            yield return new WaitForSeconds(enddelay);
-    }
-
-    public virtual void Start(GGameManager _gameManager)
-	{
-		gameManager = _gameManager;
+		//gameManager = _gameManager;
 
 		// Reset flags
 		dragActive = false;
@@ -201,9 +71,18 @@ public class GSManager :  MonoBehaviour {
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
+		Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+
+		Color c = Rbutton.gameObject.GetComponent<Image>().color;
+		c.a = 0.8f;
+		Rbutton.gameObject.GetComponent<Image>().color = c;
+
+		//Lbutton.GetComponent<Button>().interactable = false;
+		Rbutton.GetComponent<Button>().interactable = false;
+
 	}
 
-	/*
+	
 	public bool IsInputAllowed()
 	{
 		if (inputAllowedDuringAutoplay)
@@ -220,17 +99,18 @@ public class GSManager :  MonoBehaviour {
 
 	// Here we have a superclass intercept for catching global GameObject mouse down events
 	public virtual void OnMouseDown(GameObject go)
-	{
-        Debug.Log("clicked 2"+go.name);
-            countDownEvent++;
-            if (countDownEvent == 2)
-                EnableButtons();
+	{   
+		countDownEvent++;
+		Debug.Log (countDownEvent);
+		if (countDownEvent == 2)
+			EnableButtons();
             // Lock out other input during auto play?
             if (IsInputAllowed())
             {
                 // TinkerText object 
                 if (go.GetComponent<GTinkerText>() != null)
                 {
+                
                     GTinkerText tinkerText = go.GetComponent<GTinkerText>();
 
                     if (tinkerText != null)
@@ -239,7 +119,8 @@ public class GSManager :  MonoBehaviour {
                         {
                             // Is an autoplay in progress? If so, see if we should interrupt
                             if (stanzaManager.IsAutoPlaying() && inputInterruptsAutoplay)
-                            {
+              
+						{
                                 stanzaManager.RequestCancelAutoPlay();
                             }
 
@@ -249,17 +130,18 @@ public class GSManager :  MonoBehaviour {
                 }
                 // TinkerGraphic object
                 else if (go.GetComponent<GTinkerGraphic>() != null)
-                {
+			{
+
                     GTinkerGraphic tinkerGraphic = go.GetComponent<GTinkerGraphic>();
-                Debug.Log("clicked 3");
                     if (tinkerGraphic != null)
                     {
-                    Debug.Log("clicked 4");
                         tinkerGraphic.MyOnMouseDown();
                     }
                 }
+
+				
             }
-        
+			
 	}
 
 	// Here we have a superclass intercept for catching global TinkerGraphic mouse down events
@@ -399,13 +281,13 @@ public class GSManager :  MonoBehaviour {
 	//UI Right Button 
 	public void NextScene()
 	{
-		gameManager.LoadNextScene();
+		//gameManager.LoadNextScene();
 	}
 
 	//UI Left Button
 	public void PreviousScene()
 	{
-		gameManager.LoadPreviousScene();
+		//gameManager.LoadPreviousScene();
 	}
 
 	public virtual void ResetInputStates(GGameManager.MouseEvents mouseEvent)
@@ -422,6 +304,19 @@ public class GSManager :  MonoBehaviour {
 		}
 	}
 
+
+	public void MoveObject(){
+		Vector2 pos;
+		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
+		transform.position = myCanvas.transform.TransformPoint(pos);
+	}
+
+	public Vector2 GetCoordinates(){
+		return transform.position;
+	}
+
+
+
 	public bool CheckFar(Vector2 start, Vector2 end, float requiredDistance){
 		if (requiredDistance <= Vector2.Distance (start, end)) {
 			return true;
@@ -435,22 +330,45 @@ public class GSManager :  MonoBehaviour {
 		}
 		return false;
 	}
-    private void EnableButtons()
-    {
-        //Color c = Lbutton.gameObject.GetComponent<Image>().color;
-        //c.a = 1.0f;
-        //Lbutton.gameObject.GetComponent<Image>().color = c;
 
-        //c = Rbutton.gameObject.GetComponent<Image>().color;
-        //c.a = 1.0f;
-        //Rbutton.gameObject.GetComponent<Image>().color = c;
-        Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
 
-        Rbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+	private void EnableButtons()
+	{
+		Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+		Rbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+		Rbutton.GetComponent<Button>().interactable = true;
+	}
 
-        //Lbutton.GetComponent<Button>().interactable = true;
-        Rbutton.GetComponent<Button>().interactable = true;
-    }
 
-*/
+	public float getAudioLength(int i)
+	{
+
+		return sounds[i].clip.length;
+	}
+
+	public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(startdelay);
+			if (!sounds[index].isPlaying)
+			{
+				sounds[index].Play();
+			}
+			yield return new WaitForSeconds(enddelay);
+		}
+	}
+	public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
+	{ 
+		yield return new WaitForSeconds(startdelay);
+		if (!sounds[index].isPlaying)
+		{
+			sounds[index].Play();
+		}
+		yield return new WaitForSeconds(enddelay);
+	}
+
+   
+
+
 }

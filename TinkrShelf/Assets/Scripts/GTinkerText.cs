@@ -80,7 +80,7 @@ public class GTinkerText : MonoBehaviour {
             delayTime = 0.21f;
             wordanimator.speed = 1 / (delayTime);
 
-        source.Play();
+        //source.Play();
             wordanimator.SetTrigger("tapme");
     
 
@@ -120,12 +120,14 @@ public class GTinkerText : MonoBehaviour {
 	// Mouse Down Event
 	public void MyMouseDown(bool suppressAnim = false)
 	{
+		System.DateTime time=  System.DateTime.Now;
+		DataCollection.AddInTouchData (gameObject.GetComponent<Text>().text, "Text", time.ToString());
+		Debug.Log("text down");
 
         if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
 			PlaySound();
 		}
-
 		clipPlay();
 		iconanimPlay();
 
@@ -145,10 +147,10 @@ public class GTinkerText : MonoBehaviour {
 	// Paired Mouse Down Event
 	public void OnPairedMouseDown()
 	{
-		if (!stanza.stanzaManager.sceneManager.disableSounds)
+		/*if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
 			PlaySound();
-		}
+		}*/
 
 		clipPlay();
 		iconanimPlay();
@@ -157,10 +159,10 @@ public class GTinkerText : MonoBehaviour {
 	// Mouse Currently Down Event
 	public void OnMouseCurrentlyDown()
 	{
-		if (!stanza.stanzaManager.sceneManager.disableSounds)
+		/*if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
 			PlaySound();
-		}
+		}*/
 
 		clipPlay();
 		iconanimPlay();
