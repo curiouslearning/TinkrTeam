@@ -13,7 +13,7 @@ public class GGameManagerInitializer : MonoBehaviour {
         if (!GGameManager.Instance)
         {
             Debug.Log("NO GAME MANAGER INSTANCE FOUND - CREATING ONE!");
-            GGameManager instance = Instantiate(gameManager) as GGameManager;
+           // GGameManager instance = Instantiate(gameManager) as GGameManager;
 
             //if (makePersistent)
               //  DontDestroyOnLoad(instance.gameObject);

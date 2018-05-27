@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LoadAssetExample : MonoBehaviour {
     static AssetBundle bundleloaded;
@@ -11,10 +12,16 @@ public class LoadAssetExample : MonoBehaviour {
     public static StoryBookJson storyBookJson;
     public static int pageNumber;
 	public GStanzaManager stanzaManager;
+    public List<GameObject> tinkerGraphicObjects;
+    public List<GameObject> tinkerTextObjects;
+	public List<GameObject> stanzaObjects;
 
-	private string[] allStanzaJsons;
+    private string[] allStanzaJsons;
 	private string page;
+	public GameObject right;
+	public GameObject left;
 
+	public static string sceneScript; 
 	Font font;
 	Transform canvasTransform;
 
@@ -24,10 +31,14 @@ public class LoadAssetExample : MonoBehaviour {
 	private readonly float minWordSpace = 15.0f;
 	private readonly float minLineSpace = 30.0f;
 
+	//variables for logging data
+	DateTime inTime;
+	int timeSpent;
 
 	private bool autoPlaying = false;
 	private bool cancelAutoPlay = false;
 
+	public DataCollection dataCollector;
 
     public void Awake()
     {
@@ -47,25 +58,121 @@ public class LoadAssetExample : MonoBehaviour {
                 Debug.Log("Failed to load AssetBundle!");
 
             }
-        }
-        LoadStoryData("5PageProxy.json");
+		}
+		dataCollector.LoadLocalJSON ();
+		dataCollector.AddNewBook ("5PageProxy");
+		LoadStoryData ("5PageProxy.json");
     }
+
     void Start () {
        
     }
     private void LoadStoryData(string fileName)
     {
-        pageNumber = 0;
+		pageNumber = 0;
         TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
-        LoadPageData(pageNumber);
+		LoadCompletePage ();
+
+    }
+	public void LoadNextPage()
+	{
+		TimeSpan span = ( DateTime.Now- inTime );
+		DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
+		pageNumber++;
+		if (pageNumber > 4) {
+			right.SetActive (false);
+		}
+		EmptyPage ();
+		LoadCompletePage ();
+	}
+
+	public void LoadPreviousPage()
+	{
+		TimeSpan span = ( DateTime.Now- inTime );
+		DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
+		pageNumber--;
+		if(pageNumber<0){
+			left.SetActive (false);
+		}
+		EmptyPage ();
+		LoadCompletePage ();
+	}
+
+	public void EmptyPage()
+	{
+		for(int i=0;i<tinkerGraphicObjects.Count;i++)
+		{
+			Destroy (tinkerGraphicObjects [i]);
+		}
+		for (int j=0;j<stanzaObjects.Count;j++)
+		{
+			Destroy (stanzaObjects[j]);
+		}
+
+
+
 	
+	}
+	public void LoadCompletePage()
+	{   
+		dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
+		inTime = DateTime.Now;
+		LoadSceneSpecificScript ();
+		LoadPageData(pageNumber);
 		LoadStanzaData();
 		TokenizeStanza();
-    }
-    public void LoadPageData(int pageNo)
+		LoadStanzaAudio();
+		LoadTriggers();
+		LoadAudios();
+
+	}
+		
+
+	public void LoadSceneSpecificScript ()
+	{  
+		
+		GameObject go = new  GameObject();
+		go.transform.SetParent(canvasTransform);
+		go.name="SceneManager"+pageNumber;
+		sceneScript =storyBookJson.pages [pageNumber].script;
+		go.AddComponent(Type.GetType(sceneScript));
+		GameObject.Find ("Canvas").GetComponent<GStanzaManager> ().sceneManager = GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager>();
+		GameObject.Find("SceneManager"+pageNumber).GetComponent<GSManager>().stanzaManager=GameObject.Find("Canvas").GetComponent<GStanzaManager>();
+		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().myCanvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
+		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().Lbutton = GameObject.FindWithTag ("left_arrow");
+		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().Rbutton = GameObject.FindWithTag ("right_arrow");
+		GameObject.Find ("GameManager").GetComponent<GGameManager> ().sceneManager = GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ();
+	
+	}
+
+    public void LoadStanzaAudio()
     {
+       GameObject.Find("Canvas").AddComponent<AudioSource>().clip= LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
+
+    }
+
+    public void LoadAudios()
+    {
+        TimeStampClass[] timeStamps= storyBookJson.pages[pageNumber].timestamps;
+        for(int i = 0; i < timeStamps.Length; i++)
+        {
+            tinkerTextObjects[i].AddComponent<AudioSource>().clip = LoadAudioAsset(timeStamps[i].audio);
+
+        }
+    }
+
+    public AudioClip LoadAudioAsset(string name)
+    {
+        
+        return bundleloaded.LoadAsset<AudioClip>(name);
+    }
+
+    public void LoadPageData(int pageNo)
+	{tinkerGraphicObjects.Clear ();
         if (storyBookJson != null)
         {
             if (storyBookJson.pages[pageNo]!=null)
@@ -76,14 +183,39 @@ public class LoadAssetExample : MonoBehaviour {
                 {
                     CreateGameObject(gameObjects[i]);
                 }
+                
             }
          }
 
     }
+
+    public void LoadTriggers()
+    {
+        TriggerClass[] triggers = storyBookJson.pages[pageNumber].triggers;
+        for (int i = 0; i < triggers.Length; i++)
+        {
+            if (triggers[i].typeOfLinking == 1)
+            {
+
+            }
+            if (triggers[i].typeOfLinking == 2)
+            {
+
+            }
+            if (triggers[i].typeOfLinking == 3)//two way linking of tinker graphic and tinker texts.
+            {
+                GameObject text = tinkerTextObjects[triggers[i].textId];
+                GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
+                text.GetComponent<GTinkerText>().pairedGraphic = graphic.GetComponent<GTinkerGraphic>();
+                graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
+            }
+        }
+    }
    
 
 	public void LoadStanzaData()
-	{
+	{   startingY = 170.0f;
+		stanzaManager.stanzas.Clear ();
 		j =0;
 		TextClass[] texts= LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
 
@@ -99,7 +231,7 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
 	public void TokenizeStanza (){
-
+		tinkerTextObjects.Clear ();
 		string[] words;
 
 		for (i = 0; i < stanzaManager.stanzas.Count; i++) {
@@ -123,6 +255,8 @@ public class LoadAssetExample : MonoBehaviour {
 		go.transform.localScale = new Vector3(1,1,1);
 		RectTransform trans = go.GetComponent<RectTransform>();
 		trans.anchoredPosition = new Vector3(x, y,0);
+        go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
+		stanzaObjects.Add (go);
 		return go.GetComponent<StanzaObject>();
 	}
 
@@ -130,8 +264,8 @@ public class LoadAssetExample : MonoBehaviour {
 	{
 		GameObject UItextGO = new GameObject("Text2");
 		UItextGO.transform.SetParent(parent.transform);
-
-		Text text = UItextGO.AddComponent<Text>();
+       // Debug.Log(anim.runtimeAnimatorController);
+        Text text = UItextGO.AddComponent<Text>();
 		text.text = textToPrint;
 		text.fontSize = fontSize;
 		text.color = textColor;
@@ -151,12 +285,16 @@ public class LoadAssetExample : MonoBehaviour {
 		text.alignment = TextAnchor.UpperLeft;
 		trans.anchoredPosition = new Vector3(x, y,0);
 
-		UItextGO.AddComponent<GTinkerText> ();
+		
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (trans);
 		trans.pivot = new Vector2 (0,1);
 
 		width = width + trans.rect.width + minWordSpace;
-		return UItextGO.GetComponent<GTinkerText>();
+        UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
+        GTinkerText tinkerText= UItextGO.AddComponent<GTinkerText>();
+        tinkerText.stanza =UItextGO.GetComponentInParent<StanzaObject>();
+        tinkerTextObjects.Add(UItextGO);
+        return UItextGO.GetComponent<GTinkerText>();
 	}
 
 
@@ -170,27 +308,38 @@ public class LoadAssetExample : MonoBehaviour {
         go.transform.localScale = scale;
         go.AddComponent<SpriteRenderer>();
         go.GetComponent<SpriteRenderer>().sortingOrder = gameObjectData.orderInLayer;
-        
+		go.AddComponent<GTinkerGraphic>();
+		go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
+		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
+		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);//go.AddComponent<Collider>();
+		BoxCollider col = go.AddComponent<BoxCollider>();
+		col.isTrigger = true;
+		col.size = new Vector2(1, 1);
         if (gameObjectData.anim.Length >0)
         {
-            go.AddComponent<PngToAnim>();
-            Anim anim = gameObjectData.anim[0];
-            LoadAssetImages(anim.animName, anim.numberOfImages);
-            go.GetComponent<PngToAnim>().PlayAnimation(0, 0.25f, anim.isLooping);
-        }
-        else
-        {
-            LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
-        }
-        go.AddComponent<GTinkerGraphic>();
-        go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
-        go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager").GetComponent<GSManager>();
-        go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        Debug.Log(gameObjectData.draggable+""+this);
-        go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);//go.AddComponent<Collider>();
-        BoxCollider col = go.AddComponent<BoxCollider>();
-        col.isTrigger = true;
-        col.size = new Vector2(1, 1);
+
+			Anim anim = gameObjectData.anim[0];
+			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), anim.animName, anim.numberOfImages);
+
+			if (gameObjectData.anim[0].movable.speed!=0)
+			{
+				Movable movable = gameObjectData.anim[0].movable;
+				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, movable);
+			}
+			else
+			{
+				Debug.Log("helllooooooooo");
+				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, null);
+			}
+		}
+		else
+		{
+			LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
+		}
+        
+		tinkerGraphicObjects.Add(go);
+
 
 
     }
@@ -206,17 +355,17 @@ public class LoadAssetExample : MonoBehaviour {
         sr.sprite = sprite;
     }
 
-    public void LoadAssetImages(string startName,int length)
-    {
-        
-        PngToAnim.sprites= new Sprite[length];
-        for (int i = 0; i < length; i++)
-        {
-            var sprite = bundleloaded.LoadAsset<Sprite>(startName+"-"+(i+1));
-            PngToAnim.sprites[i] = sprite;
-        
-        }     
-    }
+	public void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
+	{
+
+		tinkerGraphic.sprites= new Sprite[length];
+		for (int i = 0; i < length; i++)
+		{
+			var sprite = bundleloaded.LoadAsset<Sprite>(startName+"-"+(i+1));
+			tinkerGraphic.sprites[i] = sprite;
+
+		}     
+	}
     public void LoadScene()
     {
         if (!bundleloaded)

@@ -95,7 +95,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -123,6 +123,8 @@ MonoBehaviour:
     id: 0
     text: 
   tinkerTexts: []
+  stanzaManager: {fileID: 0}
+  endDelay: 0
 --- !u!224 &224207483928684634
 RectTransform:
   m_ObjectHideFlags: 1

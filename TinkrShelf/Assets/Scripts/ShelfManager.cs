@@ -46,8 +46,6 @@
 
 	public void Start(){
 
-		Firebase.Analytics.FirebaseAnalytics
-			.LogEvent ("progress", "percent", 100f);
 	}
 
 		    public void Update()
@@ -180,6 +178,7 @@
 		       
 		    }
 			}
+
 			public void LoadCentreBook()
 		    {   Debug.Log(bookscenePath);
 				SceneManager.LoadScene (bookscenePath+"/Scene00");

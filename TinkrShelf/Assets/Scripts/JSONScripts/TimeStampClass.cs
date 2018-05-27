@@ -5,5 +5,6 @@ using UnityEngine;
 public class TimeStampClass {
     public int start;
     public int wordIdx;
+    public string audio;
     public int end;
 }

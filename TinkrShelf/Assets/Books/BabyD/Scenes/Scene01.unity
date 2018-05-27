@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &95074314
 Prefab:
   m_ObjectHideFlags: 0
@@ -258,10 +258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  stanzaManager: {fileID: 1026469799}
+  stanzaManager: {fileID: 0}
   stanzas:
-  - {fileID: 1805811267}
-  - {fileID: 1121447532}
+  - {fileID: 0}
+  - {fileID: 0}
   Lbutton: {fileID: 1751614411}
   Rbutton: {fileID: 427614378}
   inputAllowedDuringAutoplay: 1
@@ -351,7 +351,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -579,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c69baa6db1098247b36c88df7bfc1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneManager: {fileID: 0}
   stanzas: []
 --- !u!1 &427614378
 GameObject:
@@ -807,12 +808,12 @@ Prefab:
         type: 2}
       propertyPath: pairedText1
       value: 
-      objectReference: {fileID: 1386300218}
+      objectReference: {fileID: 0}
     - target: {fileID: 114650084260148614, guid: 974f2f9847ef89b4e97fc584691c02f3,
         type: 2}
       propertyPath: pairedText2
       value: 
-      objectReference: {fileID: 1052507825}
+      objectReference: {fileID: 0}
     - target: {fileID: 114650084260148614, guid: 974f2f9847ef89b4e97fc584691c02f3,
         type: 2}
       propertyPath: sceneManager
@@ -1209,7 +1210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &916407769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,7 +3055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2063150610
 AudioSource:
   m_ObjectHideFlags: 0
