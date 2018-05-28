@@ -121,8 +121,10 @@ public class GTinkerText : MonoBehaviour {
 	public void MyMouseDown(bool suppressAnim = false)
 	{
 		System.DateTime time=  System.DateTime.Now;
-		DataCollection.AddInTouchData (gameObject.GetComponent<Text>().text, "Text", time.ToString());
-		Debug.Log("text down");
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData (gameObject.GetComponent<Text>().text, "Text", time.ToString());
+
+		FirebaseHelper.LogInAppTouch (gameObject.GetComponent<Text>().text, "Text", time.ToString());
 
         if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{

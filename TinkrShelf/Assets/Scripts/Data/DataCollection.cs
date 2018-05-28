@@ -93,15 +93,12 @@ public class DataCollection : MonoBehaviour {
 
 	}
 
-	public static void AddInResponseData( string selection, string answer, List<string> options, bool correct, string timeElapsed){
+	public static void AddInResponseData( string selection, string answer, List<string> options, string correct, string timeElapsed){
 		//type will be button, text or image
 		JSONNode node = new JSONObject();
 		node ["selection"] = selection;
 		node ["answer"] = answer;
-		if (correct)
-			node ["correct"] = "yes";
-		else
-			node ["correct"] = "no";
+		node ["correct"] = correct;
 		node ["timeTaken"] = timeElapsed;
 
 		node ["options"] = new JSONArray ();

@@ -260,7 +260,9 @@ public class GGameManager : MonoBehaviour
 	public void DownClick()
 	{   
 		DateTime time = DateTime.Now;
-		DataCollection.AddInTouchData ("DownMenu", "button", time.ToString());
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData ("DownMenu", "button", time.ToString());
+		FirebaseHelper.LogInAppTouch("DownMenu","button",time.ToString());
 		dropContainer.SetActive (false);
 		menuContainer.SetActive (true);
 		if (i == 1) {
@@ -279,7 +281,9 @@ public class GGameManager : MonoBehaviour
 	public void UpArrowClick()
 	{ 
 		DateTime time = DateTime.Now;
-		DataCollection.AddInTouchData ("UpMenu", "button", time.ToString());
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData ("UpMenu", "button", time.ToString());
+		FirebaseHelper.LogInAppTouch("UpMenu", "button", time.ToString());
 		menuContainer.SetActive (false);
 		dropContainer.SetActive(true);
 	}
@@ -287,7 +291,9 @@ public class GGameManager : MonoBehaviour
 	public void MenuClick()
 	{
 		DateTime time = DateTime.Now;
-		DataCollection.AddInTouchData ("Home", "button", time.ToString());
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData ("Home", "button", time.ToString());
+		FirebaseHelper.LogInAppTouch("Home", "button", time.ToString());
 		SceneManager.LoadScene ("scene2");
 	}
 
@@ -295,7 +301,10 @@ public class GGameManager : MonoBehaviour
 	{
 		DateTime time = DateTime.Now;
 		if (j == 1) {
-			DataCollection.AddInTouchData ("ReadOn", "button", time.ToString());
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInTouchData ("ReadOn", "button", time.ToString());
+			FirebaseHelper.LogInAppTouch("ReadOn", "button", time.ToString());
+
 			read.image.sprite = narrateOff;
 			j = 0;
 			stanzaManager.RequestCancelAutoPlay();
@@ -305,7 +314,10 @@ public class GGameManager : MonoBehaviour
 		}
 		else
 		{  
-			DataCollection.AddInTouchData ("ReadOff", "button", time.ToString());
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInTouchData ("ReadOff", "button", time.ToString());
+			FirebaseHelper.LogInAppTouch("ReadOff", "button", time.ToString());
+
 			read.image.sprite=narrateOn;
 			j = 1;
 			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);

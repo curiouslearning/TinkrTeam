@@ -48,9 +48,10 @@ public class GTinkerGraphic : MonoBehaviour {
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
-		Debug.Log (""+time.ToString() + dataTinkerGraphic.label);
-		DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
-        Debug.Log("clicked graphic" + this);
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
+		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
+
 		sceneManager.OnMouseDown(this);
     }
 

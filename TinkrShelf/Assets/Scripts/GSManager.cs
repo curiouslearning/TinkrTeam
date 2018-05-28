@@ -170,7 +170,6 @@ public class GSManager :  MonoBehaviour {
 	// Here we have a superclass intercept for catching global GameObject mouse currently down events
 	public virtual void OnMouseCurrentlyDown(GameObject go)
 	{
-        Debug.Log("current down");
 		// Lock out other input during auto play?
 		if (IsInputAllowed())
 		{
