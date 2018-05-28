@@ -22,10 +22,6 @@
 	           
 	            bookenter = this.gameObject;
 	            count++;
-	            
-
-
-
 
 	        }
 	        else if (collider.gameObject.name == "Exit")
@@ -34,8 +30,6 @@
 	            bookexit = this.gameObject;
 	            count++;
 	            
-
-
 
 	        }
 	        else if (collider.gameObject.name == "one")

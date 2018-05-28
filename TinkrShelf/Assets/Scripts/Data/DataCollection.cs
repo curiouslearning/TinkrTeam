@@ -4,6 +4,8 @@ using UnityEngine;
 using SimpleJSON;
 using System.IO;
 
+
+//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 public class DataCollection : MonoBehaviour {
 
 	private static string path;
@@ -71,6 +73,7 @@ public class DataCollection : MonoBehaviour {
 		Debug.Log ("saved: "+node.ToString());
 	}
 
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 	public static void AddInSectionData( string inTime, string timeSpent){
 		JSONNode node = new JSONObject();
 		node ["inTime"] = inTime;
@@ -81,6 +84,7 @@ public class DataCollection : MonoBehaviour {
 		SaveLocalJSON (dataNode);
 	}
 
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 	public static void AddInTouchData( string label, string type, string time){
 		//type will be button, text or image
 		JSONNode node = new JSONObject();
@@ -93,6 +97,7 @@ public class DataCollection : MonoBehaviour {
 
 	}
 
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 	public static void AddInResponseData( string selection, string answer, List<string> options, string correct, string timeElapsed){
 		//type will be button, text or image
 		JSONNode node = new JSONObject();

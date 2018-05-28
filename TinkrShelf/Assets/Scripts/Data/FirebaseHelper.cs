@@ -156,6 +156,26 @@ public class FirebaseHelper  : MonoBehaviour{
 		}
 	}
 
+	public static void LogInShelfSection( string timeEnter, string timeSpent){
+
+		Debug.Log ("fireOn"+ timeSpent);
+		if (timeEnter != null ) {
+			Firebase.Analytics.FirebaseAnalytics.LogEvent (
+				"IN_APP_SECTION",
+				new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter (
+						"TABLET_ID", tabID),
+					new Firebase.Analytics.Parameter (
+						"APP_ID", "Shelf"),
+					new Firebase.Analytics.Parameter (
+						"TIME_ENTER", timeEnter),
+					new Firebase.Analytics.Parameter (
+						"TIME_SPENT", timeSpent)
+				}
+			);
+		}
+	}
+
 	public static void LogInAppTouch( string label,string type, string timestamp){
 
 		if (label != null ) {
@@ -179,6 +199,27 @@ public class FirebaseHelper  : MonoBehaviour{
 		}
 	}
 
+
+	public static void LogInShelfTouch( string label,string type, string timestamp){
+		Debug.Log ("fire"+ label);
+		if (label != null ) {
+			Firebase.Analytics.FirebaseAnalytics.LogEvent (
+				"IN_APP_TOUCH",
+				new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter (
+						"TABLET_ID", tabID),
+					new Firebase.Analytics.Parameter (
+						"APP_ID", "Shelf"),
+					new Firebase.Analytics.Parameter (
+						"LABEL", label),
+					new Firebase.Analytics.Parameter (
+						"TYPE", type),
+					new Firebase.Analytics.Parameter (
+						"TIMESTAMP", timestamp)
+				}
+			);
+		}
+	}
 
 
 	public static void LogInAppResponse(string selection, string answer,string options, string correct, string timeElapsed){
