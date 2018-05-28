@@ -178,7 +178,7 @@ public class FirebaseHelper  : MonoBehaviour{
 	}
 
 	public static void LogInAppTouch( string label,string type, string timestamp){
-
+		Debug.Log ("touched"+label);
 		if (label != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_TOUCH",

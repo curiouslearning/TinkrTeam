@@ -76,7 +76,7 @@ public class GTinkerText : MonoBehaviour {
     public void clipPlay()
 	{
             AudioSource source = gameObject.GetComponent<AudioSource>();
-
+		//this.GetComponent<RectTransform>().pivot = ;
             delayTime = 0.21f;
             wordanimator.speed = 1 / (delayTime);
 
@@ -142,7 +142,7 @@ public class GTinkerText : MonoBehaviour {
 		if (pairedGraphic)
 		{
 			// Then send the event along!
-		//	pairedGraphic.OnPairedMouseDown(this);
+			pairedGraphic.OnPairedMouseDown(this);
 		}
 	}
 

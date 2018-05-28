@@ -12,13 +12,10 @@ public class GTinkerGraphic : MonoBehaviour {
 	private bool  draggable;
 	public Canvas myCanvas;
 	public Sprite[] sprites;
-	private int currentframe = 0;
+	private int currentframe=0;
 	private float SecPerFrame = 0.25f;
 	private bool isLooping = false;
-	private float finalx;
-	private float speed;
-	private string direction;
-	float finalpso;
+	public Movable movable; 
 	public SpriteRenderer spr;
 
 	// Reset and highlight colors defaults (change from scene manager subclasses)
@@ -28,9 +25,8 @@ public class GTinkerGraphic : MonoBehaviour {
 	private void Awake()
 	{
 		spr = GetComponent<SpriteRenderer>();
-		currentframe = 0;
-
 	}
+
     // Use this for initialization
     void Start () {
         //anim = GetComponent<Animator>();
@@ -57,10 +53,11 @@ public class GTinkerGraphic : MonoBehaviour {
 			LoadAssetExample.LoadAssetImages(this, anim.animName, anim.numberOfImages);
 
 			if (dataTinkerGraphic.anim [0].movable.speed != 0 && dataTinkerGraphic.anim [0].onTouch){
-				Movable movable = dataTinkerGraphic.anim [0].movable;
-				PlayAnimation (0, 0.25f, anim.isLooping, movable);
+				movable = dataTinkerGraphic.anim [0].movable;
+				PlayAnimation ( 0.25f, anim.isLooping);
 			} else if (dataTinkerGraphic.anim [0].onTouch) {
-				PlayAnimation (0, 0.25f, anim.isLooping, null);
+				movable = null;
+				PlayAnimation ( 0.25f, anim.isLooping);
 			} 
 		
 		}
@@ -112,37 +109,23 @@ public class GTinkerGraphic : MonoBehaviour {
 		return transform.position;
 	}
 
-	public void PlayAnimation(int ID, float secPerFrame, bool isLooping,Movable movable)
+	public void PlayAnimation( float secPerFrame, bool isLooping)
 	{
 		SecPerFrame = secPerFrame;
 		this.isLooping = isLooping;
-		if(movable!=null)
-		{
-			this.finalx = movable.finalx;
-			this.direction = movable.direction;
-			this.speed = movable.speed;
-		}
 		StopCoroutine("AnimateandMove");
 		StopCoroutine("AnimateSprite");
-		switch (ID)
-		{
-		default:
-			currentframe = 0;
-			if (movable != null)
-			{
-				StartCoroutine("AnimateandMove");
-			}
-			else
-			{
-				StartCoroutine("AnimateSprite", ID);
-			}
-			break;
+		currentframe = 0;
+		if (movable != null) {
+			StartCoroutine ("AnimateandMove");
+		} else {
+			StartCoroutine ("AnimateSprite");
 		}
 	}
 
 	IEnumerator AnimateandMove()
-	{   Debug.Log (sprites.Length+"spritelenghth");
-		if(transform.position.x>=finalx)
+	{   
+		if(transform.position.x>=movable.finalx)
 		{
 			spr.sprite = sprites[sprites.Length -1];
 			yield break;
@@ -152,7 +135,7 @@ public class GTinkerGraphic : MonoBehaviour {
 		spr.sprite = sprites[currentframe];
 		currentframe++;
 		var posx = transform.position.x;
-		posx += speed;
+		posx += movable.speed;
 		transform.position = new Vector3(posx, this.transform.position.y, 0);
 		if (currentframe >= sprites.Length)
 		{
@@ -163,11 +146,9 @@ public class GTinkerGraphic : MonoBehaviour {
 		}
 		StartCoroutine("AnimateandMove");
 	}
-	IEnumerator AnimateSprite(int ID)
+
+	IEnumerator AnimateSprite()
 	{
-		switch (ID)
-		{
-		default:
 			yield return new WaitForSeconds(SecPerFrame);
 			spr.sprite = sprites[currentframe];
 			currentframe++;
@@ -179,11 +160,9 @@ public class GTinkerGraphic : MonoBehaviour {
 				}
 				else
 				{
-					break;
+				yield break;
 				}
 			}
-			StartCoroutine("AnimateSprite", ID);
-			break;
+			StartCoroutine("AnimateSprite");
 		}
-	}
 }

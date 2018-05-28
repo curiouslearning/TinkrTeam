@@ -78,7 +78,6 @@ public class LoadAssetExample : MonoBehaviour {
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
 		LoadCompletePage ();
-
     }
 	public void LoadNextPage()
 	{
@@ -126,8 +125,8 @@ public class LoadAssetExample : MonoBehaviour {
 		{
 			Destroy (stanzaObjects[j]);
 		}
-
-
+		stanzaObjects = null;
+		stanzaManager.RequestCancelAutoPlay ();
 
 	
 	}
@@ -157,6 +156,7 @@ public class LoadAssetExample : MonoBehaviour {
 		sceneScript =storyBookJson.pages [pageNumber].script;
 		go.AddComponent(Type.GetType(sceneScript));
 		GameObject.Find ("Canvas").GetComponent<GStanzaManager> ().sceneManager = GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager>();
+		GameObject.Find ("SceneManager" + pageNumber).GetComponent<GSManager> ().gameManager = GameObject.Find ("GameManager").GetComponent<GGameManager> ();
 		GameObject.Find("SceneManager"+pageNumber).GetComponent<GSManager>().stanzaManager=GameObject.Find("Canvas").GetComponent<GStanzaManager>();
 		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().myCanvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
 		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().Lbutton = GameObject.FindWithTag ("left_arrow");
@@ -166,8 +166,9 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
     public void LoadStanzaAudio()
-    {
-       GameObject.Find("Canvas").AddComponent<AudioSource>().clip= LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
+	{
+		Destroy (GameObject.Find ("Canvas").GetComponent<AudioSource> ());
+		GameObject.Find("Canvas").AddComponent<AudioSource>().clip= LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
 
     }
 
@@ -222,6 +223,7 @@ public class LoadAssetExample : MonoBehaviour {
             {
                 GameObject text = tinkerTextObjects[triggers[i].textId];
                 GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
+
                 text.GetComponent<GTinkerText>().pairedGraphic = graphic.GetComponent<GTinkerGraphic>();
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
             }
@@ -233,6 +235,7 @@ public class LoadAssetExample : MonoBehaviour {
 	{   startingY = 170.0f;
 		stanzaManager.stanzas.Clear ();
 		j =0;
+		stanzaObjects = new List<GameObject> ();
 		TextClass[] texts= LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
 
 		foreach (TextClass text in texts)          
@@ -278,7 +281,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	GTinkerText CreateText( StanzaObject parent, float x, float y, string textToPrint, int fontSize, Color textColor)
 	{
-		GameObject UItextGO = new GameObject("Text2");
+		GameObject UItextGO = new GameObject(textToPrint);
 		UItextGO.transform.SetParent(parent.transform);
        // Debug.Log(anim.runtimeAnimatorController);
         Text text = UItextGO.AddComponent<Text>();
@@ -314,7 +317,6 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
 
-
     public void CreateGameObject(GameObjectClass gameObjectData)
     {
         Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
@@ -339,12 +341,14 @@ public class LoadAssetExample : MonoBehaviour {
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), anim.animName, anim.numberOfImages);
 
 			if (gameObjectData.anim [0].movable.speed != 0 && gameObjectData.anim [0].onStart) {
-				Movable movable = gameObjectData.anim [0].movable;
-				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, movable);
-			} else if (gameObjectData.anim [0].onStart) {
-				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, null);
+					go.GetComponent<GTinkerGraphic>().movable = gameObjectData.anim [0].movable;
+				    go.GetComponent<GTinkerGraphic> ().PlayAnimation ( 0.25f, anim.isLooping);
+				Debug.Log ("onstart"+gameObjectData.anim [0].onStart);
+			} else if (gameObjectData.anim [0].onStart) {   Debug.Log ("on222start"+gameObjectData.anim [0].movable.ToString());
+				   go.GetComponent<GTinkerGraphic> ().movable = null;
+				   go.GetComponent<GTinkerGraphic> ().PlayAnimation ( 0.25f, anim.isLooping);
 			} else {
-				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
+				  LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 			   
 			}
 		}

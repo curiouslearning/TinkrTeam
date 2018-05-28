@@ -116,15 +116,9 @@ public class GGameManager : MonoBehaviour
 
 		}
 
-			
-			//auto play on start
-		if (stanzaManager != null && read.image.sprite == narrateOn)
-		{
 
-			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
 
-		}
-		}
+	}
 
 
 	void Update()

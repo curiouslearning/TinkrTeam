@@ -4,9 +4,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class Movable
-{public float finalx;
+{
+	public float finalx;
 	public float finaly;
 	public float speed;
-	public string direction;
 	
 }

@@ -47,11 +47,6 @@ public class SceneManager0 : GSManager {
 			GameObject changecolour = GameObject.Find ("cat");
 			changecolour.GetComponent<SpriteRenderer> ().color = red;
 		}
-		GTinkerGraphic tinkerGraphic = go.GetComponent<GTinkerGraphic> ();
-		if (tinkerGraphic != null) {
-
-			tinkerGraphic.MyOnMouseDown ();
-		}
 
 	}
 

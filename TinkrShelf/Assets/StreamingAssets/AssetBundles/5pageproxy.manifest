@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 79506591
+CRC: 3533641791
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 985ca3ebf4077afbd761bc4aaede1bd0
+    Hash: 832cd62e71b6d437dda0266f39c2f45b
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -21,6 +21,7 @@ Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-4.png
 - Assets/Books/BabyD/Sprite/red.png
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-2.png
+- Assets/Books/BabyD/Resources/Audio/VO/child_yellow.mp3
 - Assets/Books/5pageProxy/AnimPNGs/yelloww.png
 - Assets/Books/BabyD/Sprite/blue.png
 - Assets/Books/5pageProxy/AnimPNGs/A01/A01-1.png
@@ -45,11 +46,13 @@ Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-6.png
 - Assets/Books/5pageProxy/AnimPNGs/blue.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_way.mp3
+- Assets/Books/BabyD/Resources/Audio/VO/Stanzas/scene10_child_stanza_red.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_your.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-9.png
 - Assets/Books/BabyD/Resources/JSON/scene11_child_stanza_red.json
 - Assets/Books/BabyD/Resources/Audio/VO/child_tub.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_duck.mp3
+- Assets/Books/BabyD/Resources/Audio/VO/child_blue.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_find.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_go.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A02/A02-06.png
