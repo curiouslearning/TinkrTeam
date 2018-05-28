@@ -162,7 +162,7 @@
 			    {   
 			        System.TimeSpan span = System.DateTime.Now - inTime;
 			        FirebaseHelper.LogInShelfSection (inTime.ToString(), span.ToString());
-					SceneManager.LoadScene (bookscenePath+"/Scene00");
+					SceneManager.LoadScene (bookscenePath+"/Scene01");
 				}
 
 			    private void LoadShelfData()

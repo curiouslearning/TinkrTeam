@@ -8,6 +8,7 @@ using System;
 
 public class LoadAssetExample : MonoBehaviour {
     static AssetBundle bundleloaded;
+
     private string[] allPagesJsons;
     public static StoryBookJson storyBookJson;
     public static int pageNumber;

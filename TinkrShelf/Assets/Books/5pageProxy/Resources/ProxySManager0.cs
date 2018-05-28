@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scenemanager0 : GSManager {
+public class SceneManager0 : GSManager {
 	
 
 

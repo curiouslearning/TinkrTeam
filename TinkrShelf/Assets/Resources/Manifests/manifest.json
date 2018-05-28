@@ -17,15 +17,15 @@
     },
     {
         "bookId": 2,
-        "title": "Frog B story",
+        "title": "Proxy Book",
         "author": "",
         "language": "English (U.S.)",
         "readingLevel": 1, 
         "tags" : [
-                "frog", 
-                "jump"
+                "proxy", 
+                "book"
             ],
-"fileName": "FrogB",
+"fileName": "5pageProxy",
 "pathToThumbnail": "Thumbnail/duck2",
 "version": 1
         },

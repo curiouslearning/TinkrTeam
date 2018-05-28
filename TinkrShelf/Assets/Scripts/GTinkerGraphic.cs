@@ -134,7 +134,7 @@ public class GTinkerGraphic : MonoBehaviour {
 			}
 			else
 			{
-				StartCoroutine("AnimateSprite", ID);
+				StartCoroutine("AnimateSprite");
 			}
 			break;
 		}
