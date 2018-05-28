@@ -22,7 +22,10 @@ public class FirebaseHelper  : MonoBehaviour{
 			if(isConnected){
 			    Debug.Log("internet connection found");
 				text.text = "connected";
-			    LogEvent ();
+
+				//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			    //LogEvent ();
+			
 			}
 			else{
 				Debug.Log("not connected");
@@ -42,11 +45,20 @@ public class FirebaseHelper  : MonoBehaviour{
 		}
 	} 
 
+	public static void AddBook(string name){
+		appID = name;
+	
+	}
+		
+	public static void AddSection(string no){
+		secID = no;
+	}
+
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 	public void LogEvent(){
 
 		string label, type, time, timeEnter;
-		string answer, selection, correct, options;
-		int timeSpent;
+		string answer, selection, correct, options, timeSpent;
 		long count;
 
 		path = DataCollection.GetPath ();
@@ -73,7 +85,7 @@ public class FirebaseHelper  : MonoBehaviour{
 							for (int i = 0; i < count; i++) {
 								timeEnter = dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_SECTION"] [0] ["inTime"];
 								timeSpent = dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_SECTION"] [0] ["timeSpent"];
-								LogInAppSection (tabID, dataToLog [tabID] [app.Key], dataToLog [tabID] [app.Key] [section.Key], timeEnter, timeSpent);
+								LogInAppSection (timeEnter, timeSpent);
 								dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_SECTION"].Remove (0);
 							}
 
@@ -100,7 +112,7 @@ public class FirebaseHelper  : MonoBehaviour{
 								selection = dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_RESPONSE"] [0] ["selection"];
 								time = dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_RESPONSE"] [0] ["timeTaken"];
 								options = dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_RESPONSE"] [0] ["options"].ToString();
-								LogInAppResponse (selection,answer,correct,options,time);
+								LogInAppResponse (selection,answer,options,correct,time);
 								dataToLog [tabID] [app.Key] [section.Key] ["IN_APP_RESPONSE"].Remove (0);
 							}
 						}
@@ -124,7 +136,8 @@ public class FirebaseHelper  : MonoBehaviour{
 		DataCollection.SaveLocalJSON (dataToLog);
 	}
 
-	public static void LogInAppSection(string tabID, string appID, string secID, string timeEnter, int timeSpent){
+	public static void LogInAppSection( string timeEnter, string timeSpent){
+
 		if (timeEnter != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_SECTION",
@@ -144,8 +157,28 @@ public class FirebaseHelper  : MonoBehaviour{
 		}
 	}
 
+	public static void LogInShelfSection( string timeEnter, string timeSpent){
+
+		Debug.Log ("fireOn"+ timeSpent);
+		if (timeEnter != null ) {
+			Firebase.Analytics.FirebaseAnalytics.LogEvent (
+				"IN_APP_SECTION",
+				new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter (
+						"TABLET_ID", tabID),
+					new Firebase.Analytics.Parameter (
+						"APP_ID", "Shelf"),
+					new Firebase.Analytics.Parameter (
+						"TIME_ENTER", timeEnter),
+					new Firebase.Analytics.Parameter (
+						"TIME_SPENT", timeSpent)
+				}
+			);
+		}
+	}
+
 	public static void LogInAppTouch( string label,string type, string timestamp){
-		
+
 		if (label != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_TOUCH",
@@ -168,9 +201,29 @@ public class FirebaseHelper  : MonoBehaviour{
 	}
 
 
+	public static void LogInShelfTouch( string label,string type, string timestamp){
+		Debug.Log ("fire"+ label);
+		if (label != null ) {
+			Firebase.Analytics.FirebaseAnalytics.LogEvent (
+				"IN_APP_TOUCH",
+				new Firebase.Analytics.Parameter[] {
+					new Firebase.Analytics.Parameter (
+						"TABLET_ID", tabID),
+					new Firebase.Analytics.Parameter (
+						"APP_ID", "Shelf"),
+					new Firebase.Analytics.Parameter (
+						"LABEL", label),
+					new Firebase.Analytics.Parameter (
+						"TYPE", type),
+					new Firebase.Analytics.Parameter (
+						"TIMESTAMP", timestamp)
+				}
+			);
+		}
+	}
 
-	public void LogInAppResponse(string selection, string answer,string correct, string options, string timeElapsed){
 
+	public static void LogInAppResponse(string selection, string answer,string options, string correct, string timeElapsed){
 
 		if (answer != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (

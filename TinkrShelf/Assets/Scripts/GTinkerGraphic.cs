@@ -48,11 +48,27 @@ public class GTinkerGraphic : MonoBehaviour {
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
-		Debug.Log (""+time.ToString() + dataTinkerGraphic.label);
-		DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
-        Debug.Log("clicked graphic" + this);
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
+		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
+
+		if (dataTinkerGraphic.anim.Length > 0) {
+			Anim anim = dataTinkerGraphic.anim[0];
+			LoadAssetExample.LoadAssetImages(this, anim.animName, anim.numberOfImages);
+
+			if (dataTinkerGraphic.anim [0].movable.speed != 0 && dataTinkerGraphic.anim [0].onTouch){
+				Movable movable = dataTinkerGraphic.anim [0].movable;
+				PlayAnimation (0, 0.25f, anim.isLooping, movable);
+			} else if (dataTinkerGraphic.anim [0].onTouch) {
+				PlayAnimation (0, 0.25f, anim.isLooping, null);
+			} 
+		
+		}
+
 		sceneManager.OnMouseDown(this);
     }
+
+
 
 	// Paired TinkerText Mouse Down Event
 	public void OnPairedMouseDown(GTinkerText tinkerText)

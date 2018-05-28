@@ -38,7 +38,8 @@ public class LoadAssetExample : MonoBehaviour {
 	private bool autoPlaying = false;
 	private bool cancelAutoPlay = false;
 
-	public DataCollection dataCollector;
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+	//public DataCollection dataCollector;
 
     public void Awake()
     {
@@ -59,8 +60,11 @@ public class LoadAssetExample : MonoBehaviour {
 
             }
 		}
-		dataCollector.LoadLocalJSON ();
-		dataCollector.AddNewBook ("5PageProxy");
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//dataCollector.LoadLocalJSON ();
+		//dataCollector.AddNewBook ("5PageProxy");
+
+		FirebaseHelper.AddBook("5PageProxy");
 		LoadStoryData ("5PageProxy.json");
     }
 
@@ -79,7 +83,12 @@ public class LoadAssetExample : MonoBehaviour {
 	public void LoadNextPage()
 	{
 		TimeSpan span = ( DateTime.Now- inTime );
-		DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
 		if (pageNumber > 4) {
@@ -92,7 +101,12 @@ public class LoadAssetExample : MonoBehaviour {
 	public void LoadPreviousPage()
 	{
 		TimeSpan span = ( DateTime.Now- inTime );
-		DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber--;
 		if(pageNumber<0){
@@ -119,7 +133,9 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 	public void LoadCompletePage()
 	{   
-		dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
+		FirebaseHelper.AddSection(pageNumber.ToString());
 		inTime = DateTime.Now;
 		LoadSceneSpecificScript ();
 		LoadPageData(pageNumber);
@@ -322,15 +338,14 @@ public class LoadAssetExample : MonoBehaviour {
 			Anim anim = gameObjectData.anim[0];
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), anim.animName, anim.numberOfImages);
 
-			if (gameObjectData.anim[0].movable.speed!=0)
-			{
-				Movable movable = gameObjectData.anim[0].movable;
-				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, movable);
-			}
-			else
-			{
-				Debug.Log("helllooooooooo");
-				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, null);
+			if (gameObjectData.anim [0].movable.speed != 0 && gameObjectData.anim [0].onStart) {
+				Movable movable = gameObjectData.anim [0].movable;
+				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, movable);
+			} else if (gameObjectData.anim [0].onStart) {
+				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, null);
+			} else {
+				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
+			   
 			}
 		}
 		else
@@ -355,7 +370,7 @@ public class LoadAssetExample : MonoBehaviour {
         sr.sprite = sprite;
     }
 
-	public void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
+	public static void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
 	{
 
 		tinkerGraphic.sprites= new Sprite[length];
@@ -366,6 +381,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		}     
 	}
+
     public void LoadScene()
     {
         if (!bundleloaded)

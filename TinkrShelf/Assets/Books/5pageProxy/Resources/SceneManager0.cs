@@ -22,11 +22,15 @@ public class SceneManager0 : GSManager {
 		base.OnMouseDown (go);      
 
 		if (go == cat1) {
-			DataCollection.AddInResponseData (cat1.name, cat1.name, options, true, System.DateTime.Now.ToString ());
-			Debug.Log ("red");
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInResponseData (cat1.name, cat1.name, options, true, System.DateTime.Now.ToString ());
+
+			FirebaseHelper.LogInAppResponse (cat1.name, cat1.name, options.ToString(), "yes", System.DateTime.Now.ToString ());
 
 		} else if(go == cat2 || go == cat3){
-			DataCollection.AddInResponseData (go.name, cat1.name, options, false, System.DateTime.Now.ToString ());
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInResponseData (go.name, cat1.name, options, false, System.DateTime.Now.ToString ());
+			FirebaseHelper.LogInAppResponse(go.name,cat1.name, options.ToString(), "no", System.DateTime.Now.ToString ());
 			Debug.Log ("not red");
 		}
 

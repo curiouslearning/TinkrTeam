@@ -28,7 +28,7 @@
 					"draggable": false,
 					"anim": null
 				},
-				{"id": 2,
+			 	{"id": 2,
 					"posX": 0.93,
 					"posY": 0.2,
 					"scaleX": 0.09,
@@ -356,6 +356,8 @@
 							"animName": "A03",
 							"numberOfImages": 9,
 							"isLooping": true,
+							"onTouch":false,
+							"onStart":true,
                             "movable":
 							{
 							     "finalx":1.12,
@@ -382,7 +384,9 @@
 							"id": 1,
 							"animName": "A01",
 							"numberOfImages": 4,
-							"isLooping": true,
+							"isLooping": false,
+							"onTouch":true,
+							"onStart":true,
 							"movable":{
 							 "speed":0
 							}

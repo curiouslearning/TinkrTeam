@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1194260970
+CRC: 79506591
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a708b5941210a4f30a3a24a69d615409
+    Hash: 985ca3ebf4077afbd761bc4aaede1bd0
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -21,6 +21,7 @@ Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-4.png
 - Assets/Books/BabyD/Sprite/red.png
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-2.png
+- Assets/Books/5pageProxy/AnimPNGs/yelloww.png
 - Assets/Books/BabyD/Sprite/blue.png
 - Assets/Books/5pageProxy/AnimPNGs/A01/A01-1.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_name.mp3
@@ -34,6 +35,7 @@ Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-8.png
 - Assets/Books/5pageProxy/AnimPNGs/A01/A01-4.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_a.mp3
+- Assets/Books/5pageProxy/AnimPNGs/red.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_baby.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-7.png
 - Assets/Books/5pageProxy/AnimPNGs/A02/A02-03.png
@@ -41,6 +43,7 @@ Assets:
 - Assets/Books/BabyD/Resources/Audio/VO/child_will.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_rub.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-6.png
+- Assets/Books/5pageProxy/AnimPNGs/blue.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_way.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_your.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-9.png
