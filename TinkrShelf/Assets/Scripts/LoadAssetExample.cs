@@ -338,15 +338,14 @@ public class LoadAssetExample : MonoBehaviour {
 			Anim anim = gameObjectData.anim[0];
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), anim.animName, anim.numberOfImages);
 
-			if (gameObjectData.anim[0].movable.speed!=0)
-			{
-				Movable movable = gameObjectData.anim[0].movable;
-				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, movable);
-			}
-			else
-			{
-				Debug.Log("helllooooooooo");
-				go.GetComponent<GTinkerGraphic>().PlayAnimation(0, 0.25f, anim.isLooping, null);
+			if (gameObjectData.anim [0].movable.speed != 0 && gameObjectData.anim [0].onStart) {
+				Movable movable = gameObjectData.anim [0].movable;
+				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, movable);
+			} else if (gameObjectData.anim [0].onStart) {
+				go.GetComponent<GTinkerGraphic> ().PlayAnimation (0, 0.25f, anim.isLooping, null);
+			} else {
+				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
+			   
 			}
 		}
 		else
@@ -371,7 +370,7 @@ public class LoadAssetExample : MonoBehaviour {
         sr.sprite = sprite;
     }
 
-	public void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
+	public static void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
 	{
 
 		tinkerGraphic.sprites= new Sprite[length];
@@ -382,6 +381,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		}     
 	}
+
     public void LoadScene()
     {
         if (!bundleloaded)

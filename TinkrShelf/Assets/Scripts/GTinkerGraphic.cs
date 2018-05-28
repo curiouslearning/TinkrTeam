@@ -52,8 +52,23 @@ public class GTinkerGraphic : MonoBehaviour {
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
 
+		if (dataTinkerGraphic.anim.Length > 0) {
+			Anim anim = dataTinkerGraphic.anim[0];
+			LoadAssetExample.LoadAssetImages(this, anim.animName, anim.numberOfImages);
+
+			if (dataTinkerGraphic.anim [0].movable.speed != 0 && dataTinkerGraphic.anim [0].onTouch){
+				Movable movable = dataTinkerGraphic.anim [0].movable;
+				PlayAnimation (0, 0.25f, anim.isLooping, movable);
+			} else if (dataTinkerGraphic.anim [0].onTouch) {
+				PlayAnimation (0, 0.25f, anim.isLooping, null);
+			} 
+		
+		}
+
 		sceneManager.OnMouseDown(this);
     }
+
+
 
 	// Paired TinkerText Mouse Down Event
 	public void OnPairedMouseDown(GTinkerText tinkerText)

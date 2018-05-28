@@ -69,7 +69,6 @@ public class DataCollection : MonoBehaviour {
 	public static void SaveLocalJSON(JSONNode node)
 	{
 		File.WriteAllText (Application.persistentDataPath + "/JSONData.json", node.ToString() );
-		Debug.Log ("written");
 		Debug.Log ("saved: "+node.ToString());
 	}
 

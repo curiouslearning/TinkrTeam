@@ -54,6 +54,7 @@ public class FirebaseHelper  : MonoBehaviour{
 		secID = no;
 	}
 
+	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 	public void LogEvent(){
 
 		string label, type, time, timeEnter;
