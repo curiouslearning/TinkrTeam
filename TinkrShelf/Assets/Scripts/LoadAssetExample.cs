@@ -232,7 +232,8 @@ public class LoadAssetExample : MonoBehaviour {
    
 
 	public void LoadStanzaData()
-	{   startingY = 170.0f;
+	{   
+		startingY = 170.0f;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();

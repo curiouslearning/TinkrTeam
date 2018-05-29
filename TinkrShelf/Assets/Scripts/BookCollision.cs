@@ -46,7 +46,7 @@
 	        {
 	            this.gameObject.GetComponent<BookObject>().position = 3;
 				this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (12, 12, 0);
-				loadImageandText (this.gameObject.GetComponent<BookObject> ());
+				LoadImageandText (this.gameObject.GetComponent<BookObject> ());
 				var bookVar = this.gameObject.GetComponent<BookObject> ();
 				bookName = bookVar.book.fileName;
 				bookName += "/";
