@@ -255,7 +255,7 @@
 					"text": "He will find the way"
 				}
 			],
-			"audioFile": "scene11_child_stanza_red.mp3",
+			"audioFile": "scene10_child_stanza_red.mp3",
 			"timestamps": [
 				{
 					"start": "155",
@@ -356,14 +356,13 @@
 							"animName": "A03",
 							"numberOfImages": 9,
 							"isLooping": true,
-							"onTouch":false,
-							"onStart":true,
+							"onTouch":true,
+							"onStart":false,
                             "movable":
 							{
-							     "finalx":1.12,
+							     "finalx":1.2,
 								 "finaly":-0.3,
-								 "speed":0.10,
-								 "direction":"right"
+								 "speed":-0.10
 							}
 						}
 					]

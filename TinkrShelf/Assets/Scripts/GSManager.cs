@@ -80,9 +80,18 @@ public class GSManager :  MonoBehaviour {
 		//Lbutton.GetComponent<Button>().interactable = false;
 		Rbutton.GetComponent<Button>().interactable = false;
 
+		StartCoroutine ("PlayStanzaAudio");
 	}
 
-	
+
+	IEnumerator PlayStanzaAudio(){
+		yield return new  WaitForSeconds(1);
+		if (stanzaManager != null && gameManager!= null && gameManager.read.image.sprite == gameManager.narrateOn)
+		{
+			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
+		}
+	}
+
 	public bool IsInputAllowed()
 	{
 		if (inputAllowedDuringAutoplay)
@@ -101,7 +110,6 @@ public class GSManager :  MonoBehaviour {
 	public virtual void OnMouseDown(GameObject go)
 	{   
 		countDownEvent++;
-		Debug.Log (countDownEvent);
 		if (countDownEvent == 2)
 			EnableButtons();
             // Lock out other input during auto play?
