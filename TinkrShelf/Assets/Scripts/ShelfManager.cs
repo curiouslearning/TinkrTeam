@@ -36,7 +36,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     //for data collection
     private System.DateTime inTime;	
 
-	private const string url = "https://api.myjson.com/bins/sulqm";
+	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/manifest.json";
     private string responseJson;
     private bool isServerJson = false;
 
@@ -190,7 +190,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {   
         System.TimeSpan span = System.DateTime.Now - inTime;
         FirebaseHelper.LogInShelfSection (inTime.ToString(), span.ToString());
-		SceneManager.LoadScene (bookscenePath+"/Scene00");
+		SceneManager.LoadScene (bookscenePath+"/Scene01");
 	}
 
     private void LoadShelfData()

@@ -2,21 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
-public class GTinkerGraphic : MonoBehaviour {
+public class GTinkerGraphic : MonoBehaviour{
     public GameObjectClass dataTinkerGraphic;
    // private Animator anim;
     public GTinkerText pairedText1;
     public GTinkerText pairedText2;
 	public GSManager sceneManager;
-	private bool  draggable;
 	public Canvas myCanvas;
+
 	public Sprite[] sprites;
 	private int currentframe=0;
-	private float SecPerFrame = 0.25f;
-	private bool isLooping = false;
-	public Movable movable; 
 	public SpriteRenderer spr;
+
+	public Sequence[] sequences;
+	private int seqIterator;
+	public float[] secPerFrame;
 
 	// Reset and highlight colors defaults (change from scene manager subclasses)
 	public Color resetColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
@@ -32,32 +34,32 @@ public class GTinkerGraphic : MonoBehaviour {
         //anim = GetComponent<Animator>();
     }
 
-   
+
 	public void SetDraggable(bool value){
-		draggable = value;
+		dataTinkerGraphic.draggable = value;
 	}
 
 	public bool GetDraggable(){
-		return draggable;
+		return dataTinkerGraphic.draggable;
 	}
 	
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
+
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
+
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
 
 		if (dataTinkerGraphic.anim.Length > 0) {
-			Anim anim = dataTinkerGraphic.anim[0];
-			LoadAssetExample.LoadAssetImages(this, anim.animName, anim.numberOfImages);
-
-			if (dataTinkerGraphic.anim [0].movable.speed != 0 && dataTinkerGraphic.anim [0].onTouch){
-				movable = dataTinkerGraphic.anim [0].movable;
-				PlayAnimation ( 0.25f, anim.isLooping);
-			} else if (dataTinkerGraphic.anim [0].onTouch) {
-				movable = null;
-				PlayAnimation ( 0.25f, anim.isLooping);
+			
+			if (dataTinkerGraphic.anim [0].onTouch) {
+				
+				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
+				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
+				sequences = dataTinkerGraphic.anim [0].sequences;
+				PlayAnimation();
 			} 
 		
 		}
@@ -109,30 +111,68 @@ public class GTinkerGraphic : MonoBehaviour {
 		return transform.position;
 	}
 
-	public void PlayAnimation( float secPerFrame, bool isLooping)
-	{
-		SecPerFrame = secPerFrame;
-		this.isLooping = isLooping;
-		StopCoroutine("AnimateandMove");
-		StopCoroutine("AnimateSprite");
-		currentframe = 0;
-		if (movable != null) {
-			StartCoroutine ("AnimateandMove");
-		} else {
-			StartCoroutine ("AnimateSprite");
-		}
+	public void PlayAnimation(){
+		StopCoroutine ("Animate");
+		StartCoroutine("Animate");
 	}
 
-	IEnumerator AnimateandMove()
+
+	IEnumerator Animate()
+	{
+		currentframe = 0;
+		int i = 1;
+
+		for (seqIterator = 0; seqIterator < sequences.Length; seqIterator++) {
+			
+			//animate for non moving sequences of PNGs
+			if (sequences [seqIterator].movable.speed == 0 ) {
+				i = 1;       //count the number of loops from start for every sequence!
+				while (i <= sequences [seqIterator].noOfLoops) {
+					for (currentframe = sequences [seqIterator].startFrame; currentframe <= sequences [seqIterator].endFrame; currentframe++) {
+						spr.sprite = sprites [currentframe];
+						yield return new WaitForSeconds (secPerFrame [currentframe]);
+					}
+					i++;
+
+				}
+			}
+			//animate for nmoving sequences of PNGs
+			else {
+				currentframe = sequences [seqIterator].startFrame;
+				while (transform.position.x < sequences [seqIterator].movable.finalx) {
+					spr.sprite = sprites[currentframe];
+					yield return new WaitForSeconds(secPerFrame[currentframe]);
+					currentframe++;
+					var posx = transform.position.x;
+					posx += sequences [seqIterator].movable.speed;
+					transform.position = new Vector3(posx, this.transform.position.y, 0);
+
+					//loop if we reached the end frame but not the final posiiton!
+					if (currentframe > sequences [seqIterator].endFrame)
+					{
+						currentframe = sequences [seqIterator].startFrame;
+					} 
+				
+				}
+
+				spr.sprite = sprites[sequences [seqIterator].endFrame];
+			}
+
+
+		}
+		yield break;
+	}
+
+	/*IEnumerator AnimateAndMove()
 	{   
 		if(transform.position.x>=movable.finalx)
 		{
 			spr.sprite = sprites[sprites.Length -1];
 			yield break;
 		}
-		yield return new WaitForSeconds(SecPerFrame);
-		Debug.Log (spr.sprite);
 		spr.sprite = sprites[currentframe];
+		Debug.Log ("waited for move:"+secPerFrame[currentframe]);
+		yield return new WaitForSeconds(secPerFrame[currentframe]);
 		currentframe++;
 		var posx = transform.position.x;
 		posx += movable.speed;
@@ -144,13 +184,14 @@ public class GTinkerGraphic : MonoBehaviour {
 				currentframe = 0;
 			}
 		}
-		StartCoroutine("AnimateandMove");
+		StartCoroutine("AnimateAndMove");
 	}
 
 	IEnumerator AnimateSprite()
 	{
-			yield return new WaitForSeconds(SecPerFrame);
-			spr.sprite = sprites[currentframe];
+		    spr.sprite = sprites[currentframe];
+	    	Debug.Log ("waited for sprite:"+secPerFrame[currentframe]);
+		    yield return new WaitForSeconds(secPerFrame[currentframe]);
 			currentframe++;
 			if (currentframe >= sprites.Length)
 			{
@@ -164,5 +205,5 @@ public class GTinkerGraphic : MonoBehaviour {
 				}
 			}
 			StartCoroutine("AnimateSprite");
-		}
+		}*/
 }
