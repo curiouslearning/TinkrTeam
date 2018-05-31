@@ -331,23 +331,20 @@ public class LoadAssetExample : MonoBehaviour {
 		go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
 		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
 		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);//go.AddComponent<Collider>();
+		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
 		BoxCollider col = go.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		col.size = new Vector2(1, 1);
         if (gameObjectData.anim.Length >0)
         {
+			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);
+			go.GetComponent<GTinkerGraphic> ().secPerFrame = gameObjectData.anim [0].secPerFrame;
 
-			Anim anim = gameObjectData.anim[0];
-			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), anim.animName, anim.numberOfImages);
+			if ( gameObjectData.anim [0].onStart) {
 
-			if (gameObjectData.anim [0].movable.speed != 0 && gameObjectData.anim [0].onStart) {
-					go.GetComponent<GTinkerGraphic>().movable = gameObjectData.anim [0].movable;
-				    go.GetComponent<GTinkerGraphic> ().PlayAnimation ( 0.25f, anim.isLooping);
-				Debug.Log ("onstart"+gameObjectData.anim [0].onStart);
-			} else if (gameObjectData.anim [0].onStart) {   Debug.Log ("on222start"+gameObjectData.anim [0].movable.ToString());
-				   go.GetComponent<GTinkerGraphic> ().movable = null;
-				   go.GetComponent<GTinkerGraphic> ().PlayAnimation ( 0.25f, anim.isLooping);
+				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
+				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
+				go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
 				  LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 			   

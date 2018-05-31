@@ -6,8 +6,8 @@ public class Anim  {
     public int id;
     public string animName;
     public int numberOfImages;
-    public bool isLooping;
 	public bool onTouch;
 	public bool onStart;
-	public Movable movable;
+	public float[] secPerFrame;
+	public Sequence[] sequences; 
 }

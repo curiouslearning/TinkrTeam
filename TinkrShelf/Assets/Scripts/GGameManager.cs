@@ -254,8 +254,10 @@ public class GGameManager : MonoBehaviour
 	public void DownClick()
 	{   
 		DateTime time = DateTime.Now;
+
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("DownMenu", "button", time.ToString());
+
 		FirebaseHelper.LogInAppTouch("DownMenu","button",time.ToString());
 		dropContainer.SetActive (false);
 		menuContainer.SetActive (true);
