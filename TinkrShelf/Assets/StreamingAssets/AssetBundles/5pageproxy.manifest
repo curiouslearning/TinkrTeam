@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1515723641
+CRC: 3095093858
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1e4f77138fdbbfa611862e31e685cb6f
+    Hash: 2848ef65dfdeed5d4d96dbb1b43fb12e
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -19,11 +19,11 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-4.png
-- Assets/Books/BabyD/Sprite/red.png
+- Assets/Books/BabyD/Iconanimations/Sprite/red.png
 - Assets/Books/5pageProxy/AnimPNGs/A03/A03-2.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_yellow.mp3
 - Assets/Books/5pageProxy/AnimPNGs/yelloww.png
-- Assets/Books/BabyD/Sprite/blue.png
+- Assets/Books/BabyD/Iconanimations/Sprite/blue.png
 - Assets/Books/5pageProxy/AnimPNGs/A01/A01-1.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_name.mp3
 - Assets/Books/BabyD/Resources/Audio/VO/child_you.mp3
@@ -76,7 +76,7 @@ Assets:
 - Assets/Books/5pageProxy/AnimPNGs/A02/A02-04.png
 - Assets/Books/BabyD/Resources/Audio/VO/child_what.mp3
 - Assets/Books/5pageProxy/AnimPNGs/A09/A09-7.png
-- Assets/Books/BabyD/Sprite/yelloww.png
+- Assets/Books/BabyD/Iconanimations/Sprite/yelloww.png
 - Assets/Books/5pageProxy/AnimPNGs/A09/A09-8.png
 - Assets/Books/5pageProxy/AnimPNGs/A02/A02-02.png
 - Assets/Books/5pageProxy/AnimPNGs/A01/A01-2.png
