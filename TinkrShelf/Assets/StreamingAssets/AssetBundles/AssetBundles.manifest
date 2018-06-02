@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 4210058807
+CRC: 1478850307
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: 5pageproxy
+      Dependencies: {}
+    Info_1:
+      Name: catstory
       Dependencies: {}

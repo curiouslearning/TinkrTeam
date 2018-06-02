@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class GTinkerGraphic : MonoBehaviour{
-    public GameObjectClass dataTinkerGraphic;
-   // private Animator anim;
-    public GTinkerText pairedText1;
-    public GTinkerText pairedText2;
+	public GameObjectClass dataTinkerGraphic;
+	// private Animator anim;
+	public GTinkerText pairedText1;
+	public GTinkerText pairedText2;
 	public GSManager sceneManager;
 	public Canvas myCanvas;
 
@@ -29,10 +29,10 @@ public class GTinkerGraphic : MonoBehaviour{
 		spr = GetComponent<SpriteRenderer>();
 	}
 
-    // Use this for initialization
-    void Start () {
-        //anim = GetComponent<Animator>();
-    }
+	// Use this for initialization
+	void Start () {
+		//anim = GetComponent<Animator>();
+	}
 
 
 	public void SetDraggable(bool value){
@@ -42,7 +42,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	public bool GetDraggable(){
 		return dataTinkerGraphic.draggable;
 	}
-	
+
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
@@ -51,21 +51,9 @@ public class GTinkerGraphic : MonoBehaviour{
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
 
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
-
-		if (dataTinkerGraphic.anim.Length > 0) {
-			
-			if (dataTinkerGraphic.anim [0].onTouch) {
-				
-				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
-				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
-				sequences = dataTinkerGraphic.anim [0].sequences;
-				PlayAnimation();
-			} 
-		
-		}
-
+		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
-    }
+	}
 
 
 
@@ -73,6 +61,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseDown(tinkerText);
+		LoadAndPlayAnimation ();
 	}
 
 	// Mouse Currently Down Event
@@ -92,26 +81,45 @@ public class GTinkerGraphic : MonoBehaviour{
 	{
 		sceneManager.OnMouseUp(this);
 	}
-    
+
 	// Paired TinkerText Mouse Up Event
 	public void OnPairedMouseUp(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseUp(tinkerText);
 	}
-		
+
 
 	public void MoveObject(){
 		Vector2 pos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
-        transform.position = myCanvas.transform.TransformPoint(pos);
-        //transform.position = Input.mousePosition;
-    }
+		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
+		transform.position = myCanvas.transform.TransformPoint(pos);
+		//transform.position = Input.mousePosition;
+	}
 
 	public Vector2 GetCoordinates(){
 		return transform.position;
 	}
 
+
+	public void LoadAndPlayAnimation(){
+
+		if (dataTinkerGraphic.anim.Length > 0) {
+
+			if (dataTinkerGraphic.anim [0].onTouch) {
+
+				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
+				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
+				sequences = dataTinkerGraphic.anim [0].sequences;
+				PlayAnimation();
+
+			} 
+
+		}
+
+	}
+
 	public void PlayAnimation(){
+
 		StopCoroutine ("Animate");
 		StartCoroutine("Animate");
 	}
@@ -123,7 +131,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		int i = 1;
 
 		for (seqIterator = 0; seqIterator < sequences.Length; seqIterator++) {
-			
+
 			//animate for non moving sequences of PNGs
 			if (sequences [seqIterator].movable.speed == 0 ) {
 				i = 1;       //count the number of loops from start for every sequence!
@@ -152,7 +160,7 @@ public class GTinkerGraphic : MonoBehaviour{
 					{
 						currentframe = sequences [seqIterator].startFrame;
 					} 
-				
+
 				}
 
 				spr.sprite = sprites[sequences [seqIterator].endFrame];
