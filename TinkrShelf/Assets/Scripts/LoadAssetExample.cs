@@ -54,7 +54,7 @@ public class LoadAssetExample : MonoBehaviour {
 
         if (!bundleloaded)
         {
-            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));
+			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/"+ShelfManager.selectedBook.ToLower()));
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
@@ -65,8 +65,8 @@ public class LoadAssetExample : MonoBehaviour {
 		//dataCollector.LoadLocalJSON ();
 		//dataCollector.AddNewBook ("5PageProxy");
 
-		FirebaseHelper.AddBook("CatStory");
-		LoadStoryData ("CatStory.json");
+		FirebaseHelper.AddBook(ShelfManager.selectedBook);
+		LoadStoryData (ShelfManager.selectedBook+".json");
     }
 
     void Start () {
@@ -286,7 +286,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	GTinkerText CreateText( StanzaObject parent, float x, float y, string textToPrint, int fontSize, Color textColor)
 	{
-		GameObject UItextGO = new GameObject(textToPrint);
+		GameObject UItextGO = new GameObject("Text_"+textToPrint);
 		UItextGO.transform.SetParent(parent.transform);
        // Debug.Log(anim.runtimeAnimatorController);
         Text text = UItextGO.AddComponent<Text>();
@@ -349,7 +349,6 @@ public class LoadAssetExample : MonoBehaviour {
 
 				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
 				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
-				Debug.Log (gameObjectData.anim [0].sequences + "heeereee  ");
 				go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
 				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());

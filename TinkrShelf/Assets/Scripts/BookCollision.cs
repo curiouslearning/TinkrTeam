@@ -7,7 +7,8 @@
 	using System.Collections;
 
 	public class BookCollision : ShelfManager
-	{  public string bookName="";
+	{  
+	    public string bookName="";
 	    public static GameObject bookenter = null;
 	    public static GameObject bookexit = null;
 
@@ -49,6 +50,8 @@
 				LoadImageandText (this.gameObject.GetComponent<BookObject> ());
 				var bookVar = this.gameObject.GetComponent<BookObject> ();
 				bookName = bookVar.book.fileName;
+			    // first store the name to reference while loading the assets of book!
+			    selectedBook = bookName;
 				bookName += "/";
 				string filePath = Path.Combine ("Books/", bookName);
 				bookscenePath = Path.Combine(filePath,"Scenes");

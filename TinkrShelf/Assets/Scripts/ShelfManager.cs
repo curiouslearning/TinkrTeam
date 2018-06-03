@@ -35,10 +35,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     //for data collection
     private System.DateTime inTime;	
-
-	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/manifest.json";
+	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/Manifests/manifest.json";
     private string responseJson;
     private bool isServerJson = false;
+
+	public static string selectedBook;
 
 
 	void Awake()
@@ -66,6 +67,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		}
 		LoadShelfData();
 
+		// first store the name to reference while loading the assets of book!
+		selectedBook = bookInfos[2].GetComponent<BookObject>().book.fileName;
+		string filePath = Path.Combine ("Books/", selectedBook+"/");
+		bookscenePath = Path.Combine(filePath,"Scenes");
 		//loading inital center book on first time loading of shelf
 		LoadImageandText(bookInfos[2]);
 
@@ -156,7 +161,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
 	{    
 		GameObject go = eventData.pointerCurrentRaycast.gameObject;
-		Debug.Log (go.name);
 
 		if (go.name == "Cover" )
 		 {
@@ -189,7 +193,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public void LoadCentreBook()
     {   
         System.TimeSpan span = System.DateTime.Now - inTime;
-        FirebaseHelper.LogInShelfSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInShelfSection (inTime.ToString (), span.ToString ());
 		SceneManager.LoadScene (bookscenePath+"/Scene01");
 	}
 
@@ -240,6 +244,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
                     break;
                 }
             }
+
 		}
 		else
 		{

@@ -159,7 +159,6 @@ public class FirebaseHelper  : MonoBehaviour{
 
 	public static void LogInShelfSection( string timeEnter, string timeSpent){
 
-		Debug.Log ("fireOn"+ timeSpent);
 		if (timeEnter != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_SECTION",
@@ -201,7 +200,6 @@ public class FirebaseHelper  : MonoBehaviour{
 
 
 	public static void LogInShelfTouch( string label,string type, string timestamp){
-		Debug.Log ("fire"+ label);
 		if (label != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_TOUCH",
