@@ -30,7 +30,7 @@ public class CatSManager7 : GSManager {
 	}
 	public IEnumerator SetGameObject ()
 	{
-		yield return new WaitForSeconds (1.5f);
+		yield return new WaitForSeconds (2.5f);
 		GameObject.Find ("Ham").SetActive (false);
 	}
 }

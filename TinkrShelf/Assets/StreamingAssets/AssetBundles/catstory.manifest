@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2560261315
+CRC: 437423499
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8c61136a104bc2a700b27ce15ec190ad
+    Hash: 27c2bc4119d91419c504a38f7cfc89b5
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -32,7 +32,6 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A11a/A11a-3.png
 - Assets/Books/CatStory/AnimPNGs/A03b/A03b-4.png
 - Assets/Books/CatStory/AnimPNGs/A05/A05-3.png
-- Assets/Books/CatStory/AnimPNGs/A16b/A16b-4.png
 - Assets/Books/CatStory/AnimPNGs/A12/A12-1.png
 - Assets/Books/CatStory/AnimPNGs/A03/A03-9.png
 - Assets/Books/CatStory/AnimPNGs/A16/A16-1.png
@@ -66,13 +65,14 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A02/A02-2.png
 - Assets/Books/CatStory/AnimPNGs/A04/A04-4.png
 - Assets/Books/CatStory/AnimPNGs/A11/A11-2.png
+- Assets/Books/CatStory/AnimPNGs/A16/A16-4.png
 - Assets/Books/CatStory/AnimPNGs/A15/A15-7.png
 - Assets/Books/CatStory/AnimPNGs/A03/A03-1.png
 - Assets/Books/CatStory/AnimPNGs/A13/A13-2.png
 - Assets/Books/CatStory/Audio/SingleWord/Jam.mp3
 - Assets/Books/CatStory/AnimPNGs/A16/A16-2.png
-- Assets/Books/CatStory/AnimPNGs/A16b/A16b-1.png
 - Assets/Books/CatStory/AnimPNGs/A04/A04-1.png
+- Assets/Books/CatStory/AnimPNGs/A16/A16-6.png
 - Assets/Books/CatStory/AnimPNGs/A10/A10-5.png
 - Assets/Books/CatStory/AnimPNGs/A09/A09-3.png
 - Assets/Books/CatStory/AnimPNGs/A02/A02-1.png
@@ -86,6 +86,7 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A12/A12-6.png
 - Assets/Books/CatStory/Audio/SingleWord/Mat.mp3
 - Assets/Books/CatStory/Audio/SingleWord/Sam.mp3
+- Assets/Books/CatStory/AnimPNGs/A16/A16-5.png
 - Assets/Books/CatStory/AnimPNGs/A06/A06-3.png
 - Assets/Books/CatStory/AnimPNGs/A11/A11-3.png
 - Assets/Books/CatStory/AnimPNGs/A15/A15-2.png
@@ -100,7 +101,6 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A10/A10-2.png
 - Assets/Books/CatStory/AnimPNGs/A03/A03-5.png
 - Assets/Books/CatStory/AnimPNGs/A08/A08-4.png
-- Assets/Books/CatStory/AnimPNGs/A16b/A16b-2.png
 - Assets/Books/CatStory/AnimPNGs/A09/A09-8.png
 - Assets/Books/CatStory/AnimPNGs/A07/A07-8.png
 - Assets/Books/CatStory/AnimPNGs/A17/A17-4.png
@@ -117,7 +117,6 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A08/A08-3.png
 - Assets/Books/CatStory/Audio/SingleWord/Cat.mp3
 - Assets/Books/CatStory/AnimPNGs/A05/A05-2.png
-- Assets/Books/CatStory/AnimPNGs/A16b/A16b-3.png
 - Assets/Books/CatStory/AnimPNGs/A15/A15-1.png
 - Assets/Books/CatStory/AnimPNGs/A10/A10-1.png
 - Assets/Books/CatStory/AnimPNGs/A15/A15-6.png
