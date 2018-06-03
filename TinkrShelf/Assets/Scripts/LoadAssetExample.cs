@@ -15,7 +15,7 @@ public class LoadAssetExample : MonoBehaviour {
     public List<GameObject> tinkerGraphicObjects;
     public List<GameObject> tinkerTextObjects;
 	public List<GameObject> stanzaObjects;
-
+    
     private string[] allStanzaJsons;
 	private string page;
 	public GameObject right;
@@ -25,7 +25,7 @@ public class LoadAssetExample : MonoBehaviour {
 	Font font;
 	Transform canvasTransform;
 
-	private int i,j;
+	private int noOfPages, i,j;
 	float width=0.0f, startingX, startingY, startingXText, startingYText;
 	float height = 32.94f;  //height of text:32.94
 	private readonly float minWordSpace = 15.0f;
@@ -44,16 +44,17 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		startingX = -400.0f;
-		startingY = 170.0f;   //abhi ke liye static
+		startingX = -100.0f;
+		startingY = 200.0f;   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
-		font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
+		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
         {
-            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/5pageproxy"));
+            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
@@ -64,8 +65,8 @@ public class LoadAssetExample : MonoBehaviour {
 		//dataCollector.LoadLocalJSON ();
 		//dataCollector.AddNewBook ("5PageProxy");
 
-		FirebaseHelper.AddBook("5PageProxy");
-		LoadStoryData ("5PageProxy.json");
+		FirebaseHelper.AddBook("CatStory");
+		LoadStoryData ("CatStory.json");
     }
 
     void Start () {
@@ -77,10 +78,13 @@ public class LoadAssetExample : MonoBehaviour {
         TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
+		noOfPages = storyBookJson.pages.Length;
+		left.SetActive (false);
 		LoadCompletePage ();
     }
 	public void LoadNextPage()
-	{
+	{   
+		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -90,7 +94,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
-		if (pageNumber > 4) {
+		if (pageNumber == noOfPages) {
 			right.SetActive (false);
 		}
 		EmptyPage ();
@@ -108,7 +112,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber--;
-		if(pageNumber<0){
+		if(pageNumber==0){
 			left.SetActive (false);
 		}
 		EmptyPage ();
@@ -233,7 +237,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	public void LoadStanzaData()
 	{   
-		startingY = 170.0f;
+		startingY = 200.0f;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
@@ -286,8 +290,9 @@ public class LoadAssetExample : MonoBehaviour {
 		UItextGO.transform.SetParent(parent.transform);
        // Debug.Log(anim.runtimeAnimatorController);
         Text text = UItextGO.AddComponent<Text>();
+
 		text.text = textToPrint;
-		text.fontSize = fontSize;
+		text.fontSize = 80;
 		text.color = textColor;
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);
@@ -318,15 +323,15 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
 
-    public void CreateGameObject(GameObjectClass gameObjectData)
-    {
-        Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
-        Vector3 scale = new Vector3(gameObjectData.scaleX, gameObjectData.scaleY);
-        GameObject go = new GameObject(gameObjectData.label);
-        go.transform.position=position;
-        go.transform.localScale = scale;
-        go.AddComponent<SpriteRenderer>();
-        go.GetComponent<SpriteRenderer>().sortingOrder = gameObjectData.orderInLayer;
+	public void CreateGameObject(GameObjectClass gameObjectData)
+	{
+		Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
+		Vector3 scale = new Vector3(gameObjectData.scaleX, gameObjectData.scaleY);
+		GameObject go = new GameObject(gameObjectData.label);
+		go.transform.position=position;
+		go.transform.localScale = scale;
+		go.AddComponent<SpriteRenderer>();
+		go.GetComponent<SpriteRenderer>().sortingOrder = gameObjectData.orderInLayer;
 		go.AddComponent<GTinkerGraphic>();
 		go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
 		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
@@ -335,8 +340,8 @@ public class LoadAssetExample : MonoBehaviour {
 		BoxCollider col = go.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		col.size = new Vector2(1, 1);
-        if (gameObjectData.anim.Length >0)
-        {
+		if (gameObjectData.anim.Length >0)
+		{
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);
 			go.GetComponent<GTinkerGraphic> ().secPerFrame = gameObjectData.anim [0].secPerFrame;
 
@@ -344,21 +349,29 @@ public class LoadAssetExample : MonoBehaviour {
 
 				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
 				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
+				Debug.Log (gameObjectData.anim [0].sequences + "heeereee  ");
 				go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
-				  LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
-			   
+				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
+
 			}
 		}
 		else
 		{
 			LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 		}
+<<<<<<< HEAD
         
 		tinkerGraphicObjects.Add(go);
 
     }
 
+=======
+
+		tinkerGraphicObjects.Add(go);
+
+	}
+>>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
     public void LoadAsset(string name)
     {
       

@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class GTinkerGraphic : MonoBehaviour{
-    public GameObjectClass dataTinkerGraphic;
-   // private Animator anim;
-    public GTinkerText pairedText1;
-    public GTinkerText pairedText2;
+	public GameObjectClass dataTinkerGraphic;
+	// private Animator anim;
+	public GTinkerText pairedText1;
+	public GTinkerText pairedText2;
 	public GSManager sceneManager;
 	public Canvas myCanvas;
 
@@ -29,10 +29,10 @@ public class GTinkerGraphic : MonoBehaviour{
 		spr = GetComponent<SpriteRenderer>();
 	}
 
-    // Use this for initialization
-    void Start () {
-        //anim = GetComponent<Animator>();
-    }
+	// Use this for initialization
+	void Start () {
+		//anim = GetComponent<Animator>();
+	}
 
 
 	public void SetDraggable(bool value){
@@ -42,7 +42,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	public bool GetDraggable(){
 		return dataTinkerGraphic.draggable;
 	}
-	
+
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
@@ -53,7 +53,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
 		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
-    }
+	}
 
 
 
@@ -81,20 +81,20 @@ public class GTinkerGraphic : MonoBehaviour{
 	{
 		sceneManager.OnMouseUp(this);
 	}
-    
+
 	// Paired TinkerText Mouse Up Event
 	public void OnPairedMouseUp(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseUp(tinkerText);
 	}
-		
+
 
 	public void MoveObject(){
 		Vector2 pos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
-        transform.position = myCanvas.transform.TransformPoint(pos);
-        //transform.position = Input.mousePosition;
-    }
+		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
+		transform.position = myCanvas.transform.TransformPoint(pos);
+		//transform.position = Input.mousePosition;
+	}
 
 	public Vector2 GetCoordinates(){
 		return transform.position;
@@ -115,11 +115,19 @@ public class GTinkerGraphic : MonoBehaviour{
 			} 
 
 		}
+<<<<<<< HEAD
 	
 	}
 
 	public void PlayAnimation(){
 		
+=======
+
+	}
+
+	public void PlayAnimation(){
+
+>>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
 		StopCoroutine ("Animate");
 		StartCoroutine("Animate");
 	}
@@ -131,7 +139,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		int i = 1;
 
 		for (seqIterator = 0; seqIterator < sequences.Length; seqIterator++) {
-			
+
 			//animate for non moving sequences of PNGs
 			if (sequences [seqIterator].movable.speed == 0 ) {
 				i = 1;       //count the number of loops from start for every sequence!
@@ -160,7 +168,7 @@ public class GTinkerGraphic : MonoBehaviour{
 					{
 						currentframe = sequences [seqIterator].startFrame;
 					} 
-				
+
 				}
 
 				spr.sprite = sprites[sequences [seqIterator].endFrame];

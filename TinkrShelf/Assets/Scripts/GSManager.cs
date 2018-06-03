@@ -71,14 +71,16 @@ public class GSManager :  MonoBehaviour {
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
+		if(Lbutton!=null)
 		Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
 
 		Color c = Rbutton.gameObject.GetComponent<Image>().color;
 		c.a = 0.8f;
 		Rbutton.gameObject.GetComponent<Image>().color = c;
-
-		//Lbutton.GetComponent<Button>().interactable = false;
-		Rbutton.GetComponent<Button>().interactable = false;
+		if(Lbutton!=null)
+		Lbutton.GetComponent<Button>().interactable = true;
+		if(Rbutton!=null)
+		Rbutton.GetComponent<Button>().interactable = true;
 
 		StartCoroutine ("PlayStanzaAudio");
 	}
@@ -109,9 +111,9 @@ public class GSManager :  MonoBehaviour {
 	// Here we have a superclass intercept for catching global GameObject mouse down events
 	public virtual void OnMouseDown(GameObject go)
 	{   
-		countDownEvent++;
-		if (countDownEvent == 2)
-			EnableButtons();
+		//countDownEvent++;
+		//if (countDownEvent == 2)
+		//	EnableButtons();
             // Lock out other input during auto play?
             if (IsInputAllowed())
             {
@@ -339,12 +341,12 @@ public class GSManager :  MonoBehaviour {
 	}
 
 
-	private void EnableButtons()
-	{
-		Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
-		Rbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
-		Rbutton.GetComponent<Button>().interactable = true;
-	}
+//	private void EnableButtons()
+//	{   
+//		Lbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+//		Rbutton.gameObject.GetComponent<Image>().color = GGameManager.navblue;
+//		Rbutton.GetComponent<Button>().interactable = true;
+//	}
 
 
 	public float getAudioLength(int i)
