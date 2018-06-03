@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1928834680
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4ded9093c34cb38ceba9eeb025307f91
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Books/CatStory/AnimPNGs/A01/A01-1.png
+- Assets/Books/CatStory/AnimPNGs/A01/A01-3.png
+- Assets/Books/CatStory/AnimPNGs/A01/A01-4.png
+- Assets/Books/CatStory/AnimPNGs/A01/A01-2.png
+Dependencies: []

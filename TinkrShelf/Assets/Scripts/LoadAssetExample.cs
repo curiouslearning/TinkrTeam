@@ -357,9 +357,8 @@ public class LoadAssetExample : MonoBehaviour {
         
 		tinkerGraphicObjects.Add(go);
 
-
-
     }
+
     public void LoadAsset(string name)
     {
       

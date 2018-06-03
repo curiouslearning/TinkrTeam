@@ -51,19 +51,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
 
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
-
-		if (dataTinkerGraphic.anim.Length > 0) {
-			
-			if (dataTinkerGraphic.anim [0].onTouch) {
-				
-				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
-				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
-				sequences = dataTinkerGraphic.anim [0].sequences;
-				PlayAnimation();
-			} 
-		
-		}
-
+		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
     }
 
@@ -73,6 +61,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseDown(tinkerText);
+		LoadAndPlayAnimation ();
 	}
 
 	// Mouse Currently Down Event
@@ -111,7 +100,26 @@ public class GTinkerGraphic : MonoBehaviour{
 		return transform.position;
 	}
 
+
+	public void LoadAndPlayAnimation(){
+
+		if (dataTinkerGraphic.anim.Length > 0) {
+
+			if (dataTinkerGraphic.anim [0].onTouch) {
+
+				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
+				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
+				sequences = dataTinkerGraphic.anim [0].sequences;
+				PlayAnimation();
+
+			} 
+
+		}
+	
+	}
+
 	public void PlayAnimation(){
+		
 		StopCoroutine ("Animate");
 		StartCoroutine("Animate");
 	}

@@ -31,7 +31,7 @@
         },
         {
             "bookId": 3,
-            "title": "Jungle story",
+            "title": "Cat story",
             "author": "",
             "language": "English (U.S.)",
             "readingLevel": 1, 
@@ -39,7 +39,7 @@
                     "ducks", 
                     "jungle"
                 ],
-    "fileName": "JungleBook",
+    "fileName": "CatStory",
     "pathToThumbnail": "Thumbnail/duck3",
     "version": 1
         },

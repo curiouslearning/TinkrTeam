@@ -36,7 +36,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     //for data collection
     private System.DateTime inTime;	
 
-	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/manifest.json";
+	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/Manifests/manifest.json";
     private string responseJson;
     private bool isServerJson = false;
 
@@ -190,7 +190,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {   
         System.TimeSpan span = System.DateTime.Now - inTime;
         FirebaseHelper.LogInShelfSection (inTime.ToString(), span.ToString());
-		SceneManager.LoadScene (bookscenePath+"/Scene01");
+		SceneManager.LoadScene (bookscenePath+"/5pageproxy");
 	}
 
     private void LoadShelfData()
@@ -211,15 +211,12 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 				else
 				{
 					//use server manifest
-
-					Debug.Log("using server json");
 					dataAsJson = responseJson;
 
 					// overwrite local manifest with server manifest
 
 					string path =  Application.dataPath + "/Resources/Manifests/manifest.json";
 					System.IO.File.WriteAllText(path, dataAsJson);
-					Debug.Log("Write complete  "+dataAsJson);
 				}
 			}
 
