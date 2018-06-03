@@ -51,6 +51,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
 
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
+		Debug.Log("0000");
 		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
 	}
@@ -106,7 +107,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			if (dataTinkerGraphic.anim [0].onTouch) {
-
+				Debug.Log ("11111");
 				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
 				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
 				sequences = dataTinkerGraphic.anim [0].sequences;
@@ -126,8 +127,12 @@ public class GTinkerGraphic : MonoBehaviour{
 	}
 
 	public void PlayAnimation(){
+<<<<<<< HEAD
 
 >>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
+=======
+		Debug.Log ("2222");
+>>>>>>> b70ee33b06e4d7e85f5cf6af1f14a8227f5154f7
 		StopCoroutine ("Animate");
 		StartCoroutine("Animate");
 	}
@@ -152,10 +157,31 @@ public class GTinkerGraphic : MonoBehaviour{
 
 				}
 			}
-			//animate for nmoving sequences of PNGs
-			else {
+			//animate for moving sequences of PNGs
+			else if(transform.position.x < sequences [seqIterator].movable.finalx) {
 				currentframe = sequences [seqIterator].startFrame;
 				while (transform.position.x < sequences [seqIterator].movable.finalx) {
+					spr.sprite = sprites[currentframe];
+					yield return new WaitForSeconds(secPerFrame[currentframe]);
+					currentframe++;
+					var posx = transform.position.x;
+					posx += sequences [seqIterator].movable.speed;
+					transform.position = new Vector3(posx, this.transform.position.y, 0);
+
+					//loop if we reached the end frame but not the final posiiton!
+					if (currentframe > sequences [seqIterator].endFrame)
+					{
+						currentframe = sequences [seqIterator].startFrame;
+					} 
+
+				}
+
+				spr.sprite = sprites[sequences [seqIterator].endFrame];
+			}
+			else if(transform.position.x > sequences [seqIterator].movable.finalx) 
+			{
+				currentframe = sequences [seqIterator].startFrame;
+				while (transform.position.x > sequences [seqIterator].movable.finalx) {
 					spr.sprite = sprites[currentframe];
 					yield return new WaitForSeconds(secPerFrame[currentframe]);
 					currentframe++;

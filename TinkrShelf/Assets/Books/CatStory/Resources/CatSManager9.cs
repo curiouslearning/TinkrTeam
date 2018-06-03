@@ -16,7 +16,7 @@ public class CatSManager9 : GSManager {
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "Jam") 
-		{  // StartCoroutine (SetGameObject());
+		{   StartCoroutine (SetGameObject());
 			GameObject seqAnim = GameObject.Find ("CatJam");
 			GTinkerGraphic tinkerGraphic1 = seqAnim.GetComponent<GTinkerGraphic>();
 			if (tinkerGraphic1 != null)
@@ -28,10 +28,10 @@ public class CatSManager9 : GSManager {
 
 
 	}
-//	public IEnumerator SetGameObject ()
-//	{
-//		yield return new WaitForSeconds (2.0f);
-//		GameObject.Find ("Jam").SetActive (false);
-//	}
+	public IEnumerator SetGameObject ()
+	{
+		yield return new WaitForSeconds (2.0f);
+		GameObject.Find ("Jam").SetActive (false);
+	}
 
 }
