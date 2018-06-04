@@ -635,7 +635,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -910,7 +910,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 0,
+					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
 			]

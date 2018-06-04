@@ -17,7 +17,7 @@
     },
     {
         "bookId": 2,
-        "title": "Frog B story",
+        "title": "Proxy story",
         "author": "",
         "language": "English (U.S.)",
         "readingLevel": 1, 
@@ -25,7 +25,7 @@
                 "frog", 
                 "jump"
             ],
-"fileName": "FrogB",
+"fileName": "5pageProxy",
 "pathToThumbnail": "Thumbnail/duck2",
 "version": 1
         },
@@ -36,11 +36,11 @@
             "language": "English (U.S.)",
             "readingLevel": 1, 
             "tags" : [
-                    "ducks", 
-                    "jungle"
+                    "cat", 
+                    "man"
                 ],
     "fileName": "CatStory",
-    "pathToThumbnail": "Thumbnail/duck3",
+    "pathToThumbnail": "Thumbnail/cat",
     "version": 1
         },
         {

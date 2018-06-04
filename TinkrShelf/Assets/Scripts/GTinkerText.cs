@@ -137,20 +137,14 @@ public class GTinkerText : MonoBehaviour {
 		{
 			graphicPlay();
 		}
-		CallPairedGraphic ();
-	}
-		
-	public void CallPairedGraphic(){
-		
+
 		// Is there a TinkerGraphic paired with this TinkerText?
 		if (pairedGraphic)
 		{
 			// Then send the event along!
 			pairedGraphic.OnPairedMouseDown(this);
 		}
-	
 	}
-
 
 	// Paired Mouse Down Event
 	public void OnPairedMouseDown()

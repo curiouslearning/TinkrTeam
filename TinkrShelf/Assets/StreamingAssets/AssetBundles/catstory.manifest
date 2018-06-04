@@ -1,19 +1,5 @@
 ManifestFileVersion: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-CRC: 1928834680
-Hashes:
-  AssetFileHash:
-    serializedVersion: 2
-    Hash: 4ded9093c34cb38ceba9eeb025307f91
-  TypeTreeHash:
-    serializedVersion: 2
-    Hash: 460b4f5d62b6facbccf7c01637df8f00
-=======
-CRC: 2560261315
-=======
 CRC: 437423499
->>>>>>> b70ee33b06e4d7e85f5cf6af1f14a8227f5154f7
 Hashes:
   AssetFileHash:
     serializedVersion: 2
@@ -21,20 +7,10 @@ Hashes:
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
->>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
-<<<<<<< HEAD
-- Class: 213
-  Script: {instanceID: 0}
-Assets:
-- Assets/Books/CatStory/AnimPNGs/A01/A01-1.png
-- Assets/Books/CatStory/AnimPNGs/A01/A01-3.png
-- Assets/Books/CatStory/AnimPNGs/A01/A01-4.png
-- Assets/Books/CatStory/AnimPNGs/A01/A01-2.png
-=======
 - Class: 49
   Script: {instanceID: 0}
 - Class: 83
@@ -174,5 +150,4 @@ Assets:
 - Assets/Books/CatStory/AnimPNGs/A11/A11-4.png
 - Assets/Books/CatStory/AnimPNGs/A06/A06-2.png
 - Assets/Books/CatStory/AnimPNGs/A17/A17-5.png
->>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
 Dependencies: []

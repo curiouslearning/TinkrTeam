@@ -50,8 +50,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
 
-		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "graphic", time.ToString());
-		Debug.Log("0000");
+		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "Graphic", time.ToString());
 		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
 	}
@@ -107,7 +106,6 @@ public class GTinkerGraphic : MonoBehaviour{
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			if (dataTinkerGraphic.anim [0].onTouch) {
-				Debug.Log ("11111");
 				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
 				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
 				sequences = dataTinkerGraphic.anim [0].sequences;
@@ -116,24 +114,12 @@ public class GTinkerGraphic : MonoBehaviour{
 			} 
 
 		}
-<<<<<<< HEAD
-	
-	}
-
-	public void PlayAnimation(){
-		
-=======
 
 	}
 
 	public void PlayAnimation(){
-<<<<<<< HEAD
-
->>>>>>> c5b6bb6ece4d25c2f130d68fe0aaf69beb951460
-=======
-		Debug.Log ("2222");
->>>>>>> b70ee33b06e4d7e85f5cf6af1f14a8227f5154f7
 		StopCoroutine ("Animate");
+		transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
 		StartCoroutine("Animate");
 	}
 

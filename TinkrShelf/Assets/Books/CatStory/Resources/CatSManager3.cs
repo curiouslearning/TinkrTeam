@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class CatSManager3 : GSManager {
 
-//	// Use this for initialization
-//	void Start () {
-//		
-//	}
-//	
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
-
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "Cat") 

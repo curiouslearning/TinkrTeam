@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class CatSManager7 : GSManager {
 
-	// Use this for initialization
-//	void Start () {
-//		
-//	}
-//	
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
+	GameObject ham;
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "Ham") 
-			{ GameObject seqAnim = GameObject.Find ("CatHam");
-				GTinkerGraphic tinkerGraphic1 = seqAnim.GetComponent<GTinkerGraphic>();
-				if (tinkerGraphic1 != null)
-				{
-					tinkerGraphic1.MyOnMouseDown();
-				    StartCoroutine (SetGameObject());
-				}
+		if (go.name == "CatHam" || go.name == "Text_Ham") {
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
 			}
+			ham.SetActive (true);
+		}
 
-		
+		if (go.name == "Ham") 
+		{   
+			StartCoroutine (SetGameObject());
+			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+		}
+			
+		base.OnMouseDown (go);
 	}
 	public IEnumerator SetGameObject ()
 	{
 		yield return new WaitForSeconds (2.5f);
-		GameObject.Find ("Ham").SetActive (false);
+		ham = GameObject.Find ("Ham"); 
+		ham.SetActive (false);
 	}
+		
 }
