@@ -13,6 +13,7 @@ public class CatSManager9 : GSManager {
 				jam = GameObject.Find ("Jam");
 			}
 			jam.SetActive (true);
+			StartCoroutine (SetGameObject());
 		}
 		if (go.name == "Jam") 
 		{   

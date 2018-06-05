@@ -44,8 +44,8 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		startingX = -100.0f;
-		startingY = 200.0f;   //abhi ke liye static
+		startingX = -2.0f;
+		startingY = 129.0f;   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
 		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
@@ -54,7 +54,8 @@ public class LoadAssetExample : MonoBehaviour {
 
         if (!bundleloaded)
         {
-			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/"+ShelfManager.selectedBook.ToLower()));
+			//bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/"+ShelfManager.selectedBook.ToLower()));
+			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
@@ -65,8 +66,10 @@ public class LoadAssetExample : MonoBehaviour {
 		//dataCollector.LoadLocalJSON ();
 		//dataCollector.AddNewBook ("5PageProxy");
 
-		FirebaseHelper.AddBook(ShelfManager.selectedBook);
-		LoadStoryData (ShelfManager.selectedBook+".json");
+		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
+		//LoadStoryData (ShelfManager.selectedBook+".json");
+		FirebaseHelper.AddBook("CatStory");
+		LoadStoryData ("CatStory.json");
     }
 
     void Start () {
@@ -94,9 +97,9 @@ public class LoadAssetExample : MonoBehaviour {
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
-		if (pageNumber == noOfPages) {
+		if (pageNumber == (noOfPages - 1)) {
 			right.SetActive (false);
-		}
+		} 
 		EmptyPage ();
 		LoadCompletePage ();
 	}
@@ -114,6 +117,9 @@ public class LoadAssetExample : MonoBehaviour {
 		pageNumber--;
 		if(pageNumber==0){
 			left.SetActive (false);
+		}
+		else if (pageNumber != (noOfPages - 1)) {
+			right.SetActive (true);
 		}
 		EmptyPage ();
 		LoadCompletePage ();
@@ -237,7 +243,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	public void LoadStanzaData()
 	{   
-		startingY = 200.0f;
+		startingY = 129.0f;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
@@ -312,7 +318,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (trans);
-		trans.pivot = new Vector2 (0,1);
+		//trans.pivot = new Vector2 (0,1);
 
 		width = width + trans.rect.width + minWordSpace;
         UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
@@ -337,9 +343,7 @@ public class LoadAssetExample : MonoBehaviour {
 		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
 		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
-		BoxCollider col = go.AddComponent<BoxCollider>();
-		col.isTrigger = true;
-		col.size = new Vector2(1, 1);
+
 		if (gameObjectData.anim.Length >0)
 		{
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);
@@ -359,7 +363,8 @@ public class LoadAssetExample : MonoBehaviour {
 		{
 			LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 		}
-
+		BoxCollider col = go.AddComponent<BoxCollider>();
+		col.isTrigger = true;
 		tinkerGraphicObjects.Add(go);
 
 	}
