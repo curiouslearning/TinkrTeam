@@ -6,6 +6,9 @@ public class CatSManager9 : GSManager {
 
 	GameObject jam;
 
+	//removing the timer
+	//simultaenous clicks handling!
+
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "CatJam" || go.name == "Text_Jam") {

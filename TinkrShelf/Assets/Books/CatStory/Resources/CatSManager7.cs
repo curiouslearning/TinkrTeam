@@ -8,16 +8,30 @@ public class CatSManager7 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name == "Text_Ham") {
+		if (go.name == "CatHam") {
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
 			}
+
 			ham.SetActive (true);
 		}
+		else if ( go.name == "Text_Ham"){
+			
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
+			}
 
-		if (go.name == "Ham") 
+			ham.SetActive (true);
+			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+
+		}
+		else if (go.name == "Ham") 
 		{   
-			StartCoroutine (SetGameObject());
+			ham = go;
 			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
 			if (catHam != null)
 			{ 
@@ -26,12 +40,6 @@ public class CatSManager7 : GSManager {
 		}
 			
 		base.OnMouseDown (go);
-	}
-	public IEnumerator SetGameObject ()
-	{
-		yield return new WaitForSeconds (2.5f);
-		ham = GameObject.Find ("Ham"); 
-		ham.SetActive (false);
 	}
 		
 }
