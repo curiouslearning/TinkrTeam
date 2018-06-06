@@ -28,7 +28,7 @@ public class LoadAssetExample : MonoBehaviour {
 	private int noOfPages, i,j;
 	float width=0.0f, startingX, startingY, startingXText, startingYText;
 	float height = 32.94f;  //height of text:32.94
-	private readonly float minWordSpace = 15.0f;
+	private readonly float minWordSpace = 25.0f;
 	private readonly float minLineSpace = 30.0f;
 
 	//variables for logging data
@@ -44,11 +44,10 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		startingX = -2.0f;
-		startingY = 129.0f;   //abhi ke liye static
+		   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
-		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
+
 		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
@@ -66,13 +65,15 @@ public class LoadAssetExample : MonoBehaviour {
 		//dataCollector.LoadLocalJSON ();
 		//dataCollector.AddNewBook ("5PageProxy");
 
-		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
-		//LoadStoryData (ShelfManager.selectedBook+".json");
-		FirebaseHelper.AddBook("CatStory");
-		LoadStoryData ("CatStory.json");
+		FirebaseHelper.AddBook(ShelfManager.selectedBook);
+		LoadStoryData (ShelfManager.selectedBook.ToLower()+".json");
+		//FirebaseHelper.AddBook("CatStoryLevel2");
+		//LoadStoryData ("CatStoryLevel2.json");
     }
 
     void Start () {
+		startingX = storyBookJson.textStartPositionX;
+		startingY = storyBookJson.textStartPositionY;
        
     }
     private void LoadStoryData(string fileName)
@@ -243,7 +244,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	public void LoadStanzaData()
 	{   
-		startingY = 129.0f;
+		startingY = storyBookJson.textStartPositionY;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
@@ -298,7 +299,7 @@ public class LoadAssetExample : MonoBehaviour {
         Text text = UItextGO.AddComponent<Text>();
 
 		text.text = textToPrint;
-		text.fontSize = 80;
+		text.fontSize = 60;
 		text.color = textColor;
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);
