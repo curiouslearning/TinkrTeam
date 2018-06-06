@@ -2,21 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CatSManager3 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "Cat") 
-		{
-			GameObject seqAnim = GameObject.Find ("Ran");
-			GTinkerGraphic tinkerGraphic1 = seqAnim.GetComponent<GTinkerGraphic> ();
-			GTinkerGraphic tinkerGraphic2 = go.GetComponent<GTinkerGraphic> ();
-			if (tinkerGraphic1 != null && tinkerGraphic2 != null) 
-			{
-				tinkerGraphic1.MyOnMouseDown ();
-				tinkerGraphic2.MyOnMouseDown ();
+		if (go.name == "Cat") {
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.MyOnMouseDown ();
 			}
-		
+		} else if (go.name == "Ran") {
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.MyOnMouseDown ();
+			} 
+
+		} else if (go.name == "Text_Ran") {
+			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (ranGraphic != null && catGraphic!=null) {
+				ranGraphic.MyOnMouseDown ();
+				catGraphic.MyOnMouseDown ();
+			}
+
+		}
+		base.OnMouseDown (go);
 	}
-}
 }
