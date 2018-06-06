@@ -161,10 +161,10 @@ public class GTinkerText : MonoBehaviour {
 	// Mouse Currently Down Event
 	public void OnMouseCurrentlyDown()
 	{
-		/*if (!stanza.stanzaManager.sceneManager.disableSounds)
+		if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
 			PlaySound();
-		}*/
+		}
 
 		clipPlay();
 		iconanimPlay();

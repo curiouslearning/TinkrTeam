@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CatSManager3 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
@@ -19,6 +20,15 @@ public class CatSManager3 : GSManager {
 			} 
 			
 		}
+		 else if (go.name == "Text_Ran") {
+			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (ranGraphic != null && catGraphic!=null) {
+				ranGraphic.MyOnMouseDown ();
+				catGraphic.MyOnMouseDown ();
+			}
+
+		}
 		base.OnMouseDown (go);
-}
+	}
 }

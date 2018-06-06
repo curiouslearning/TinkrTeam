@@ -22,7 +22,7 @@
 				{
 					"id": 0,
 					"posX": 25,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A01-1",
@@ -103,7 +103,7 @@
 				{
 					"id": 0,
 					"posX": 25,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A02-1",
@@ -185,9 +185,9 @@
 				{
 					"id": 0,
 					"posX": 25,
-					"posY": -100,
-					"scaleX": 80,
-					"scaleY": 80,
+					"posY": -65,
+					"scaleX": 60,
+					"scaleY": 60,
 					"imageName": "A03b-1",
 					"orderInLayer":1,
 					"inText": false,
@@ -219,7 +219,7 @@
 								  "movable":
 									  {
 										"finalx":494,
-										"finaly":-100,
+										"finaly":-65,
 										"speed":75
 									  }
 								  }
@@ -230,7 +230,7 @@
                 {   
 					"id": 1,
 					"posX": -424,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A03-01",
@@ -241,7 +241,7 @@
 					"draggable": false,
                     "anim": 
                     [
-						{   "id": 2,
+						{   "id": 1,
 							"animName": "A03", 
 							"numberOfImages": 9,
                             "onTouch":true,
@@ -255,7 +255,7 @@
 									"movable": 
 									{  
 										"finalx":0,
-										"finaly":-100,
+										"finaly":-65,
 										"speed":25
 									    
 									}	
@@ -290,7 +290,14 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 2,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				},
+	            {
+					"stnzaId": 0,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
 		  ]
@@ -310,7 +317,7 @@
 				{
 					"id": 0,
 					"posX":-23,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A04-1",
@@ -367,9 +374,10 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
+		        
 			]
 
 		},
@@ -388,7 +396,7 @@
 				{
 					"id": 0,
 					"posX": -23,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A05-1",
@@ -475,7 +483,7 @@
 				{
 					"id": 0,
 					"posX": 33,
-					"posY": -100,
+					"posY": -65,
 					"scaleX":80,
 					"scaleY": 80,
 					"imageName": "A06-1",
@@ -533,7 +541,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -553,7 +561,7 @@
 				{
 					"id": 0,
 					"posX": 500,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A07-1",
@@ -579,7 +587,7 @@
 									"movable": 
 									{  
 										"finalx":50,
-										"finaly":-100,
+										"finaly":-65,
 										"speed":-50
 									}	
 								},
@@ -607,7 +615,7 @@
 				{
 						"id": 1,
 						"posX": -13.3,
-						"posY": -100,
+						"posY": -65,
 						"scaleX": 80,
 						"scaleY": 80,
 						"imageName": "A07-8",
@@ -664,7 +672,7 @@
 				{
 					"id": 0,
 					"posX": 43,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A08-1",
@@ -742,7 +750,7 @@
 				{
 					"id": 0,
 					"posX": 502,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-1",
@@ -794,7 +802,7 @@
 				{
 						"id": 1,
 						"posX": -2,
-						"posY": -100,
+						"posY": -65,
 						"scaleX": 80,
 						"scaleY": 80,
 						"imageName": "A09-9",
@@ -850,7 +858,7 @@
 				{
 					"id": 0,
 					"posX": -15,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A10-6",
@@ -864,7 +872,7 @@
 				{       
 					"id": 1,
 					"posX": 495,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A10-1",
@@ -889,7 +897,7 @@
 										"noOfLoops":0,
 										"movable": 
 										{  "finalx":-15,
-											"finaly":-100,
+											"finaly":-65,
 											"speed":-30
 											
 										}	
@@ -945,7 +953,7 @@
 				{
 					"id": 0,
 					"posX": -11,
-					"posY": -42,
+					"posY": -45,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A11a-1",
@@ -1022,10 +1030,10 @@
 				{
 					"id": 0,
 					"posX": -4,
-					"posY": -104,
+					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
-					"imageName": "A12-6",
+					"imageName": "A15b-3",
 					"orderInLayer":1,
 					"inText": true,
 					"label": "NapMat",
@@ -1036,7 +1044,7 @@
 				{ 
 					"id": 1,
 					"posX":-2,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A12-1",
@@ -1118,6 +1126,7 @@
 			},
             "gameObjects": 
             [
+<<<<<<< HEAD
 				{
 					"id": 0,
 					"posX": 265,
@@ -1132,10 +1141,13 @@
 					"draggable": false,
 					"anim": null
 				},
+=======
+				
+>>>>>>> be693b1e6f13cda40e4fac41aefa807d67d9fd39
 				{ 
 					"id": 1,
 					"posX": -23,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A13-1",
@@ -1213,9 +1225,9 @@
             [
 				
 				{ 
-					"id": 1,
+					"id": 0,
 					"posX": -277,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A14-1",
@@ -1241,7 +1253,7 @@
 									"movable": 
 									{   
 										"finalx":-27,
-										"finaly":-100,
+										"finaly":-65,
 										"speed":25
 									}	
 								}
@@ -1272,7 +1284,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -1290,7 +1302,7 @@
 				{
 					"id": 0,
 					"posX": 133,
-					"posY": -104,
+					"posY": -144,
 					"scaleX": 60,
 					"scaleY": 60,
 					"imageName": "A15b-3",
@@ -1308,7 +1320,7 @@
 					"scaleX": 60,
 					"scaleY": 60,
 					"imageName": "A15b-1",
-					"orderInLayer":2,
+					"orderInLayer":3,
 					"inText": true,
 					"label": "SlamCat",
 					"destroyOnCollision":"NIL",
@@ -1326,7 +1338,7 @@
 							[
 								{ "startFrame":0,
 									"endFrame":1,
-									"noOfLoops":1,
+									"noOfLoops":5,
 									"movable": 
 									{   
 										"speed":0
@@ -1343,7 +1355,7 @@
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A15-1",
-					"orderInLayer":3,
+					"orderInLayer":2,
 					"inText": true,
 					"label": "RanMan",
 					"destroyOnCollision":"NIL",
@@ -1406,7 +1418,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 2,
 					"typeOfLinking": 3
 				}
 			]
@@ -1424,7 +1436,7 @@
             [   {
 					"id": 0,
 					"posX": 232,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 60,
 					"scaleY": 60,
 					"imageName": "A15-7",
@@ -1438,7 +1450,7 @@
 				{
 					"id": 1,
 					"posX": 0,
-					"posY": -100,
+					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A15b-3",
@@ -1449,14 +1461,15 @@
 					"draggable": false,
 					"anim": null
 				},
+			
 				{
 					"id": 2,
 					"posX": 0,
-					"posY": -100,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A16-1",
-					"orderInLayer":1,
+					"orderInLayer":3,
 					"inText": true,
 					"label": "Cat",
 					"destroyOnCollision":"NIL",
@@ -1466,7 +1479,7 @@
 						{
 							"id": 1,
 							"animName": "A16",
-							"numberOfImages": 6,
+							"numberOfImages": 2,
                             "onTouch":true,
 							"onStart":false,
 							"secPerFrame":[0.5,0.5],
@@ -1474,29 +1487,35 @@
 							[
 								{ "startFrame":0,
 									"endFrame":1,
-									"noOfLoops":2,
+									"noOfLoops":1,
 									"movable": 
 									{   
 										"speed":0
 									}	
 								}
+								
                             ]    
 						}
+					
 						
 				    ]
 				},
-				
-				{
+	            
+                {
 					"id": 3,
-					"posX": 0,
-					"posY": -100,
+					"posX": -46,
+					"posY": -45,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A16b-1",
-					"orderInLayer":2,
+					"orderInLayer":3,
 					"inText": true,
+<<<<<<< HEAD
 					"label": "CatSleepMat",
 					"destroyOnCollision":"NIL",
+=======
+					"label": "Zzz",
+>>>>>>> be693b1e6f13cda40e4fac41aefa807d67d9fd39
 					"draggable": false,
 					"anim": 
 					[ 
@@ -1505,23 +1524,29 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":false,
+							"onStart":true,
 							"secPerFrame":[0.4,0.4,0.4,0.4],
 							"sequences": 
 							[
 								{ "startFrame":0,
 									"endFrame":3,
-									"noOfLoops":2,
+									"noOfLoops":1,
 									"movable": 
 									{   
 										"speed":0
 									}	
 								}
+								
                             ]    
 						}
+					
 						
 				    ]
 				}
+
+
+				
+				
 			],		
 			"texts": 
 			[
@@ -1548,7 +1573,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 3,
 					"typeOfLinking": 3
 				}
 			]
@@ -1569,7 +1594,7 @@
 				{
 					"id": 0,
 					"posX": 0,
-					"posY": -100,
+					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A15b-3",
@@ -1582,7 +1607,7 @@
 				},
 				{  	"id": 1,
 					"posX": 0,
-					"posY": -87,
+					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A17-1",
@@ -1643,7 +1668,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 0,
+					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
 			]
@@ -1659,7 +1684,7 @@
             [   {
 					"id": 0,
 					"posX": -39,
-					"posY": -100,
+					"posY": -70,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A18-7",
@@ -1673,7 +1698,7 @@
 				{
 					"id": 1,
 					"posX": 509,
-					"posY": -100,
+					"posY": -57,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A18-1",
@@ -1698,7 +1723,7 @@
 									"noOfLoops":0,
 									"movable": 
 									{   "finalx":-31,
-										"finaly":-60,
+										"finaly":-57,
 										"speed":-60
 									}
 									
@@ -1723,7 +1748,7 @@
 			[
 				{
 					"id": 0,
-					"text": "Cat"
+					"text": "Jam"
 					
 				}
 			],
@@ -1746,9 +1771,18 @@
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
 				}
+
 			]
 		}
+		
 	]
 		}
 		

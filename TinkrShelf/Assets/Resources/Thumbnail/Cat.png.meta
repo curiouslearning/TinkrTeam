@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0b642937ec6b50c40b1a99c416985f3e
-timeCreated: 1527932358
+guid: 9eb0d14e5d226404492cd7c1144eaaad
+timeCreated: 1528020528
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -73,5 +73,5 @@ TextureImporter:
     physicsShape: []
   spritePackingTag: 
   userData: 
-  assetBundleName: catstory
+  assetBundleName: 
   assetBundleVariant: 

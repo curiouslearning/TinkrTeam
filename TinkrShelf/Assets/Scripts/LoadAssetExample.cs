@@ -44,8 +44,8 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		startingX = -100.0f;
-		startingY = 200.0f;   //abhi ke liye static
+		startingX = -2.0f;
+		startingY = 129.0f;   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
 		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
@@ -64,7 +64,8 @@ public class LoadAssetExample : MonoBehaviour {
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.LoadLocalJSON ();
 
-		LoadStoryData ("CatStory.json");  //ShelfManager.selectedBook+
+		LoadStoryData ("CatStory.json"); 
+		//LoadStoryData (ShelfManager.selectedBook+".json");
     }
 
     void Start () {
@@ -97,9 +98,9 @@ public class LoadAssetExample : MonoBehaviour {
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
-		if (pageNumber == noOfPages) {
+		if (pageNumber == (noOfPages - 1)) {
 			right.SetActive (false);
-		}
+		} 
 		EmptyPage ();
 		LoadCompletePage ();
 	}
@@ -117,6 +118,9 @@ public class LoadAssetExample : MonoBehaviour {
 		pageNumber--;
 		if(pageNumber==0){
 			left.SetActive (false);
+		}
+		else if (pageNumber != (noOfPages - 1)) {
+			right.SetActive (true);
 		}
 		EmptyPage ();
 		LoadCompletePage ();
@@ -241,7 +245,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	public void LoadStanzaData()
 	{   
-		startingY = 200.0f;
+		startingY = 129.0f;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
