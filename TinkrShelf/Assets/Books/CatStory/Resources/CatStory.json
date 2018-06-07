@@ -1126,24 +1126,6 @@
 			},
             "gameObjects": 
             [
-<<<<<<< HEAD
-				{
-					"id": 0,
-					"posX": 265,
-					"posY": -144,
-					"scaleX": 50,
-					"scaleY": 50,
-					"imageName": "A12-1",
-					"orderInLayer":1,
-					"inText": true,
-					"label": "CatHat",
-					"destroyOnCollision":"NIL",
-					"draggable": false,
-					"anim": null
-				},
-=======
-				
->>>>>>> be693b1e6f13cda40e4fac41aefa807d67d9fd39
 				{ 
 					"id": 1,
 					"posX": -23,
@@ -1510,12 +1492,8 @@
 					"imageName": "A16b-1",
 					"orderInLayer":3,
 					"inText": true,
-<<<<<<< HEAD
-					"label": "CatSleepMat",
+					"label": "Sleep",
 					"destroyOnCollision":"NIL",
-=======
-					"label": "Zzz",
->>>>>>> be693b1e6f13cda40e4fac41aefa807d67d9fd39
 					"draggable": false,
 					"anim": 
 					[ 
@@ -1573,7 +1551,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 3,
+					"sceneObjectId": 2,
 					"typeOfLinking": 3
 				}
 			]

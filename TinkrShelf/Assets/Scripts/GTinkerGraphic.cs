@@ -134,7 +134,6 @@ public class GTinkerGraphic : MonoBehaviour{
 		if (destroyObject != null) {
 			StopCoroutine (destroyObject);
 		}
-		Debug.Log ("stopped");
 		transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
 		StartCoroutine("Animate");
 	}
