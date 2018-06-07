@@ -149,10 +149,10 @@ public class GTinkerText : MonoBehaviour {
 	// Paired Mouse Down Event
 	public void OnPairedMouseDown()
 	{
-		/*if (!stanza.stanzaManager.sceneManager.disableSounds)
+		if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
 			PlaySound();
-		}*/
+		}
 
 		clipPlay();
 		iconanimPlay();

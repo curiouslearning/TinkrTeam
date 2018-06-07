@@ -52,6 +52,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "Graphic", time.ToString());
 		LoadAndPlayAnimation ();
+
 		sceneManager.OnMouseDown(this);
 	}
 

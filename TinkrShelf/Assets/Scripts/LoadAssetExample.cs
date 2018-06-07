@@ -28,7 +28,7 @@ public class LoadAssetExample : MonoBehaviour {
 	private int noOfPages, i,j;
 	float width=0.0f, startingX, startingY, startingXText, startingYText;
 	float height = 32.94f;  //height of text:32.94
-	private readonly float minWordSpace = 25.0f;
+	private readonly float minWordSpace = 35.0f;
 	private readonly float minLineSpace = 30.0f;
 
 	//variables for logging data
@@ -48,7 +48,8 @@ public class LoadAssetExample : MonoBehaviour {
 		startingXText = 0.0f;
 		startingYText = 0.0f;
 
-		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+		//font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+		font=Resources.GetBuiltinResource<Font>("Arial.ttf");
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
@@ -273,7 +274,7 @@ public class LoadAssetExample : MonoBehaviour {
 			}
 
 			UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (stanzaManager.stanzas[i].GetComponent<RectTransform>());
-			width = 0.0f;
+			width = 10.0f;
 		}
 
 

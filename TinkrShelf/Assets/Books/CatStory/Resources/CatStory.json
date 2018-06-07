@@ -69,7 +69,7 @@
 			"timestamps": 
 			[
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Cat.mp3",
 					"end": 801
@@ -149,7 +149,7 @@
 			"timestamps":
 			 [
 				{
-					"start": 302,
+					"start": 50,
 					"wordIdx": 1,
 					"audio":"Wag.mp3",
 					"end": 879
@@ -227,7 +227,7 @@
                 {   
 					"id": 1,
 					"posX": -424,
-					"posY": -65,
+					"posY": -24,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A03-01",
@@ -251,7 +251,7 @@
 									"movable": 
 									{  
 										"finalx":0,
-										"finaly":-65,
+										"finaly":-24,
 										"speed":25
 									    
 									}	
@@ -357,7 +357,7 @@
 			"audioFile": "Man.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Man.mp3",
 					"end": 801
@@ -445,7 +445,7 @@
 			"audioFile": "Sam.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Sam.mp3",
 					"end": 801
@@ -521,7 +521,7 @@
 			"timestamps":
 			 [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Sad.mp3",
 					"end": 801
@@ -631,7 +631,7 @@
 			"timestamps": 
 			[
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Ham.mp3",
 					"end": 801
@@ -814,7 +814,7 @@
 			"audioFile": "Jam.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Jam.mp3",
 					"end": 801
@@ -879,12 +879,21 @@
 								"sequences":
 								[
 									{ "startFrame":0,
-										"endFrame":5,
+										"endFrame":3,
 										"noOfLoops":0,
 										"movable": 
 										{  "finalx":-15,
 											"finaly":-65,
 											"speed":-30
+											
+										}	
+									},
+						            { "startFrame":4,
+										"endFrame":5,
+										"noOfLoops":1,
+										"movable": 
+										{  
+											"speed":0
 											
 										}	
 									}
@@ -1078,7 +1087,7 @@
 			"audioFile": "Nap.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Nap.mp3",
 					"end": 801
@@ -1236,7 +1245,7 @@
 			"audioFile": "Ran.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Ran.mp3",
 					"end": 801
@@ -1367,7 +1376,7 @@
 			"audioFile": "Slam.mp3",
 			"timestamps": [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Slam.mp3",
 					"end": 801
@@ -1396,12 +1405,12 @@
             "gameObjects": 
             [   {
 					"id": 0,
-					"posX": 232,
-					"posY": -65,
-					"scaleX": 60,
-					"scaleY": 60,
+					"posX": 106,
+					"posY": -39,
+					"scaleX": 80,
+					"scaleY": 80,
 					"imageName": "A15-7",
-					"orderInLayer":1,
+					"orderInLayer":2,
 					"inText": true,
 					"label": "SleepMan",
 					"draggable": false,
@@ -1513,7 +1522,7 @@
 			"timestamps":
 			 [
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Cat.mp3",
 					"end": 801
@@ -1575,7 +1584,7 @@
 							"numberOfImages": 5,
                             "onTouch":true,
                             "onStart":false,
-							"secPerFrame":[0,0.5,0.5,0.2,0],
+							"secPerFrame":[0,0.4,0.4,0.2,0],
 							"sequences":
 							[
 								{ "startFrame":0,
@@ -1606,7 +1615,7 @@
 			"timestamps": 
 			[
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Fat.mp3",
 					"end": 801
@@ -1679,7 +1688,7 @@
 								},
 								{ "startFrame":4,
 									"endFrame":5,
-									"noOfLoops":1,
+									"noOfLoops":3,
 									"movable": 
 									{  
 										"speed":0
@@ -1705,7 +1714,7 @@
 			"timestamps": 
 			[
 				{
-					"start": 185,
+					"start": 50,
 					"wordIdx": 0,
 					"audio":"Cat.mp3",
 					"end": 801
