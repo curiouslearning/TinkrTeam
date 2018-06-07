@@ -48,14 +48,13 @@ public class LoadAssetExample : MonoBehaviour {
 		startingY = 129.0f;   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
-		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
-		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+		font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+		//font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
         {
-			//bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/"+ShelfManager.selectedBook.ToLower()));
-			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));
+			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
@@ -64,12 +63,9 @@ public class LoadAssetExample : MonoBehaviour {
 		}
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.LoadLocalJSON ();
-		//dataCollector.AddNewBook ("5PageProxy");
 
-		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
+		LoadStoryData ("CatStory.json"); 
 		//LoadStoryData (ShelfManager.selectedBook+".json");
-		FirebaseHelper.AddBook("CatStory");
-		LoadStoryData ("CatStory.json");
     }
 
     void Start () {
@@ -82,6 +78,11 @@ public class LoadAssetExample : MonoBehaviour {
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
 		noOfPages = storyBookJson.pages.Length;
+
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//dataCollector.AddNewBook (storyBookJson.id.ToString());
+
+		FirebaseHelper.AddBook(storyBookJson.id); 
 		left.SetActive (false);
 		LoadCompletePage ();
     }
@@ -89,11 +90,10 @@ public class LoadAssetExample : MonoBehaviour {
 	{   
 		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
-
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
@@ -111,7 +111,7 @@ public class LoadAssetExample : MonoBehaviour {
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber--;
@@ -144,7 +144,8 @@ public class LoadAssetExample : MonoBehaviour {
 	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
-		FirebaseHelper.AddSection(pageNumber.ToString());
+		Debug.Log(pageNumber);
+		FirebaseHelper.AddSection(pageNumber);
 		inTime = DateTime.Now;
 		LoadSceneSpecificScript ();
 		LoadPageData(pageNumber);
@@ -343,7 +344,6 @@ public class LoadAssetExample : MonoBehaviour {
 		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
 		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
-
 		if (gameObjectData.anim.Length >0)
 		{
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);
@@ -363,6 +363,12 @@ public class LoadAssetExample : MonoBehaviour {
 		{
 			LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 		}
+
+		if(gameObjectData.destroyOnCollision != "NIL"){
+			var rigidbody = go.AddComponent<Rigidbody> ();
+			rigidbody.isKinematic = true;
+		}
+		//add BoxCollider after adding the sprite for proper size!
 		BoxCollider col = go.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		tinkerGraphicObjects.Add(go);

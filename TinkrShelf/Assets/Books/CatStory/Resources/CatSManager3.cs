@@ -12,13 +12,15 @@ public class CatSManager3 : GSManager {
 			if (tinkerGraphic != null) {
 				tinkerGraphic.MyOnMouseDown ();
 			}
-		} else if (go.name == "Ran") {
+		}
+		else if (go.name == "Ran") {
 			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
-			if (tinkerGraphic != null) {
+			if (tinkerGraphic != null ) {
 				tinkerGraphic.MyOnMouseDown ();
 			} 
-
-		} else if (go.name == "Text_Ran") {
+			
+		}
+		 else if (go.name == "Text_Ran") {
 			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
 			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
 			if (ranGraphic != null && catGraphic!=null) {

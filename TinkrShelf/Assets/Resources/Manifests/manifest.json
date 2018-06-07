@@ -31,21 +31,7 @@
         },
         {
             "bookId": 3,
-            "title": "Cat story",
-            "author": "",
-            "language": "English (U.S.)",
-            "readingLevel": 1, 
-            "tags" : [
-                    "cat", 
-                    "man"
-                ],
-    "fileName": "CatStory",
-    "pathToThumbnail": "Thumbnail/cat",
-    "version": 1
-        },
-        {
-            "bookId": 4,
-            "title": "Brave lion",
+			"title": "Brave lion",
             "author": "",
             "language": "English (U.S.)",
             "readingLevel": 1, 
@@ -53,9 +39,25 @@
                     "lion", 
                     "eats"
                 ],
-    "fileName": "Lion",
-    "pathToThumbnail": "Thumbnail/duck4",
-    "version": 1
+    		"fileName": "Lion",
+    		"pathToThumbnail": "Thumbnail/duck4",
+    		"version": 1
+            
+        },
+        {
+            "bookId": 4,
+			"title": "Cat story",
+            "author": "",
+            "language": "English (U.S.)",
+            "readingLevel": 1, 
+            "tags" : [
+                    "cat", 
+                    "man"
+                ],
+            "fileName": "CatStory",
+            "pathToThumbnail": "Thumbnail/cat",
+            "version": 1
+            
         },
         {
             "bookId": 5,
