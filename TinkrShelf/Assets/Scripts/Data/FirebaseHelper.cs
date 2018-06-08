@@ -58,7 +58,8 @@ public class FirebaseHelper  : MonoBehaviour{
 	public void LogEvent(){
 
 		string label, time, timeEnter;
-		string answer, selection, foilList, timeSpent;
+		string answer, selection, foilList;
+		double timeSpent;
 		long count;
 
 		path = DataCollection.GetPath ();
@@ -129,12 +130,11 @@ public class FirebaseHelper  : MonoBehaviour{
 			Debug.Log ("no file to log data!");		
  		}
 
-		Debug.Log ("here"+dataToLog);
 		text.text = dataToLog.ToString ();
 		DataCollection.SaveLocalJSON (dataToLog);
 	}
 
-	public static void LogInAppSection( string timeEnter, string timeSpent){
+	public static void LogInAppSection( string timeEnter, double timeSpent){
 
 		if (timeEnter != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
@@ -155,16 +155,16 @@ public class FirebaseHelper  : MonoBehaviour{
 		}
 	}
 
-	public static void LogInShelfSection( string timeEnter, string timeSpent){
+	public static void LogInShelfSection( string timeEnter, double timeSpent){
 
-		if (timeEnter != null ) {
+		if (timeEnter != null) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_SECTION",
 				new Firebase.Analytics.Parameter[] {
 					new Firebase.Analytics.Parameter (
 						"TABLET_ID", tabID),
 					new Firebase.Analytics.Parameter (
-						"APP_ID", "Shelf"),
+						"APP_ID", 0),
 					new Firebase.Analytics.Parameter (
 						"TIME_ENTER", timeEnter),
 					new Firebase.Analytics.Parameter (
@@ -189,14 +189,14 @@ public class FirebaseHelper  : MonoBehaviour{
 					new Firebase.Analytics.Parameter (
 						"LABEL", label),
 					new Firebase.Analytics.Parameter (
-						"TIMESTAMP", timestamp)
+						"TIME_OF_TOUCH", timestamp)
 				}
 			);
 		}
 	}
 
 
-	public static void LogInShelfTouch( string label,string type, string timestamp){
+	public static void LogInShelfTouch( string label, string timestamp){
 		if (label != null ) {
 			Firebase.Analytics.FirebaseAnalytics.LogEvent (
 				"IN_APP_TOUCH",
@@ -208,9 +208,7 @@ public class FirebaseHelper  : MonoBehaviour{
 					new Firebase.Analytics.Parameter (
 						"LABEL", label),
 					new Firebase.Analytics.Parameter (
-						"TYPE", type),
-					new Firebase.Analytics.Parameter (
-						"TIMESTAMP", timestamp)
+						"TIME_OF_TOUCH", timestamp)
 				}
 			);
 		}
@@ -236,7 +234,7 @@ public class FirebaseHelper  : MonoBehaviour{
 					new Firebase.Analytics.Parameter (
 						"FOIL",options),
 					new Firebase.Analytics.Parameter (
-						"TIME", timeElapsed)
+						"TIME_OF_RESPONSE", timeElapsed)
 				}
 			);
 		}

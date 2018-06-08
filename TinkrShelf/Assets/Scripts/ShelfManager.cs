@@ -105,7 +105,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     public void left()
     {
-        FirebaseHelper.LogInShelfTouch ("Left Arrow","Button", System.DateTime.Now.ToString());
+		FirebaseHelper.LogInShelfTouch ("Button_Left Arrow", System.DateTime.Now.ToString());
         count = 0;
         check = true;
         name = "left";
@@ -120,7 +120,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     public void right()
    {              
-        FirebaseHelper.LogInShelfTouch ("Right Arrow","Button", System.DateTime.Now.ToString());
+		FirebaseHelper.LogInShelfTouch ("Button__Right Arrow", System.DateTime.Now.ToString());
         count = 0;
         check = true;
         name = "right";
@@ -167,7 +167,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
 			if (go.GetComponentInParent<BookObject> () != null) {
 
-		        FirebaseHelper.LogInShelfTouch ("Book "+go.GetComponentInParent<BookObject> ().position,"Book",System.DateTime.Now.ToString());		                
+		        FirebaseHelper.LogInShelfTouch ("Graphic_Book "+go.GetComponentInParent<BookObject> ().position,System.DateTime.Now.ToString());		                
 
 				if (go.GetComponentInParent<BookObject> ().position == 1) {
 						right60 ();
@@ -185,7 +185,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	    }
 		else if (go.name == "Image" || go.name=="Title" ) {
 			i = 0; j = 0;
-        	FirebaseHelper.LogInShelfTouch (go.name,go.name,System.DateTime.Now.ToString());
+        	FirebaseHelper.LogInShelfTouch (go.name,System.DateTime.Now.ToString());
 			LoadCentreBook ();
          }
 	}
@@ -193,7 +193,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public void LoadCentreBook()
     {   
         System.TimeSpan span = System.DateTime.Now - inTime;
-		FirebaseHelper.LogInShelfSection (inTime.ToString (), span.ToString ());
+		FirebaseHelper.LogInShelfSection (inTime.ToString (), span.TotalSeconds);
 		SceneManager.LoadScene (bookscenePath+"/Scene01");
 	}
 

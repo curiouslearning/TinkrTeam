@@ -100,15 +100,14 @@ public class GTinkerGraphic : MonoBehaviour{
 	{
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
 		{
-			Debug.Log (col.gameObject.name+"== "+dataTinkerGraphic.destroyOnCollision);
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
 		}
 	}
 
 	public IEnumerator DestroyCollisionObject (GameObject go)
 	{
-		yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]);
-		go.SetActive (false);
+			yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]);
+			go.SetActive (false);
 	}
 
 

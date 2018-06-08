@@ -48,8 +48,8 @@ public class LoadAssetExample : MonoBehaviour {
 		startingY = 129.0f;   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
-		//font = Resources.GetBuiltinResource<Font>("OpenDyslexic-Regular.ttf");
-		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+		font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+		//font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
@@ -90,11 +90,10 @@ public class LoadAssetExample : MonoBehaviour {
 	{   
 		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
-
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
@@ -112,7 +111,7 @@ public class LoadAssetExample : MonoBehaviour {
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber--;

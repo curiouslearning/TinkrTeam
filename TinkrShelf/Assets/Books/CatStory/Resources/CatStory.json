@@ -568,7 +568,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatHam",
-					"destroyOnCollision":"Ham",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -757,7 +757,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatJam",
-					"destroyOnCollision":"Jam",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -1408,7 +1408,7 @@
 			
 		},
 		{ "pageNumber": 15,
-			"script":"GSManager",
+			"script":"CatSManager16",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -1501,8 +1501,8 @@
 							"id": 1,
 							"animName": "A16b",
 							"numberOfImages": 4,
-                            "onTouch":true,
-							"onStart":true,
+                            "onTouch":false,
+							"onStart":false,
 							"secPerFrame":[0.4,0.4,0.4,0.4],
 							"sequences": 
 							[
