@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
 public class StoryBookJson{
+	public int id;
     public string fontColor;
 	public float textStartPositionX;
 	public float textStartPositionY;

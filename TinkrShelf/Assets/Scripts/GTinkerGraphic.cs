@@ -23,15 +23,11 @@ public class GTinkerGraphic : MonoBehaviour{
 	// Reset and highlight colors defaults (change from scene manager subclasses)
 	public Color resetColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 	public Color highlightColor = GameManager.yellow;
+	private Coroutine destroyObject;
 
 	private void Awake()
 	{
 		spr = GetComponent<SpriteRenderer>();
-	}
-
-	// Use this for initialization
-	void Start () {
-		//anim = GetComponent<Animator>();
 	}
 
 
@@ -43,14 +39,15 @@ public class GTinkerGraphic : MonoBehaviour{
 		return dataTinkerGraphic.draggable;
 	}
 
+
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData (dataTinkerGraphic.label, "graphic", time.ToString());
+		//DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
 
-		FirebaseHelper.LogInAppTouch(dataTinkerGraphic.label, "Graphic", time.ToString());
+		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
 		LoadAndPlayAnimation ();
 
 		sceneManager.OnMouseDown(this);
@@ -94,11 +91,24 @@ public class GTinkerGraphic : MonoBehaviour{
 		Vector2 pos;
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
 		transform.position = myCanvas.transform.TransformPoint(pos);
-		//transform.position = Input.mousePosition;
 	}
 
 	public Vector2 GetCoordinates(){
 		return transform.position;
+	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
+		{
+			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
+		}
+	}
+
+	public IEnumerator DestroyCollisionObject (GameObject go)
+	{
+			yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]);
+			go.SetActive (false);
 	}
 
 
@@ -119,7 +129,11 @@ public class GTinkerGraphic : MonoBehaviour{
 	}
 
 	public void PlayAnimation(){
-		StopCoroutine ("Animate");
+		//StopAllCoroutines();
+		StopCoroutine("Animate");
+		if (destroyObject != null) {
+			StopCoroutine (destroyObject);
+		}
 		transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
 		StartCoroutine("Animate");
 	}

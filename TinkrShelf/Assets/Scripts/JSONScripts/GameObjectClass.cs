@@ -12,6 +12,7 @@ public class GameObjectClass  {
     public string imageName;
     public bool inText;
     public string label;
+	public string destroyOnCollision;
     public bool draggable;
     public Anim[] anim;
 

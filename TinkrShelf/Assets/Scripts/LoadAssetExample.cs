@@ -20,6 +20,7 @@ public class LoadAssetExample : MonoBehaviour {
 	private string page;
 	public GameObject right;
 	public GameObject left;
+	static float previousTextWidth;
 
 	public static string sceneScript; 
 	Font font;
@@ -28,8 +29,10 @@ public class LoadAssetExample : MonoBehaviour {
 	private int noOfPages, i,j;
 	float width=0.0f, startingX, startingY, startingXText, startingYText;
 	float height = 32.94f;  //height of text:32.94
-	private readonly float minWordSpace = 35.0f;
+	private readonly float minWordSpace = 30.0f;
 	private readonly float minLineSpace = 30.0f;
+	float PivotX=0.0f;
+	float PivotY=0.5f;
 
 	//variables for logging data
 	DateTime inTime;
@@ -48,14 +51,14 @@ public class LoadAssetExample : MonoBehaviour {
 		startingXText = 0.0f;
 		startingYText = 0.0f;
 
+		font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 		//font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
-		font=Resources.GetBuiltinResource<Font>("Arial.ttf");
+
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
         {
-			//bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/"+ShelfManager.selectedBook.ToLower()));
-			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));
+			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
@@ -64,12 +67,13 @@ public class LoadAssetExample : MonoBehaviour {
 		}
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.LoadLocalJSON ();
-		//dataCollector.AddNewBook ("5PageProxy");
 
-		FirebaseHelper.AddBook(ShelfManager.selectedBook);
+
+		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
 		LoadStoryData (ShelfManager.selectedBook.ToLower()+".json");
 		//FirebaseHelper.AddBook("CatStoryLevel2");
 		//LoadStoryData ("CatStoryLevel2.json");
+
     }
 
     void Start () {
@@ -84,18 +88,22 @@ public class LoadAssetExample : MonoBehaviour {
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
 		noOfPages = storyBookJson.pages.Length;
+
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//dataCollector.AddNewBook (storyBookJson.id.ToString());
+
+		FirebaseHelper.AddBook(storyBookJson.id); 
 		left.SetActive (false);
 		LoadCompletePage ();
     }
 	public void LoadNextPage()
-	{   
+	{   previousTextWidth = 0;
 		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
-
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber++;
@@ -107,13 +115,13 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
 	public void LoadPreviousPage()
-	{
+	{    previousTextWidth = 0;
 		TimeSpan span = ( DateTime.Now- inTime );
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.ToString());
+		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
 
 		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
 		pageNumber--;
@@ -146,7 +154,8 @@ public class LoadAssetExample : MonoBehaviour {
 	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
-		FirebaseHelper.AddSection(pageNumber.ToString());
+		Debug.Log(pageNumber);
+		FirebaseHelper.AddSection(pageNumber);
 		inTime = DateTime.Now;
 		LoadSceneSpecificScript ();
 		LoadPageData(pageNumber);
@@ -155,9 +164,17 @@ public class LoadAssetExample : MonoBehaviour {
 		LoadStanzaAudio();
 		LoadTriggers();
 		LoadAudios();
+		SetPivotOfText ();
 
 	}
 		
+	public void SetPivotOfText()
+	{
+		GameObject textPivot = GameObject.Find ("StanzaObject(Clone)");
+		foreach(Transform child in textPivot.transform)
+			child.GetComponent<RectTransform>().pivot = new Vector2 (0.0f, 0.5f);
+		
+	}
 
 	public void LoadSceneSpecificScript ()
 	{  
@@ -274,7 +291,7 @@ public class LoadAssetExample : MonoBehaviour {
 			}
 
 			UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (stanzaManager.stanzas[i].GetComponent<RectTransform>());
-			width = 10.0f;
+			width = 0.0f;
 		}
 
 
@@ -300,10 +317,11 @@ public class LoadAssetExample : MonoBehaviour {
         Text text = UItextGO.AddComponent<Text>();
 
 		text.text = textToPrint;
-		text.fontSize = 60;
+		text.fontSize = 80;
 		text.color = textColor;
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);
+
 
 		ContentSizeFitter csf= UItextGO.AddComponent<ContentSizeFitter> ();
 		csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
@@ -317,12 +335,14 @@ public class LoadAssetExample : MonoBehaviour {
 		RectTransform trans = UItextGO.GetComponent<RectTransform>();
 		text.alignment = TextAnchor.UpperLeft;
 		trans.anchoredPosition = new Vector3(x, y,0);
-
-		
+		UItextGO.GetComponent<RectTransform> ().pivot = new Vector2 (0.0f, 0.5f);
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (trans);
 		//trans.pivot = new Vector2 (0,1);
 
-		width = width + trans.rect.width + minWordSpace;
+
+		width = width+trans.rect.width+minWordSpace;
+
+
         UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
         GTinkerText tinkerText= UItextGO.AddComponent<GTinkerText>();
         tinkerText.stanza =UItextGO.GetComponentInParent<StanzaObject>();
@@ -345,7 +365,6 @@ public class LoadAssetExample : MonoBehaviour {
 		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
 		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
-
 		if (gameObjectData.anim.Length >0)
 		{
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);
@@ -365,6 +384,12 @@ public class LoadAssetExample : MonoBehaviour {
 		{
 			LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>());
 		}
+
+		if(gameObjectData.destroyOnCollision != "NIL"){
+			var rigidbody = go.AddComponent<Rigidbody> ();
+			rigidbody.isKinematic = true;
+		}
+		//add BoxCollider after adding the sprite for proper size!
 		BoxCollider col = go.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		tinkerGraphicObjects.Add(go);

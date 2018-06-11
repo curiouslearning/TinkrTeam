@@ -122,9 +122,9 @@ public class GTinkerText : MonoBehaviour {
 	{
 		System.DateTime time=  System.DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData (gameObject.GetComponent<Text>().text, "Text", time.ToString());
+		//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
 
-		FirebaseHelper.LogInAppTouch (gameObject.GetComponent<Text>().text, "Text", time.ToString());
+		FirebaseHelper.LogInAppTouch ( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
 
         if (!stanza.stanzaManager.sceneManager.disableSounds)
 		{
