@@ -1,0 +1,32 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class L2CatSManager3 : GSManager {
+
+	public override void OnMouseDown(GameObject go)
+	{
+		if (go.name == "Cat") {
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.MyOnMouseDown ();
+			}
+		} else if (go.name == "Ran") {
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.MyOnMouseDown ();
+			} 
+
+		} else if (go.name == "Text_Ran") {
+			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (ranGraphic != null && catGraphic!=null) {
+				ranGraphic.MyOnMouseDown ();
+				catGraphic.MyOnMouseDown ();
+			}
+
+		}
+		base.OnMouseDown (go);
+	}
+}

@@ -9,80 +9,11 @@ EditorBuildSettings:
     path: Assets/scene2.unity
     guid: ddf8527a674e59242a624cf4343dbe04
   - enabled: 1
-    path: Assets/Books/CatStory/Scenes/Scene01.unity
+    path: Assets/Books/catstory/Scenes/Scene01.unity
     guid: 07afb3fb7ab88f3488c2d69cfe616c08
   - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene00.unity
-    guid: c8a036239e352e247a025d5998832cec
+    path: Assets/Books/catstorylevel2/Scenes/Scene01.unity
+    guid: ae2f82f3146bdb344af583a72e39e55f
   - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene01.unity
-    guid: 9d5b95e2880d0094fb73d2a05c76568a
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene02.unity
-    guid: e623e4b543c23f040b58dce77d5dcf3a
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene03.unity
-    guid: ad06ad236e95fa24b86b79c843771a91
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene04.unity
-    guid: d6f9b012f05c33e4981bf9b74168aebb
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene05.unity
-    guid: a2e3b200af3a93e4fbce50d04bf04a65
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene06.unity
-    guid: 36f7fae1443c30e4da0abca0bd86fece
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene07.unity
-    guid: 07af116cc85049d4eb97a30b14404ff2
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene08.unity
-    guid: d5ef7e8e80d7dfd41a34173540acf9f2
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene09.unity
-    guid: 98fbcff73f9fdc14cb69c1fa2e1855ec
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene10.unity
-    guid: 154277fbeebeff34ab91d4474e18d43f
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene11.unity
-    guid: fb4170fe43cbf184bb373849afabcae3
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene12.unity
-    guid: b5a116db233ff094e89d8d5fe709d04e
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene13.unity
-    guid: 9c1e1ed88053efe4b8fa9a6d3d958509
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene14.unity
-    guid: 2992d1ac91830544cbccb934a08b5552
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene15.unity
-    guid: d9fcf601d50a51743ad9ac323f52f1a3
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene16.unity
-    guid: 5d5e0b3ea642b9d4588d07d2bd3b651c
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene17.unity
-    guid: d813d95e746a0954292bd9003cb9e0f9
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene18.unity
-    guid: 544da92f0a4027744bcb110b9dcebcc6
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene19.unity
-    guid: 14eaa40cf0a0c7340a3910f54b389450
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene20.unity
-    guid: 9f2a1f07a061ef849a2f25e5a553fc09
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene21.unity
-    guid: f374618ef7b3504488f3f98bc95bfd9c
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/Scene24.unity
-    guid: 233cc0d5c28ee2c479a02a09c3a19785
-  - enabled: 1
-    path: Assets/Books/BabyD/Scenes/END.unity
-    guid: a0752765938d0af40bcb2e7c8c5b7257
-  - enabled: 1
-    path: Assets/Books/5pageProxy/Scenes/Scene01.unity
+    path: Assets/Books/5pageproxy/Scenes/Scene01.unity
     guid: f1e38bbb8d043bb46bbf6f24b904aabd
