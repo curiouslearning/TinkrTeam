@@ -20,6 +20,7 @@ public class LoadAssetExample : MonoBehaviour {
 	private string page;
 	public GameObject right;
 	public GameObject left;
+	static float previousTextWidth;
 
 	public static string sceneScript; 
 	Font font;
@@ -28,8 +29,10 @@ public class LoadAssetExample : MonoBehaviour {
 	private int noOfPages, i,j;
 	float width=0.0f, startingX, startingY, startingXText, startingYText;
 	float height = 32.94f;  //height of text:32.94
-	private readonly float minWordSpace = 15.0f;
+	private readonly float minWordSpace = 30.0f;
 	private readonly float minLineSpace = 30.0f;
+	float PivotX=0.0f;
+	float PivotY=0.5f;
 
 	//variables for logging data
 	DateTime inTime;
@@ -44,12 +47,13 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		startingX = -2.0f;
-		startingY = 129.0f;   //abhi ke liye static
+		   //abhi ke liye static
 		startingXText = 0.0f;
 		startingYText = 0.0f;
+
 		font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 		//font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+
 		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
@@ -64,11 +68,17 @@ public class LoadAssetExample : MonoBehaviour {
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.LoadLocalJSON ();
 
-		LoadStoryData ("CatStory.json"); 
-		//LoadStoryData (ShelfManager.selectedBook+".json");
+
+		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
+		LoadStoryData (ShelfManager.selectedBook.ToLower()+".json");
+		//FirebaseHelper.AddBook("CatStoryLevel2");
+		//LoadStoryData ("CatStoryLevel2.json");
+
     }
 
     void Start () {
+		startingX = storyBookJson.textStartPositionX;
+		startingY = storyBookJson.textStartPositionY;
        
     }
     private void LoadStoryData(string fileName)
@@ -87,7 +97,7 @@ public class LoadAssetExample : MonoBehaviour {
 		LoadCompletePage ();
     }
 	public void LoadNextPage()
-	{   
+	{   previousTextWidth = 0;
 		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -105,7 +115,7 @@ public class LoadAssetExample : MonoBehaviour {
 	}
 
 	public void LoadPreviousPage()
-	{
+	{    previousTextWidth = 0;
 		TimeSpan span = ( DateTime.Now- inTime );
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -154,9 +164,17 @@ public class LoadAssetExample : MonoBehaviour {
 		LoadStanzaAudio();
 		LoadTriggers();
 		LoadAudios();
+		SetPivotOfText ();
 
 	}
 		
+	public void SetPivotOfText()
+	{
+		GameObject textPivot = GameObject.Find ("StanzaObject(Clone)");
+		foreach(Transform child in textPivot.transform)
+			child.GetComponent<RectTransform>().pivot = new Vector2 (0.0f, 0.5f);
+		
+	}
 
 	public void LoadSceneSpecificScript ()
 	{  
@@ -244,7 +262,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 	public void LoadStanzaData()
 	{   
-		startingY = 129.0f;
+		startingY = storyBookJson.textStartPositionY;
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
@@ -304,6 +322,7 @@ public class LoadAssetExample : MonoBehaviour {
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);
 
+
 		ContentSizeFitter csf= UItextGO.AddComponent<ContentSizeFitter> ();
 		csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 		csf.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
@@ -316,12 +335,14 @@ public class LoadAssetExample : MonoBehaviour {
 		RectTransform trans = UItextGO.GetComponent<RectTransform>();
 		text.alignment = TextAnchor.UpperLeft;
 		trans.anchoredPosition = new Vector3(x, y,0);
-
-		
+		UItextGO.GetComponent<RectTransform> ().pivot = new Vector2 (0.0f, 0.5f);
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (trans);
 		//trans.pivot = new Vector2 (0,1);
 
-		width = width + trans.rect.width + minWordSpace;
+
+		width = width+trans.rect.width+minWordSpace;
+
+
         UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
         GTinkerText tinkerText= UItextGO.AddComponent<GTinkerText>();
         tinkerText.stanza =UItextGO.GetComponentInParent<StanzaObject>();

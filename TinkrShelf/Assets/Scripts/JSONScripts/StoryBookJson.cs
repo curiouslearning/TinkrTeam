@@ -6,7 +6,8 @@ using UnityEngine;
 public class StoryBookJson{
 	public int id;
     public string fontColor;
-    public int textStartPosition;
+	public float textStartPositionX;
+	public float textStartPositionY;
     public string storyImageFile;
     public string backgroundColor;
     public string arrowColor;

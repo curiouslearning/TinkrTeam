@@ -89,16 +89,16 @@
     },
 	{
     "bookId": 7,
-    "title": "Shoe Story",
+    "title": "CAT story L2",
     "author": "",
     "language": "English (U.S.)",
     "readingLevel": 4, 
     "tags" : [
-            "shubham", 
-            "Delhi"
+            "level2", 
+            "Cat"
         ],
-"fileName": "shoe",
-"pathToThumbnail": "Thumbnail/shoe",
+"fileName": "CatStoryLevel2",
+"pathToThumbnail": "Thumbnail/cat",
 "version": 1
     }
 ]
