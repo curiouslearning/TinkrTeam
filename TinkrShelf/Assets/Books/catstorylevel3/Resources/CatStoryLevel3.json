@@ -1,7 +1,8 @@
 {
 	"id":1,
 	"fontColor": "black",
-	"textStartPosition": 100,
+	"textStartPositionX": -261.0,
+	 "textStartPositionY": 132.0,
 	"storyImageFile": null,
 	"backgroundColor": "blue",
 	"arrowColor": "red",
@@ -72,7 +73,7 @@
 				{
 					"start": 45,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 249
 				},
 				{
@@ -87,7 +88,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -149,7 +150,7 @@
 			[
 				{
 					"id": 0,
-					"text": "The Cat wags."
+					"text": "The cat wags."
 					
 				}
 			],
@@ -159,7 +160,7 @@
 				{
 					"start": 145,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 285
 				},
 				{
@@ -171,7 +172,7 @@
 				{
 					"start": 640,
 					"wordIdx": 2,
-					"audio":"Wags.mp3",
+					"audio":"wags.mp3",
 					"end": 1165
 				}
 				
@@ -180,7 +181,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -192,7 +193,7 @@
 
         {
             "pageNumber": 2,
-			"script":"CatSManager3",
+			"script":"L3CatSManager3",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -298,7 +299,7 @@
 				{
 					"start": 55,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 285
 				},
 				{
@@ -318,14 +319,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"typeOfLinking": 3
-				},
-	            {
-					"stnzaId": 0,
-					"textId": 0,
+					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -400,7 +394,7 @@
 				{
 					"start": 485,
 					"wordIdx": 1,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 630
 				},
 				{
@@ -413,7 +407,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -500,7 +494,7 @@
 				{
 					"start": 490,
 					"wordIdx": 1,
-					"audio":"Waves.mp3",
+					"audio":"waves.mp3",
 					"end": 985
 				}
 				
@@ -577,7 +571,7 @@
 				{
 					"start": 40,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 250
 				},
 				{
@@ -589,7 +583,7 @@
 				{
 					"start": 570,
 					"wordIdx": 2,
-					"audio":"Is.mp3",
+					"audio":"is.mp3",
 					"end": 800
 				},
 				{
@@ -604,7 +598,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -615,7 +609,7 @@
 
         {   
 			"pageNumber": 6,
-			"script":"CatSManager7",
+			"script":"L3CatSManager7",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -707,7 +701,7 @@
 				{
 					"start": 40,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 250
 				},
 				{
@@ -719,7 +713,7 @@
 				{
 					"start": 700,
 					"wordIdx": 2,
-					"audio":"Eats.mp3",
+					"audio":"eats.mp3",
 					"end": 1060
 				},
 				{
@@ -734,7 +728,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -802,7 +796,7 @@
 				{
 					"start": 40,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 275
 				},
 				{
@@ -814,7 +808,7 @@
 				{
 					"start": 690,
 					"wordIdx": 2,
-					"audio":"Is.mp3",
+					"audio":"is.mp3",
 					"end": 935
 				},
 				{
@@ -828,7 +822,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -840,7 +834,7 @@
 
 		{
 			"pageNumber": 8,
-			"script":"CatSManager9",
+			"script":"L3CatSManager9",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -929,7 +923,7 @@
 				{
 					"start": 40,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 270
 				},
 				{
@@ -941,7 +935,7 @@
 				{
 					"start": 740,
 					"wordIdx": 2,
-					"audio":"Eats.mp3",
+					"audio":"eats.mp3",
 					"end": 1155
 				},
 				{
@@ -955,7 +949,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -966,7 +960,7 @@
 
 		{
 			"pageNumber": 9,
-			"script":"CatSManager10",
+			"script":"L3CatSManager10",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -1041,7 +1035,7 @@
 				{
 					"start": 45,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 240
 				},
 				{
@@ -1053,7 +1047,7 @@
 				{
 					"start": 700,
 					"wordIdx": 2,
-					"audio":"Is.mp3",
+					"audio":"is.mp3",
 					"end": 985
 				},
 				{
@@ -1068,7 +1062,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -1137,7 +1131,7 @@
 				{
 					"start": 30,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 300
 				},
 				{
@@ -1149,7 +1143,7 @@
 				{
 					"start": 820,
 					"wordIdx": 2,
-					"audio":"On.mp3",
+					"audio":"on.mp3",
 					"end": 1045
 				},
 				{
@@ -1163,7 +1157,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1252,7 +1246,7 @@
 				{
 					"start": 50,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 345
 				},
 				{
@@ -1264,7 +1258,7 @@
 				{
 					"start": 875,
 					"wordIdx": 2,
-					"audio":"Naps.mp3",
+					"audio":"naps.mp3",
 					"end": 1405
 				}
 				
@@ -1272,7 +1266,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -1294,7 +1288,7 @@
             "gameObjects": 
             [
 				{ 
-					"id": 1,
+					"id": 0,
 					"posX": -23,
 					"posY": -65,
 					"scaleX": 80,
@@ -1343,13 +1337,13 @@
 				{
 					"start": 185,
 					"wordIdx": 0,
-					"audio":"Sam_s.mp3",
+					"audio":"sam_s.mp3",
 					"end": 801
 				},
 				{
 					"start": 185,
 					"wordIdx": 1,
-					"audio":"Black.mp3",
+					"audio":"black.mp3",
 					"end": 801
 				},
 				{
@@ -1364,9 +1358,9 @@
 			 [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 2,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]	
@@ -1441,7 +1435,7 @@
 				{
 					"start": 510,
 					"wordIdx": 1,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 640
 				},
 				{
@@ -1461,7 +1455,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1593,7 +1587,7 @@
 				{
 					"start": 490,
 					"wordIdx": 1,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 630
 				},
 				{
@@ -1605,7 +1599,7 @@
 				{
 					"start": 970,
 					"wordIdx": 3,
-					"audio":"Slams.mp3",
+					"audio":"slams.mp3",
 					"end": 1635
 				}
 				
@@ -1613,7 +1607,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 2,
 					"typeOfLinking": 3
@@ -1623,7 +1617,7 @@
 			
 		},
 		{ "pageNumber": 15,
-			"script":"CatSManager16",
+			"script":"L3CatSManager16",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -1755,7 +1749,7 @@
 				{
 					"start": 40,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 300
 				},
 				{
@@ -1767,13 +1761,13 @@
 				{
 					"start": 670,
 					"wordIdx": 2,
-					"audio":"Still.mp3",
+					"audio":"still.mp3",
 					"end": 1010
 				},
 				{
 					"start": 1030,
 					"wordIdx": 3,
-					"audio":"Naps.mp3",
+					"audio":"naps.mp3",
 					"end": 1650
 				}
 				
@@ -1782,7 +1776,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 2,
 					"typeOfLinking": 3
@@ -1868,7 +1862,7 @@
 				{
 					"start": 45,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 245
 				},
 				{
@@ -1880,7 +1874,7 @@
 				{
 					"start": 720,
 					"wordIdx": 2,
-					"audio":"Is.mp3",
+					"audio":"is.mp3",
 					"end": 990
 				},
 				{
@@ -1895,7 +1889,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -1903,7 +1897,7 @@
 			]
 		},
 		{   "pageNumber": 17,
-			"script":"CatSManager18",
+			"script":"L3CatSManager18",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
@@ -1959,7 +1953,7 @@
 								},
 								{ "startFrame":4,
 									"endFrame":5,
-									"noOfLoops":1,
+									"noOfLoops":3,
 									"movable": 
 									{  
 										"speed":0
@@ -1987,7 +1981,7 @@
 				{
 					"start": 45,
 					"wordIdx": 0,
-					"audio":"The.mp3",
+					"audio":"the.mp3",
 					"end": 295
 				},
 				{
@@ -1999,19 +1993,19 @@
 				{
 					"start": 620,
 					"wordIdx": 2,
-					"audio":"Is.mp3",
+					"audio":"is.mp3",
 					"end": 820
 				},
 				{
 					"start": 825,
 					"wordIdx": 3,
-					"audio":"In.mp3",
+					"audio":"in.mp3",
 					"end": 960
 				},
 				{
 					"start": 965,
 					"wordIdx": 4,
-					"audio":"A.mp3",
+					"audio":"a.mp3",
 					"end": 1100
 				},
 				{
@@ -2025,16 +2019,9 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 3,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
 
