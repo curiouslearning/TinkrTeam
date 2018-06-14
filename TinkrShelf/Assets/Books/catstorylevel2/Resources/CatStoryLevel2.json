@@ -166,7 +166,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -296,14 +296,14 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				},
 	            {
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -387,7 +387,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -488,6 +488,7 @@
 				}
 			]
 		},
+
 		
 
         {
@@ -539,7 +540,7 @@
 			[
 				{
 					"id": 0,
-					"text": "sad cat"
+					"text": "Sad cat"
 					
 				}
 			],
@@ -680,7 +681,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -874,7 +875,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1055,7 +1056,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1156,7 +1157,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
@@ -1179,7 +1180,7 @@
             [
 				
 				{ 
-					"id": 1,
+					"id": 0,
 					"posX": -23,
 					"posY": -65,
 					"scaleX": 80,
@@ -1242,9 +1243,9 @@
 			 [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]	
@@ -1821,16 +1822,9 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
 					"textId": 1,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 

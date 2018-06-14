@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1727376878
+CRC: 3115189866
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9edd390e9303916466cbfac3389cfffe
+    Hash: 26326e701b3e76df788ea8bdfa01fa89
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -227,6 +227,7 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A02/A02-5.png
 - Assets/Books/catstorylevel2/AnimPNGs/A15b/A15b-1.png
 - Assets/Books/catstorylevel2/AnimPNGs/A18/A18-7.png
+- Assets/Books/catstorylevel3/Resources/CatStoryLevel3.json
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-4.png
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A14/A14-3.png

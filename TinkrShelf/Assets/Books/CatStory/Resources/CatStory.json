@@ -1,7 +1,7 @@
 {
 	"id":1,
 	"fontColor": "black",
-	"textStartPositionX": -26.0,
+	"textStartPositionX": -70.0,
 	 "textStartPositionY": 132.0,
 	"storyImageFile": null,
 	"backgroundColor": "blue",
@@ -1137,7 +1137,7 @@
             "gameObjects": 
             [
 				{ 
-					"id": 1,
+					"id": 0,
 					"posX": -23,
 					"posY": -65,
 					"scaleX": 80,
@@ -1180,7 +1180,7 @@
 					
 				}
 			],
-			"audioFile": "Hat.mp3",
+			"audioFile":"Hat.mp3",
 			"timestamps": 
 			[
 				{
@@ -1197,7 +1197,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]	

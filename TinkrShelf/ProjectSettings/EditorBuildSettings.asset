@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Books/5pageproxy/Scenes/Scene01.unity
     guid: f1e38bbb8d043bb46bbf6f24b904aabd
+  - enabled: 1
+    path: Assets/Books/catstorylevel3/Scenes/Scene01.unity
+    guid: b93a5c02453e2ee42815e3d3a3ab24cb

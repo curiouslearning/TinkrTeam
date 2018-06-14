@@ -8,7 +8,7 @@ public class L3CatSManager7 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name == "Text_Ham") {
+		if (go.name == "CatHam" || go.name == "Text_ham") {
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
 			}
