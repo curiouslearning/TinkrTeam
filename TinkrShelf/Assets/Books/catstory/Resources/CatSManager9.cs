@@ -8,7 +8,7 @@ public class CatSManager9 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam" || go.name == "Text_Jam") {
+		if (go.name == "CatJam" || go.name == "Text_jam") {
 			if (jam == null) {
 				jam = GameObject.Find ("Jam");
 			}

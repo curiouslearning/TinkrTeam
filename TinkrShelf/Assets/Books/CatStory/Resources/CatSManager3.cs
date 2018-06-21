@@ -20,7 +20,7 @@ public class CatSManager3 : GSManager {
 			} 
 			
 		}
-		 else if (go.name == "Text_Ran") {
+		 else if (go.name == "Text_ran") {
 			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
 			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
 			if (ranGraphic != null && catGraphic!=null) {

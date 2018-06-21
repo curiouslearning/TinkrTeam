@@ -26,7 +26,7 @@
                 "jump"
             ],
 "fileName": "5pageProxy",
-"pathToThumbnail": "Thumbnail/duck2",
+"pathToThumbnail": "Thumbnail/dog",
 "version": 1
         },
         {
@@ -40,7 +40,7 @@
                     "eats"
                 ],
     		"fileName": "Lion",
-    		"pathToThumbnail": "Thumbnail/duck4",
+    		"pathToThumbnail": "Thumbnail/Lion",
     		"version": 1
             
         },
@@ -70,21 +70,21 @@
                     "some actions"
                 ],
     "fileName": "OtherFile",
-    "pathToThumbnail": "Thumbnail/duck5",
+    "pathToThumbnail": "Thumbnail/frog",
     "version": 1
         },
 		{
     "bookId": 6,
-    "title": "Main Story",
+    "title": "CAT story L3",
     "author": "",
     "language": "English (U.S.)",
     "readingLevel": 300, 
     "tags" : [
-            "csk", 
-            "kxip"
+            "level3", 
+            "cat"
         ],
-"fileName": "Ipl",
-"pathToThumbnail": "Thumbnail/ipl",
+"fileName": "CatStoryLevel3",
+"pathToThumbnail": "Thumbnail/cat",
 "version": 1
     },
 	{

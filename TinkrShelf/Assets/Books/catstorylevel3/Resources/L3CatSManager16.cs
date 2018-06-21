@@ -8,7 +8,7 @@ public class L3CatSManager16 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "Cat" || go.name == "Text_Cat") {
+		if (go.name == "Cat" || go.name == "Text_naps.") {
 			if (sleep == null) {
 				sleep = GameObject.Find ("Sleep").GetComponent<GTinkerGraphic> ();
 			}
