@@ -103,7 +103,9 @@ public class LoadAssetExample : MonoBehaviour {
     }
 
 	public void LoadNextPage()
-	{   previousTextWidth = 0;
+    {
+        stanzaManager.RequestCancelAutoPlay();
+        previousTextWidth = 0;
 		left.SetActive (true);
 		TimeSpan span = ( DateTime.Now- inTime );
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -121,8 +123,10 @@ public class LoadAssetExample : MonoBehaviour {
 
 		EmptyPage ();
 		LoadCompletePage ();
+	
+        LoadCompletePage ();
 	}
-
+        
 	public void LoadPreviousPage()
 	{    previousTextWidth = 0;
 		TimeSpan span = ( DateTime.Now- inTime );
@@ -148,17 +152,17 @@ public class LoadAssetExample : MonoBehaviour {
 	{
 		for(int i=0;i<tinkerGraphicObjects.Count;i++)
 		{
-			Destroy (tinkerGraphicObjects [i]);
-		}
+            Destroy(tinkerGraphicObjects[i]);
+        }
 		for (int j=0;j<stanzaObjects.Count;j++)
 		{
-			Destroy (stanzaObjects[j]);
-		}
+            Destroy(stanzaObjects[j]);
+        }
 		stanzaObjects = null;
-		stanzaManager.RequestCancelAutoPlay ();
+        //stanzaManager.RequestCancelAutoPlay();
 
-	
-	}
+
+    }
 	public void LoadCompletePage()
 	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
