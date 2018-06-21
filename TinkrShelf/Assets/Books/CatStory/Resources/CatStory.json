@@ -1771,75 +1771,49 @@
 			]
 		},
 	    {   "pageNumber": 18,
-			"script":"EndPage",
-			"audio": {
-				"audioName": "audio-name",
-				"isAnim": true,
-				"objectId": 1
-			},
-            "gameObjects": 
-            [   {
-					"id": 0,
-					"posX": 4.9,
-					"posY": 81.3,
-					"scaleX": 15,
-					"scaleY": 15,
-					"imageName": "ReadAgain",
-					"orderInLayer":1,
-					"inText": false,
-					"label": "readagain",
-					"destroyOnCollision":"NIL",
-					"draggable": false,
-                    "anim": null
-				},
-				{
-					"id": 1,
-					"posX": 9,
-					"posY": -39,
-					"scaleX": 15,
-					"scaleY": 15,
-					"imageName": "Home",
-					"orderInLayer":1,
-					"inText":false,
-					"label": "home",
-					"destroyOnCollision":"NIL",
-					"draggable": false,
-                    "anim": null
-                    
-				}
-			],
-				
-			"texts": 
-			[
-				{
-					"id": 0,
-					"text": "END"				
-				}
-			],
-			"audioFile": "audio-name",
-			"timestamps":
-			 [
-				{
-					"start": 0,
-					"wordIdx": 0,
-					"audio":"audio-name",
-					"end": 0
-				}
-				
-			],
-			"triggers": 
-			[
-				{
-					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"typeOfLinking": 3
-				}
-			]
-
-			
-		}
+            "script":"EndPage",
+            "audio": {
+                "audioName": "audio-name",
+                "isAnim": true,
+                "objectId": 1
+            },
+           "gameObjects":
+           [   {
+                    "id": 0,
+                    "posX": 4.9,
+                    "posY": 81.3,
+                    "scaleX": 15,
+                    "scaleY": 15,
+                    "imageName": "ReadAgain",
+                    "orderInLayer":1,
+                    "inText": false,
+                    "label": "readagain",
+                    "destroyOnCollision":"NIL",
+                    "draggable": false,
+                   "anim": null
+                },
+                {
+                    "id": 1,
+                    "posX": 9,
+                    "posY": -39,
+                    "scaleX": 15,
+                    "scaleY": 15,
+                    "imageName": "Home",
+                    "orderInLayer":1,
+                    "inText":false,
+                    "label": "home",
+                    "destroyOnCollision":"NIL",
+                    "draggable": false,
+                   "anim": null
+                   
+                }
+            ],
+                
+            "texts": null ,
+            "audioFile": null ,
+            "timestamps":null ,
+            "triggers": null
+        }
 		
 	]
 		}
