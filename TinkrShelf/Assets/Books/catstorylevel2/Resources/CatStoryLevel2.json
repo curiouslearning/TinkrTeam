@@ -487,7 +487,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
