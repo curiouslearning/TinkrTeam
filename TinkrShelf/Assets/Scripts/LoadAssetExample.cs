@@ -102,6 +102,7 @@ public class LoadAssetExample : MonoBehaviour {
         LoadCompletePage();
     }
 
+
     public void LoadNextPage()
     {
         stanzaManager.RequestCancelAutoPlay();
@@ -125,15 +126,15 @@ public class LoadAssetExample : MonoBehaviour {
         LoadCompletePage();
     }
 
-    public void LoadPreviousPage()
-    { previousTextWidth = 0;
-        TimeSpan span = (DateTime.Now - inTime);
+        
 
+
+    public void LoadPreviousPage()
+    {  previousTextWidth = 0;
+        TimeSpan span = (DateTime.Now - inTime);
         //sending data directly to firebase using "72 hours rule"! (removed local data storage)
         //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
-
         FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
-
         Destroy(GameObject.Find("SceneManager" + (pageNumber)));
         pageNumber--;
         if (pageNumber == 0) {
@@ -146,37 +147,37 @@ public class LoadAssetExample : MonoBehaviour {
         LoadCompletePage();
     }
 
-    public void EmptyPage()
-    {
-        for (int i = 0; i < tinkerGraphicObjects.Count; i++)
-        {
+ 
+	public void EmptyPage()
+	{
+		for(int i=0;i<tinkerGraphicObjects.Count;i++)
+		{
             Destroy(tinkerGraphicObjects[i]);
         }
-        for (int j = 0; j < stanzaObjects.Count; j++)
-        {
+		for (int j=0;j<stanzaObjects.Count;j++)
+		{
             Destroy(stanzaObjects[j]);
         }
-        stanzaObjects = null;
-        stanzaManager.RequestCancelAutoPlay();
-
+		stanzaObjects = null;
+        //stanzaManager.RequestCancelAutoPlay();
+    }
+	public void LoadCompletePage()
+	{   
+		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
+		Debug.Log(pageNumber);
+		FirebaseHelper.AddSection(pageNumber);
+		inTime = DateTime.Now;
+		LoadSceneSpecificScript ();
+		LoadPageData(pageNumber);
+		LoadStanzaData();
+		TokenizeStanza();
+		LoadStanzaAudio();
+		LoadTriggers();
+		LoadAudios();
 
     }
-    public void LoadCompletePage()
-    {
-        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
-        //dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
-        Debug.Log(pageNumber);
-        FirebaseHelper.AddSection(pageNumber);
-        inTime = DateTime.Now;
-        LoadSceneSpecificScript();
-        LoadPageData(pageNumber);
-        LoadStanzaData();
-        TokenizeStanza();
-        LoadStanzaAudio();
-        LoadTriggers();
-        LoadAudios();
-
-    }
+   
 
 
 

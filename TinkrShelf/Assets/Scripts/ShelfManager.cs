@@ -78,8 +78,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             request.Dispose();
             isServerJson = false;
             Debug.Log("timeout");
+
             //load shelf data with local json
             LoadShelfData();
+
+            LoadInitialCenterBook();
             yield break;
         }
         
@@ -90,8 +93,16 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             isServerJson = true;
 
         LoadShelfData();
+        LoadInitialCenterBook();
         // first store the name to reference while loading the assets of book!
-        Debug.Log(bookInfos.Count);
+
+
+
+        //StartCoroutine(OnResponse(request));
+
+    }
+    private void LoadInitialCenterBook() {
+
         selectedBook = bookInfos[2].book.fileName;
 
         string filePath = Path.Combine("Books/", selectedBook + "/");
@@ -101,36 +112,33 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         LoadImageandText(bookInfos[2]);
 
 
-        //StartCoroutine(OnResponse(request));
-
     }
 
 
+    //   private IEnumerator OnResponse(WWW req)
+    //{
 
- //   private IEnumerator OnResponse(WWW req)
-	//{
+    //	yield return req;
+    //	if (req.error == null) {
+    //		responseJson = req.text;
 
-	//	yield return req;
-	//	if (req.error == null) {
-	//		responseJson = req.text;
+    //		// if internet-> ok
+    //		if (responseJson != "")
+    //			isServerJson = true;
+    //	}
+    //       LoadShelfData();
 
-	//		// if internet-> ok
-	//		if (responseJson != "")
-	//			isServerJson = true;
-	//	}
- //       LoadShelfData();
+    //       // first store the name to reference while loading the assets of book!
+    //       Debug.Log(bookInfos.Count);
+    //       selectedBook = bookInfos[2].book.fileName;
 
- //       // first store the name to reference while loading the assets of book!
- //       Debug.Log(bookInfos.Count);
- //       selectedBook = bookInfos[2].book.fileName;
+    //       string filePath = Path.Combine ("Books/", selectedBook+"/");
 
- //       string filePath = Path.Combine ("Books/", selectedBook+"/");
+    //       bookscenePath = Path.Combine(filePath,"Scenes");
+    //       //loading inital center book on first time loading of shelf
+    //       LoadImageandText(bookInfos[2]);
 
- //       bookscenePath = Path.Combine(filePath,"Scenes");
- //       //loading inital center book on first time loading of shelf
- //       LoadImageandText(bookInfos[2]);
-
- //   }
+    //   }
 
     public void Update()
     {
