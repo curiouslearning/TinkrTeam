@@ -17,7 +17,7 @@ public class EndPage : ShelfManager, IPointerClickHandler {
 			SceneManager.LoadScene (bookscenePath+"/Scene01");
 		}
 		if (go.name == "Home") 
-		{SceneManager.LoadScene ("scene2");
+		{
 		}
 }
 }
