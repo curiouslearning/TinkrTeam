@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class CatSManager10 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "Fat"|| go.name == "Text_fat") 
+		if (go.name == "Fat"|| go.name == "Text_Fat") 
 		{  if (fat == null) {
 				fat = GameObject.Find ("Fat");
 			}

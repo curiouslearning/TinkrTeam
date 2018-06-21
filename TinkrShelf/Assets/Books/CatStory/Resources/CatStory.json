@@ -319,8 +319,8 @@
 					"id": 0,
 					"posX":-23,
 					"posY": -65,
-					"scaleX": 80,
-					"scaleY": 80,
+					"scaleX": 40,
+					"scaleY": 40,
 					"imageName": "A04-1",
 					"orderInLayer":1,
 					"inText": true,
@@ -569,7 +569,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatHam",
-					"destroyOnCollision":"NIL",
+					"destroyOnCollision":"Ham",
 					"draggable": false,
                     "anim": 
                     [
@@ -758,7 +758,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatJam",
-					"destroyOnCollision":"NIL",
+					"destroyOnCollision":"Jam",
 					"draggable": false,
                     "anim": 
                     [
@@ -810,7 +810,7 @@
 						"orderInLayer":1,
 						"inText": true,
 						"label": "Jam",
-					    "destroyOnCollision":"NIL",
+					    "destroyOnCollision":"Jam",
 						"draggable": false,
 						"anim": null
 						
@@ -959,7 +959,7 @@
 				"objectId": 1
 			},
             "gameObjects": 
-            [
+            [  
 				{
 					"id": 0,
 					"posX": -11,
@@ -980,11 +980,11 @@
 							"numberOfImages": 3,
                             "onTouch":true,
 							"onStart":false,
-							"secPerFrame":[0.3,0.3,0.3],
+							"secPerFrame":[0.3,0.3],
 							"sequences":
 							[
 								{ "startFrame":0,
-									"endFrame":2,
+									"endFrame":1,
 									"noOfLoops":3,
 									"movable": 
 									{  
@@ -1494,7 +1494,7 @@
 				},
 	            
                 {
-					"id": 3,
+					"id":3,
 					"posX": -46,
 					"posY": -45,
 					"scaleX": 40,
@@ -1671,10 +1671,10 @@
             "gameObjects": 
             [   {
 					"id": 0,
-					"posX": -39,
-					"posY": -70,
-					"scaleX": 80,
-					"scaleY": 80,
+					"posX": 8,
+					"posY": -131,
+					"scaleX": 40,
+					"scaleY": 40,
 					"imageName": "A18-7",
 					"orderInLayer":2,
 					"inText": true,
@@ -1809,35 +1809,10 @@
 				}
 			],
 				
-			"texts": 
-			[
-				{
-					"id": 0,
-					"text": "END"				
-				}
-			],
-			"audioFile": "audio-name",
-			"timestamps":
-			 [
-				{
-					"start": 0,
-					"wordIdx": 0,
-					"audio":"audio-name",
-					"end": 0
-				}
-				
-			],
-			"triggers": 
-			[
-				{
-					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"typeOfLinking": 3
-				}
-			]
-
+			"texts": null,
+			"audioFile": null,
+			"timestamps":null,
+			"triggers": null
 			
 		}
 		

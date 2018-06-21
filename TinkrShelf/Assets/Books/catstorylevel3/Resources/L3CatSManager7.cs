@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,32 +8,38 @@ public class L3CatSManager7 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name == "Text_ham.") {
+		if (go.name == "CatHam") {
 			if (ham == null) {
-				Debug.Log ("nullham");
-				ham = GameObject.Find("Ham");
+				ham = GameObject.Find ("Ham");
 			}
-			ham.SetActive (true);
-			StartCoroutine (SetGameObject());
-		}
 
-		if (go.name == "Ham") 
+			ham.SetActive (true);
+		}
+		else if ( go.name == "Text_ham."){
+
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
+			}
+
+			ham.SetActive (true);
+			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+
+		}
+		else if (go.name == "Ham") 
 		{   
-			StartCoroutine (SetGameObject());
+			ham = go;
 			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
 			if (catHam != null)
 			{ 
 				catHam.MyOnMouseDown();
 			}
 		}
-			
+
 		base.OnMouseDown (go);
 	}
-	public IEnumerator SetGameObject ()
-	{
-		yield return new WaitForSeconds (2.3f);
-		ham = GameObject.Find ("Ham"); 
-		ham.SetActive (false);
-	}
-		
+
 }

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 720228482
+CRC: 899590964
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b481b29dd025071247521ad9e438398a
+    Hash: 3edcbcd9228612b7d5b629a48d8f22e0
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -66,7 +66,6 @@ Assets:
 - Assets/Books/catstorylevel3/Audio/SingleWord/Ham.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/sat.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A09/A09-2.png
-- Assets/Books/catstorylevel3/AnimPNGs/A11a/A11a-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A02/A02-4.png
 - Assets/Books/catstory/Audio/SingleWord/Fat.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/Glad.mp3
@@ -84,6 +83,7 @@ Assets:
 - Assets/Books/catstory/AnimPNGs/A08/A08-1.png
 - Assets/Books/catstory/AnimPNGs/A11/A11-7.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/Sad.mp3
+- Assets/Books/catstory/AnimPNGs/A18/A18-7.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/he.mp3
 - Assets/Books/catstory/AnimPNGs/A11/A11-5.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/happy.mp3
@@ -223,7 +223,6 @@ Assets:
 - Assets/Books/catstorylevel3/Audio/SingleWord/fast.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A02/A02-5.png
 - Assets/Books/catstorylevel2/AnimPNGs/A15b/A15b-1.png
-- Assets/Books/catstorylevel2/AnimPNGs/A18/A18-7.png
 - Assets/Books/catstorylevel3/Resources/CatStoryLevel3.json
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-4.png
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-3.png
@@ -239,7 +238,6 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A11/A11-1.png
 - Assets/Books/catstorylevel3/AnimPNGs/A03b/A03b-5.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/makes.mp3
-- Assets/Books/catstorylevel2/AnimPNGs/A11a/A11a-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A10/A10-4.png
 - Assets/Books/catstory/AnimPNGs/A13/A13-4.png
 - Assets/Books/catstorylevel2/AnimPNGs/A02/A02-2.png
@@ -304,7 +302,6 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A02/A02-1.png
 - Assets/Books/catstory/AnimPNGs/A07/A07-7.png
 - Assets/Books/catstorylevel3/Audio/Stanza/Sam the man slams.mp3
-- Assets/Books/catstorylevel3/AnimPNGs/A18/A18-7.png
 - Assets/Books/catstory/AnimPNGs/A10/A10-2.png
 - Assets/Books/catstorylevel3/AnimPNGs/A10/A10-5.png
 - Assets/Books/catstorylevel2/AnimPNGs/A12/A12-6.png

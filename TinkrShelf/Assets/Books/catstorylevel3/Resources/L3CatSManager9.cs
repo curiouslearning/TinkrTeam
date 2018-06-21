@@ -8,31 +8,39 @@ public class L3CatSManager9 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam" || go.name == "Text_jam.") {
+		if (go.name == "CatJam") {
 			if (jam == null) {
 				jam = GameObject.Find ("Jam");
 			}
+
 			jam.SetActive (true);
-			StartCoroutine (SetGameObject());
 		}
-		if (go.name == "Jam") 
+		else if ( go.name == "Text_jam."){
+
+			if (jam == null) {
+				jam = GameObject.Find ("Jam");
+			}
+
+			jam.SetActive (true);
+			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+
+		}
+		else if (go.name == "Jam") 
 		{   
-			StartCoroutine (SetGameObject());
+			jam = go;
 			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
 			if (catJam != null)
 			{ 
 				catJam.MyOnMouseDown();
 			}
 		}
+
 		base.OnMouseDown (go);
-
 	}
 
-	public IEnumerator SetGameObject ()
-	{
-		yield return new WaitForSeconds (2.5f);
-		jam = GameObject.Find ("Jam"); 
-		jam.SetActive (false);
-	}
 
 }
