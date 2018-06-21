@@ -305,15 +305,12 @@ public class GGameManager : MonoBehaviour
 			j = 0;
 			stanzaManager.RequestCancelAutoPlay();
 			StartCoroutine (SetMenuContainer ());
-
-
 		}
 		else
 		{  
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
 			FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-
 			read.image.sprite=narrateOn;
 			j = 1;
 			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);

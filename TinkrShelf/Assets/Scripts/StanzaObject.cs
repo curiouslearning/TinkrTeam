@@ -46,17 +46,19 @@ public class StanzaObject : MonoBehaviour {
 			if (i < tinkerTexts.Count - 1)
 			{
 				float pauseDelay = tinkerTexts[i + 1].GetStartTime() - tinkerTexts[i].GetEndTime();
-
+                if(anim!=null)
 				anim.Play("textzoomout");
 				yield return new WaitForSeconds(t.delayTime / 2);
 
-				//anim.SetTrigger("tapme");
-				anim.Play("textzoomin");
+                //anim.SetTrigger("tapme");
+                if (anim != null)
+                    anim.Play("textzoomin");
 				yield return new WaitForSeconds(t.delayTime / 2);
 				if (pauseDelay != 0)
 				{
-					anim.speed = 1 / pauseDelay;
-					if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+                    if (anim != null)
+                        anim.speed = 1 / pauseDelay;
+					if (anim != null&&anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
 						anim.Play("pausedelay");
 					//anim.SetTrigger("resume");
 					yield return new WaitForSeconds(pauseDelay);
@@ -71,7 +73,7 @@ public class StanzaObject : MonoBehaviour {
                 if (anim != null)
                     anim.Play("textzoomin");
 				yield return new WaitForSeconds(t.delayTime / 2);
-				if (endDelay != 0)
+				if (anim != null&&endDelay != 0)
 				{
 					anim.speed = 1 / endDelay;
 					anim.Play("enddelay");
@@ -95,7 +97,8 @@ public class StanzaObject : MonoBehaviour {
 	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
 	{
 		// if we aren't already mouse down on this text
-		if (mouseDownTinkerText != null && mouseDownTinkerText != tinkerText)
+		if (mouseDownTinkerText !=
+            null && mouseDownTinkerText != tinkerText)
 		{
 			// Then reset the old one
 			mouseDownTinkerText.Reset();
