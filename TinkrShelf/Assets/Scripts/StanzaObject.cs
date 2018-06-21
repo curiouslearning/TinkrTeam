@@ -22,75 +22,79 @@ public class StanzaObject : MonoBehaviour {
 	void Start () {
 
 	}
-	
 
-	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)
-	{
-		int startingTinkerTextIndex = 0;
 
-		if (startingTinkerText != null)
-		{
-			startingTinkerTextIndex = tinkerTexts.IndexOf(startingTinkerText);
-		}
+    public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)
+    {
+        int startingTinkerTextIndex = 0;
 
-		for (int i = startingTinkerTextIndex; i < tinkerTexts.Count; i++)
-		{
-			// delay according to timing data
-			//animation not integrated
-			//yield return new WaitForSeconds(tinkerTexts[i].GetAnimationDelay());
-			GTinkerText t = tinkerTexts[i];
-			Animator anim = t.GetComponent<Animator>();
-			anim.speed = 1 / t.delayTime;
+        if (startingTinkerText != null)
+        {
+            startingTinkerTextIndex = tinkerTexts.IndexOf(startingTinkerText);
+        }
 
-			// If we aren't on last word, delay before playing next word
-			if (i < tinkerTexts.Count - 1)
-			{
-				float pauseDelay = tinkerTexts[i + 1].GetStartTime() - tinkerTexts[i].GetEndTime();
+        for (int i = startingTinkerTextIndex; i < tinkerTexts.Count; i++)
+        {
+            // delay according to timing data
+            //animation not integrated
+            //yield return new WaitForSeconds(tinkerTexts[i].GetAnimationDelay());
+            GTinkerText t = tinkerTexts[i];
+            Animator anim = t.GetComponent<Animator>();
+            anim.speed = 1 / t.delayTime;
 
-				anim.Play("textzoomout");
-				yield return new WaitForSeconds(t.delayTime / 2);
+            // If we aren't on last word, delay before playing next word
+            if (i < tinkerTexts.Count - 1)
+            {
+                float pauseDelay = tinkerTexts[i + 1].GetStartTime() - tinkerTexts[i].GetEndTime();
+                if (anim != null)
+                    anim.Play("textzoomout");
+                yield return new WaitForSeconds(t.delayTime / 2);
 
-				//anim.SetTrigger("tapme");
-				anim.Play("textzoomin");
-				yield return new WaitForSeconds(t.delayTime / 2);
-				if (pauseDelay != 0)
-				{
-					anim.speed = 1 / pauseDelay;
-					if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
-						anim.Play("pausedelay");
-					//anim.SetTrigger("resume");
-					yield return new WaitForSeconds(pauseDelay);
-				}
-			}
-			else // Delay before next stanza
-			{
-				anim.Play("textzoomout");
-				yield return new WaitForSeconds(t.delayTime / 2);
+                //anim.SetTrigger("tapme");
+                if (anim != null)
+                    anim.Play("textzoomin");
+                yield return new WaitForSeconds(t.delayTime / 2);
+                if (pauseDelay != 0)
+                {
+                    if (anim != null)
+                        anim.speed = 1 / pauseDelay;
+                    if (anim != null && anim.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+                        anim.Play("pausedelay");
+                    //anim.SetTrigger("resume");
+                    yield return new WaitForSeconds(pauseDelay);
+                }
+            }
+            else // Delay before next stanza
+            {
+                if (anim != null)
+                    anim.Play("textzoomout");
+                yield return new WaitForSeconds(t.delayTime / 2);
 
-				anim.Play("textzoomin");
-				yield return new WaitForSeconds(t.delayTime / 2);
-				if (endDelay != 0)
-				{
-					anim.speed = 1 / endDelay;
-					anim.Play("enddelay");
-				}
+                if (anim != null)
+                    anim.Play("textzoomin");
+                yield return new WaitForSeconds(t.delayTime / 2);
+                if (anim != null && endDelay != 0)
+                {
+                    anim.speed = 1 / endDelay;
+                    anim.Play("enddelay");
+                }
 
-				yield return new WaitForSeconds(endDelay);
+                yield return new WaitForSeconds(endDelay);
 
-			}
+            }
 
-			// Abort early?
-			if (stanzaManager.CancelAutoPlay())
-			{
-				yield break;
-			}
-		}
+            // Abort early?
+            if (stanzaManager.CancelAutoPlay())
+            {
+                yield break;
+            }
+        }
 
-		// Stop the coroutine
-		yield break;
-	}
+        // Stop the coroutine
+        yield break;
+    }
 
-	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
+    public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
 	{
 		// if we aren't already mouse down on this text
 		if (mouseDownTinkerText != null && mouseDownTinkerText != tinkerText)

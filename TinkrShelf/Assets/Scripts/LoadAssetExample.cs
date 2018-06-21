@@ -11,202 +11,204 @@ public class LoadAssetExample : MonoBehaviour {
     private string[] allPagesJsons;
     public static StoryBookJson storyBookJson;
     public static int pageNumber;
-	public GStanzaManager stanzaManager;
+    public GStanzaManager stanzaManager;
     public List<GameObject> tinkerGraphicObjects;
     public List<GameObject> tinkerTextObjects;
-	public List<GameObject> stanzaObjects;
-    
+    public List<GameObject> stanzaObjects;
+
     private string[] allStanzaJsons;
-	private string page;
-	public GameObject right;
-	public GameObject left;
-	public GameObject endPageHome;
-	public GameObject endPageReadAgain;
+    private string page;
+    public GameObject right;
+    public GameObject left;
+    public GameObject endPageHome;
+    public GameObject endPageReadAgain;
 
-	static float previousTextWidth;
+    static float previousTextWidth;
 
-	public static string sceneScript; 
-	Font font;
-	Transform canvasTransform;
+    public static string sceneScript;
+    Font font;
+    Transform canvasTransform;
 
-	private int noOfPages, i,j;
-	float width=0.0f, startingX, startingY, startingXText, startingYText;
-	float height = 32.94f;  //height of text:32.94
-	private readonly float minWordSpace = 30.0f;
-	private readonly float minLineSpace = 30.0f;
-	float PivotX=0.0f;
-	float PivotY=0.5f;
+    private int noOfPages, i, j;
+    float width = 0.0f, startingX, startingY, startingXText, startingYText;
+    float height = 32.94f;  //height of text:32.94
+    private readonly float minWordSpace = 30.0f;
+    private readonly float minLineSpace = 30.0f;
+    float PivotX = 0.0f;
+    float PivotY = 0.5f;
 
-	//variables for logging data
-	DateTime inTime;
-	int timeSpent;
+    //variables for logging data
+    DateTime inTime;
+    int timeSpent;
 
-	private bool autoPlaying = false;
-	private bool cancelAutoPlay = false;
+    private bool autoPlaying = false;
+    private bool cancelAutoPlay = false;
 
-	//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-	//public DataCollection dataCollector;
+    //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+    //public DataCollection dataCollector;
 
     public void Awake()
     {
 
-		//font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
+        //font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+        font = Resources.Load<Font>("Font/OpenDyslexic-Regular");
 
-		canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
+        canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
         {
-			bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
+            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
             if (bundleloaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
 
             }
-		}
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//dataCollector.LoadLocalJSON ();
+        }
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //dataCollector.LoadLocalJSON ();
 
-		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
-		//FirebaseHelper.AddBook("CatStoryLevel2");
+        //FirebaseHelper.AddBook(ShelfManager.selectedBook);
+        //FirebaseHelper.AddBook("CatStoryLevel2");
 
-		LoadStoryData ();
+        LoadStoryData();
     }
 
-    void Start () {
-		startingX = storyBookJson.textStartPositionX;
-		startingY = storyBookJson.textStartPositionY;
-		Debug.Log (startingX);
-		Debug.Log (startingY);
-       
+    void Start() {
+        startingX = storyBookJson.textStartPositionX;
+        startingY = storyBookJson.textStartPositionY;
+        Debug.Log(startingX);
+        Debug.Log(startingY);
+
     }
-		
+
 
     public void LoadStoryData()
     {
-		string fileName = ShelfManager.selectedBook.ToLower()+".json";
-		pageNumber = 0;
+        string fileName = ShelfManager.selectedBook.ToLower() + ".json";
+        pageNumber = 0;
         TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
         string json = charDataFile.ToString();
         storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
-		noOfPages = storyBookJson.pages.Length;
+        noOfPages = storyBookJson.pages.Length;
 
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//dataCollector.AddNewBook (storyBookJson.id.ToString());
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //dataCollector.AddNewBook (storyBookJson.id.ToString());
 
-		FirebaseHelper.AddBook(storyBookJson.id); 
-		left.SetActive (false);
-		right.SetActive(true);
-		endPageHome.SetActive(false);
-		endPageReadAgain.SetActive (false);
-		LoadCompletePage ();
+        FirebaseHelper.AddBook(storyBookJson.id);
+        left.SetActive(false);
+        right.SetActive(true);
+        endPageHome.SetActive(false);
+        endPageReadAgain.SetActive(false);
+        LoadCompletePage();
     }
 
-	public void LoadNextPage()
-	{   previousTextWidth = 0;
-		left.SetActive (true);
-		TimeSpan span = ( DateTime.Now- inTime );
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+    public void LoadNextPage()
+    {
+        stanzaManager.RequestCancelAutoPlay();
+        previousTextWidth = 0;
+        left.SetActive(true);
+        TimeSpan span = (DateTime.Now - inTime);
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
+        FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
 
-		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
-		pageNumber++;
-		if (pageNumber == (noOfPages - 1)) {
-			right.SetActive (false);
-			endPageHome.SetActive(true);
-			endPageReadAgain.SetActive (true);
-		} 
+        Destroy(GameObject.Find("SceneManager" + (pageNumber)));
+        pageNumber++;
+        if (pageNumber == (noOfPages - 1)) {
+            right.SetActive(false);
+            endPageHome.SetActive(true);
+            endPageReadAgain.SetActive(true);
+        }
 
-		EmptyPage ();
-		LoadCompletePage ();
-	}
+        EmptyPage();
+        LoadCompletePage();
+    }
 
-	public void LoadPreviousPage()
-	{    previousTextWidth = 0;
-		TimeSpan span = ( DateTime.Now- inTime );
+    public void LoadPreviousPage()
+    { previousTextWidth = 0;
+        TimeSpan span = (DateTime.Now - inTime);
 
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
-		FirebaseHelper.LogInAppSection (inTime.ToString(), span.TotalSeconds);
+        FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
 
-		Destroy(GameObject.Find("SceneManager"+(pageNumber)));
-		pageNumber--;
-		if(pageNumber==0){
-			left.SetActive (false);
-		}
-		else if (pageNumber != (noOfPages - 1)) {
-			right.SetActive (true);
-		}
-		EmptyPage ();
-		LoadCompletePage ();
-	}
+        Destroy(GameObject.Find("SceneManager" + (pageNumber)));
+        pageNumber--;
+        if (pageNumber == 0) {
+            left.SetActive(false);
+        }
+        else if (pageNumber != (noOfPages - 1)) {
+            right.SetActive(true);
+        }
+        EmptyPage();
+        LoadCompletePage();
+    }
 
-	public void EmptyPage()
-	{
-		for(int i=0;i<tinkerGraphicObjects.Count;i++)
-		{
-			Destroy (tinkerGraphicObjects [i]);
-		}
-		for (int j=0;j<stanzaObjects.Count;j++)
-		{
-			Destroy (stanzaObjects[j]);
-		}
-		stanzaObjects = null;
-		stanzaManager.RequestCancelAutoPlay ();
-
-	
-	}
-	public void LoadCompletePage()
-	{   
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
-		Debug.Log(pageNumber);
-		FirebaseHelper.AddSection(pageNumber);
-		inTime = DateTime.Now;
-		LoadSceneSpecificScript ();
-		LoadPageData(pageNumber);
-		LoadStanzaData();
-		TokenizeStanza();
-		LoadStanzaAudio();
-		LoadTriggers();
-		LoadAudios();
-
-	}
-		
+    public void EmptyPage()
+    {
+        for (int i = 0; i < tinkerGraphicObjects.Count; i++)
+        {
+            Destroy(tinkerGraphicObjects[i]);
+        }
+        for (int j = 0; j < stanzaObjects.Count; j++)
+        {
+            Destroy(stanzaObjects[j]);
+        }
+        stanzaObjects = null;
+        stanzaManager.RequestCancelAutoPlay();
 
 
-	public void LoadSceneSpecificScript ()
-	{  
-		
-		GameObject go = new  GameObject();
-		go.transform.SetParent(canvasTransform);
-		go.name="SceneManager"+pageNumber;
-		sceneScript =storyBookJson.pages [pageNumber].script;
-		go.AddComponent(Type.GetType(sceneScript));
-		GameObject.Find ("Canvas").GetComponent<GStanzaManager> ().sceneManager = GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager>();
-		GameObject.Find ("SceneManager" + pageNumber).GetComponent<GSManager> ().gameManager = GameObject.Find ("GameManager").GetComponent<GGameManager> ();
-		GameObject.Find("SceneManager"+pageNumber).GetComponent<GSManager>().stanzaManager=GameObject.Find("Canvas").GetComponent<GStanzaManager>();
-		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().myCanvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
-		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().Lbutton = GameObject.FindWithTag ("left_arrow");
-		GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ().Rbutton = GameObject.FindWithTag ("right_arrow");
-		GameObject.Find ("GameManager").GetComponent<GGameManager> ().sceneManager = GameObject.Find ("SceneManager"+pageNumber).GetComponent<GSManager> ();
-	
-	}
+    }
+    public void LoadCompletePage()
+    {
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
+        Debug.Log(pageNumber);
+        FirebaseHelper.AddSection(pageNumber);
+        inTime = DateTime.Now;
+        LoadSceneSpecificScript();
+        LoadPageData(pageNumber);
+        LoadStanzaData();
+        TokenizeStanza();
+        LoadStanzaAudio();
+        LoadTriggers();
+        LoadAudios();
+
+    }
+
+
+
+    public void LoadSceneSpecificScript()
+    {
+
+        GameObject go = new GameObject();
+        go.transform.SetParent(canvasTransform);
+        go.name = "SceneManager" + pageNumber;
+        sceneScript = storyBookJson.pages[pageNumber].script;
+        go.AddComponent(Type.GetType(sceneScript));
+        GameObject.Find("Canvas").GetComponent<GStanzaManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
+        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().gameManager = GameObject.Find("GameManager").GetComponent<GGameManager>();
+        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
+        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Lbutton = GameObject.FindWithTag("left_arrow");
+        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Rbutton = GameObject.FindWithTag("right_arrow");
+        GameObject.Find("GameManager").GetComponent<GGameManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
+
+    }
 
     public void LoadStanzaAudio()
-	{
-		Destroy (GameObject.Find ("Canvas").GetComponent<AudioSource> ());
-		GameObject.Find("Canvas").AddComponent<AudioSource>().clip= LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
+    {
+        Destroy(GameObject.Find("Canvas").GetComponent<AudioSource>());
+        GameObject.Find("Canvas").AddComponent<AudioSource>().clip = LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
 
     }
 
     public void LoadAudios()
     {
-        TimeStampClass[] timeStamps= storyBookJson.pages[pageNumber].timestamps;
-        for(int i = 0; i < timeStamps.Length; i++)
+        TimeStampClass[] timeStamps = storyBookJson.pages[pageNumber].timestamps;
+        for (int i = 0; i < timeStamps.Length; i++)
         {
             tinkerTextObjects[i].AddComponent<AudioSource>().clip = LoadAudioAsset(timeStamps[i].audio);
 
@@ -215,25 +217,25 @@ public class LoadAssetExample : MonoBehaviour {
 
     public AudioClip LoadAudioAsset(string name)
     {
-        
+
         return bundleloaded.LoadAsset<AudioClip>(name);
     }
 
     public void LoadPageData(int pageNo)
-	{ tinkerGraphicObjects.Clear ();
+    { tinkerGraphicObjects.Clear();
         if (storyBookJson != null)
         {
-            if (storyBookJson.pages[pageNo]!=null)
+            if (storyBookJson.pages[pageNo] != null)
             {
                 PageClass page = storyBookJson.pages[pageNo];
                 GameObjectClass[] gameObjects = page.gameObjects;
-                for (int i = 0; i < gameObjects.Length;i++)
+                for (int i = 0; i < gameObjects.Length; i++)
                 {
                     CreateGameObject(gameObjects[i]);
                 }
-                
+
             }
-         }
+        }
 
     }
 
@@ -259,31 +261,33 @@ public class LoadAssetExample : MonoBehaviour {
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
             }
         }
+
     }
-   
 
-	public void LoadStanzaData()
-	{   
-		startingX = storyBookJson.textStartPositionX;
-		startingY = storyBookJson.textStartPositionY;
+    public void LoadStanzaData()
+    {
+        startingX = storyBookJson.textStartPositionX;
+        startingY = storyBookJson.textStartPositionY;
 
-		stanzaManager.stanzas.Clear ();
-		j =0;
-		stanzaObjects = new List<GameObject> ();
-		TextClass[] texts= LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
+        stanzaManager.stanzas.Clear();
+        j = 0;
+        stanzaObjects = new List<GameObject>();
+        TextClass[] texts = LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
 
-		foreach (TextClass text in texts)          
+        foreach (TextClass text in texts)
+        {
+            stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
+            stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
+            stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
+            startingY = startingY - height - minLineSpace;
+            j++;
+        }
 
-			stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
-			stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
-			stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
-			startingY = startingY -height - minLineSpace;  
-			j++;
-		}
+    }
 
-	}
 
-	public void TokenizeStanza (){
+	public void TokenizeStanza ()
+{
 		tinkerTextObjects.Clear ();
 		string[] words;
 
