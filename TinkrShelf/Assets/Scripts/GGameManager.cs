@@ -261,14 +261,14 @@ public class GGameManager : MonoBehaviour
 		FirebaseHelper.LogInAppTouch("Button_DownMenu",time.ToString());
 		dropContainer.SetActive (false);
 		menuContainer.SetActive (true);
-		if (i == 1) {
+        upArrow.image.sprite = up;
+        if (i == 1) {
 			isOpen = true;
-			upArrow.image.sprite = up;
+			
 			i = 0;
 		}
 		else{
 			isOpen = false;
-			upArrow.image.sprite = down;
 			i = 1;
 		}
 	}

@@ -64,10 +64,12 @@ public class StanzaObject : MonoBehaviour {
 			}
 			else // Delay before next stanza
 			{
+                if(anim!=null)
 				anim.Play("textzoomout");
 				yield return new WaitForSeconds(t.delayTime / 2);
 
-				anim.Play("textzoomin");
+                if (anim != null)
+                    anim.Play("textzoomin");
 				yield return new WaitForSeconds(t.delayTime / 2);
 				if (endDelay != 0)
 				{
