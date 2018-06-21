@@ -35,12 +35,16 @@ public class StanzaObject : MonoBehaviour {
 
 		for (int i = startingTinkerTextIndex; i < tinkerTexts.Count; i++)
 		{
-			// delay according to timing data
-			//animation not integrated
-			//yield return new WaitForSeconds(tinkerTexts[i].GetAnimationDelay());
-			GTinkerText t = tinkerTexts[i];
+            // delay according to timing data
+            //animation not integrated
+            //yield return new WaitForSeconds(tinkerTexts[i].GetAnimationDelay());
+            GTinkerText t = null;
+            if (tinkerTexts[i]!=null)
+             t = tinkerTexts[i];
+   
 			Animator anim = t.GetComponent<Animator>();
-			anim.speed = 1 / t.delayTime;
+            if(anim!=null)
+            anim.speed = 1 / t.delayTime;
 
 			// If we aren't on last word, delay before playing next word
 			if (i < tinkerTexts.Count - 1)
