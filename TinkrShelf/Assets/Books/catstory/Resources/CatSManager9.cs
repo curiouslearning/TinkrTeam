@@ -4,35 +4,42 @@ using UnityEngine;
 
 public class CatSManager9 : GSManager {
 
-	GameObject jam;
+	GameObject ham;
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam" || go.name == "Text_jam") {
-			if (jam == null) {
-				jam = GameObject.Find ("Jam");
+		if (go.name == "CatJam") {
+			if (ham == null) {
+				ham = GameObject.Find ("Jam");
 			}
-			jam.SetActive (true);
-			StartCoroutine (SetGameObject());
+
+			ham.SetActive (true);
 		}
-		if (go.name == "Jam") 
-		{   
-			StartCoroutine (SetGameObject());
-			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
-			if (catJam != null)
+		else if ( go.name == "Text_Jam"){
+
+			if (ham == null) {
+				ham = GameObject.Find ("Jam");
+			}
+
+			ham.SetActive (true);
+			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
 			{ 
-				catJam.MyOnMouseDown();
+				catHam.MyOnMouseDown();
+			}
+
+		}
+		else if (go.name == "Jam") 
+		{  
+			ham = go;
+			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
 			}
 		}
+
 		base.OnMouseDown (go);
-
-	}
-
-	public IEnumerator SetGameObject ()
-	{
-		yield return new WaitForSeconds (2.0f);
-		jam = GameObject.Find ("Jam"); 
-		jam.SetActive (false);
 	}
 
 }

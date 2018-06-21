@@ -99,6 +99,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	void OnTriggerEnter (Collider col)
 	{
+		Debug.Log (""+col.name);
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
 		{
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));

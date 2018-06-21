@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +13,9 @@ public class CatSManager18 : GSManager {
 			if (cat != null)
 			{   
 				cat.MyOnMouseDown();
-
+22 
 			}
 		}
 		base.OnMouseDown(go);
-
 	}
 }
