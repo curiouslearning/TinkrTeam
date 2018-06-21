@@ -130,7 +130,10 @@ public class LoadAssetExample : MonoBehaviour {
 
 
     public void LoadPreviousPage()
-    {  previousTextWidth = 0;
+    {
+        stanzaManager.RequestCancelAutoPlay();
+
+        previousTextWidth = 0;
         TimeSpan span = (DateTime.Now - inTime);
         //sending data directly to firebase using "72 hours rule"! (removed local data storage)
         //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
