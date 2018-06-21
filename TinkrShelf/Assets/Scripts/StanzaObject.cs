@@ -22,7 +22,7 @@ public class StanzaObject : MonoBehaviour {
 	void Start () {
 
 	}
-	
+
 
 	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)
 	{
@@ -94,7 +94,8 @@ public class StanzaObject : MonoBehaviour {
 		yield break;
 	}
 
-	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
+
+    public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
 	{
 		// if we aren't already mouse down on this text
 		if (mouseDownTinkerText !=
