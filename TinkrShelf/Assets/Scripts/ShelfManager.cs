@@ -35,46 +35,102 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     //for data collection
     private System.DateTime inTime;	
-	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr/Manifests/manifest.json";
+	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
     private string responseJson;
     private bool isServerJson = false;
 
 	public static string selectedBook;
 
 
-	void Awake()
+	void Start()
 	{    Image = GameObject.Find("Image");
 	   	 Title = GameObject.Find("Title");
-         
-      	//call json file from server
-    	WWW request = new WWW(url);
-        StartCoroutine(OnResponse(request));
+        
+        //call json file from server
+        WWW request = new WWW(url);
+        StartCoroutine(DownloadFileWithTimeout(request));
 
-		localManifestFileName = "Manifests/manifest";  //set to passed file name
+        //StartCoroutine(OnResponse(request));
+
+        localManifestFileName = "Manifests/manifest";  //set to passed file name
         inTime = System.DateTime.Now;   
 	}
 
-	private IEnumerator OnResponse(WWW req)
-	{
 
-		yield return req;
-		if (req.error == null) {
-			responseJson = req.text;
-			Debug.Log ("data" + responseJson);
-			// if internet-> ok
-			if (responseJson != "")
-				isServerJson = true;
-		}
-		LoadShelfData();
+    IEnumerator DownloadFileWithTimeout(WWW request)
+    {
+        //WWW request = new WWW(URL);
+        float timer = 0;
+        float timeOut = 2.0f;
+        bool failed = false;
+       
 
-		// first store the name to reference while loading the assets of book!
-		selectedBook = bookInfos[2].GetComponent<BookObject>().book.fileName;
-		string filePath = Path.Combine ("Books/", selectedBook+"/");
-		bookscenePath = Path.Combine(filePath,"Scenes");
-		//loading inital center book on first time loading of shelf
-		LoadImageandText(bookInfos[2]);
+        while (!request.isDone)
+        {
+            if (timer > timeOut) { failed = true; break; }
+            timer += Time.deltaTime;
+            yield return null;
+            
+        }
 
-	}
+        if (failed || !string.IsNullOrEmpty(request.error))
+        {
+            request.Dispose();
+            isServerJson = false;
+            Debug.Log("timeout");
+            //load shelf data with local json
+            LoadShelfData();
+            yield break;
+        }
+        
+        responseJson = request.text;
+
+        // if internet-> ok
+        if (responseJson != "")
+            isServerJson = true;
+
+        LoadShelfData();
+        // first store the name to reference while loading the assets of book!
+        Debug.Log(bookInfos.Count);
+        selectedBook = bookInfos[2].book.fileName;
+
+        string filePath = Path.Combine("Books/", selectedBook + "/");
+
+        bookscenePath = Path.Combine(filePath, "Scenes");
+        //loading inital center book on first time loading of shelf
+        LoadImageandText(bookInfos[2]);
+
+
+        //StartCoroutine(OnResponse(request));
+
+    }
+
+
+
+ //   private IEnumerator OnResponse(WWW req)
+	//{
+
+	//	yield return req;
+	//	if (req.error == null) {
+	//		responseJson = req.text;
+
+	//		// if internet-> ok
+	//		if (responseJson != "")
+	//			isServerJson = true;
+	//	}
+ //       LoadShelfData();
+
+ //       // first store the name to reference while loading the assets of book!
+ //       Debug.Log(bookInfos.Count);
+ //       selectedBook = bookInfos[2].book.fileName;
+
+ //       string filePath = Path.Combine ("Books/", selectedBook+"/");
+
+ //       bookscenePath = Path.Combine(filePath,"Scenes");
+ //       //loading inital center book on first time loading of shelf
+ //       LoadImageandText(bookInfos[2]);
+
+ //   }
 
     public void Update()
     {
@@ -164,7 +220,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
 		if (go.name == "Cover" )
 		 {
-
 			if (go.GetComponentInParent<BookObject> () != null) {
 
 		        FirebaseHelper.LogInShelfTouch ("Graphic_Book "+go.GetComponentInParent<BookObject> ().position,System.DateTime.Now.ToString());		                
@@ -230,15 +285,16 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
             //gets array of json string objects
             allBookJsons = JsonHelper.GetJsonObjectArray(dataAsJson, "books");
-            j = allBookJsons.Length-1;
-			foreach (string jsonObj in allBookJsons)
+            j = allBookJsons.Length - 1;
+            foreach (string jsonObj in allBookJsons)
 			{  if (i < 5) {
-					bookInfos.Add (new BookObject());
-					bookInfos [i].book = JsonUtility.FromJson<Book> (jsonObj);  //add string object as JSONObject to array of books
-               
+					bookInfos.Add(new BookObject());
+                    bookInfos [i].book = JsonUtility.FromJson<Book> (jsonObj);  //add string object as JSONObject to array of books
+
 					bookInfos [i].SetCoverThumbnail ();
 					i++;
 				}
+
                 if(i==5)
                 {
                     break;
@@ -250,8 +306,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		{
 			Debug.LogError("Cannot load shelf data!");
 		}
+   
 
-	}
+    }
    
      
    

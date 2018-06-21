@@ -71,13 +71,13 @@ public class GSManager :  MonoBehaviour {
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
-		//Color c = Rbutton.gameObject.GetComponent<Image>().color;
-		//c.a = 0.8f;
-		//if(Lbutton!=null)
-		//	Lbutton.gameObject.GetComponent<Image>().color = c;
+		Color c = Rbutton.gameObject.GetComponent<Image>().color;
+		c.a = 0.8f;
+		if(Lbutton!=null)
+			Lbutton.gameObject.GetComponent<Image>().color = c;
 
 
-		//Rbutton.gameObject.GetComponent<Image>().color = c;
+		Rbutton.gameObject.GetComponent<Image>().color = c;
 		if(Lbutton!=null)
 		Lbutton.GetComponent<Button>().interactable = true;
 		if(Rbutton!=null)

@@ -40,7 +40,7 @@ public class LoadAssetExample : MonoBehaviour {
 	//variables for logging data
 	DateTime inTime;
 	int timeSpent;
-	int count;
+
 	private bool autoPlaying = false;
 	private bool cancelAutoPlay = false;
 
@@ -76,7 +76,9 @@ public class LoadAssetExample : MonoBehaviour {
     void Start () {
 		startingX = storyBookJson.textStartPositionX;
 		startingY = storyBookJson.textStartPositionY;
-
+		Debug.Log (startingX);
+		Debug.Log (startingY);
+       
     }
 		
 
@@ -152,14 +154,13 @@ public class LoadAssetExample : MonoBehaviour {
 		{
 			Destroy (stanzaObjects[j]);
 		}
-		Destroy(GameObject.Find("StanzaPivot"));
 		stanzaObjects = null;
 		stanzaManager.RequestCancelAutoPlay ();
 
 	
 	}
 	public void LoadCompletePage()
-	{ 
+	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
 		Debug.Log(pageNumber);
@@ -173,9 +174,10 @@ public class LoadAssetExample : MonoBehaviour {
 		LoadTriggers();
 		LoadAudios();
 
-
 	}
 		
+
+
 	public void LoadSceneSpecificScript ()
 	{  
 		
@@ -218,7 +220,7 @@ public class LoadAssetExample : MonoBehaviour {
     }
 
     public void LoadPageData(int pageNo)
-	{tinkerGraphicObjects.Clear ();
+	{ tinkerGraphicObjects.Clear ();
         if (storyBookJson != null)
         {
             if (storyBookJson.pages[pageNo]!=null)
@@ -264,39 +266,20 @@ public class LoadAssetExample : MonoBehaviour {
 	{   
 		startingX = storyBookJson.textStartPositionX;
 		startingY = storyBookJson.textStartPositionY;
+
 		stanzaManager.stanzas.Clear ();
 		j =0;
 		stanzaObjects = new List<GameObject> ();
 		TextClass[] texts= LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
-		int length =LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps.Length ;
-		if (length == 1) {
-			startingX = -75.0f;
-		}
-		else if (length == 2) 
-		{   startingX = -150.0f;
-			
-		}
-		else if (length == 3) 
-		{   startingX = -200.0f;
-			
-		}
-		else if (length == 4) 
-		{   startingX = -220.0f;
-			
-		}
-		else if (length == 5) 
-		{   startingX = -300.0f;
-			
-		}
+
 		foreach (TextClass text in texts)          
-		{   
+
 			stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
 			stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
 			stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
 			startingY = startingY -height - minLineSpace;  
 			j++;
 		}
-	
 
 	}
 
@@ -304,24 +287,16 @@ public class LoadAssetExample : MonoBehaviour {
 		tinkerTextObjects.Clear ();
 		string[] words;
 
-
 		for (i = 0; i < stanzaManager.stanzas.Count; i++) {
 			words = stanzaManager.stanzas [i].stanzaValue.text.Split (' ');
 
 			for (j = 0; j < words.Length; j++) {
 				stanzaManager.stanzas[i].tinkerTexts.Add( CreateText (stanzaManager.stanzas[i], startingXText+width, startingYText , words[j], 30, Color.black) );
 			}
-		
 
 			UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (stanzaManager.stanzas[i].GetComponent<RectTransform>());
 			width = 0.0f;
-
-
 		}
-
-
-		//GameObject.Find ("StanzaObject(Clone)").transform.parent = GameObject.Find ("StanzaPivot").transform;
-		//GameObject.Find ("StanzaPivot").transform.position = new Vector3 (-3,0,0);
 
 
 	}
@@ -329,19 +304,17 @@ public class LoadAssetExample : MonoBehaviour {
 	StanzaObject CreateStanza( float x, float y)
 	{
 		GameObject go = Instantiate (Resources.Load ("Prefabs/StanzaObject")) as GameObject;
-		go.tag = "stanza";
-		go.transform.localScale = new Vector3(0.69f,0.69f,0.69f);
-
+		go.transform.SetParent(canvasTransform);
+		go.transform.localScale = new Vector3(1,1,1);
 		RectTransform trans = go.GetComponent<RectTransform>();
 		//trans.position=new Vector3(0,0,0);
 		trans.position = new Vector3((x+26.59184f),92.0f,0);
 		//trans.localPosition = new Vector3(x, y,0);
+		trans.anchoredPosition = new Vector3(x, y,0);
+    
         go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
 		stanzaObjects.Add (go);
 		return go.GetComponent<StanzaObject>();
-
-
-
 	}
 
 	GTinkerText CreateText( StanzaObject parent, float x, float y, string textToPrint, int fontSize, Color textColor)
@@ -350,6 +323,7 @@ public class LoadAssetExample : MonoBehaviour {
 		UItextGO.transform.SetParent(parent.transform);
        // Debug.Log(anim.runtimeAnimatorController);
         Text text = UItextGO.AddComponent<Text>();
+
 		text.text = textToPrint;
 		text.fontSize = 60;
 		text.color = textColor;
@@ -383,9 +357,6 @@ public class LoadAssetExample : MonoBehaviour {
         tinkerText.stanza =UItextGO.GetComponentInParent<StanzaObject>();
         tinkerTextObjects.Add(UItextGO);
         return UItextGO.GetComponent<GTinkerText>();
-
-
-
 	}
 
 
