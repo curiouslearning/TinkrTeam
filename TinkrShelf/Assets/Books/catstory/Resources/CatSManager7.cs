@@ -8,12 +8,14 @@ public class CatSManager7 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name == "Text_Ham") {
-			if (ham == null) {
-				ham = GameObject.Find ("Ham");
+		if (go.name == "CatHam" || go.name == "Text_ham") 
+		{
+			if (ham == null) 
+			{
+				ham = GameObject.Find("Ham");
 			}
-			ham.SetActive (true);
-			StartCoroutine (SetGameObject());
+			ham.SetActive(true);
+			StartCoroutine(SetGameObject());
 		}
 
 		if (go.name == "Ham") 

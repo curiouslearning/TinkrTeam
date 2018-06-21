@@ -8,7 +8,7 @@ public class L3CatSManager9 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam" || go.name == "Text_jam") {
+		if (go.name == "CatJam" || go.name == "Text_jam.") {
 			if (jam == null) {
 				jam = GameObject.Find ("Jam");
 			}
@@ -30,7 +30,7 @@ public class L3CatSManager9 : GSManager {
 
 	public IEnumerator SetGameObject ()
 	{
-		yield return new WaitForSeconds (2.0f);
+		yield return new WaitForSeconds (2.5f);
 		jam = GameObject.Find ("Jam"); 
 		jam.SetActive (false);
 	}
