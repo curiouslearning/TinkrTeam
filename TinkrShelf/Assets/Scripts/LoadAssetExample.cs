@@ -20,6 +20,9 @@ public class LoadAssetExample : MonoBehaviour {
 	private string page;
 	public GameObject right;
 	public GameObject left;
+	public GameObject endPageHome;
+	public GameObject endPageReadAgain;
+
 	static float previousTextWidth;
 
 	public static string sceneScript; 
@@ -47,9 +50,6 @@ public class LoadAssetExample : MonoBehaviour {
     public void Awake()
     {
 
-		   //abhi ke liye static
-
-
 		//font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 		font=Resources.Load<Font>("Font/OpenDyslexic-Regular");
 
@@ -67,12 +67,10 @@ public class LoadAssetExample : MonoBehaviour {
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.LoadLocalJSON ();
 
-
 		//FirebaseHelper.AddBook(ShelfManager.selectedBook);
-		LoadStoryData (ShelfManager.selectedBook.ToLower()+".json");
 		//FirebaseHelper.AddBook("CatStoryLevel2");
-		//LoadStoryData ("CatStoryLevel2.json");
-	
+
+		LoadStoryData ();
     }
 
     void Start () {
@@ -80,8 +78,11 @@ public class LoadAssetExample : MonoBehaviour {
 		startingY = storyBookJson.textStartPositionY;
 
     }
-    private void LoadStoryData(string fileName)
+		
+
+    public void LoadStoryData()
     {
+		string fileName = ShelfManager.selectedBook.ToLower()+".json";
 		pageNumber = 0;
         TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
         string json = charDataFile.ToString();
@@ -93,8 +94,12 @@ public class LoadAssetExample : MonoBehaviour {
 
 		FirebaseHelper.AddBook(storyBookJson.id); 
 		left.SetActive (false);
+		right.SetActive(true);
+		endPageHome.SetActive(false);
+		endPageReadAgain.SetActive (false);
 		LoadCompletePage ();
     }
+
 	public void LoadNextPage()
 	{   previousTextWidth = 0;
 		left.SetActive (true);
@@ -108,7 +113,10 @@ public class LoadAssetExample : MonoBehaviour {
 		pageNumber++;
 		if (pageNumber == (noOfPages - 1)) {
 			right.SetActive (false);
+			endPageHome.SetActive(true);
+			endPageReadAgain.SetActive (true);
 		} 
+
 		EmptyPage ();
 		LoadCompletePage ();
 	}
@@ -281,7 +289,7 @@ public class LoadAssetExample : MonoBehaviour {
 			
 		}
 		foreach (TextClass text in texts)          
-		{   Debug.Log("loop"+startingX +"+"+ startingY);
+		{   
 			stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
 			stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
 			stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
@@ -325,7 +333,6 @@ public class LoadAssetExample : MonoBehaviour {
 		go.transform.localScale = new Vector3(0.69f,0.69f,0.69f);
 
 		RectTransform trans = go.GetComponent<RectTransform>();
-		Debug.Log("stanza"+x +"+"+ y);
 		//trans.position=new Vector3(0,0,0);
 		trans.position = new Vector3((x+26.59184f),92.0f,0);
 		//trans.localPosition = new Vector3(x, y,0);
