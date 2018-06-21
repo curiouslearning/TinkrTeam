@@ -71,13 +71,13 @@ public class GSManager :  MonoBehaviour {
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
-		//Color c = Rbutton.gameObject.GetComponent<Image>().color;
-		//c.a = 0.8f;
-		//if(Lbutton!=null)
-		//	Lbutton.gameObject.GetComponent<Image>().color = c;
+		Color c = Rbutton.gameObject.GetComponent<Image>().color;
+		c.a = 0.8f;
+		if(Lbutton!=null)
+			Lbutton.gameObject.GetComponent<Image>().color = c;
 
 
-		//Rbutton.gameObject.GetComponent<Image>().color = c;
+		Rbutton.gameObject.GetComponent<Image>().color = c;
 		if(Lbutton!=null)
 		Lbutton.GetComponent<Button>().interactable = true;
 		if(Rbutton!=null)
@@ -171,7 +171,7 @@ public class GSManager :  MonoBehaviour {
 		Renderer[] list;
 		list = tinkerText.pairedGraphic.gameObject.GetComponentsInChildren<Renderer>();
 		foreach(Renderer item in list){
-			if (item.name == "ripple") //don't color ripple in scene 13 attached to BabyD.
+			if (item.name == "ripple")           //don't color ripple in scene 13 attached to BabyD.
 				continue;
 			item.material.color = tinkerText.pairedGraphic.highlightColor;
 		 }
