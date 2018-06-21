@@ -11,17 +11,13 @@
 	    public GameObject cover;
 
 		public void SetCoverThumbnail(){
-	        
 			Sprite sprite = Resources.Load<Sprite> (book.pathToThumbnail);
-	        
 			if (sprite) {
 				cover.GetComponent<Image>().sprite = sprite;
 			}
-
 		}
 	    public void RemoveThumbnail()
 	    {
-	 
 	            cover.GetComponent<Image>().sprite = null;
 	    }
 	}
