@@ -6,6 +6,7 @@ TagManager:
   tags:
   - left_arrow
   - right_arrow
+  - stanza
   layers:
   - Default
   - TransparentFX

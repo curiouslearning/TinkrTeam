@@ -83,14 +83,14 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         {
             if (name == "left")
 			{  if (bookwheel.transform.position.z % 30 == 0) 
-					bookwheel.transform.Rotate (0, 0, 1);
+					bookwheel.transform.Rotate (0, 0, 2);
             }
             else
 			{ if (bookwheel.transform.position.z % 30 == 0) 
-					bookwheel.transform.Rotate (0, 0, -1);
+					bookwheel.transform.Rotate (0, 0, -2);
 
             }
-            count++;
+            count+=2;
             if (count == degree)
             {
                 check = false;

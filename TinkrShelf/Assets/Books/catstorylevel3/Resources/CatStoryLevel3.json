@@ -502,7 +502,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1081,8 +1081,22 @@
 			},
             "gameObjects": 
             [
-				{
+				{    
 					"id": 0,
+					"posX":-2,
+					"posY": -65,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A12-1",
+					"orderInLayer":2,
+					"inText": true,
+					"label": "NapCat",
+					"destroyOnCollision":"NIL",
+					"draggable": false,
+					"anim": null
+				},
+                    {
+					"id": 1,
 					"posX": -11,
 					"posY": -45,
 					"scaleX": 80,
@@ -1710,7 +1724,7 @@
 							"id": 1,
 							"animName": "A16b",
 							"numberOfImages": 4,
-                            "onTouch":false,
+                            "onTouch":true,
 							"onStart":false,
 							"secPerFrame":[0.4,0.4,0.4,0.4],
 							"sequences": 
@@ -2019,7 +2033,7 @@
 			[
 				{
 					"stnzaId": 0,
-					"textId": 3,
+					"textId": 5,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3

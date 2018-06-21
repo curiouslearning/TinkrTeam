@@ -17,7 +17,7 @@ public class L2CatSManager9 : GSManager {
 		}
 		if (go.name == "Jam") 
 		{   
-			StartCoroutine (SetGameObject());
+			StartCoroutine(SetGameObject());
 			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
 			if (catJam != null)
 			{ 
@@ -30,7 +30,7 @@ public class L2CatSManager9 : GSManager {
 
 	public IEnumerator SetGameObject ()
 	{
-		yield return new WaitForSeconds (2.0f);
+		yield return new WaitForSeconds (2.5f);
 		jam = GameObject.Find ("Jam"); 
 		jam.SetActive (false);
 	}

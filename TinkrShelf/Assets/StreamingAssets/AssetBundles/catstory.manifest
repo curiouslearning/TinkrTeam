@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3115189866
+CRC: 720228482
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 26326e701b3e76df788ea8bdfa01fa89
+    Hash: b481b29dd025071247521ad9e438398a
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -18,6 +18,8 @@ ClassTypes:
 - Class: 213
   Script: {instanceID: 0}
 Assets:
+- Assets/Books/catstorylevel3/Audio/Stanza/Sam waves.mp3
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat is sad.mp3
 - Assets/Books/catstory/AnimPNGs/A10/A10-4.png
 - Assets/Books/catstorylevel2/AnimPNGs/A08/A08-1.png
 - Assets/Books/catstorylevel2/AnimPNGs/A02/A02-5.png
@@ -38,21 +40,20 @@ Assets:
 - Assets/Books/catstory/AnimPNGs/A06/A06-4.png
 - Assets/Books/catstorylevel2/AnimPNGs/A17/A17-6.png
 - Assets/Books/catstorylevel3/AnimPNGs/A06/A06-2.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat wags.mp3
 - Assets/Books/catstory/AnimPNGs/A11a/A11a-2.png
 - Assets/Books/catstory/Audio/SingleWord/Ham.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/in.mp3
 - Assets/Books/catstory/AnimPNGs/A07/A07-1.png
 - Assets/Books/catstorylevel3/AnimPNGs/A11/A11-2.png
-- Assets/Books/catstory/AnimPNGs/A11a/A11a-3.png
+- Assets/Books/catstorylevel2/Images/Home.png
 - Assets/Books/catstorylevel3/AnimPNGs/A03b/A03b-2.png
 - Assets/Books/catstory/AnimPNGs/A03b/A03b-4.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/on.mp3
 - Assets/Books/catstory/AnimPNGs/A05/A05-3.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Glad cat.mp3
 - Assets/Books/catstory/AnimPNGs/A12/A12-1.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/Fat.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A15b/A15b-2.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Sad cat.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A11/A11-4.png
 - Assets/Books/catstory/AnimPNGs/A03/A03-9.png
 - Assets/Books/catstorylevel2/AnimPNGs/A04/A04-2.png
@@ -72,7 +73,6 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A11/A11-3.png
 - Assets/Books/catstory/AnimPNGs/A03/A03-3.png
 - Assets/Books/catstory/AnimPNGs/A07/A07-6.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Fat cat.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/sam_s.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/eats.mp3
 - Assets/Books/catstory/AnimPNGs/A18/A18-1.png
@@ -104,7 +104,6 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A17/A17-6.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/eat.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A07/A07-6.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat wags.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-6.png
 - Assets/Books/catstorylevel3/AnimPNGs/A02/A02-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A14/A14-1.png
@@ -118,9 +117,7 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A03/A03-1.png
 - Assets/Books/catstorylevel3/AnimPNGs/A10/A10-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A16/A16-2.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Sam slams.mp3
 - Assets/Books/catstory/AnimPNGs/A18/A18-3.png
-- Assets/Books/catstorylevel3/Audio/Stanza/The man.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A17/A17-2.png
 - Assets/Books/catstory/Audio/SingleWord/Glad.mp3
 - Assets/Books/catstory/AnimPNGs/A03b/A03b-2.png
@@ -166,12 +163,12 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-4.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/Ham.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A18/A18-5.png
+- Assets/Books/catstory/Images/Home.png
 - Assets/Books/catstorylevel3/AnimPNGs/A11/A11-6.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/a.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/Glad.mp3
 - Assets/Books/catstory/AnimPNGs/A02/A02-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A15/A15-2.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Hi Sam.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A13/A13-3.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/he.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/Fat.mp3
@@ -213,13 +210,13 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A03/A03-6.png
 - Assets/Books/catstorylevel2/AnimPNGs/A10/A10-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A16b/A16b-2.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Sam_s hat.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A02/A02-4.png
 - Assets/Books/catstory/AnimPNGs/A12/A12-5.png
 - Assets/Books/catstorylevel2/Audio/Stanza/Cat naps.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A04/A04-3.png
 - Assets/Books/catstory/Audio/SingleWord/Hat.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A03/A03-7.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat is glad.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A16b/A16b-1.png
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-9.png
 - Assets/Books/catstorylevel2/AnimPNGs/A01/A01-2.png
@@ -232,6 +229,7 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A14/A14-3.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/slams.mp3
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat ran.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A03/A03-8.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/Wag.mp3
 - Assets/Books/catstory/AnimPNGs/A05/A05-1.png
@@ -268,11 +266,13 @@ Assets:
 - Assets/Books/catstorylevel2/Audio/SingleWord/Mat.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/sam_s.mp3
 - Assets/Books/catstorylevel2/Audio/Stanza/Sad cat.mp3
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat is fat.mp3
 - Assets/Books/catstory/AnimPNGs/A15/A15-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A04/A04-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A15b/A15b-3.png
 - Assets/Books/catstory/AnimPNGs/A13/A13-1.png
 - Assets/Books/catstorylevel2/AnimPNGs/A05/A05-2.png
+- Assets/Books/catstorylevel3/Audio/Stanza/Sam the man ran.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A01/A01-2.png
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-7.png
 - Assets/Books/catstorylevel2/AnimPNGs/A18/A18-3.png
@@ -282,6 +282,7 @@ Assets:
 - Assets/Books/catstory/AnimPNGs/A15/A15-3.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/waves.mp3
 - Assets/Books/catstory/AnimPNGs/A09/A09-2.png
+- Assets/Books/catstorylevel3/Images/Home.png
 - Assets/Books/catstorylevel2/AnimPNGs/A03b/A03b-2.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/Slam.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A06/A06-4.png
@@ -297,10 +298,12 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A03/A03-3.png
 - Assets/Books/catstorylevel2/Audio/Stanza/Sam ran.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A17/A17-5.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat is in a jam.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/naps.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A17/A17-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A02/A02-1.png
 - Assets/Books/catstory/AnimPNGs/A07/A07-7.png
+- Assets/Books/catstorylevel3/Audio/Stanza/Sam the man slams.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A18/A18-7.png
 - Assets/Books/catstory/AnimPNGs/A10/A10-2.png
 - Assets/Books/catstorylevel3/AnimPNGs/A10/A10-5.png
@@ -310,9 +313,9 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A14/A14-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A15/A15-4.png
 - Assets/Books/catstory/AnimPNGs/A03/A03-5.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat naps.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/Sam.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A06/A06-2.png
+- Assets/Books/catstorylevel3/Audio/Stanza/Sam_s black hat.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A11a/A11a-1.png
 - Assets/Books/catstory/AnimPNGs/A08/A08-4.png
 - Assets/Books/catstorylevel2/AnimPNGs/A07/A07-5.png
@@ -353,20 +356,23 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A15b/A15b-1.png
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-6.png
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-5.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat.mp3
 - Assets/Books/catstory/AnimPNGs/A17/A17-2.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat on mat.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A08/A08-1.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/fast.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/makes.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A07/A07-4.png
 - Assets/Books/catstory/AnimPNGs/A07/A07-5.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/on.mp3
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat_s ham.mp3
 - Assets/Books/catstory/AnimPNGs/A13/A13-3.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/see.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/Slam.mp3
 - Assets/Books/catstorylevel2/Audio/Stanza/Cat_s jam.mp3
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat naps.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A06/A06-3.png
 - Assets/Books/catstorylevel2/AnimPNGs/A07/A07-1.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat still naps.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A07/A07-2.png
 - Assets/Books/catstorylevel3/AnimPNGs/A09/A09-5.png
 - Assets/Books/catstorylevel2/Resources/CatStoryLevel2.json
@@ -386,6 +392,7 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A12/A12-1.png
 - Assets/Books/catstorylevel3/AnimPNGs/A03b/A03b-3.png
 - Assets/Books/catstory/AnimPNGs/A10/A10-1.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat eats ham.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A18/A18-1.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/and.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/black.mp3
@@ -418,18 +425,17 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A13/A13-2.png
 - Assets/Books/catstorylevel2/AnimPNGs/A11a/A11a-2.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/Man.mp3
+- Assets/Books/catstorylevel3/Audio/Stanza/Sam the man.mp3
 - Assets/Books/catstorylevel3/AnimPNGs/A10/A10-4.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/does.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/waves.mp3
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat_s mat.mp3
 - Assets/Books/catstorylevel2/Audio/SingleWord/happy.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A11/A11-5.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/cat_s.mp3
-- Assets/Books/catstorylevel3/Audio/Stanza/Sam ran.mp3
 - Assets/Books/catstory/AnimPNGs/A15b/A15b-3.png
+- Assets/Books/catstorylevel3/Audio/Stanza/The cat eats jam.mp3
 - Assets/Books/catstorylevel2/Audio/Stanza/Cat jam.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-2.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat_s jam.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A03b/A03b-3.png
 - Assets/Books/catstorylevel3/AnimPNGs/A15/A15-1.png
 - Assets/Books/catstorylevel3/AnimPNGs/A07/A07-3.png
@@ -444,7 +450,6 @@ Assets:
 - Assets/Books/catstorylevel3/Audio/SingleWord/his.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A09/A09-7.png
 - Assets/Books/catstorylevel3/Audio/SingleWord/wants.mp3
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat ran.mp3
 - Assets/Books/catstorylevel2/AnimPNGs/A15/A15-7.png
 - Assets/Books/catstorylevel3/AnimPNGs/A16b/A16b-3.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/does.mp3
@@ -480,7 +485,6 @@ Assets:
 - Assets/Books/catstorylevel2/AnimPNGs/A04/A04-4.png
 - Assets/Books/catstorylevel2/AnimPNGs/A03/A03-9.png
 - Assets/Books/catstory/AnimPNGs/A06/A06-1.png
-- Assets/Books/catstory/AnimPNGs/A18/A18-7.png
 - Assets/Books/catstorylevel3/AnimPNGs/A03/A03-5.png
 - Assets/Books/catstorylevel3/AnimPNGs/A18/A18-2.png
 - Assets/Books/catstory/AnimPNGs/A11/A11-1.png
@@ -507,7 +511,6 @@ Assets:
 - Assets/Books/catstorylevel3/AnimPNGs/A14/A14-3.png
 - Assets/Books/catstory/AnimPNGs/A18/A18-2.png
 - Assets/Books/catstory/AnimPNGs/A11/A11-4.png
-- Assets/Books/catstorylevel3/Audio/Stanza/Cat jam.mp3
 - Assets/Books/catstorylevel3/Audio/SingleWord/Jam.mp3
 - Assets/Books/catstory/AnimPNGs/A06/A06-2.png
 - Assets/Books/catstorylevel2/Audio/SingleWord/wants.mp3

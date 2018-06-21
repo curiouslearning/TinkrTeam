@@ -29,6 +29,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "cat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -61,7 +62,7 @@
 			[
 				{
 					"id": 0,
-					"text": "Cat"
+					"text": "cat"
 					
 				}
 			],
@@ -69,7 +70,7 @@
 			"timestamps": 
 			[
 				{
-					"start": 185,
+					"start": 165,
 					"wordIdx": 0,
 					"audio":"Cat.mp3",
 					"end": 801
@@ -109,6 +110,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "wag",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -196,6 +198,7 @@
 					"orderInLayer":1,
 					"inText": false,
 					"label": "Cat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -233,13 +236,14 @@
                 {   
 					"id": 1,
 					"posX": -424,
-					"posY": -65,
+					"posY": -24,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A03-01",
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Ran",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -257,7 +261,7 @@
 									"movable": 
 									{  
 										"finalx":0,
-										"finaly":-65,
+										"finaly":-24,
 										"speed":25
 									    
 									}	
@@ -324,7 +328,7 @@
             [
 				{
 					"id": 0,
-					"posX":-23,
+					"posX":-67,
 					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -332,6 +336,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Man",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -418,6 +423,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Sam",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -511,6 +517,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "sad",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -594,6 +601,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatHam",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -647,6 +655,7 @@
 						"orderInLayer":1,
 						"inText": true,
 						"label": "Ham",
+					    "destroyOnCollision":"NIL",
 						"draggable": false,
 						"anim": null
 						
@@ -709,6 +718,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "glad",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -792,6 +802,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "CatJam",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -843,6 +854,7 @@
 						"orderInLayer":1,
 						"inText": true,
 						"label": "Jam",
+					    "destroyOnCollision":"NIL",
 						"draggable": false,
 						"anim": null
 						
@@ -904,6 +916,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Fat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": null		
 				},
@@ -917,6 +930,7 @@
 					"orderInLayer":1,
 					"inText": true,			
 					"label": "FatCatRun",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": 
 						[
@@ -935,7 +949,7 @@
 										"movable": 
 										{  "finalx":-15,
 											"finaly":-65,
-											"speed":-30
+											"speed":-60
 											
 										}	
 									}
@@ -1003,6 +1017,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "mat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -1085,6 +1100,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "NapMat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": null
 				},
@@ -1098,6 +1114,7 @@
 					"orderInLayer":2,
 					"inText": true,
 					"label": "NapCat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim":
                     [
@@ -1189,6 +1206,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "ManHat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim":
                     [
@@ -1274,6 +1292,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "RanMan",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim":
                     [
@@ -1354,6 +1373,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "SlamCatMat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": null
 				},
@@ -1367,6 +1387,7 @@
 					"orderInLayer":3,
 					"inText": true,
 					"label": "SlamCat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": 
 					[ 
@@ -1401,6 +1422,7 @@
 					"orderInLayer":2,
 					"inText": true,
 					"label": "RanMan",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim":
                     [
@@ -1483,14 +1505,15 @@
             "gameObjects": 
             [   {
 					"id": 0,
-					"posX": 232,
-					"posY": -65,
-					"scaleX": 60,
-					"scaleY": 60,
+					"posX": 106,
+					"posY": -39,
+					"scaleX": 80,
+					"scaleY": 80,
 					"imageName": "A15-7",
-					"orderInLayer":1,
+					"orderInLayer":2,
 					"inText": true,
 					"label": "SleepMan",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": null
 				},
@@ -1504,6 +1527,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "SleepMat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": null
 				},
@@ -1518,6 +1542,7 @@
 					"orderInLayer":3,
 					"inText": true,
 					"label": "Cat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": 
 					[ 
@@ -1555,7 +1580,8 @@
 					"imageName": "A16b-1",
 					"orderInLayer":3,
 					"inText": true,
-					"label": "Zzz",
+					"label": "Sleep",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": 
 					[ 
@@ -1564,7 +1590,7 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":true,
+							"onStart":false,
 							"secPerFrame":[0.4,0.4,0.4,0.4],
 							"sequences": 
 							[
@@ -1640,7 +1666,7 @@
             [
 				{
 					"id": 0,
-					"posX": 0,
+					"posX": -32,
 					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -1648,11 +1674,12 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "fatMat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim": null
 				},
 				{  	"id": 1,
-					"posX": 0,
+					"posX": -46,
 					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -1660,6 +1687,7 @@
 					"orderInLayer":2,
 					"inText": true,
 					"label": "fatCat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
 					"anim":
                     [
@@ -1669,7 +1697,7 @@
 							"numberOfImages": 5,
                             "onTouch":true,
                             "onStart":false,
-							"secPerFrame":[0,0.5,0.5,0.2,0],
+							"secPerFrame":[0,0.4,0.4,0.2,0],
 							"sequences":
 							[
 								{ "startFrame":0,
@@ -1742,6 +1770,7 @@
 					"orderInLayer":2,
 					"inText": true,
 					"label": "Jam",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": null
 				},
@@ -1755,6 +1784,7 @@
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Cat",
+					"destroyOnCollision":"NIL",
 					"draggable": false,
                     "anim": 
                     [
@@ -1779,7 +1809,7 @@
 								},
 								{ "startFrame":4,
 									"endFrame":5,
-									"noOfLoops":1,
+									"noOfLoops":3,
 									"movable": 
 									{  
 										"speed":0
