@@ -77,7 +77,7 @@ public class GStanzaManager : MonoBehaviour {
 	public void RequestAutoPlay(StanzaObject startingStanza, GTinkerText startingTinkerText = null)
 	{
 		if (!autoPlaying)  // && !sceneManager.disableAutoplay)
-		{  Debug.Log("autooo playinggg");
+		{
 			autoPlaying = true;
 			cancelAutoPlay = false; // reset our cancel flag
 			StartCoroutine(StartAutoPlay(startingStanza, startingTinkerText));
