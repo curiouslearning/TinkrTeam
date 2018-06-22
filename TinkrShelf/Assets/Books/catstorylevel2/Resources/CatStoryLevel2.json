@@ -487,7 +487,7 @@
 			"triggers": [
 				{
 					"stnzaId": 0,
-					"textId": 1,
+					"textId": 0,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
@@ -1025,14 +1025,14 @@
 						{
 							"id": 1,
 							"animName": "A11a",
-							"numberOfImages": 3,
+							"numberOfImages": 2,
                             "onTouch":true,
 							"onStart":false,
-							"secPerFrame":[0.3,0.3,0.3],
+							"secPerFrame":[0.3,0.3],
 							"sequences":
 							[
 								{ "startFrame":0,
-									"endFrame":2,
+									"endFrame":1,
 									"noOfLoops":3,
 									"movable": 
 									{  
@@ -1576,8 +1576,8 @@
 					"id": 3,
 					"posX": -46,
 					"posY": -45,
-					"scaleX": 40,
-					"scaleY": 40,
+					"scaleX": 80,
+					"scaleY": 80,
 					"imageName": "A16b-1",
 					"orderInLayer":3,
 					"inText": true,
