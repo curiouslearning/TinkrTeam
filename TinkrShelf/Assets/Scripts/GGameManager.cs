@@ -261,14 +261,14 @@ public class GGameManager : MonoBehaviour
 		FirebaseHelper.LogInAppTouch("Button_DownMenu",time.ToString());
 		dropContainer.SetActive (false);
 		menuContainer.SetActive (true);
-		if (i == 1) {
+        upArrow.image.sprite = up;
+        if (i == 1) {
 			isOpen = true;
-			upArrow.image.sprite = up;
+			
 			i = 0;
 		}
 		else{
 			isOpen = false;
-			upArrow.image.sprite = down;
 			i = 1;
 		}
 	}
@@ -290,7 +290,7 @@ public class GGameManager : MonoBehaviour
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
 		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
-		SceneManager.LoadScene ("scene2");
+		SceneManager.LoadScene ("shelf");
 	}
 
 	public void AutoNarrate()
@@ -305,15 +305,12 @@ public class GGameManager : MonoBehaviour
 			j = 0;
 			stanzaManager.RequestCancelAutoPlay();
 			StartCoroutine (SetMenuContainer ());
-
-
 		}
 		else
 		{  
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
 			FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-
 			read.image.sprite=narrateOn;
 			j = 1;
 			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);

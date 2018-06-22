@@ -103,6 +103,8 @@ public class GStanzaManager : MonoBehaviour {
 	// Begins an auto play starting w/ a stanza
 	private IEnumerator StartAutoPlay(StanzaObject startingStanza, GTinkerText startingTinkerText)
 	{
+        Debug.Log("autoplay started");
+
 		// If we aren't starting from the beginning, read the audio progress from the startingTinkerText
 		GetComponent<AudioSource>().time = startingTinkerText.GetStartTime();
 		// Start playing the full stanza audio
