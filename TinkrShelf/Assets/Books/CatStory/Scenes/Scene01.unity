@@ -289,7 +289,7 @@ Prefab:
     - target: {fileID: 224996694951569302, guid: 307cadd68728f444e9aa7c9ccc258e09,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 34.048508
+      value: 45.809578
       objectReference: {fileID: 0}
     - target: {fileID: 224996694951569302, guid: 307cadd68728f444e9aa7c9ccc258e09,
         type: 2}
@@ -440,6 +440,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 224072735973561786, guid: 307cadd68728f444e9aa7c9ccc258e09,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 278
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 307cadd68728f444e9aa7c9ccc258e09, type: 2}
   m_IsPrefabParent: 0
@@ -489,7 +494,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9472796, g: 0.91846883, b: 1, a: 1}
+  m_BackGroundColor: {r: 1, g: 0.93235296, b: 0.78676474, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -767,6 +772,7 @@ MonoBehaviour:
   left: {fileID: 412334967}
   endPageHome: {fileID: 908331214}
   endPageReadAgain: {fileID: 975779032}
+  dropdown: {fileID: 1294490693}
 --- !u!114 &455597627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,8 +958,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 131, y: 0}
-  m_SizeDelta: {x: 170, y: 170}
+  m_AnchoredPosition: {x: -8.22, y: -89}
+  m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &908331216
 MonoBehaviour:
@@ -1073,8 +1079,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189, y: 0}
-  m_SizeDelta: {x: 170, y: 170}
+  m_AnchoredPosition: {x: -10, y: 126}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975779034
 MonoBehaviour:
@@ -1211,7 +1217,7 @@ Prefab:
     - target: {fileID: 224049942753776784, guid: b1be61d854fc93a41982e757c060e5dc,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 312.35815
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 224049942753776784, guid: b1be61d854fc93a41982e757c060e5dc,
         type: 2}

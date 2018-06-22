@@ -22,6 +22,7 @@ public class LoadAssetExample : MonoBehaviour {
     public GameObject left;
     public GameObject endPageHome;
     public GameObject endPageReadAgain;
+	public GameObject dropdown;
 
     static float previousTextWidth;
 
@@ -76,8 +77,7 @@ public class LoadAssetExample : MonoBehaviour {
     void Start() {
         startingX = storyBookJson.textStartPositionX;
         startingY = storyBookJson.textStartPositionY;
-        Debug.Log(startingX);
-        Debug.Log(startingY);
+        
 
     }
 
@@ -120,6 +120,8 @@ public class LoadAssetExample : MonoBehaviour {
             right.SetActive(false);
             endPageHome.SetActive(true);
             endPageReadAgain.SetActive(true);
+			dropdown.SetActive (false);
+
         }
 
         EmptyPage();
@@ -145,6 +147,9 @@ public class LoadAssetExample : MonoBehaviour {
         }
         else if (pageNumber != (noOfPages - 1)) {
             right.SetActive(true);
+			dropdown.SetActive (true);
+			endPageHome.SetActive(false);
+			endPageReadAgain.SetActive(false);
         }
         EmptyPage();
         LoadCompletePage();
@@ -152,15 +157,16 @@ public class LoadAssetExample : MonoBehaviour {
 
  
 	public void EmptyPage()
-	{
-		for(int i=0;i<tinkerGraphicObjects.Count;i++)
-		{
-            Destroy(tinkerGraphicObjects[i]);
-        }
-		for (int j=0;j<stanzaObjects.Count;j++)
-		{
-            Destroy(stanzaObjects[j]);
-        }
+	{   if (tinkerGraphicObjects != null) {
+			for (int i = 0; i < tinkerGraphicObjects.Count; i++) {
+				Destroy (tinkerGraphicObjects [i]);
+			}
+		}
+		if (stanzaObjects != null) {
+			for (int j = 0; j < stanzaObjects.Count; j++) {
+				Destroy (stanzaObjects [j]);
+			}
+		}
 		stanzaObjects = null;
         //stanzaManager.RequestCancelAutoPlay();
     }
@@ -277,7 +283,19 @@ public class LoadAssetExample : MonoBehaviour {
         j = 0;
         stanzaObjects = new List<GameObject>();
         TextClass[] texts = LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
-
+		int length = LoadAssetExample.storyBookJson.pages [LoadAssetExample.pageNumber].timestamps.Length;
+		if(length==1)
+			startingX=-95.0f ;
+		else if(length==2)
+			startingX=-175.0f ;
+		else if(length==3)
+			startingX=-212.0f ;
+		else if(length==4)
+			startingX=-280.0f ;
+		else if(length==5)
+			startingX=-335.0f ;
+		else if(length==6)
+			startingX=-345.0f ;
         foreach (TextClass text in texts)
         {
             stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
@@ -317,7 +335,7 @@ public class LoadAssetExample : MonoBehaviour {
 		RectTransform trans = go.GetComponent<RectTransform>();
 		//trans.position=new Vector3(0,0,0);
 		trans.position = new Vector3((x+26.59184f),92.0f,0);
-		//trans.localPosition = new Vector3(x, y,0);
+
 		trans.anchoredPosition = new Vector3(x, y,0);
     
         go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
