@@ -295,7 +295,11 @@ public class LoadAssetExample : MonoBehaviour {
 		else if(length==5)
 			startingX=-335.0f ;
 		else if(length==6)
-			startingX=-345.0f ;
+			startingX=-340.0f ;
+		else if(length==7)
+			startingX=-380.0f ;
+
+
         foreach (TextClass text in texts)
         {
             stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
@@ -351,7 +355,7 @@ public class LoadAssetExample : MonoBehaviour {
         Text text = UItextGO.AddComponent<Text>();
 
 		text.text = textToPrint;
-		text.fontSize = 60;
+		text.fontSize = storyBookJson.textFontSize;
 		text.color = textColor;
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);

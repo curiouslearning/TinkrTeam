@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/shelf.unity
     guid: ddf8527a674e59242a624cf4343dbe04
   - enabled: 1
-    path: Assets/Books/CatStory/Scenes/Scene01.unity
+    path: Assets/Books/catstory/Scenes/Scene01.unity
     guid: 07afb3fb7ab88f3488c2d69cfe616c08
   - enabled: 1
     path: Assets/Books/catstorylevel2/Scenes/Scene01.unity
     guid: ae2f82f3146bdb344af583a72e39e55f
   - enabled: 1
-    path: Assets/Books/5pageProxy/Scenes/Scene01.unity
+    path: Assets/Books/5pageproxy/Scenes/Scene01.unity
     guid: f1e38bbb8d043bb46bbf6f24b904aabd
   - enabled: 1
     path: Assets/Books/catstorylevel3/Scenes/Scene01.unity
     guid: b93a5c02453e2ee42815e3d3a3ab24cb
+  - enabled: 1
+    path: Assets/Books/catstorylevel4/Scenes/Scene01.unity
+    guid: 22a0be129c30d604f95d696a35369c81
