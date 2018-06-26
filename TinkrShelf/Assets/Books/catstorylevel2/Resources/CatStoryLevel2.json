@@ -1,7 +1,8 @@
 {
 	"fontColor": "black",
 	"textStartPositionX": -167.0,
-	 "textStartPositionY": 132.0,
+	"textStartPositionY": 132.0,
+	"textFontSize":60,
 	"storyImageFile": null,
 	"backgroundColor": "blue",
 	"arrowColor": "red",
