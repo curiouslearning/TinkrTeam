@@ -8,6 +8,7 @@ public class StoryBookJson{
     public string fontColor;
 	public float textStartPositionX;
 	public float textStartPositionY;
+	public int textFontSize;
     public string storyImageFile;
     public string backgroundColor;
     public string arrowColor;
