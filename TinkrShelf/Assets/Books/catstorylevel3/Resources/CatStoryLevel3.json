@@ -961,30 +961,17 @@
 
 		{
 			"pageNumber": 9,
-			"script":"L3CatSManager10",
+			"script":"GSManager",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
-				"objectId": 1
+				"objectId": 0
 			},
             "gameObjects": 
             [
-				{
-					"id": 0,
-					"posX": -15,
-					"posY": -65,
-					"scaleX": 80,
-					"scaleY": 80,
-					"imageName": "A10-6",
-					"orderInLayer":1,
-					"inText": true,
-					"label": "Fat",
-					"destroyOnCollision":"NIL",
-					"draggable": false,
-                    "anim": null		
-				},
+				
 				{       
-					"id": 1,
+					"id": 0,
 					"posX": 495,
 					"posY": -65,
 					"scaleX": 80,
@@ -998,7 +985,7 @@
 					"anim": 
 						[
 							{
-								"id": 1,
+								"id": 0,
 								"animName": "A10",
 								"numberOfImages": 6,
 								"onTouch":true,
@@ -1065,7 +1052,7 @@
 					"stnzaId": 0,
 					"textId": 3,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]
