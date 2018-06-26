@@ -97,6 +97,7 @@ public class LoadAssetExample : MonoBehaviour {
         FirebaseHelper.AddBook(storyBookJson.id);
         left.SetActive(false);
         right.SetActive(true);
+        dropdown.SetActive(true);
         endPageHome.SetActive(false);
         endPageReadAgain.SetActive(false);
         LoadCompletePage();
