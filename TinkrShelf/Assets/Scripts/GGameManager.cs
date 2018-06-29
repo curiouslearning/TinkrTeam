@@ -291,6 +291,7 @@ public class GGameManager : MonoBehaviour
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
 		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
 		SceneManager.LoadScene ("shelf");
+
 	}
 
 	public void AutoNarrate()

@@ -1,84 +1,20 @@
 ManifestFileVersion: 0
-CRC: 3106555977
+CRC: 3390506231
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 884cecdc592c0a6719348681f5df2539
+    Hash: 615c82fe2301a1a38c5ca4b60292a049
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cfcb18d5c2eb967a34e14942efc353ab
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
 HashAppended: 0
 ClassTypes:
 - Class: 28
   Script: {instanceID: 0}
-- Class: 49
-  Script: {instanceID: 0}
-- Class: 83
-  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 Assets:
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-4.png
 - Assets/Books/BabyD/Iconanimations/Sprite/red.png
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-2.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_yellow.mp3
-- Assets/Books/5pageproxy/AnimPNGs/yelloww.png
 - Assets/Books/BabyD/Iconanimations/Sprite/blue.png
-- Assets/Books/5pageproxy/AnimPNGs/A01/A01-1.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_name.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_you.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_is.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_frog.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_red.mp3
-- Assets/Books/5pageproxy/Resources/5pageproxy.json
-- Assets/Books/BabyD/Resources/Audio/VO/Stanzas/scene7_child_stanza.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_are.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-8.png
-- Assets/Books/5pageproxy/AnimPNGs/A01/A01-4.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_a.mp3
-- Assets/Books/5pageproxy/AnimPNGs/red.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_baby.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-7.png
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-03.png
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-3.png
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-2.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_the.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-6.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_will.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_rub.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-6.png
-- Assets/Books/5pageproxy/AnimPNGs/blue.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_way.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/Stanzas/scene10_child_stanza_red.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_your.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-9.png
-- Assets/Books/BabyD/Resources/JSON/scene11_child_stanza_red.json
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-1.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_tub.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-4.png
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-9.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_duck.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_blue.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-5.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_find.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_go.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-06.png
-- Assets/Books/5pageproxy/AnimPNGs/A01/A01-3.png
-- Assets/Books/BabyD/Resources/Audio/VO/Stanzas/scene4_child_stanza.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-05.png
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-3.png
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-1.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_babyd.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A03/A03-5.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_color.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_to.mp3
-- Assets/Books/BabyD/Resources/Audio/VO/child_he.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-04.png
-- Assets/Books/BabyD/Resources/Audio/VO/child_what.mp3
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-7.png
 - Assets/Books/BabyD/Iconanimations/Sprite/yelloww.png
-- Assets/Books/5pageproxy/AnimPNGs/A09/A09-8.png
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-02.png
-- Assets/Books/5pageproxy/AnimPNGs/A01/A01-2.png
-- Assets/Books/5pageproxy/AnimPNGs/A02/A02-01.png
 Dependencies: []

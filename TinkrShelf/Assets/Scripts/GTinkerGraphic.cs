@@ -22,7 +22,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	// Reset and highlight colors defaults (change from scene manager subclasses)
 	public Color resetColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-	public Color highlightColor = GameManager.yellow;
+	public Color highlightColor = GGameManager.yellow;
 	private Coroutine destroyObject;
 
 	private void Awake()
@@ -108,7 +108,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	public IEnumerator DestroyCollisionObject (GameObject go)
 	{
-			yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]);
+			yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
 			go.SetActive (false);
 	}
 

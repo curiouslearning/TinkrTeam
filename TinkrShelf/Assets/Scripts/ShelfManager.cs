@@ -42,7 +42,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 	public static string selectedBook;
 
 
-	void Start()
+	void Awake()
 	{    Image = GameObject.Find("Image");
 	   	 Title = GameObject.Find("Title");
         
@@ -61,7 +61,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
         //WWW request = new WWW(URL);
         float timer = 0;
-        float timeOut = 2.0f;
+        float timeOut = 1.0f;
         bool failed = false;
        
 
