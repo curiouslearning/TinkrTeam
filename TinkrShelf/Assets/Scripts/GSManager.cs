@@ -65,7 +65,7 @@ public class GSManager :  MonoBehaviour {
 		if (stanzaManager != null)
 		{
 			// And it has an audio clip and xml defined already in the scene
-			if (LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps.Length >0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
+			if (LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps.Length >0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
 			{
 				// Then have it set the xml up
 				stanzaManager.LoadStanzaJSON();
