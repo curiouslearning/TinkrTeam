@@ -39,7 +39,7 @@
 							"animName": "A01",
 							"numberOfImages": 4,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0],
 							"sequences":
 							[
@@ -63,7 +63,7 @@
 			[
 				{
 					"id": 0,
-					"text": "cat"
+					"text": "Cat"
 					
 				}
 			],
@@ -120,7 +120,7 @@
 							"animName": "A02",
 							"numberOfImages": 6,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0.2,0.2,0.2,0.2,0.2,0.2],
 							"sequences":
 							[
@@ -208,7 +208,7 @@
 							"animName": "A03b",
 							"numberOfImages": 5,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0.5,0.5,0.1,0.1,0.1],
 							"sequences":
 							[
@@ -252,7 +252,7 @@
 							"animName": "A03", 
 							"numberOfImages": 9,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0],
 							"sequences":
 							[
@@ -346,7 +346,7 @@
 							"animName": "A04",
 							"numberOfImages": 4,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0],
 							"sequences":
 							[
@@ -433,7 +433,7 @@
 							"animName": "A05",
 							"numberOfImages": 4,                           
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0.2],
 							"sequences":
 							[
@@ -527,7 +527,7 @@
 							"animName": "A06",
 							"numberOfImages": 4,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0],
 							"sequences":
 							[
@@ -611,7 +611,7 @@
 							"animName": "A07",
 							"numberOfImages": 7,                           
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.2,0.2,0.2,0.2,1.0,0.4,0.4],
 							"sequences":
 							[
@@ -728,7 +728,7 @@
 							"animName": "A08",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0],
 							"sequences":
 							[
@@ -812,7 +812,7 @@
 							"animName": "A09",
 							"numberOfImages": 8,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.2,0.2,0.2,0.2,1.0,0.5,0.3,0.3],
 							"sequences":
 							[
@@ -899,30 +899,17 @@
 
 		{
 			"pageNumber": 9,
-			"script":"L2CatSManager10",
+			"script":"GSManager",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
-				"objectId": 1
+				"objectId": 0
 			},
             "gameObjects": 
             [
-				{
-					"id": 0,
-					"posX": -15,
-					"posY": -65,
-					"scaleX": 80,
-					"scaleY": 80,
-					"imageName": "A10-6",
-					"orderInLayer":1,
-					"inText": true,
-					"label": "Fat",
-					"destroyOnCollision":"NIL",
-					"draggable": false,
-                    "anim": null		
-				},
+				
 				{       
-					"id": 1,
+					"id": 0,
 					"posX": 495,
 					"posY": -65,
 					"scaleX": 80,
@@ -936,11 +923,11 @@
 					"anim": 
 						[
 							{
-								"id": 1,
+								"id": 0,
 								"animName": "A10",
 								"numberOfImages": 6,
 								"onTouch":true,
-								"onStart":false,
+								 "onStart":true,
 								"secPerFrame":[0.4,0.4,0.4,0.4,0.5,0],
 								"sequences":
 								[
@@ -991,7 +978,7 @@
 					"stnzaId": 0,
 					"textId": 0,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -1028,7 +1015,7 @@
 							"animName": "A11a",
 							"numberOfImages": 2,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.3,0.3],
 							"sequences":
 							[
@@ -1125,7 +1112,7 @@
 							"animName": "A12",
 							"numberOfImages": 5,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0.5,0.5],
 							"sequences":
 							[   
@@ -1217,7 +1204,7 @@
 							"animName": "A13",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0,0.2,0.2,0],
 							"sequences":
 							[
@@ -1303,7 +1290,7 @@
 							"animName": "A14",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.1,0.1,0.1,0.1],
 							"sequences":
 							[
@@ -1433,7 +1420,7 @@
 							"animName": "A15",
 							"numberOfImages": 7,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.1,0.1,0.1,0.1,0.1,0.5,0],
 							"sequences":
 							[
@@ -1553,7 +1540,7 @@
 							"animName": "A16",
 							"numberOfImages": 2,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.5,0.5],
 							"sequences": 
 							[
@@ -1592,7 +1579,7 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
                             "onTouch":true,
-							"onStart":false,
+							 "onStart":true,
 							"secPerFrame":[0.4,0.4,0.4,0.4],
 							"sequences": 
 							[
@@ -1698,7 +1685,7 @@
 							"animName":"A17",
 							"numberOfImages": 5,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0,0.4,0.4,0.2,0],
 							"sequences":
 							[
@@ -1795,7 +1782,7 @@
 							"animName": "A18",
 							"numberOfImages": 6,
                             "onTouch":true,
-                            "onStart":false,
+                             "onStart":true,
 							"secPerFrame":[0.4,0.4,0.4,0.4,0.5,0.5],
 							"sequences":
 							[

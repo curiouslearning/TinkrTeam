@@ -82,15 +82,19 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// </summary>
     public void LoadStoryData()
     {
+      
         string fileName = ShelfManager.selectedBook.ToLower() + ".json";
-        pageNumber = 0;
-        TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
-        string json = charDataFile.ToString();
-        storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
-        noOfPages = storyBookJson.pages.Length;
+       
+            pageNumber = 0;
+            TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
+        if (charDataFile !=null)
+        {
+            string json = charDataFile.ToString();
+            storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);
+            noOfPages = storyBookJson.pages.Length;
 
-        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
-        //dataCollector.AddNewBook (storyBookJson.id.ToString());
+            //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+            //dataCollector.AddNewBook (storyBookJson.id.ToString());
 
         FirebaseHelper.AddBook(storyBookJson.id);
         left.SetActive(false);
@@ -144,14 +148,16 @@ public class LoadAssetFromJSON : MonoBehaviour {
         if (pageNumber == 0) {
             left.SetActive(false);
         }
-        else if (pageNumber != (noOfPages - 1)) {
+        else if (pageNumber == (noOfPages-2))
+        {
+            dropdown.SetActive(true);
             right.SetActive(true);
-			dropdown.SetActive (true);
-			endPageHome.SetActive(false);
-			endPageReadAgain.SetActive(false);
+            endPageHome.SetActive(false);
+            endPageReadAgain.SetActive(false);
         }
         EmptyPage();
         LoadCompletePage();
+
     }
 
     /// <summary>
