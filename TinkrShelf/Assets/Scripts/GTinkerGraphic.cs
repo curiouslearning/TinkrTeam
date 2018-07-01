@@ -112,13 +112,15 @@ public class GTinkerGraphic : MonoBehaviour{
 			go.SetActive (false);
 	}
 
-
+	/// <summary>
+	/// Loads the animation assets/frames and triggers PlayAnimation().
+	/// </summary>
 	public void LoadAndPlayAnimation(){
 
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			if (dataTinkerGraphic.anim [0].onTouch) {
-				LoadAssetExample.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
+				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
 				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
 				sequences = dataTinkerGraphic.anim [0].sequences;
 				PlayAnimation();
@@ -129,6 +131,9 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	}
 
+	/// <summary>
+	/// Resets the graphic object and triggers the animation play.
+	/// </summary>
 	public void PlayAnimation(){
 		//StopAllCoroutines();
 		StopCoroutine("Animate");
@@ -139,7 +144,9 @@ public class GTinkerGraphic : MonoBehaviour{
 		StartCoroutine("Animate");
 	}
 
-
+	/// <summary>
+	/// Animate this instance with loaded animation frames.
+	/// </summary>
 	IEnumerator Animate()
 	{
 		currentframe = 0;
@@ -159,7 +166,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 				}
 			}
-			//animate for moving sequences of PNGs
+			//animate for moving sequences of PNGs towards right.
 			else if(transform.position.x < sequences [seqIterator].movable.finalx) {
 				currentframe = sequences [seqIterator].startFrame;
 				while (transform.position.x < sequences [seqIterator].movable.finalx) {
@@ -170,7 +177,7 @@ public class GTinkerGraphic : MonoBehaviour{
 					posx += sequences [seqIterator].movable.speed;
 					transform.position = new Vector3(posx, this.transform.position.y, 0);
 
-					//loop if we reached the end frame but not the final posiiton!
+					//loop if we reached the end frame but not the final position!
 					if (currentframe > sequences [seqIterator].endFrame)
 					{
 						currentframe = sequences [seqIterator].startFrame;
@@ -180,6 +187,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
 				spr.sprite = sprites[sequences [seqIterator].endFrame];
 			}
+			//animate for moving sequences of PNGs towards left.
 			else if(transform.position.x > sequences [seqIterator].movable.finalx) 
 			{
 				currentframe = sequences [seqIterator].startFrame;
@@ -191,7 +199,7 @@ public class GTinkerGraphic : MonoBehaviour{
 					posx += sequences [seqIterator].movable.speed;
 					transform.position = new Vector3(posx, this.transform.position.y, 0);
 
-					//loop if we reached the end frame but not the final posiiton!
+					//loop if we reached the end frame but not the final position!
 					if (currentframe > sequences [seqIterator].endFrame)
 					{
 						currentframe = sequences [seqIterator].startFrame;
@@ -206,48 +214,4 @@ public class GTinkerGraphic : MonoBehaviour{
 		}
 		yield break;
 	}
-
-	/*IEnumerator AnimateAndMove()
-	{   
-		if(transform.position.x>=movable.finalx)
-		{
-			spr.sprite = sprites[sprites.Length -1];
-			yield break;
-		}
-		spr.sprite = sprites[currentframe];
-		Debug.Log ("waited for move:"+secPerFrame[currentframe]);
-		yield return new WaitForSeconds(secPerFrame[currentframe]);
-		currentframe++;
-		var posx = transform.position.x;
-		posx += movable.speed;
-		transform.position = new Vector3(posx, this.transform.position.y, 0);
-		if (currentframe >= sprites.Length)
-		{
-			if (isLooping)
-			{
-				currentframe = 0;
-			}
-		}
-		StartCoroutine("AnimateAndMove");
-	}
-
-	IEnumerator AnimateSprite()
-	{
-		    spr.sprite = sprites[currentframe];
-	    	Debug.Log ("waited for sprite:"+secPerFrame[currentframe]);
-		    yield return new WaitForSeconds(secPerFrame[currentframe]);
-			currentframe++;
-			if (currentframe >= sprites.Length)
-			{
-				if (isLooping)
-				{
-					currentframe = 0;
-				}
-				else
-				{
-				yield break;
-				}
-			}
-			StartCoroutine("AnimateSprite");
-		}*/
 }
