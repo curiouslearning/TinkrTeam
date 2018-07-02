@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class L4CatSManager9 : GSManager {
+public class L5CatSManager9 : GSManager {
 
 	GameObject jam;
 
@@ -10,18 +10,19 @@ public class L4CatSManager9 : GSManager {
 	{
 		if (go.name == "CatJam") {
 			if (jam == null) {
-				jam = GameObject.Find ("Jam");
 			}
+            jam = GameObject.Find("Jam");
 
-			jam.SetActive (true);
+            jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam."){
 
 			if (jam == null) {
-				jam = GameObject.Find ("Jam");
-			}
+				
+            }
+            jam = GameObject.Find("Jam");
 
-			jam.SetActive (true);
+            jam.SetActive (true);
 			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
 			if (catHam != null)
 			{ 

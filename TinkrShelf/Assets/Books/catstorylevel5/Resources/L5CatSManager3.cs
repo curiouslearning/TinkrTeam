@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class L4CatSManager3 : GSManager {
+public class L5CatSManager3 : GSManager {
 	
 
 	public override void OnMouseDown(GameObject go)

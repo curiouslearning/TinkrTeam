@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class L4CatSManager7 : GSManager {
+public class L5CatSManager7 : GSManager {
 
 	GameObject ham;
 
