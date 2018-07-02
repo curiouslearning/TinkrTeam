@@ -1850,7 +1850,7 @@
 			]
 		},
 		{   "pageNumber": 18,
-			"script":"EndPage",
+			"script":"GSManager",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
