@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
-using System;
 
 public class ShelfManager : MonoBehaviour, IPointerClickHandler
 {  
@@ -41,18 +40,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private bool isServerJson = false;
 
 	public static string selectedBook;
-    //for readAloud button
-    public GameObject read;
-    public GameObject mute;
-    public static bool autoNarrate = true;
-    
 
 
-    void Awake()
-
-	{
-     
-        Image = GameObject.Find("Image");
+	void Awake()
+	{    Image = GameObject.Find("Image");
 	   	 Title = GameObject.Find("Title");
         
         //call json file from server
@@ -64,18 +55,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         localManifestFileName = "Manifests/manifest";  //set to passed file name
         inTime = System.DateTime.Now;   
 	}
-    void Start() {
-        if (autoNarrate)
-        {
-    
-            read.SetActive(true);
-        }
-        else
-        {
-            read.SetActive(false);
-            mute.SetActive(true);
-        }
-    }
+
 
     IEnumerator DownloadFileWithTimeout(WWW request)
     {
@@ -125,12 +105,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
         selectedBook = bookInfos[2].book.fileName;
 
-        //string filePath = Path.Combine("Books/", selectedBook + "/");
+        string filePath = Path.Combine("Books/", selectedBook + "/");
 
-        //bookscenePath = Path.Combine(filePath, "Scenes");
-        bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
-
-
+        bookscenePath = Path.Combine(filePath, "Scenes");
         //loading inital center book on first time loading of shelf
         LoadImageandText(bookInfos[2]);
 
@@ -248,23 +225,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
 	{    
 		GameObject go = eventData.pointerCurrentRaycast.gameObject;
-        Debug.Log(go);
-        DateTime time = DateTime.Now;
-
-        if (go.name == "read")
-        {
-            FirebaseHelper.LogInAppTouch("Button_ReadOn", time.ToString());
-
-            mute.SetActive(true);
-            read.SetActive(false);
-            autoNarrate = false;
-        }
-        else if (go.name == "mute") {
-            FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-            read.SetActive(true);
-            mute.SetActive(false);
-            autoNarrate = true;
-           }
 
 		if (go.name == "Cover" )
 		 {
@@ -297,9 +257,8 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {   
         System.TimeSpan span = System.DateTime.Now - inTime;
 		FirebaseHelper.LogInShelfSection (inTime.ToString (), span.TotalSeconds);
-        //SceneManager.LoadScene (bookscenePath+"/Scene01");
-        SceneManager.LoadScene("Books/Decodable/CatTale/Common/Scenes/Scene01");
-    }
+		SceneManager.LoadScene (bookscenePath+"/Scene01");
+	}
 
     private void LoadShelfData()
 	{

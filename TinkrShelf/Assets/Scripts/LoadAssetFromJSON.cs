@@ -99,7 +99,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
             FirebaseHelper.AddBook(storyBookJson.id);
             left.SetActive(false);
             right.SetActive(true);
-            //dropdown.SetActive(true);
+            dropdown.SetActive(true);
             //endPageHome.SetActive(false);
             //endPageReadAgain.SetActive(false);
             LoadCompletePage();
@@ -132,7 +132,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
             right.SetActive(false);
             //endPageHome.SetActive(true);
             //endPageReadAgain.SetActive(true);
-			//dropdown.SetActive (false);
+			dropdown.SetActive (false);
 
         }
 
