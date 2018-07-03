@@ -290,11 +290,11 @@ public class GGameManager : MonoBehaviour
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
 		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
-		SceneManager.LoadScene ("shelf");
+
+        SceneManager.LoadScene ("shelf");
 
 	}
-
-	public void AutoNarrate()
+    public void AutoNarrate()
 	{
 		DateTime time = DateTime.Now;
 		if (j == 1) {

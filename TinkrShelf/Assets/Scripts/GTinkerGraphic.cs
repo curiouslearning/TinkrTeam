@@ -44,9 +44,9 @@ public class GTinkerGraphic : MonoBehaviour{
 	{
 		System.DateTime time=  System.DateTime.Now;
 
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
-
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
+        Debug.Log(dataTinkerGraphic.label);
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
 		LoadAndPlayAnimation ();
 

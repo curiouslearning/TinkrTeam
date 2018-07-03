@@ -113,7 +113,7 @@
 				}
 
 			],
-			
+
 			"triggers": [{
 					"stnzaId": 0,
 					"textId": 1,
@@ -2066,7 +2066,7 @@
 					"wordIdx": 2,
 					"audio": "cat.mp3",
 					"end": 925
-				} ,{
+				}, {
 					"start": 1072,
 					"wordIdx": 3,
 					"audio": "in.mp3",
@@ -2121,35 +2121,33 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 4.9,
-					"posY": 81.3,
-					"scaleX": 15,
-					"scaleY": 15,
+					"posX": 140,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
 					"imageName": "ReadAgain",
-					"orderInLayer": 1,
-					"inText": false,
-					"label": "readagain",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "ReadAgain",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
 				},
 				{
 					"id": 1,
-					"posX": 9,
-					"posY": -39,
-					"scaleX": 15,
-					"scaleY": 15,
+					"posX": -160,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
 					"imageName": "Home",
-					"orderInLayer": 1,
-					"inText": false,
-					"label": "home",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Home",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
-
 				}
 			],
-
 			"texts": null,
 			"audioFile": null,
 			"timestamps": null,
