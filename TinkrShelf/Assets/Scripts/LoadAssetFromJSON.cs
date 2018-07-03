@@ -6,7 +6,10 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System;
 
-public class LoadAssetExample : MonoBehaviour {
+/// <summary>
+/// Script to load the scene based on JSON describing the book.
+/// </summary>
+public class LoadAssetFromJSON : MonoBehaviour {
     static AssetBundle bundleloaded;
     private string[] allPagesJsons;
     public static StoryBookJson storyBookJson;
@@ -23,9 +26,7 @@ public class LoadAssetExample : MonoBehaviour {
     public GameObject endPageHome;
     public GameObject endPageReadAgain;
 	public GameObject dropdown;
-
     static float previousTextWidth;
-
     public static string sceneScript;
     Font font;
     Transform canvasTransform;
@@ -35,15 +36,10 @@ public class LoadAssetExample : MonoBehaviour {
     float height = 32.94f;  //height of text:32.94
     private readonly float minWordSpace = 30.0f;
     private readonly float minLineSpace = 30.0f;
-    float PivotX = 0.0f;
-    float PivotY = 0.5f;
 
     //variables for logging data
     public DateTime inTime;
     int timeSpent;
-
-    private bool autoPlaying = false;
-    private bool cancelAutoPlay = false;
 
     //sending data directly to firebase using "72 hours rule"! (removed local data storage)
     //public DataCollection dataCollector;
@@ -54,7 +50,7 @@ public class LoadAssetExample : MonoBehaviour {
         //font = Resources.GetBuiltinResource<Font>("Arial.ttf");
         font = Resources.Load<Font>("Font/OpenDyslexic-Regular");
 
-        canvasTransform = this.transform;  //if this script attached to canvas; otherwise update this line to store canvas transform.
+        canvasTransform = this.transform;  //if this script is attached to canvas; otherwise update this line to store canvas transform.
 
         if (!bundleloaded)
         {
@@ -69,41 +65,22 @@ public class LoadAssetExample : MonoBehaviour {
         //dataCollector.LoadLocalJSON ();
 
         //FirebaseHelper.AddBook(ShelfManager.selectedBook);
-        //FirebaseHelper.AddBook("CatStoryLevel2");
 
         LoadStoryData();
     }
 
     void Start() {
+		
         startingX = storyBookJson.textStartPositionX;
         startingY = storyBookJson.textStartPositionY;
-        
 
     }
 
-    public void HomeClick()
-    {
-        DateTime time = DateTime.Now;
-        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
-        //DataCollection.AddInTouchData ("Button_Home", time.ToString());
-        FirebaseHelper.LogInAppTouch("Button_Home_End", time.ToString());
-        TimeSpan span = (time - inTime);
-
-        FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
-        SceneManager.LoadScene("shelf");
-
-    }
-    public void ReadAgain()
-    {
-        DateTime time = DateTime.Now;
-        FirebaseHelper.LogInAppTouch("Button_Read_Again_End", time.ToString());
-
-        TimeSpan span = (time - inTime);
-        FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
-        LoadStoryData();
-    }
 
 
+	/// <summary>
+	/// Loads the story data.
+	/// </summary>
     public void LoadStoryData()
     {
    string fileName = ShelfManager.selectedBook.ToLower() + ".json";
@@ -130,11 +107,12 @@ public class LoadAssetExample : MonoBehaviour {
         }
     }
 
-
+	/// <summary>
+	/// Loads the next page on "next" arrow/button click.
+	/// </summary>
     public void LoadNextPage()
     {
         stanzaManager.RequestCancelAutoPlay();
-        previousTextWidth = 0;
         left.SetActive(true);
         DateTime time = DateTime.Now;
 
@@ -163,8 +141,9 @@ public class LoadAssetExample : MonoBehaviour {
     }
 
         
-
-
+	/// <summary>
+	/// Loads the previous page on "previous" arrow/button click.
+	/// </summary>
     public void LoadPreviousPage()
     {
         stanzaManager.RequestCancelAutoPlay();
@@ -196,7 +175,9 @@ public class LoadAssetExample : MonoBehaviour {
 
     }
 
- 
+    /// <summary>
+    /// Destrroys all the scene objects before loading another page.
+    /// </summary>
 	public void EmptyPage()
 	{   if (tinkerGraphicObjects != null) {
 			for (int i = 0; i < tinkerGraphicObjects.Count; i++) {
@@ -211,6 +192,10 @@ public class LoadAssetExample : MonoBehaviour {
 		stanzaObjects = null;
         //stanzaManager.RequestCancelAutoPlay();
     }
+
+	/// <summary>
+	/// Loads all the page asssets.
+	/// </summary>
 	public void LoadCompletePage()
 	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -258,13 +243,18 @@ public class LoadAssetExample : MonoBehaviour {
 
     }
 
+	/// <summary>
+	/// Loads the audio for stanza auto narration to the canvas.
+	/// </summary>
     public void LoadStanzaAudio()
     {
         Destroy(GameObject.Find("Canvas").GetComponent<AudioSource>());
         GameObject.Find("Canvas").AddComponent<AudioSource>().clip = LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
-
     }
 
+	/// <summary>
+	/// Loads the audio for each word.
+	/// </summary>
     public void LoadAudios()
     {
         TimeStampClass[] timeStamps = storyBookJson.pages[pageNumber].timestamps;
@@ -275,6 +265,11 @@ public class LoadAssetExample : MonoBehaviour {
         }
     }
 
+	/// <summary>
+	/// Loads the audio asset from asset bundle.
+	/// </summary>
+	/// <returns>The audio asset.</returns>
+	/// <param name="name">Name of the audio.</param>
     public AudioClip LoadAudioAsset(string name)
     {if (name != "")
             return bundleloaded.LoadAsset<AudioClip>(name);
@@ -282,6 +277,10 @@ public class LoadAssetExample : MonoBehaviour {
             return null; 
     }
 
+	/// <summary>
+	/// Loads the game objects related to any page number.
+	/// </summary>
+	/// <param name="pageNo">Page no.</param>
     public void LoadPageData(int pageNo)
     { tinkerGraphicObjects.Clear();
         if (storyBookJson != null)
@@ -300,6 +299,9 @@ public class LoadAssetExample : MonoBehaviour {
 
     }
 
+	/// <summary>
+	/// Links/Pairs TinkerTexts and TinkerGraphics.
+	/// </summary>
     public void LoadTriggers()
     {
         TriggerClass[] triggers = storyBookJson.pages[pageNumber].triggers;
@@ -325,6 +327,10 @@ public class LoadAssetExample : MonoBehaviour {
 
     }
 
+
+	/// <summary>
+	/// Loads all the stanzas on the page.
+	/// </summary>
     public void LoadStanzaData()
     {
         startingX = storyBookJson.textStartPositionX;
@@ -333,8 +339,8 @@ public class LoadAssetExample : MonoBehaviour {
         stanzaManager.stanzas.Clear();
         j = 0;
         stanzaObjects = new List<GameObject>();
-        TextClass[] texts = LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].texts;
-		int length = LoadAssetExample.storyBookJson.pages [LoadAssetExample.pageNumber].timestamps.Length;
+        TextClass[] texts = storyBookJson.pages[pageNumber].texts;
+		int length = storyBookJson.pages [pageNumber].timestamps.Length;
 		if(length==1)
 			startingX=-95.0f ;
 		else if(length==2)
@@ -362,9 +368,11 @@ public class LoadAssetExample : MonoBehaviour {
 
     }
 
-
+    /// <summary>
+    /// Tokenizes the stanza into TinkerTexts.
+    /// </summary>
 	public void TokenizeStanza ()
-{
+   {
 		tinkerTextObjects.Clear ();
 		string[] words;
 
@@ -382,6 +390,12 @@ public class LoadAssetExample : MonoBehaviour {
 
 	}
 
+	/// <summary>
+	/// Creates the stanza at any given position.
+	/// </summary>
+	/// <returns>The StanzaObject object.</returns>
+	/// <param name="x">The x coordinate.</param>
+	/// <param name="y">The y coordinate.</param>
 	StanzaObject CreateStanza( float x, float y)
 	{
 		GameObject go = Instantiate (Resources.Load ("Prefabs/StanzaObject")) as GameObject;
@@ -398,6 +412,16 @@ public class LoadAssetExample : MonoBehaviour {
 		return go.GetComponent<StanzaObject>();
 	}
 
+	/// <summary>
+	/// Creates TinkerText for a word at a position.
+	/// </summary>
+	/// <returns>The text.</returns>
+	/// <param name="parent">Parent stanza of the TinkerText.</param>
+	/// <param name="x">The x coordinate.</param>
+	/// <param name="y">The y coordinate.</param>
+	/// <param name="textToPrint">Text to print (word).</param>
+	/// <param name="fontSize">Font size.</param>
+	/// <param name="textColor">Text color.</param>
 	GTinkerText CreateText( StanzaObject parent, float x, float y, string textToPrint, int fontSize, Color textColor)
 	{
 		GameObject UItextGO = new GameObject("Text_"+textToPrint);
@@ -411,7 +435,7 @@ public class LoadAssetExample : MonoBehaviour {
 		text.font = font;
 		text.transform.localScale = new Vector3(1,1,1);
 
-
+		//used for fitting the text box to the size of text.
 		ContentSizeFitter csf= UItextGO.AddComponent<ContentSizeFitter> ();
 		csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 		csf.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
@@ -432,7 +456,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		width = width+trans.rect.width+minWordSpace;
 
-
+		//add the animator and script to the word.
         UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
         GTinkerText tinkerText= UItextGO.AddComponent<GTinkerText>();
         tinkerText.stanza =UItextGO.GetComponentInParent<StanzaObject>();
@@ -440,7 +464,10 @@ public class LoadAssetExample : MonoBehaviour {
         return UItextGO.GetComponent<GTinkerText>();
 	}
 
-
+	/// <summary>
+	/// Creates the game object.
+	/// </summary>
+	/// <param name="gameObjectData">Game object data.</param>
 	public void CreateGameObject(GameObjectClass gameObjectData)
 	{
 		Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
@@ -485,18 +512,31 @@ public class LoadAssetExample : MonoBehaviour {
 		tinkerGraphicObjects.Add(go);
 
 	}
-    public void LoadAsset(string name)
+
+    public void LoadAssetFromBundle(string name)
     {
       
        var prefab = bundleloaded.LoadAsset<GameObject>(name);
         Instantiate(prefab);     
     }
+
+	/// <summary>
+	/// Loads the asset image.
+	/// </summary>
+	/// <param name="name">Namevof the asset image.</param>
+	/// <param name="sr">Sprite Renderer.</param>
     public void LoadAssetImage(string name,SpriteRenderer sr)
     {
         var sprite = bundleloaded.LoadAsset<Sprite>(name);
         sr.sprite = sprite;
     }
 
+	/// <summary>
+	/// Loads the animation images.
+	/// </summary>
+	/// <param name="tinkerGraphic">Tinker graphic.</param>
+	/// <param name="startName">Start name.</param>
+	/// <param name="length">Number of the animation frames.</param>
 	public static void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
 	{
 
@@ -508,6 +548,7 @@ public class LoadAssetExample : MonoBehaviour {
 
 		}     
 	}
+
 
     public void LoadScene()
     {
@@ -528,6 +569,7 @@ public class LoadAssetExample : MonoBehaviour {
 
         }
     }
+
     /*IEnumerator InstantiateObject()
 
     {

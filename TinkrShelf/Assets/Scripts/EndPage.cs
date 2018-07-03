@@ -45,7 +45,7 @@ private System.DateTime inTime;
         TimeSpan span = (time - inTime);
        
         FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
-        LoadAssetExample l = myCanvas.GetComponent<LoadAssetExample>();
+        LoadAssetFromJSON l = myCanvas.GetComponent<LoadAssetFromJSON>();
         l.EmptyPage();
         l.LoadStoryData();
         

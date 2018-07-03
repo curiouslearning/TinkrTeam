@@ -56,28 +56,19 @@ public class GSManager :  MonoBehaviour {
     {
         //gameManager = _gameManager;
 
-        // Reset flags
-        dragActive = false;
-        disableAutoplay = false;
-        disableSounds = false;
-
-        // If we have a stanza manager
-        if (stanzaManager != null)
-        {
-            // And it has an audio clip and xml defined already in the scene
-            if (LoadAssetExample.storyBookJson.pages[LoadAssetExample.pageNumber].timestamps.Length > 0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
-            {
-                // Then have it set the xml up
-                stanzaManager.LoadStanzaJSON();
-            }
-        }
-        Color c = red;
-        if (Rbutton != null) { 
-            c = Rbutton.gameObject.GetComponent<Image>().color;
-            c.a = 0.8f;
-        }
-
-        if (Lbutton!=null)
+		// If we have a stanza manager
+		if (stanzaManager != null)
+		{
+			// And it has an audio clip and xml defined already in the scene
+			if (LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps.Length >0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
+			{
+				// Then have it set the xml up
+				stanzaManager.LoadStanzaJSON();
+			}
+		}
+		Color c = Rbutton.gameObject.GetComponent<Image>().color;
+		c.a = 0.8f;
+		if(Lbutton!=null)
 			Lbutton.gameObject.GetComponent<Image>().color = c;
 
         if (Rbutton != null)
