@@ -50,16 +50,11 @@ public class GSManager :  MonoBehaviour {
 	public GameObject Rbutton;
 
 
- 
 
-	public virtual void Start() //GGameManager _gameManager
-	{
-		//gameManager = _gameManager;
 
-		// Reset flags
-		dragActive = false;
-		disableAutoplay = false;
-		disableSounds = false;
+    public virtual void Start() //GGameManager _gameManager
+    {
+        //gameManager = _gameManager;
 
 		// If we have a stanza manager
 		if (stanzaManager != null)
@@ -76,13 +71,14 @@ public class GSManager :  MonoBehaviour {
 		if(Lbutton!=null)
 			Lbutton.gameObject.GetComponent<Image>().color = c;
 
+        if (Rbutton != null)
+            Rbutton.gameObject.GetComponent<Image>().color = c;
 
-		Rbutton.gameObject.GetComponent<Image>().color = c;
-		if(Lbutton!=null)
+        if (Lbutton!=null)
 		Lbutton.GetComponent<Button>().interactable = true;
 		if(Rbutton!=null)
 		Rbutton.GetComponent<Button>().interactable = true;
-
+        
 		StartCoroutine ("PlayStanzaAudio");
 	}
 
@@ -302,16 +298,22 @@ public class GSManager :  MonoBehaviour {
 
 	public virtual void ResetInputStates(GGameManager.MouseEvents mouseEvent)
 	{
-		if (stanzaManager != null)
+        if (stanzaManager != null)
 		{
 			stanzaManager.ResetInputStates(mouseEvent);
 		}
 
 		GTinkerGraphic[] list;
-		list = this.GetComponentsInChildren<GTinkerGraphic> ();
-		foreach (GTinkerGraphic tinkerGraphic in list) {
-			tinkerGraphic.MyOnMouseUp ();
-		}
+
+        if (this != null)
+        {
+            list = this.GetComponentsInChildren<GTinkerGraphic>();
+
+            foreach (GTinkerGraphic tinkerGraphic in list)
+            {
+                tinkerGraphic.MyOnMouseUp();
+            }
+        }
 	}
 
 

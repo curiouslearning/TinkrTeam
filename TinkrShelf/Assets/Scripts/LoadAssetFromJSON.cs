@@ -26,11 +26,11 @@ public class LoadAssetFromJSON : MonoBehaviour {
     public GameObject endPageHome;
     public GameObject endPageReadAgain;
 	public GameObject dropdown;
-
+    static float previousTextWidth;
     public static string sceneScript;
     Font font;
     Transform canvasTransform;
-
+    
     private int noOfPages, i, j;
     float width = 0.0f, startingX, startingY, startingXText, startingYText;
     float height = 32.94f;  //height of text:32.94
@@ -38,7 +38,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
     private readonly float minLineSpace = 30.0f;
 
     //variables for logging data
-    DateTime inTime;
+    public DateTime inTime;
     int timeSpent;
 
     //sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -77,13 +77,13 @@ public class LoadAssetFromJSON : MonoBehaviour {
     }
 
 
+
 	/// <summary>
 	/// Loads the story data.
 	/// </summary>
     public void LoadStoryData()
     {
-      
-        string fileName = ShelfManager.selectedBook.ToLower() + ".json";
+   string fileName = ShelfManager.selectedBook.ToLower() + ".json";
        
             pageNumber = 0;
             TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;
@@ -96,13 +96,15 @@ public class LoadAssetFromJSON : MonoBehaviour {
             //sending data directly to firebase using "72 hours rule"! (removed local data storage)
             //dataCollector.AddNewBook (storyBookJson.id.ToString());
 
-        FirebaseHelper.AddBook(storyBookJson.id);
-        left.SetActive(false);
-        right.SetActive(true);
-		dropdown.SetActive (true);
-        endPageHome.SetActive(false);
-        endPageReadAgain.SetActive(false);
-        LoadCompletePage();
+            FirebaseHelper.AddBook(storyBookJson.id);
+            left.SetActive(false);
+            right.SetActive(true);
+            dropdown.SetActive(true);
+            //endPageHome.SetActive(false);
+            //endPageReadAgain.SetActive(false);
+            LoadCompletePage();
+
+        }
     }
 
 	/// <summary>
@@ -112,18 +114,24 @@ public class LoadAssetFromJSON : MonoBehaviour {
     {
         stanzaManager.RequestCancelAutoPlay();
         left.SetActive(true);
-        TimeSpan span = (DateTime.Now - inTime);
+        DateTime time = DateTime.Now;
+
+        TimeSpan span = (time - inTime);
+        FirebaseHelper.LogInAppTouch("Button_Page_Right_Arrow", time.ToString());
+
         //sending data directly to firebase using "72 hours rule"! (removed local data storage)
         //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
 
         FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
 
         Destroy(GameObject.Find("SceneManager" + (pageNumber)));
+
         pageNumber++;
+
         if (pageNumber == (noOfPages - 1)) {
             right.SetActive(false);
-            endPageHome.SetActive(true);
-            endPageReadAgain.SetActive(true);
+            //endPageHome.SetActive(true);
+            //endPageReadAgain.SetActive(true);
 			dropdown.SetActive (false);
 
         }
@@ -139,10 +147,17 @@ public class LoadAssetFromJSON : MonoBehaviour {
     public void LoadPreviousPage()
     {
         stanzaManager.RequestCancelAutoPlay();
-        TimeSpan span = (DateTime.Now - inTime);
+
+        previousTextWidth = 0;
+        DateTime time = DateTime.Now;
+        TimeSpan span = ( time- inTime);
+        FirebaseHelper.LogInAppTouch("Button_Page_Left_Arrow", time.ToString());
+
         //sending data directly to firebase using "72 hours rule"! (removed local data storage)
         //DataCollection.AddInSectionData (inTime.ToString(), span.ToString());
         FirebaseHelper.LogInAppSection(inTime.ToString(), span.TotalSeconds);
+
+
         Destroy(GameObject.Find("SceneManager" + (pageNumber)));
         pageNumber--;
         if (pageNumber == 0) {
@@ -152,8 +167,8 @@ public class LoadAssetFromJSON : MonoBehaviour {
         {
             dropdown.SetActive(true);
             right.SetActive(true);
-            endPageHome.SetActive(false);
-            endPageReadAgain.SetActive(false);
+            //endPageHome.SetActive(false);
+            //endPageReadAgain.SetActive(false);
         }
         EmptyPage();
         LoadCompletePage();
@@ -207,15 +222,24 @@ public class LoadAssetFromJSON : MonoBehaviour {
         GameObject go = new GameObject();
         go.transform.SetParent(canvasTransform);
         go.name = "SceneManager" + pageNumber;
-        sceneScript = storyBookJson.pages[pageNumber].script;
-        go.AddComponent(Type.GetType(sceneScript));
-        GameObject.Find("Canvas").GetComponent<GStanzaManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
-        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().gameManager = GameObject.Find("GameManager").GetComponent<GGameManager>();
-        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
-        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Lbutton = GameObject.FindWithTag("left_arrow");
-        GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Rbutton = GameObject.FindWithTag("right_arrow");
-        GameObject.Find("GameManager").GetComponent<GGameManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
+        //if (pageNumber != 18)
+        //{
+            sceneScript = storyBookJson.pages[pageNumber].script;
+            go.AddComponent(Type.GetType(sceneScript));
+            GameObject.Find("Canvas").GetComponent<GStanzaManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
+            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().gameManager = GameObject.Find("GameManager").GetComponent<GGameManager>();
+            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
+            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Lbutton = GameObject.FindWithTag("left_arrow");
+            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Rbutton = GameObject.FindWithTag("right_arrow");
+            GameObject.Find("GameManager").GetComponent<GGameManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
+        //}
+        //else {
+        //    sceneScript = storyBookJson.pages[pageNumber].script;
+        //    go.AddComponent(Type.GetType(sceneScript));
+
+        //}
+
 
     }
 
@@ -247,9 +271,10 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <returns>The audio asset.</returns>
 	/// <param name="name">Name of the audio.</param>
     public AudioClip LoadAudioAsset(string name)
-    {
-
-        return bundleloaded.LoadAsset<AudioClip>(name);
+    {if (name != "")
+            return bundleloaded.LoadAsset<AudioClip>(name);
+        else
+            return null; 
     }
 
 	/// <summary>
