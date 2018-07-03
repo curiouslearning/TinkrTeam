@@ -753,6 +753,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!54 &469213763
 Rigidbody:
@@ -866,6 +868,8 @@ RectTransform:
   - {fileID: 1800835709}
   - {fileID: 1010744291}
   - {fileID: 467988045}
+  - {fileID: 1931947709}
+  - {fileID: 501738391}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -894,6 +898,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 1931947708}
+  mute: {fileID: 501738390}
 --- !u!1 &498625493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1021,7 +1027,77 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
+--- !u!1 &501738390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 501738391}
+  - component: {fileID: 501738393}
+  - component: {fileID: 501738392}
+  m_Layer: 5
+  m_Name: mute
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &501738391
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501738390}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482621644}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 422.3, y: 219.7}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &501738392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501738390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 7e50e3430e0922b44bc48664ee1a2747, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &501738393
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501738390}
 --- !u!1 &823758707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,6 +1850,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1271238865
 GameObject:
@@ -1970,6 +2048,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1357675647
 GameObject:
@@ -2223,6 +2303,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1402337025
 GameObject:
@@ -2351,6 +2433,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1415876277
 GameObject:
@@ -2479,6 +2563,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1546969191
 GameObject:
@@ -2801,6 +2887,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1598424417
 GameObject:
@@ -3122,6 +3210,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1800835708
 GameObject:
@@ -3371,6 +3461,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1878997206
 GameObject:
@@ -3499,6 +3591,8 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &1899078247
 GameObject:
@@ -3568,6 +3662,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899078247}
+--- !u!1 &1931947708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1931947709}
+  - component: {fileID: 1931947711}
+  - component: {fileID: 1931947710}
+  m_Layer: 5
+  m_Name: read
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1931947709
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931947708}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 482621644}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 422.3, y: 219.7}
+  m_SizeDelta: {x: 75, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1931947710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931947708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8d31dafa9ac04694f8f34b0946a62366, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1931947711
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1931947708}
 --- !u!1 &2007979830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,6 +3815,8 @@ MonoBehaviour:
   bookwheel: {fileID: 0}
   Left: {fileID: 0}
   Right: {fileID: 0}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
 --- !u!1 &2025406120
 GameObject:
@@ -3881,4 +4045,6 @@ MonoBehaviour:
   bookwheel: {fileID: 363886629}
   Left: {fileID: 941557322}
   Right: {fileID: 1800835710}
+  read: {fileID: 0}
+  mute: {fileID: 0}
   bookName: 
