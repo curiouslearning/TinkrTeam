@@ -52,15 +52,11 @@
 				bookName = bookVar.book.fileName;
 			    // first store the name to reference while loading the assets of book!
 			    selectedBook = bookName;
-            //bookName += "/";
-            //string filePath = Path.Combine ("Books/", bookName);
-            //bookscenePath = Path.Combine(filePath,"Scenes");
-            bookscenePath = "Books/Decodable/CatTale/Common/Scenes";
-
-            
-
-
-            }
+				bookName += "/";
+				string filePath = Path.Combine ("Books/", bookName);
+				bookscenePath = Path.Combine(filePath,"Scenes");
+	 
+	        }
 	        else if (collider.gameObject.name == "four")
 	        {
 	            this.gameObject.GetComponent<BookObject>().position = 4;
