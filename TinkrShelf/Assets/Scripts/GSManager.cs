@@ -39,8 +39,8 @@ public class GSManager :  MonoBehaviour {
 
 	//for menubar drop down
 
-	public int i = 1;
-	public static int j = 1; 
+	//public int i = 1;
+	//public static int j = 1; 
 	static public Color blue = new Color(6.0f / 255.0f, 7.0f / 255.0f, 253.0f / 255.0f, 81.0f);
 	static public Color red = new Color(253.0f / 255.0f, 6.0f / 255.0f, 52.0f / 255.0f, 255.0f);
 	static public Color yellow = new Color(237.0f / 255.0f, 243.0f / 255.0f, 0.0f / 255.0f, 249.0f);
@@ -48,16 +48,14 @@ public class GSManager :  MonoBehaviour {
 
 	public GameObject Lbutton;
 	public GameObject Rbutton;
-
-
-
-
+    
     public virtual void Start() //GGameManager _gameManager
     {
         //gameManager = _gameManager;
 
-		// If we have a stanza manager
-		if (stanzaManager != null)
+        
+        // If we have a stanza manager
+        if (stanzaManager != null)
 		{
 			// And it has an audio clip and xml defined already in the scene
 			if (LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps.Length >0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
@@ -79,13 +77,14 @@ public class GSManager :  MonoBehaviour {
 		if(Rbutton!=null)
 		Rbutton.GetComponent<Button>().interactable = true;
         
+        if(ShelfManager.autoNarrate)
 		StartCoroutine ("PlayStanzaAudio");
 	}
 
 
 	IEnumerator PlayStanzaAudio(){
 		yield return new  WaitForSeconds(1);
-		if (stanzaManager != null && gameManager!= null && gameManager.read.image.sprite == gameManager.narrateOn)
+		if (stanzaManager != null && gameManager!= null)
 		{
 			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
 		}
