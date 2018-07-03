@@ -5,44 +5,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script responsible for controling scenes,touch events and dropdown menu.
+/// </summary>
 public class GGameManager : MonoBehaviour
 {
-
-	// Use this for  initialization
-
-	public GSManager sceneManager;                       // Reference to SManager for each scene
+	// Reference to GSManager
+	public GSManager sceneManager;
+	public GStanzaManager stanzaManager;
 	public static bool mousepressed = false;
 	public Canvas myCanvas;
-	//[HideInInspector]
-//	public enum Scenes                                      // Place all scene names here in order
-//	{
-//		Init,
-//		Scene00,
-//		Scene01,
-//		Scene02,
-//		Scene03,
-//		Scene04,
-//		Scene05,
-//		Scene06,
-//		Scene07,
-//		Scene08,
-//		Scene09,
-//		Scene10,
-//		Scene11,
-//		Scene12,
-//		Scene13,
-//		Scene14,
-//		Scene15,
-//		Scene16,
-//		Scene17,
-//		Scene18,
-//		Scene19,
-//		Scene20,
-//		Scene21,
-//		Scene24,
-//		END
-//	}
+	static public Color yellow = new Color (237.0f / 255.0f, 245.0f / 255.0f, 84.0f / 255.0f, 1.0f);
 
+	//Mouse touch event references
 	[HideInInspector]
 	public enum MouseEvents
 	{
@@ -51,305 +26,240 @@ public class GGameManager : MonoBehaviour
 		MouseUp
 	}
 
-	// Specific colors that TinkerBook uses
-	static public Color red = new Color(238.0f / 255.0f, 35.0f / 255.0f, 39.0f / 255.0f, 1.0f);
-	static public Color white = Color.white;
-	static public Color orange = new Color(255.0f / 255.0f, 166.0f / 255.0f, 50.0f / 255.0f, 1.0f);
-	static public Color purple = new Color(103.0f / 255.0f, 1.0f / 255.0f, 207.0f / 255.0f, 1.0f);
-	static public Color brown = new Color(153.0f / 255.0f, 102.0f / 255.0f, 0 / 255.0f, 1.0f);
-	static public Color yellow = new Color(237.0f / 255.0f, 245.0f / 255.0f, 84.0f / 255.0f, 1.0f);
-	static public Color green = new Color(64.0f / 255.0f, 218.0f / 255.0f, 42.0f / 255.0f, 1.0f);
-	static public Color blue = new Color(33.0f / 255.0f, 60.0f / 255.0f, 201.0f / 255.0f, 1.0f);
-    static public Color navblue = new Color(33.0f / 255.0f, 60.0f / 255.0f, 221.0f / 255.0f, 0.9f);
-    static public Color duckColor = white;
-    static public Color frogColor = white;
-    //public Scenes currentScene;
-	public bool isOpen=false;
+	//Drop down menu references
+	public bool isOpen = false;
 	public Sprite down;
 	public Sprite up;
-
 	public Sprite narrateOn;
 	public Sprite narrateOff;
-	public Button upArrow; 
+	public Button upArrow;
 	public Button home;
 	public Button read;
 	public GameObject dropContainer;
 	public GameObject menuContainer;
+	public int i = 1;
+	public static int j = 1;
 
 	public static AudioSource[] sounds;
-	public GStanzaManager stanzaManager;
 
-	//for menubar drop down
-
-	public int i = 1;
-	public static int j = 1; 
-
-	public static GGameManager Instance
-	{
+	//
+	public static GGameManager Instance {
 		get { return GGameManager.instance; }
 	}
 	// access to the singleton
 	private static GGameManager instance;
-	
-	// Update is called once per frame
-	public void Start()
+
+	/// <summary>
+	///To set the narrate on/off button accordingly.
+	/// </summary>
+	public void Start ()
 	{
-		
-			dropContainer.SetActive(true);
-			menuContainer.SetActive(false);
-			if (gameObject != null)
-				sounds = gameObject.GetComponents<AudioSource>();
+		dropContainer.SetActive (true);
+		menuContainer.SetActive (false);
+		if (gameObject != null)
+			sounds = gameObject.GetComponents<AudioSource> ();
 
-			isOpen = false;
-
-		if (j == 1)
-		{
+		isOpen = false;
+		//Change to narrateon sprite
+		if (j == 1) {
 			if (read != null)
 				read.image.sprite = narrateOn;
 
 
 		}
-		if (j == 0)
-		{
+		//Change to narrateoff sprite
+		if (j == 0) {
 			if (read != null)
 				read.image.sprite = narrateOff;
 
 		}
 
-
-
 	}
 
-
-	void Update()
+	/// <summary>
+	/// Checks the mouse events and calls the respective scenemanager event.
+	/// </summary>
+	void Update ()
 	{
-		
-
 		// Check for mouse input
-		if (Input.GetMouseButtonDown(0))
-		{
+		if (Input.GetMouseButtonDown (0)) {
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects(Input.mousePosition);
+			List<GameObject> gos = PickGameObjects (Input.mousePosition);
 
-				// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count!=0) {
-				
-				sceneManager.OnMouseDown (gos[0]);
+			// Pass the game object along to the current scene manager (if any) to let it respond
+			if (sceneManager != null && gos.Count != 0) {
+				sceneManager.OnMouseDown (gos [0]);
 			}
-		} 
-		else if (Input.GetMouseButton(0))
-		{
+		} else if (Input.GetMouseButton (0)) {
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects(Input.mousePosition);
-				// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count!=0)
-				{
-					sceneManager.OnMouseCurrentlyDown(gos[0]);
-				}
-
-			if (gos.Count == 0)
-			{
+			List<GameObject> gos = PickGameObjects (Input.mousePosition);
+			// Pass the game object along to the current scene manager (if any) to let it respond
+			if (sceneManager != null && gos.Count != 0) {
+				sceneManager.OnMouseCurrentlyDown (gos [0]);
+			}
+			if (gos.Count == 0) {
 				// Anytime a mouse currently down event misses any gameobject, update applicable lists in scene manager
-				sceneManager.ResetInputStates(MouseEvents.MouseCurrentlyDown);
+				sceneManager.ResetInputStates (MouseEvents.MouseCurrentlyDown);
 			}
-		} 
-		else if (Input.GetMouseButtonUp(0))
-		{
+		} else if (Input.GetMouseButtonUp (0)) {
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects(Input.mousePosition);
-
-				// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count!=0) {
-					sceneManager.OnMouseUp (gos[0]);
-				}
-
+			List<GameObject> gos = PickGameObjects (Input.mousePosition);
+			// Pass the game object along to the current scene manager (if any) to let it respond
+			if (sceneManager != null && gos.Count != 0) {
+				sceneManager.OnMouseUp (gos [0]);
+			}
 			// Anytime there is a mouse up event, update applicable lists in scene manager
-			sceneManager.ResetInputStates(MouseEvents.MouseUp);
-		} 
+			sceneManager.ResetInputStates (MouseEvents.MouseUp);
+		}
 
-		else if (Input.GetKeyDown(KeyCode.Escape)) // quit game on exit
-		{
-			System.Diagnostics.Process.GetCurrentProcess().Kill();
-
+		// quit game on exit
+		else if (Input.GetKeyDown (KeyCode.Escape)) {
+			System.Diagnostics.Process.GetCurrentProcess ().Kill ();
 		}
 	}
-
-	
-
 
 	// this is called after Awake() OR after the script is recompiled (Recompile > Disable > Enable)
-	private void Init()
-	{
-		// Assign our current scene on one-time init so we can support starting game from any scene during testing
-		//currentScene = (Scenes)Enum.Parse(typeof(Scenes), SceneManager.GetActiveScene().name);
-	}
-
-	protected virtual void OnEnable()
+	protected virtual void OnEnable ()
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
-		if (instance == null)
-		{
-			Debug.Log("enable");
+		if (instance == null) {
+			Debug.Log ("enable");
 			instance = this;
-
-			Init();
-		}
-		else if (instance != this)
-		{
-			Debug.LogWarning("GAME MANAGER: WARNING - THERE IS ALREADY AN INSTANCE OF GAME MANAGER RUNNING - DESTROYING THIS ONE.");
-			Destroy(this.gameObject);
+		} else if (instance != this) {
+			Debug.LogWarning ("GAME MANAGER: WARNING - THERE IS ALREADY AN INSTANCE OF GAME MANAGER RUNNING - DESTROYING THIS ONE.");
+			Destroy (this.gameObject);
 			return;
 		}
 	}
-	void OnDisable()
+
+	void OnDisable ()
 	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 
 	// Called each time a new scene is loaded
-	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
 	{
-		Debug.Log("LEVEL WAS LOADED: " + SceneManager.GetActiveScene().name);
+		Debug.Log ("LEVEL WAS LOADED: " + SceneManager.GetActiveScene ().name);
 		//AndroidBroadcastIntentHandler.BroadcastJSONData("scene", SceneManager.GetActiveScene().name);
-		LoadSceneManager();
+		LoadSceneManager ();
 	}
 
 
-	private void LoadSceneManager()
+	private void LoadSceneManager ()
 	{
-		// Grab the current SManager GameObject (if it exists)
-		//GameObject sceneManagerGO = GameObject.Find("SceneManager");
+		sceneManager.Start ();
+	}
 
-//		if (sceneManagerGO != null)
-//		{
-//			sceneManager = sceneManagerGO.GetComponent<GSManager>();
-//
-//			if (sceneManager != null)
-//			{
-	   	sceneManager.Start(); //this
-
-			}
-		
-
-//	public void LoadPreviousScene()
-//	{
-//		if (currentScene > Scenes.Init + 1)
-//		{
-//			currentScene--;
-//			SceneManager.LoadScene(currentScene.ToString());
-//		}
-//	}
-//	public void LoadNextScene()
-//	{
-//		if (currentScene < Scenes.END)
-//		{
-//			currentScene++;
-//			SceneManager.LoadScene(currentScene.ToString());
-//			Debug.Log(currentScene);
-//		}
-//	}
-
-
-
-	public void DownClick()
-	{   
+	/// <summary>
+	///Down button is clicked.
+	/// </summary>
+	public void DownClick ()
+	{
 		DateTime time = DateTime.Now;
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_DownMenu"", time.ToString());
 
-		FirebaseHelper.LogInAppTouch("Button_DownMenu",time.ToString());
+		FirebaseHelper.LogInAppTouch ("Button_DownMenu", time.ToString ());
 		dropContainer.SetActive (false);
 		menuContainer.SetActive (true);
-        upArrow.image.sprite = up;
-        if (i == 1) {
+		upArrow.image.sprite = up;
+		if (i == 1) {
 			isOpen = true;
-			
+
 			i = 0;
-		}
-		else{
+		} else {
 			isOpen = false;
 			i = 1;
 		}
 	}
 
-
-	public void UpArrowClick()
-	{ 
+	/// <summary>
+	///Up button is clicked.
+	/// </summary>
+	public void UpArrowClick ()
+	{
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_UpMenu", time.ToString());
-		FirebaseHelper.LogInAppTouch("Button_UpMenu", time.ToString());
+		FirebaseHelper.LogInAppTouch ("Button_UpMenu", time.ToString ());
 		menuContainer.SetActive (false);
-		dropContainer.SetActive(true);
+		dropContainer.SetActive (true);
 	}
 
-	public void MenuClick()
+	/// <summary>
+	///When home button is clicked,it goes to the shelf.
+	/// </summary>
+	public void MenuClick ()
 	{
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
-		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
+		FirebaseHelper.LogInAppTouch ("Button_Home", time.ToString ());
 		SceneManager.LoadScene ("shelf");
 
 	}
 
-	public void AutoNarrate()
+	//when auto narrate button is clicked
+	public void AutoNarrate ()
 	{
 		DateTime time = DateTime.Now;
 		if (j == 1) {
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData ("Button_ReadOn", time.ToString());
-			FirebaseHelper.LogInAppTouch("Button_ReadOn", time.ToString());
+			FirebaseHelper.LogInAppTouch ("Button_ReadOn", time.ToString ());
 
 			read.image.sprite = narrateOff;
 			j = 0;
-			stanzaManager.RequestCancelAutoPlay();
+			stanzaManager.RequestCancelAutoPlay ();
 			StartCoroutine (SetMenuContainer ());
-		}
-		else
-		{  
+		} else {
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
-			FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-			read.image.sprite=narrateOn;
+			FirebaseHelper.LogInAppTouch ("Button_ReadOff", time.ToString ());
+			read.image.sprite = narrateOn;
 			j = 1;
-			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
+			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
 			StartCoroutine (SetMenuContainer ());
 		}
-	}     
+	}
 
-
-	public IEnumerator SetMenuContainer()
+	//Send back the dropdown menu to normal state
+	public IEnumerator SetMenuContainer ()
 	{
 		yield return new WaitForSeconds (0.5f);
 		menuContainer.SetActive (false);
-		dropContainer.SetActive(true);
+		dropContainer.SetActive (true);
 	}
 
-	private List<GameObject> PickGameObjects( Vector3 screenPos )
+	/// <summary>
+	/// Raycast to find the gameobject positon
+	/// </summary>
+	/// <param name="screenPos">Mouse click screen position.</param>
+	private List<GameObject> PickGameObjects (Vector3 screenPos)
 	{
-		List<GameObject> gameObjects = new List<GameObject>();
+		List<GameObject> gameObjects = new List<GameObject> ();
 		Vector3 localPos = Camera.main.ScreenToViewportPoint (screenPos);
 		Ray ray = Camera.main.ViewportPointToRay (localPos);
-
 		RaycastHit[] hits;
 		hits = Physics.RaycastAll (ray, Mathf.Infinity);
+		foreach (RaycastHit hit in hits) {
 
-		foreach (RaycastHit hit in hits)
-		{
-			
-			gameObjects.Add(hit.collider.gameObject);
+			gameObjects.Add (hit.collider.gameObject);
 		}
 
 		// Now sort all GameObjects by Z pos ascending
-		gameObjects.Sort(CompareZPosition);
+		gameObjects.Sort (CompareZPosition);
 		return gameObjects;
 	}
 
-
-	// Used for gameobject z-sorting ascending
-	private static int CompareZPosition(GameObject a, GameObject b)
+	/// <summary>
+	/// Used for gameobject z-sorting ascending.
+	/// </summary>
+	/// <param name="a">first gameobject.</param>
+	/// <param name="b">second gameobject.</param>
+	private static int CompareZPosition (GameObject a, GameObject b)
 	{
 		if (a.transform.localPosition.z < b.transform.localPosition.z)
 			return -1;

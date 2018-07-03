@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class GTinkerText : MonoBehaviour {
     //private static bool check=false;
     public GTinkerGraphic pairedGraphic;
-    public GTinkerText pairedText1;
+	public GTinkerText pairedText1;
 	public StanzaObject stanza;
     private float startTime;
     private float endTime;
-    public float delayTime;
+    public float playTime;
     private Animator wordanimator;
     private Animator graphicanimator;
     public GameObject anim;
@@ -31,7 +31,7 @@ public class GTinkerText : MonoBehaviour {
     {
         startTime = timeStamp.start / 1000.0f;
         endTime = timeStamp.end / 1000.0f;
-        delayTime = endTime - startTime;
+        playTime = endTime - startTime;
     }
 
     // Returns the absolute start time
@@ -74,15 +74,15 @@ public class GTinkerText : MonoBehaviour {
 		wordanimator.ResetTrigger("tapme");    
 	}
     public void clipPlay()
-	{
-            AudioSource source = gameObject.GetComponent<AudioSource>();
-		//this.GetComponent<RectTransform>().pivot = ;
-            delayTime = 0.21f;
-            wordanimator.speed = 1 / (delayTime);
+	{   
+			AudioSource source = gameObject.GetComponent<AudioSource> ();
+			//this.GetComponent<RectTransform>().pivot = ;
+			playTime = 0.21f;
+			wordanimator.speed = 1 / (playTime);
 
-        //source.Play();
-            wordanimator.SetTrigger("tapme");
-    
+			//source.Play();
+			wordanimator.SetTrigger ("tapme");
+
 
     }
     public void iconanimPlay()
@@ -119,38 +119,42 @@ public class GTinkerText : MonoBehaviour {
 
 	// Mouse Down Event
 	public void MyMouseDown(bool suppressAnim = false)
-	{
-		System.DateTime time=  System.DateTime.Now;
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
+	{   Debug.Log ("real");
+		if (stanza.stanzaNarrate == false) {
+			Debug.Log ("gtink text entered");
+			System.DateTime time = System.DateTime.Now;
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
 
-		FirebaseHelper.LogInAppTouch ( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
+			FirebaseHelper.LogInAppTouch (("Text_" + gameObject.GetComponent<Text> ().text), time.ToString ());
 
-        if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{
-			PlaySound();
+			if (!stanza.stanzaManager.sceneManager.disableSounds) {
+				Debug.Log ("sound");
+				PlaySound ();
+			}
+			clipPlay ();
+			iconanimPlay ();
+
+			if (!suppressAnim) {
+				graphicPlay ();
+			}
 		}
-		clipPlay();
-		iconanimPlay();
 
-		if (!suppressAnim)
-		{
-			graphicPlay();
-		}
-
-		// Is there a TinkerGraphic paired with this TinkerText?
-		if (pairedGraphic)
-		{
-			// Then send the event along!
-			pairedGraphic.OnPairedMouseDown(this);
-		}
+			// Is there a TinkerGraphic paired with this TinkerText?
+			if (pairedGraphic) {
+				// Then send the event along!
+				
+				pairedGraphic.OnPairedMouseDown (this);
+			
+			}
+		
 	}
 
 	// Paired Mouse Down Event
 	public void OnPairedMouseDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{
+		{   Debug.Log ("sound");
 			PlaySound();
 		}
 
@@ -162,7 +166,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{
+		{   Debug.Log ("sound");
 			PlaySound();
 		}
 
@@ -170,18 +174,18 @@ public class GTinkerText : MonoBehaviour {
 		iconanimPlay();
 
 		// Is there a TinkerGraphic paired with this TinkerText?
-		if (pairedGraphic)
+		/*if (pairedGraphic)
 		{
 			// Then send the event along!
 		//	pairedGraphic.OnPairedMouseCurrentlyDown(this);
-		}
+		}*/
 	}
 
 	// Paired Mouse Currently Down Event
 	public void OnPairedMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{
+		{    Debug.Log ("sound");
 			PlaySound();
 		} 
 
@@ -193,11 +197,11 @@ public class GTinkerText : MonoBehaviour {
 	public void MyOnMouseUp()
 	{
 		// Is there a TinkerGraphic paired with this TinkerText?
-		if (pairedGraphic)
+		/*if (pairedGraphic)
 		{
 			// Then send the event along!
 			//pairedGraphic.OnPairedMouseUp(this);
-		}
+		}*/
 
         clipResume();
 		iconanimResume();
@@ -206,7 +210,7 @@ public class GTinkerText : MonoBehaviour {
 		
 	// Plays any sound that is attached 
 	public void PlaySound()
-	{
+	{   Debug.Log ("sound");
 		if (!GetComponent<AudioSource>().isPlaying)
 		{
 			GetComponent<AudioSource>().Play();
@@ -231,7 +235,7 @@ public class GTinkerText : MonoBehaviour {
         clipResume();
 		iconanimResume();
 
-		if (pairedGraphic != null)
+		/*if (pairedGraphic != null)
 		{
 
 			Renderer[] list;
@@ -239,7 +243,7 @@ public class GTinkerText : MonoBehaviour {
 			foreach(Renderer item in list){   //color all the components
 				item.material.color = this.pairedGraphic.resetColor;
 			}
-		}
+		}*/
 	}
 
 }
