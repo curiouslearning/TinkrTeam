@@ -475,7 +475,7 @@
 					"destroyOnCollision": "Ham",
 					"draggable": false,
 					"anim": [{
-							"id": 1,
+							"id": 0,
 							"animName": "A07",
 							"numberOfImages": 7,
 							"onTouch": true,
