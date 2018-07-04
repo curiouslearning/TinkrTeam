@@ -33,7 +33,7 @@ public class GSManager :  MonoBehaviour {
 	[HideInInspector]
 	public bool dragActive = false;
 
-    private int countDownEvent = 0;
+    //private int countDownEvent = 0;
     public static AudioSource[] sounds;
 
 

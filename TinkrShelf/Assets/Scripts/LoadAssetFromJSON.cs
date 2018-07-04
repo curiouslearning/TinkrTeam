@@ -23,10 +23,10 @@ public class LoadAssetFromJSON : MonoBehaviour {
     private string page;
     public GameObject right;
     public GameObject left;
-    public GameObject endPageHome;
-    public GameObject endPageReadAgain;
-	public GameObject dropdown;
-    static float previousTextWidth;
+    //public GameObject endPageHome;
+    //public GameObject endPageReadAgain;
+	//public GameObject dropdown;
+    //static float previousTextWidth;
     public static string sceneScript;
     Font font;
     Transform canvasTransform;
@@ -148,7 +148,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
     {
         stanzaManager.RequestCancelAutoPlay();
 
-        previousTextWidth = 0;
+        //previousTextWidth = 0;
         DateTime time = DateTime.Now;
         TimeSpan span = ( time- inTime);
         FirebaseHelper.LogInAppTouch("Button_Page_Left_Arrow", time.ToString());
@@ -165,7 +165,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
         }
         else if (pageNumber == (noOfPages-2))
         {
-            dropdown.SetActive(true);
+            //dropdown.SetActive(true);
             right.SetActive(true);
             //endPageHome.SetActive(false);
             //endPageReadAgain.SetActive(false);
