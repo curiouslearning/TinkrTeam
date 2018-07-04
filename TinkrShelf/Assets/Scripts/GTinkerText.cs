@@ -9,9 +9,9 @@ public class GTinkerText : MonoBehaviour {
     public GTinkerGraphic pairedGraphic;
     public GTinkerText pairedText1;
 	public StanzaObject stanza;
-    private float startTime;
-    private float endTime;
-    public float delayTime;
+    private float startTime;//timings corresponding the timings of stanza auto narrate audio 
+    private float endTime;//timings corresponding the timings of stanza auto narrate audio 
+    public float delayTime;//timings corresponding the timings of stanza auto narrate audio 
     private Animator wordanimator;
     private Animator graphicanimator;
     public GameObject anim;
@@ -24,7 +24,11 @@ public class GTinkerText : MonoBehaviour {
         if (anim2 != null)
             graphicanimator = anim2.GetComponent<Animator>();
     }
-
+    /// <summary>
+    /// it set up the timing for each tinkertext
+    /// each timing corresponds to the timing of occurance of a particular text in the complete stanza audio
+    /// </summary>
+    /// <param name="timeStamp"></param>
 
     // Takes an xml word element and reads and sets the timing data
     public void SetupWordTiming(TimeStampClass timeStamp)
@@ -33,20 +37,28 @@ public class GTinkerText : MonoBehaviour {
         endTime = timeStamp.end / 1000.0f;
         delayTime = endTime - startTime;
     }
-
+    /// <summary>
+    /// return the starting time for each word
+    /// </summary>
+    /// <returns></returns>
     // Returns the absolute start time
     public float GetStartTime()
     {
         return startTime;
     }
-
+    /// <summary>
+    /// return the end time for each word
+    /// </summary>
+    /// <returns></returns>
     // Returns the absolute end time
     public float GetEndTime()
     {
         return endTime;
     }
 
-
+    /// <summary>
+    /// add the box collider to the particular word
+    /// </summary>
 	// Adds a box collider based on initial text mesh size (and makes sure it is large enough)
 	private void AddCollider()
 	{
@@ -67,12 +79,17 @@ public class GTinkerText : MonoBehaviour {
 
 
 
-   
+    /// <summary>
+    /// this function bring the zoomed out text animation to its original state
+    /// </summary>
     public void clipResume()
     {
         wordanimator.Play("textzoomin");
 		wordanimator.ResetTrigger("tapme");    
 	}
+    /// <summary>
+    /// this function sets the tap me trigger so that the text can go from normal to zoomed out state 
+    /// </summary>
     public void clipPlay()
 	{
             AudioSource source = gameObject.GetComponent<AudioSource>();
@@ -118,6 +135,11 @@ public class GTinkerText : MonoBehaviour {
 
 
 	// Mouse Down Event
+    /// <summary>
+    /// this function performs the text_animation(zoomin + zoomout) for the each tinkertext on mousedown event
+    /// this function also play the corresponding graphical animation if there is paired graphic 
+    /// </summary>
+    /// <param name="suppressAnim"></param>
 	public void MyMouseDown(bool suppressAnim = false)
 	{
 		System.DateTime time=  System.DateTime.Now;
@@ -147,6 +169,9 @@ public class GTinkerText : MonoBehaviour {
 	}
 
 	// Paired Mouse Down Event
+    /// <summary>
+    /// this function is called when the tinkertext is linked to particular tinkergraphic and we need to perform the the zooming animation for that text 
+    /// </summary>
 	public void OnPairedMouseDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
@@ -190,6 +215,10 @@ public class GTinkerText : MonoBehaviour {
 	}
 
 	// Mouse Up Event
+    /// <summary>
+    /// this function is called when there is mouse up event
+    /// on this event the text gos from zoomed out to the normal state
+    /// </summary>
 	public void MyOnMouseUp()
 	{
 		// Is there a TinkerGraphic paired with this TinkerText?
@@ -204,7 +233,10 @@ public class GTinkerText : MonoBehaviour {
 		graphicResume();
 	}
 		
-	// Plays any sound that is attached 
+	// Plays any sound that is attached
+    /// <summary>
+    /// this function plays the sound for each tinkrtext
+    /// </summary>
 	public void PlaySound()
 	{
 		if (!GetComponent<AudioSource>().isPlaying)
@@ -212,7 +244,9 @@ public class GTinkerText : MonoBehaviour {
 			GetComponent<AudioSource>().Play();
 		}
 	}
-
+    /// <summary>
+    /// this function stops the sound for each tinkrtext
+    /// </summary>
 	// Stops any sound that is attached 
 	public void StopSound()
 	{
