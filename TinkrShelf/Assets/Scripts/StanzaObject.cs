@@ -23,8 +23,13 @@ public class StanzaObject : MonoBehaviour {
 
 	}
 
-
-	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)
+    /// <summary>
+    /// this function plays the text anmiation of all the texts of the particular stanza
+    /// the playing of animation of texts of the stanza is synced with audio play of that stanza that is happening in a seperate thread in stanzamanager.requestautoplay 
+    /// </summary>
+    /// <param name="startingTinkerText"></param>
+    /// <returns></returns>
+	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)//needed to be asked
 	{
 		int startingTinkerTextIndex = 0;
 
@@ -98,7 +103,11 @@ public class StanzaObject : MonoBehaviour {
 		yield break;
 	}
 
-
+/// <summary>
+/// this function handles the mousedown evens on the tinkertexts of the stanza
+/// </summary>
+/// <param name="tinkerText">tinkertext that is pressed</param>
+/// <param name="suppressAnim">bool to check whether animation is to be suppressed</param>
     public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
 	{
 		// if we aren't already mouse down on this text
@@ -114,8 +123,11 @@ public class StanzaObject : MonoBehaviour {
 
 		// And signal the tinkerText 
 		tinkerText.MyMouseDown(suppressAnim);
-	}
-
+	}   
+    /// <summary>
+    /// this function handles the on paired mouse events
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		// if we aren't already mouse down on this text
@@ -131,7 +143,10 @@ public class StanzaObject : MonoBehaviour {
 		// And signal the tinkerText 
 		tinkerText.OnPairedMouseDown();
 	}
-
+    /// <summary>
+    /// this function handles the currently down on the tinkertext 
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnMouseCurrentlyDown(GTinkerText tinkerText)
 	{
 		// If this text is already marked as mouse down, clear that
@@ -172,7 +187,10 @@ public class StanzaObject : MonoBehaviour {
 			//DetectStanzaAutoPlay(tinkerText);
 		}
 	}
-
+    /// <summary>
+    /// this function handles the onPairedMouseCurrenltyDown event on tinkertext
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnPairedMouseCurrentlyDown(GTinkerText tinkerText)
 	{
 		// If this text is already marked as mouse down, clear that
@@ -213,7 +231,9 @@ public class StanzaObject : MonoBehaviour {
 			//DetectStanzaAutoPlay(tinkerText);
 		}
 	}
-
+    /// <summary>
+    /// this function stops the individual sounds of all the texts of the stanza
+    /// </summary>
 
 	public void StopAllIndividualSounds()
 	{
@@ -222,7 +242,10 @@ public class StanzaObject : MonoBehaviour {
 			tinkerText.StopSound();
 		}
 	}
-
+    /// <summary>
+    /// this function handles the on mouse up events of text
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnMouseUp(GTinkerText tinkerText)
 	{
 		// Assign this new one
