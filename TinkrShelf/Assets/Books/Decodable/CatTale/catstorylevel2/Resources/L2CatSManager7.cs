@@ -7,7 +7,7 @@ public class L2CatSManager7 : GSManager {
 	GameObject ham;
 
 	public override void OnMouseDown(GameObject go)
-	{
+	{   Debug.Log ("scene spf entered");
 		if (go.name == "CatHam") {
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
@@ -16,7 +16,7 @@ public class L2CatSManager7 : GSManager {
 			ham.SetActive (true);
 		}
 		else if ( go.name == "Text_ham"){
-
+			Debug.Log ("ham if enterred");
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
 			}

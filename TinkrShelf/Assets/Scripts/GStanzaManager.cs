@@ -136,9 +136,9 @@ public class GStanzaManager : MonoBehaviour {
 	}
 
 	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
-	{
+	{   Debug.Log ("reached");
 		if (tinkerText.stanza != null && stanzas.Contains(tinkerText.stanza))
-		{
+		{   Debug.Log ("no");
 			tinkerText.stanza.OnMouseDown(tinkerText, suppressAnim);
 		}
 
@@ -187,7 +187,7 @@ public class GStanzaManager : MonoBehaviour {
 	}
 
 
-	public void OnMouseDown(GTinkerGraphic tinkerGraphic)
+	/*public void OnMouseDown(GTinkerGraphic tinkerGraphic)
 	{
 		if (tinkerGraphic != null)
 		{
@@ -200,6 +200,6 @@ public class GStanzaManager : MonoBehaviour {
 	{
 		tinkerGraphic.MyOnMouseUp();
 	}
-
+      */
 
 }
