@@ -242,7 +242,7 @@ public class FirebaseHelper  : MonoBehaviour{
 					new Firebase.Analytics.Parameter (
 						"TABLET_ID", tabID),
 					new Firebase.Analytics.Parameter (
-						"APP_ID", "Shelf"),
+						"APP_ID", "0"),
 					new Firebase.Analytics.Parameter (
 						"LABEL", label),
 					new Firebase.Analytics.Parameter (

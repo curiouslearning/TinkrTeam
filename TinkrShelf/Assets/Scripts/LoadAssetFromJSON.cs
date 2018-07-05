@@ -43,7 +43,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
     //sending data directly to firebase using "72 hours rule"! (removed local data storage)
     //public DataCollection dataCollector;
-
+    
     public void Awake()
     {
 
@@ -54,6 +54,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
         if (!bundleloaded)
         {
+
             bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
             if (bundleloaded == null)
             {
@@ -90,7 +91,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
         if (charDataFile !=null)
         {
             string json = charDataFile.ToString();
-            storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);// serializing the the json into specific  c# class
+            storyBookJson = JsonUtility.FromJson<StoryBookJson>(json);// serializing the the json into specific c# class
             noOfPages = storyBookJson.pages.Length;
 
             //sending data directly to firebase using "72 hours rule"! (removed local data storage)
@@ -567,11 +568,25 @@ public class LoadAssetFromJSON : MonoBehaviour {
         {
 
             string[] scenes = bundleloaded.GetAllScenePaths();
-            SceneManager.LoadScene(scenes[0]);
+            //SceneManager.LoadScene(scenes[0]);
 
+            StartCoroutine(LoadYourAsyncScene(scenes));
         }
     }
 
+    IEnumerator LoadYourAsyncScene(string[] scenes)
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scenes[0]);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
     /*IEnumerator InstantiateObject()
 
     {

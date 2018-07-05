@@ -263,9 +263,24 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
         System.TimeSpan span = System.DateTime.Now - inTime;
         FirebaseHelper.LogInShelfSection(inTime.ToString(), span.TotalSeconds);
-        SceneManager.LoadScene("Books/Decodable/CatTale/Common/Scenes/Scene01");
+        //SceneManager.LoadScene("Books/Decodable/CatTale/Common/Scenes/Scene01");
+        StartCoroutine(LoadYourAsyncScene());
     }
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
 
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Books/Decodable/CatTale/Common/Scenes/Scene01");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
     private void LoadShelfData()
     {
         TextAsset file = Resources.Load(localManifestFileName) as TextAsset;
