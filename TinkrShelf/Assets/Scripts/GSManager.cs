@@ -4,22 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Script responsible for controling the scenes.
+/// </summary>
 public class GSManager :  MonoBehaviour {
-
 
 	[HideInInspector]
 	public GGameManager gameManager;
 	public Canvas myCanvas;
 
+
 	// Manager for all TinkerTexts and stanza
 	public GStanzaManager stanzaManager;
-	//public List<StanzaObject> stanzas;
 
     // Whether to allow input on text/graphics during autoplay
-    public bool inputAllowedDuringAutoplay = true;
+	public bool inputAllowedDuringAutoplay = true;
 
 	// Whether to interrupt auto play if a single word is hit
-	public bool inputInterruptsAutoplay = true;
+	public bool inputInterruptsAutoplay = false;
 
 	// Disable auto play?
 	[HideInInspector]
@@ -36,52 +38,38 @@ public class GSManager :  MonoBehaviour {
     //private int countDownEvent = 0;
     public static AudioSource[] sounds;
 
-
-	//for menubar drop down
-
-	//public int i = 1;
-	//public static int j = 1; 
-	static public Color blue = new Color(6.0f / 255.0f, 7.0f / 255.0f, 253.0f / 255.0f, 81.0f);
-	static public Color red = new Color(253.0f / 255.0f, 6.0f / 255.0f, 52.0f / 255.0f, 255.0f);
-	static public Color yellow = new Color(237.0f / 255.0f, 243.0f / 255.0f, 0.0f / 255.0f, 249.0f);
-
-
+	//Navigation buttons
 	public GameObject Lbutton;
 	public GameObject Rbutton;
-    
-    public virtual void Start() //GGameManager _gameManager
-    {
-        //gameManager = _gameManager;
 
-        
-        // If we have a stanza manager
-        if (stanzaManager != null)
+	/// <summary>
+	/// Loads the texts timings if stanzamanager is not null.
+	/// Calls on Auto stanza play.
+	/// </summary>
+	public virtual void Start() 
+	{
+
+		// Reset flags
+		// dragActive = false;
+		// disableAutoplay = false;
+		// disableSounds = false;
+
+		// If we have a stanza manager
+		if (stanzaManager != null)
 		{
 			// And it has an audio clip and xml defined already in the scene
-			if (LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps.Length >0) //&& stanzaManager.GetComponent<AudioSource>().clip != null)
+			if (LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps.Length >0)
 			{
 				// Then have it set the xml up
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
-		Color c = Rbutton.gameObject.GetComponent<Image>().color;
-		c.a = 0.8f;
-		if(Lbutton!=null)
-			Lbutton.gameObject.GetComponent<Image>().color = c;
-
-        if (Rbutton != null)
-            Rbutton.gameObject.GetComponent<Image>().color = c;
-
-        if (Lbutton!=null)
-		Lbutton.GetComponent<Button>().interactable = true;
-		if(Rbutton!=null)
-		Rbutton.GetComponent<Button>().interactable = true;
-        
-        if(ShelfManager.autoNarrate)
 		StartCoroutine ("PlayStanzaAudio");
 	}
 
-
+	/// <summary>
+	/// Plays the stanza narration if sprite is narrateOn and stanzamanager and gamemanager are not null.
+	/// </summary>
 	IEnumerator PlayStanzaAudio(){
 		yield return new  WaitForSeconds(1);
 		if (stanzaManager != null && gameManager!= null)
@@ -90,6 +78,11 @@ public class GSManager :  MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// if intruption allowed during auto play is true , return true .
+	/// if stanzamanager is not null , return depending on autoplaying.
+	/// return true if stanza manager is null.
+	/// </summary>
 	public bool IsInputAllowed()
 	{
 		if (inputAllowedDuringAutoplay)
@@ -101,21 +94,23 @@ public class GSManager :  MonoBehaviour {
 			return !stanzaManager.IsAutoPlaying();   
 		}
 
-		return true; // stanza manager must be null
+		return true; // if stanza manager is null
 	}
-
-	// Here we have a superclass intercept for catching global GameObject mouse down events
+		
+	/// <summary>
+	/// If input is allowed(during stanza play / after stanza play) check if Tinkertext or Tinkergraphic 
+	/// If tinkertext , call stanzamanager onmousedown(tinkrtext).
+	/// If tinkergraphic , call tinkrgraphic.mymousedown.
+	/// This function can be overriden by specific scene manager.
+	/// </summary>
 	public virtual void OnMouseDown(GameObject go)
-	{   
-		//countDownEvent++;
-		//if (countDownEvent == 2)
-		//	EnableButtons();
+	{       Debug.Log ("base mouse down ent");
             // Lock out other input during auto play?
             if (IsInputAllowed())
             {
                 // TinkerText object 
                 if (go.GetComponent<GTinkerText>() != null)
-                {
+                {  
                 
                     GTinkerText tinkerText = go.GetComponent<GTinkerText>();
 
@@ -124,56 +119,55 @@ public class GSManager :  MonoBehaviour {
                         if (stanzaManager != null)
                         {
                             // Is an autoplay in progress? If so, see if we should interrupt
-                            if (stanzaManager.IsAutoPlaying() && inputInterruptsAutoplay)
-              
-						{
-                                stanzaManager.RequestCancelAutoPlay();
-                            }
-
-                            stanzaManager.OnMouseDown(tinkerText);
+						    if (stanzaManager.IsAutoPlaying () && inputInterruptsAutoplay) {
+							    stanzaManager.RequestCancelAutoPlay ();
+						}
+                          stanzaManager.OnMouseDown(tinkerText);
                         }
                     }
                 }
                 // TinkerGraphic object
                 else if (go.GetComponent<GTinkerGraphic>() != null)
-			{
-
+			    {
                     GTinkerGraphic tinkerGraphic = go.GetComponent<GTinkerGraphic>();
                     if (tinkerGraphic != null)
                     {
                         tinkerGraphic.MyOnMouseDown();
                     }
                 }
-
-				
-            }
-			
+		    }
 	}
 
-	// Here we have a superclass intercept for catching global TinkerGraphic mouse down events
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerGraphic mouse down events.
+	/// If graphic is paired to text ,this fuction is called.
+	/// </summary>
+    /// <param name="tinkerGraphic">Tinker graphic.</param>
 	public virtual void OnMouseDown(GTinkerGraphic tinkerGraphic)
 	{
-		
 		if (tinkerGraphic.pairedText1 != null)
 		{
 			stanzaManager.OnPairedMouseDown(tinkerGraphic.pairedText1);
 		}
 	}
 
-	// Here we have a superclass intercept for catching global TinkerText paired mouse down events
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerText paired mouse down events.
+	/// </summary>
+	/// <param name="tinkerText">Tinker text.</param>
 	public virtual void OnPairedMouseDown(GTinkerText tinkerText)
 	{
-		Renderer[] list;
-		list = tinkerText.pairedGraphic.gameObject.GetComponentsInChildren<Renderer>();
-		foreach(Renderer item in list){
-			if (item.name == "ripple")           //don't color ripple in scene 13 attached to BabyD.
-				continue;
-			item.material.color = tinkerText.pairedGraphic.highlightColor;
-		 }
-       
+		
 	}
 
-	// Here we have a superclass intercept for catching global GameObject mouse currently down events
+	/// <summary>
+	/// Here we have a superclass intercept for catching global GameObject mouse currently down events.
+	/// If input is allowed(during stanza play / after stanza play) check if Tinkertext or Tinkergraphic 
+	/// If tinkertext , call stanzamanager onmousecurrentlydown(tinkrtext).
+	/// If tinkergraphic , call tinkrgraphic onmousecurrentlydown.
+	/// This function can be overriden by specific scene manager.
+	/// </summary>
+	/// <param name="go">Game object clicked.</param>
 	public virtual void OnMouseCurrentlyDown(GameObject go)
 	{
 		// Lock out other input during auto play?
@@ -209,23 +203,37 @@ public class GSManager :  MonoBehaviour {
 		}
 	}
 
-	// Here we have a superclass intercept for catching global TinkerGraphic mouse currently down events
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerGraphic mouse currently down events.
+	/// Move the graphic if draggable.
+	/// </summary>
+	/// <param name="tinkerGraphic">Tinker graphic.</param>
 	public virtual void OnMouseCurrentlyDown(GTinkerGraphic tinkerGraphic)
 	{
         if (tinkerGraphic.GetDraggable())
         {
             tinkerGraphic.MoveObject();
         }
-        // override me
+        
     }
 
-	// Here we have a superclass intercept for catching global TinkerText paired mouse currently down events
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerText paired mouse currently down events.
+	/// </summary>
+	/// <param name="tinkerText">Tinker text.</param>
 	public virtual void OnPairedMouseCurrentlyDown(GTinkerText tinkerText)
 	{
 		// override me
 	}
 
-	// Here we have a superclass intercept for catching global GameObject mouse up events
+
+	/// <summary>
+	/// Here we have a superclass intercept for catching global GameObject mouse up events.
+	/// If object not draggable and tinker text is not null , call stanza manager onMouseUp(tinkertext). 
+	/// If tinkergraphic , call tinkrgraphic.MyOnMouseUp.
+	/// This function can be overriden by specific scene manager.
+	/// </summary>
+	/// <param name="go">Game Object selected.</param>
 	public virtual void OnMouseUp(GameObject go)
 	{
 		// Got a TinkerText object? (Also, make sure dragActive is false)
@@ -253,48 +261,54 @@ public class GSManager :  MonoBehaviour {
 		}
 	}
 
-	// Here we have a superclass intercept for catching global TinkerGraphic mouse up events
+
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerGraphic mouse up events.
+	/// </summary>
+	/// <param name="tinkerGraphic">Tinker graphic.</param>
 	public virtual void OnMouseUp(GTinkerGraphic tinkerGraphic)
 	{
 		// override me
 	}
 
-	// Here we have a superclass intercept for catching global TinkerText paired mouse up events
+
+	/// <summary>
+	/// Here we have a superclass intercept for catching global TinkerText paired mouse up events.
+	/// </summary>
+	/// <param name="tinkerText">Tinker text.</param>
 	public virtual void OnPairedMouseUp(GTinkerText tinkerText)
 	{
-		Renderer[] list;
-		list = tinkerText.pairedGraphic.gameObject.GetComponentsInChildren<Renderer>();
-		foreach(Renderer item in list){   //color all the components
-			item.material.color = tinkerText.pairedGraphic.resetColor;
-		}
+//		Renderer[] list;
+//		list = tinkerText.pairedGraphic.gameObject.GetComponentsInChildren<Renderer>();
+//		foreach(Renderer item in list){   //color all the components
+//			item.material.color = tinkerText.pairedGraphic.resetColor;
+//		}
 	}
 		
 
-	// Override if a scene manager subclass needs a hint manager
+
+	/// <summary>
+	/// Override if a scene manager subclass needs a hint manager.
+	/// </summary>
 	public virtual IEnumerator StartHintManager()
 	{
 		yield break;
 	}
 
-	// Override if a scene manager subclass needs a graphic hint
+
+	/// <summary>
+	/// Override if a scene manager subclass needs a graphic hint
+	/// </summary>
 	public virtual IEnumerator PlayHintAnimation()
 	{
 		yield break;
 	}
-		
 
-	//UI Right Button 
-	public void NextScene()
-	{
-		//gameManager.LoadNextScene();
-	}
-
-	//UI Left Button
-	public void PreviousScene()
-	{
-		//gameManager.LoadPreviousScene();
-	}
-
+	/// <summary>
+	/// Resets the states on mouse up.
+	/// Reset all the Tinker graphics to normal state
+	/// </summary>
+	/// <param name="mouseEvent">Mouse event.</param>
 	public virtual void ResetInputStates(GGameManager.MouseEvents mouseEvent)
 	{
         if (stanzaManager != null)
@@ -316,31 +330,31 @@ public class GSManager :  MonoBehaviour {
 	}
 
 
-	public void MoveObject(){
-		Vector2 pos;
-		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
-		transform.position = myCanvas.transform.TransformPoint(pos);
-	}
+//	public void MoveObject(){
+//		Vector2 pos;
+//		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
+//		transform.position = myCanvas.transform.TransformPoint(pos);
+//	}
+//
+//	public Vector2 GetCoordinates(){
+//		return transform.position;
+//	}
 
-	public Vector2 GetCoordinates(){
-		return transform.position;
-	}
 
 
-
-	public bool CheckFar(Vector2 start, Vector2 end, float requiredDistance){
-		if (requiredDistance <= Vector2.Distance (start, end)) {
-			return true;
-		}
-		return false;
-	}
-
-	public bool CheckNear(Vector2 start, Vector2 end, float requiredDistance){
-		if (requiredDistance >= Vector2.Distance (start, end)) {
-			return true;
-		}
-		return false;
-	}
+//	public bool CheckFar(Vector2 start, Vector2 end, float requiredDistance){
+//		if (requiredDistance <= Vector2.Distance (start, end)) {
+//			return true;
+//		}
+//		return false;
+//	}
+//
+//	public bool CheckNear(Vector2 start, Vector2 end, float requiredDistance){
+//		if (requiredDistance >= Vector2.Distance (start, end)) {
+//			return true;
+//		}
+//		return false;
+//	}
 
 
 //	private void EnableButtons()
@@ -351,33 +365,33 @@ public class GSManager :  MonoBehaviour {
 //	}
 
 
-	public float getAudioLength(int i)
-	{
-
-		return sounds[i].clip.length;
-	}
-
-	public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
-	{
-		while (true)
-		{
-			yield return new WaitForSeconds(startdelay);
-			if (!sounds[index].isPlaying)
-			{
-				sounds[index].Play();
-			}
-			yield return new WaitForSeconds(enddelay);
-		}
-	}
-	public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
-	{ 
-		yield return new WaitForSeconds(startdelay);
-		if (!sounds[index].isPlaying)
-		{
-			sounds[index].Play();
-		}
-		yield return new WaitForSeconds(enddelay);
-	}
+//	public float getAudioLength(int i)
+//	{
+//
+//		return sounds[i].clip.length;
+//	}
+//
+//	public IEnumerator PlayLoopingSound(int index,float startdelay=0f, float enddelay=0f)
+//	{
+//		while (true)
+//		{
+//			yield return new WaitForSeconds(startdelay);
+//			if (!sounds[index].isPlaying)
+//			{
+//				sounds[index].Play();
+//			}
+//			yield return new WaitForSeconds(enddelay);
+//		}
+//	}
+//	public IEnumerator PlayNonLoopSound(int index,float startdelay=0f, float enddelay=0f)
+//	{ 
+//		yield return new WaitForSeconds(startdelay);
+//		if (!sounds[index].isPlaying)
+//		{
+//			sounds[index].Play();
+//		}
+//		yield return new WaitForSeconds(enddelay);
+//	}
 
    
 
