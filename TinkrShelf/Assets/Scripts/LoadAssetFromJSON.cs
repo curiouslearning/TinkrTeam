@@ -106,7 +106,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
         }
     }
-	}
+
 
 	/// <summary>
 	/// Loads the next page on "next" arrow/button click.
