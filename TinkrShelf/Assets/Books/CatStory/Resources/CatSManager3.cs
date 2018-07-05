@@ -21,14 +21,17 @@ public class CatSManager3 : GSManager {
 			
 		}
 		 else if (go.name == "Text_ran") {
+			Debug.Log ("text ran");
 			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
 			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
 			if (ranGraphic != null && catGraphic!=null) {
-				ranGraphic.MyOnMouseDown ();
 				catGraphic.MyOnMouseDown ();
+				ranGraphic.MyOnMouseDown ();
+
 			}
 
 		}
+		Debug.Log ("base");
 		base.OnMouseDown (go);
 	}
 }

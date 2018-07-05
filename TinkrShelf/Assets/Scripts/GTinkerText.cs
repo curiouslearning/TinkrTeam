@@ -154,7 +154,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnPairedMouseDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{   Debug.Log ("sound");
+      		{   Debug.Log ("sound");
 			PlaySound();
 		}
 
