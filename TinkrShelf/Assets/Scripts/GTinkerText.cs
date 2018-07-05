@@ -11,7 +11,7 @@ public class GTinkerText : MonoBehaviour {
 	public StanzaObject stanza;
     private float startTime;//timings corresponding the timings of stanza auto narrate audio 
     private float endTime;//timings corresponding the timings of stanza auto narrate audio 
-    public float delayTime;//timings corresponding the timings of stanza auto narrate audio 
+    public float playTime;//timings corresponding the timings of stanza auto narrate audio 
     private Animator wordanimator;
     private Animator graphicanimator;
     public GameObject anim;
