@@ -106,6 +106,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
         }
     }
+	}
 
 	/// <summary>
 	/// Loads the next page on "next" arrow/button click.
@@ -322,7 +323,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
             {
                 GameObject text = tinkerTextObjects[triggers[i].textId];
                 GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
-
                 text.GetComponent<GTinkerText>().pairedGraphic = graphic.GetComponent<GTinkerGraphic>();
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
             }
@@ -409,6 +409,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		trans.anchoredPosition = new Vector3(x, y,0);
     
         go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
+
 		stanzaObjects.Add (go);
 		return go.GetComponent<StanzaObject>();
 	}
