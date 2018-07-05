@@ -26,53 +26,28 @@ public class GGameManager : MonoBehaviour
 		MouseUp
 	}
 
-	//Drop down menu references
-	public bool isOpen = false;
-	public Sprite down;
-	public Sprite up;
-	public Sprite narrateOn;
-	public Sprite narrateOff;
-	public Button upArrow;
-	public Button home;
-	public Button read;
-	public GameObject dropContainer;
-	public GameObject menuContainer;
-	public int i = 1;
-	public static int j = 1;
+	// Specific colors that TinkerBook uses
+	
+	static public Color yellow = new Color(237.0f / 255.0f, 245.0f / 255.0f, 84.0f / 255.0f, 1.0f);
+	
 
 	public static AudioSource[] sounds;
 
-	//
-	public static GGameManager Instance {
+
+	public static GGameManager Instance
+	{
 		get { return GGameManager.instance; }
 	}
 	// access to the singleton
 	private static GGameManager instance;
-
-	/// <summary>
-	///To set the narrate on/off button accordingly.
-	/// </summary>
-	public void Start ()
+    
+    // Update is called once per frame
+    public void Start()
 	{
-		dropContainer.SetActive (true);
-		menuContainer.SetActive (false);
-		if (gameObject != null)
-			sounds = gameObject.GetComponents<AudioSource> ();
+        
+			if (gameObject != null)
+				sounds = gameObject.GetComponents<AudioSource>();
 
-		isOpen = false;
-		//Change to narrateon sprite
-		if (j == 1) {
-			if (read != null)
-				read.image.sprite = narrateOn;
-
-
-		}
-		//Change to narrateoff sprite
-		if (j == 0) {
-			if (read != null)
-				read.image.sprite = narrateOff;
-
-		}
 
 	}
 
@@ -159,20 +134,7 @@ public class GGameManager : MonoBehaviour
 		DateTime time = DateTime.Now;
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData ("Button_DownMenu"", time.ToString());
 
-		FirebaseHelper.LogInAppTouch ("Button_DownMenu", time.ToString ());
-		dropContainer.SetActive (false);
-		menuContainer.SetActive (true);
-		upArrow.image.sprite = up;
-		if (i == 1) {
-			isOpen = true;
-
-			i = 0;
-		} else {
-			isOpen = false;
-			i = 1;
-		}
 	}
 
 	/// <summary>
@@ -183,9 +145,6 @@ public class GGameManager : MonoBehaviour
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_UpMenu", time.ToString());
-		FirebaseHelper.LogInAppTouch ("Button_UpMenu", time.ToString ());
-		menuContainer.SetActive (false);
-		dropContainer.SetActive (true);
 	}
 
 	/// <summary>
@@ -196,42 +155,19 @@ public class GGameManager : MonoBehaviour
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
-		FirebaseHelper.LogInAppTouch ("Button_Home", time.ToString ());
-		SceneManager.LoadScene ("shelf");
+		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
+
+        SceneManager.LoadScene ("shelf");
 
 	}
-
-	//when auto narrate button is clicked
-	public void AutoNarrate ()
+    public void AutoNarrate()
 	{
 		DateTime time = DateTime.Now;
-		if (j == 1) {
-			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-			//DataCollection.AddInTouchData ("Button_ReadOn", time.ToString());
-			FirebaseHelper.LogInAppTouch ("Button_ReadOn", time.ToString ());
+    
+        if(ShelfManager.autoNarrate)
+        stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
+	}     
 
-			read.image.sprite = narrateOff;
-			j = 0;
-			stanzaManager.RequestCancelAutoPlay ();
-			StartCoroutine (SetMenuContainer ());
-		} else {
-			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
-			FirebaseHelper.LogInAppTouch ("Button_ReadOff", time.ToString ());
-			read.image.sprite = narrateOn;
-			j = 1;
-			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
-			StartCoroutine (SetMenuContainer ());
-		}
-	}
-
-	//Send back the dropdown menu to normal state
-	public IEnumerator SetMenuContainer ()
-	{
-		yield return new WaitForSeconds (0.5f);
-		menuContainer.SetActive (false);
-		dropContainer.SetActive (true);
-	}
 
 	/// <summary>
 	/// Raycast to find the gameobject positon

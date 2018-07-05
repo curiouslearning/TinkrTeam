@@ -35,11 +35,8 @@ public class GSManager :  MonoBehaviour {
 	[HideInInspector]
 	public bool dragActive = false;
 
+    //private int countDownEvent = 0;
     public static AudioSource[] sounds;
-
-	//for menubar drop down
-	public int i = 1;
-	public static int j = 1; 
 
 	//Navigation buttons
 	public GameObject Lbutton;
@@ -53,9 +50,9 @@ public class GSManager :  MonoBehaviour {
 	{
 
 		// Reset flags
-		dragActive = false;
-		disableAutoplay = false;
-		disableSounds = false;
+		// dragActive = false;
+		// disableAutoplay = false;
+		// disableSounds = false;
 
 		// If we have a stanza manager
 		if (stanzaManager != null)
@@ -75,7 +72,7 @@ public class GSManager :  MonoBehaviour {
 	/// </summary>
 	IEnumerator PlayStanzaAudio(){
 		yield return new  WaitForSeconds(1);
-		if (stanzaManager != null && gameManager!= null && gameManager.read.image.sprite == gameManager.narrateOn)
+		if (stanzaManager != null && gameManager!= null)
 		{
 			stanzaManager.RequestAutoPlay (stanzaManager.stanzas [0], stanzaManager.stanzas [0].tinkerTexts [0]);
 		}
@@ -314,16 +311,22 @@ public class GSManager :  MonoBehaviour {
 	/// <param name="mouseEvent">Mouse event.</param>
 	public virtual void ResetInputStates(GGameManager.MouseEvents mouseEvent)
 	{
-		if (stanzaManager != null)
+        if (stanzaManager != null)
 		{
 			stanzaManager.ResetInputStates(mouseEvent);
 		}
 
-//		GTinkerGraphic[] list;
-//		list = this.GetComponentsInChildren<GTinkerGraphic> ();
-//		foreach (GTinkerGraphic tinkerGraphic in list) {
-//			tinkerGraphic.MyOnMouseUp ();
-//		}
+		GTinkerGraphic[] list;
+
+        if (this != null)
+        {
+            list = this.GetComponentsInChildren<GTinkerGraphic>();
+
+            foreach (GTinkerGraphic tinkerGraphic in list)
+            {
+                tinkerGraphic.MyOnMouseUp();
+            }
+        }
 	}
 
 

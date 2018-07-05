@@ -24,36 +24,52 @@ public class GTinkerGraphic : MonoBehaviour{
 	public Color resetColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 	public Color highlightColor = GGameManager.yellow;
 	private Coroutine destroyObject;
-
+    /// <summary>
+    /// fetch the sprite renderer attached to given graphical object 
+    /// </summary>
 	private void Awake()
 	{
 		spr = GetComponent<SpriteRenderer>();
 	}
 
-
+    /// <summary>
+    /// set the draggable property for that tinkergraphic
+    /// </summary>
+    /// <param name="value">bool value to be set</param>
 	public void SetDraggable(bool value){
 		dataTinkerGraphic.draggable = value;
 	}
-
+    /// <summary>
+    /// return whether the graphic is draggable or not 
+    /// </summary>
+    /// <returns></returns>
 	public bool GetDraggable(){
 		return dataTinkerGraphic.draggable;
 	}
 
-
+    /// <summary>
+    /// this handles the mouse down events on the tinkergraphic 
+    /// playes the animation for that graphic so it is attached
+    /// also handles the animating of the text paired to that graphic
+    /// </summary>
 	public void MyOnMouseDown()
 	{
 		System.DateTime time=  System.DateTime.Now;
 
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
-
+        //sending data directly to firebase using "72 hours rule"! (removed local data storage)
+        //DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
+        Debug.Log(dataTinkerGraphic.label);
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
 		LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
 	}
 
 
-
+    /// <summary>
+    /// this function is called when the tinkergraphic is paired to some tinkertext 
+    /// and we want have some paired graphical animation for that text
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	// Paired TinkerText Mouse Down Event
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{

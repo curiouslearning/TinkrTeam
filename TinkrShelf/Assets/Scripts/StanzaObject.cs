@@ -111,7 +111,11 @@ public class StanzaObject : MonoBehaviour {
 		yield break;
 	}
 
-
+/// <summary>
+/// this function handles the mousedown evens on the tinkertexts of the stanza
+/// </summary>
+/// <param name="tinkerText">tinkertext that is pressed</param>
+/// <param name="suppressAnim">bool to check whether animation is to be suppressed</param>
     public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
 	{   Debug.Log ("yes");
 		// if we aren't already mouse down on this text
@@ -126,8 +130,11 @@ public class StanzaObject : MonoBehaviour {
 
 		// And signal the tinkerText 
 		tinkerText.MyMouseDown(suppressAnim);
-	}
-
+	}   
+    /// <summary>
+    /// this function handles the on paired mouse events
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		// if we aren't already mouse down on this text
@@ -144,7 +151,10 @@ public class StanzaObject : MonoBehaviour {
 		if(stanzaNarrate==false)
 		tinkerText.OnPairedMouseDown();
 	}
-
+    /// <summary>
+    /// this function handles the currently down on the tinkertext 
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnMouseCurrentlyDown(GTinkerText tinkerText)
 	{
 		// If this text is already marked as mouse down, clear that
@@ -185,7 +195,10 @@ public class StanzaObject : MonoBehaviour {
 			//DetectStanzaAutoPlay(tinkerText);
 		}
 	}
-
+    /// <summary>
+    /// this function handles the onPairedMouseCurrenltyDown event on tinkertext
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnPairedMouseCurrentlyDown(GTinkerText tinkerText)
 	{
 		// If this text is already marked as mouse down, clear that
@@ -226,7 +239,9 @@ public class StanzaObject : MonoBehaviour {
 			//DetectStanzaAutoPlay(tinkerText);
 		}
 	}
-
+    /// <summary>
+    /// this function stops the individual sounds of all the texts of the stanza
+    /// </summary>
 
 	public void StopAllIndividualSounds()
 	{
@@ -235,7 +250,10 @@ public class StanzaObject : MonoBehaviour {
 			tinkerText.StopSound();
 		}
 	}
-
+    /// <summary>
+    /// this function handles the on mouse up events of text
+    /// </summary>
+    /// <param name="tinkerText"></param>
 	public void OnMouseUp(GTinkerText tinkerText)
 	{   Debug.Log ("stanza onmouse up");
 		// Assign this new one

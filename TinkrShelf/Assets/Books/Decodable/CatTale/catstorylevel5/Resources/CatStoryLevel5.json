@@ -1,0 +1,2159 @@
+{
+	"fontColor": "black",
+	"textStartPositionX": -420.0,
+	"textStartPositionY": 132.0,
+	"textFontSize": 30,
+	"storyImageFile": null,
+	"backgroundColor": "blue",
+	"arrowColor": "red",
+	"fontFamily": "helvetica",
+	"language": "english",
+	"pages": [{
+			"pageNumber": 0,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 25,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A01-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A01",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0, 0.2, 0.2, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
+							}
+
+						]
+					}]
+				},
+				{
+					"id": 1,
+					"posX": -11,
+					"posY": -81,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A11a-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "mat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The cat on the mat is glad"
+
+			}],
+			"audioFile": "The cat on the mat is glad.mp3",
+			"timestamps": [{
+					"start": 49,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 229
+				},
+				{
+					"start": 302,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 497
+				},
+				{
+					"start": 532,
+					"wordIdx": 2,
+					"audio": "on.mp3",
+					"end": 780
+				},
+				{
+					"start": 781,
+					"wordIdx": 3,
+					"audio": "the.mp3",
+					"end": 853
+				},
+				{
+					"start": 853,
+					"wordIdx": 4,
+					"audio": "mat.mp3",
+					"end": 1194
+				},
+				{
+					"start": 1195,
+					"wordIdx": 5,
+					"audio": "is.mp3",
+					"end": 1397
+				}, {
+					"start": 1449,
+					"wordIdx": 6,
+					"audio": "glad.mp3",
+					"end": 1750
+				}
+
+			],
+
+			"triggers": [{
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 4,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
+		},
+
+
+		{
+			"pageNumber": 1,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 25,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A02-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "wag",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A02",
+					"numberOfImages": 6,
+					"onTouch": true,
+					"onStart": true,
+					"secPerFrame": [0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 5,
+							"noOfLoops": 100,
+							"movable": {
+								"speed": 0
+							}
+
+						}
+
+					]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "The happy cat wags"
+
+			}],
+			"audioFile": "The happy cat wags.mp3",
+			"timestamps": [{
+					"start": 149,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 286
+				},
+				{
+					"start": 288,
+					"wordIdx": 1,
+					"audio": "happy.mp3",
+					"end": 657
+				},
+				{
+					"start": 697,
+					"wordIdx": 2,
+					"audio": "cat.mp3",
+					"end": 889
+				},
+				{
+					"start": 1038,
+					"wordIdx": 3,
+					"audio": "wags.mp3",
+					"end": 1481
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 3,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+		{
+			"pageNumber": 2,
+			"script": "L5CatSManager3",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 25,
+					"posY": -65,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "A03b-1",
+					"orderInLayer": 1,
+					"inText": false,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A03b",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.5, 0.5, 0.1, 0.1, 0.1],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 2,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+
+								}
+							},
+							{
+								"startFrame": 3,
+								"endFrame": 4,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": 494,
+									"finaly": -65,
+									"speed": 75
+								}
+							}
+						]
+					}]
+				},
+				{
+					"id": 1,
+					"posX": -424,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A03-01",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Ran",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A03",
+						"numberOfImages": 9,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 7,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": 0,
+								"finaly": -65,
+								"speed": 25
+
+							}
+						}]
+					}]
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The cat ran. The cat is not happy"
+
+			}],
+			"audioFile": "The cat ran The cat is not happy.mp3",
+			"timestamps": [{
+					"start": 108,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 200
+				},
+				{
+					"start": 280,
+					"wordIdx": 1,
+					"audio": "Cat.mp3",
+					"end": 581
+				},
+				{
+					"start": 560,
+					"wordIdx": 2,
+					"audio": "Ran.mp3",
+					"end": 963
+				},
+				{
+					"start": 1171,
+					"wordIdx": 3,
+					"audio": "the.mp3",
+					"end": 1283
+				},
+				{
+					"start": 1337,
+					"wordIdx": 4,
+					"audio": "cat.mp3",
+					"end": 1553
+				},
+				{
+					"start": 1574,
+					"wordIdx": 5,
+					"audio": "is.mp3",
+					"end": 1776
+				},
+				{
+					"start": 1783,
+					"wordIdx": 6,
+					"audio": "not.mp3",
+					"end": 2121
+				},
+				{
+					"start": 2132,
+					"wordIdx": 7,
+					"audio": "happy.mp3",
+					"end": 2504
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 3,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -23,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A04-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "Man",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A04",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": true,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+				"id": 0,
+				"text": "Sam the man is happy"
+
+			}],
+			"audioFile": "Sam the man is happy.mp3",
+			"timestamps": [{
+					"start": 57,
+					"wordIdx": 0,
+					"audio": "sam.mp3",
+					"end": 423
+				},
+				{
+					"start": 452,
+					"wordIdx": 1,
+					"audio": "the.mp3",
+					"end": 556
+				},
+				{
+					"start": 560,
+					"wordIdx": 2,
+					"audio": "man.mp3",
+					"end": 854
+				},
+				{
+					"start": 963,
+					"wordIdx": 3,
+					"audio": "is.mp3",
+					"end": 1123
+				},
+				{
+					"start": 1127,
+					"wordIdx": 4,
+					"audio": "happy.mp3",
+					"end": 1613
+				}
+
+			],
+			"triggers": [{
+					"stnzaId": 0,
+					"textId": 2,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+
+			]
+
+		},
+
+
+		{
+			"pageNumber": 4,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -23,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A05-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "Sam",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A05",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": true,
+					"secPerFrame": [0, 0.2, 0.2, 0.2],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+
+							}
+						},
+						{
+							"startFrame": 2,
+							"endFrame": 3,
+							"noOfLoops": 3,
+							"movable": {
+								"speed": 0
+
+							}
+						}
+					]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "See Sam the man wave. Sam is Happy"
+
+			}],
+			"audioFile": "See Sam the man wave Sam is Happy.mp3",
+			"timestamps": [{
+					"start": 68,
+					"wordIdx": 0,
+					"audio": "See.mp3",
+					"end": 326
+				}, {
+					"start": 334,
+					"wordIdx": 1,
+					"audio": "Sam.mp3",
+					"end": 745
+				},
+				{
+					"start": 767,
+					"wordIdx": 2,
+					"audio": "the.mp3",
+					"end": 867
+				},
+				{
+					"start": 869,
+					"wordIdx": 3,
+					"audio": "Man.mp3",
+					"end": 1218
+				},
+				{
+					"start": 1219,
+					"wordIdx": 4,
+					"audio": "wave.mp3",
+					"end": 1480
+				},
+				{
+					"start": 1874,
+					"wordIdx": 5,
+					"audio": "sam.mp3",
+					"end": 2171
+				},
+				{
+					"start": 2185,
+					"wordIdx": 6,
+					"audio": "is.mp3",
+					"end": 2436
+				},
+				{
+					"start": 2448,
+					"wordIdx": 7,
+					"audio": "happy.mp3",
+					"end": 2872
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 4,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 5,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 33,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A06-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "sad",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A06",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": true,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+				"id": 0,
+				"text": "The cat is sad and not happy."
+
+			}],
+			"audioFile": "The cat is sad and not happy.mp3",
+			"timestamps": [{
+					"start": 124,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 239
+				},
+				{
+					"start": 306,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 517
+				},
+				{
+					"start": 557,
+					"wordIdx": 2,
+					"audio": "is.mp3",
+					"end": 721
+				},
+				{
+					"start": 731,
+					"wordIdx": 3,
+					"audio": "sad.mp3",
+					"end": 1017
+				},
+				{
+					"start": 1347,
+					"wordIdx": 4,
+					"audio": "and.mp3",
+					"end": 1607
+				},
+				{
+					"start": 1608,
+					"wordIdx": 5,
+					"audio": "not.mp3",
+					"end": 1788
+				},
+				{
+					"start": 1855,
+					"wordIdx": 6,
+					"audio": "happy.mp3",
+					"end": 2241
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 3,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 6,
+			"script": "L5CatSManager7",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 500,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A07-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "CatHam",
+					"destroyOnCollision": "Ham",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A07",
+							"numberOfImages": 7,
+							"onTouch": true,
+							"onStart": true,
+							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 2,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 50,
+										"finaly": -65,
+										"speed": -50
+									}
+								},
+								{
+									"startFrame": 3,
+									"endFrame": 4,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 5,
+									"endFrame": 6,
+									"noOfLoops": 2,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+
+					]
+				},
+				{
+					"id": 1,
+					"posX": -28,
+					"posY": -120,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A07-8",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Ham",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "The cat is glad to eat the ham."
+
+			}],
+			"audioFile": "The cat is glad to eat the ham.mp3",
+			"timestamps": [{
+					"start": 54,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 252
+				},
+				{
+					"start": 343,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 571
+				},
+				{
+					"start": 623,
+					"wordIdx": 2,
+					"audio": "is.mp3",
+					"end": 801
+				},
+				{
+					"start": 861,
+					"wordIdx": 3,
+					"audio": "glad.mp3",
+					"end": 1132
+				},
+				{
+					"start": 1297,
+					"wordIdx": 4,
+					"audio": "to.mp3",
+					"end": 1417
+				},
+				{
+					"start": 1483,
+					"wordIdx": 5,
+					"audio": "eat.mp3",
+					"end": 1758
+				},
+				{
+					"start": 1764,
+					"wordIdx": 6,
+					"audio": "the.mp3",
+					"end": 1905
+				},
+				{
+					"start": 1913,
+					"wordIdx": 7,
+					"audio": "ham.mp3",
+					"end": 2282
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 7,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+		{
+			"pageNumber": 7,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 43,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A08-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "glad",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A08",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": true,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+
+						}
+					}]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "The glad cat is happy."
+
+			}],
+			"audioFile": "The glad cat is happy.mp3",
+			"timestamps": [{
+					"start": 132,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 269
+				},
+				{
+					"start": 283,
+					"wordIdx": 1,
+					"audio": "glad.mp3",
+					"end": 559
+				},
+				{
+					"start": 693,
+					"wordIdx": 2,
+					"audio": "cat.mp3",
+					"end": 908
+				},
+				{
+					"start": 950,
+					"wordIdx": 3,
+					"audio": "is.mp3",
+					"end": 1181
+				},
+				{
+					"start": 1258,
+					"wordIdx": 4,
+					"audio": "happy.mp3",
+					"end": 1649
+				}
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+
+		{
+			"pageNumber": 8,
+			"script": "L5CatSManager9",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 502,
+					"posY": -65,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A09-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "CatJam",
+					"destroyOnCollision": "Jam",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A09",
+							"numberOfImages": 8,
+							"onTouch": true,
+							"onStart": true,
+							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.5, 0.3, 0.3],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 102,
+										"finaly": -100,
+										"speed": -50
+									}
+								},
+								{
+									"startFrame": 4,
+									"endFrame": 5,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 6,
+									"endFrame": 7,
+									"noOfLoops": 2,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+
+					]
+				},
+				{
+					"id": 1,
+					"posX": -2,
+					"posY": -108,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A09-9",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Jam",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The cat is glad to eat the jam."
+
+			}],
+			"audioFile": "The cat is glad to eat the jam.mp3",
+			"timestamps": [{
+					"start": 60,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 215
+				},
+				{
+					"start": 277,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 496
+				},
+				{
+					"start": 540,
+					"wordIdx": 2,
+					"audio": "is.mp3",
+					"end": 736
+				},
+				{
+					"start": 798,
+					"wordIdx": 3,
+					"audio": "glad.mp3",
+					"end": 1063
+				},
+				{
+					"start": 1198,
+					"wordIdx": 4,
+					"audio": "to.mp3",
+					"end": 1316
+				},
+				{
+					"start": 1436,
+					"wordIdx": 5,
+					"audio": "eat.mp3",
+					"end": 1721
+				},
+				{
+					"start": 1725,
+					"wordIdx": 6,
+					"audio": "the.mp3",
+					"end": 1922
+				},
+				{
+					"start": 1923,
+					"wordIdx": 7,
+					"audio": "jam.mp3",
+					"end": 2251
+				}
+
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 7,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 9,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 0
+			},
+			"gameObjects": [
+
+				{
+					"id": 0,
+					"posX": 495,
+					"posY": -65,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A10-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "FatCatRun",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 0,
+						"animName": "A10",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 5,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -15,
+								"finaly": -65,
+								"speed": -60
+
+							}
+						}]
+					}]
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The cat is fat and happy."
+
+			}],
+			"audioFile": "The cat is fat and happy.mp3",
+			"timestamps": [{
+					"start": 90,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 238
+				},
+				{
+					"start": 305,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 540
+				},
+				{
+					"start": 592,
+					"wordIdx": 2,
+					"audio": "is.mp3",
+					"end": 835
+				},
+				{
+					"start": 901,
+					"wordIdx": 3,
+					"audio": "fat.mp3",
+					"end": 1233
+				},
+				{
+					"start": 1378,
+					"wordIdx": 4,
+					"audio": "and.mp3",
+					"end": 1568
+				},
+				{
+					"start": 1581,
+					"wordIdx": 5,
+					"audio": "happy.mp3",
+					"end": 2015
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 3,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 10,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 17,
+					"posY": -33,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A12-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "NapCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -11,
+					"posY": -45,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A11a-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "mat",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A11a",
+						"numberOfImages": 3,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.3, 0.3],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 3,
+							"movable": {
+								"speed": 0
+
+							}
+						}]
+					}]
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The cat likes the mat."
+
+			}],
+			"audioFile": "The cat likes the mat.mp3",
+			"timestamps": [{
+					"start": 92,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 246
+				},
+				{
+					"start": 343,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 567
+				},
+				{
+					"start": 606,
+					"wordIdx": 2,
+					"audio": "likes.mp3",
+					"end": 1098
+				},
+				{
+					"start": 1174,
+					"wordIdx": 3,
+					"audio": "the.mp3",
+					"end": 1300
+				},
+				{
+					"start": 1303,
+					"wordIdx": 4,
+					"audio": "mat.mp3",
+					"end": 1619
+				}
+
+			],
+			"triggers": [{
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 4,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
+		},
+
+
+		{
+			"pageNumber": 11,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": -4,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "NapMat",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -2,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A12-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "NapCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A12",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0, 0.2, 0.2, 0.5, 0.5],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 2,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+							},
+							{
+								"startFrame": 3,
+								"endFrame": 4,
+								"noOfLoops": 2,
+								"movable": {
+									"speed": 0
+								}
+							}
+						]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "Happy cat naps on the mat"
+
+			}],
+			"audioFile": "Happy cat naps on the mat.mp3",
+			"timestamps": [{
+					"start": 51,
+					"wordIdx": 0,
+					"audio": "happy.mp3",
+					"end": 462
+				}, {
+					"start": 506,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 809
+				},
+				{
+					"start": 928,
+					"wordIdx": 2,
+					"audio": "naps.mp3",
+					"end": 1284
+				},
+				{
+					"start": 1288,
+					"wordIdx": 3,
+					"audio": "on.mp3",
+					"end": 1538
+				},
+				{
+					"start": 1547,
+					"wordIdx": 4,
+					"audio": "the.mp3",
+					"end": 1654
+				},
+				{
+					"start": 1660,
+					"wordIdx": 5,
+					"audio": "mat.mp3",
+					"end": 1943
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+
+		{
+
+			"pageNumber": 12,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [
+
+				{
+					"id": 0,
+					"posX": -23,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A13-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "ManHat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A13",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0, 0.2, 0.2, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+							}
+						}]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "Sam’s hat makes him happy"
+
+			}],
+			"audioFile": "Sam_s hat makes him happy.mp3",
+			"timestamps": [{
+					"start": 56,
+					"wordIdx": 0,
+					"audio": "Sam's.mp3",
+					"end": 599
+				},
+				{
+					"start": 600,
+					"wordIdx": 1,
+					"audio": "hat.mp3",
+					"end": 957
+				},
+				{
+					"start": 1011,
+					"wordIdx": 2,
+					"audio": "makes.mp3",
+					"end": 1413
+				},
+				{
+					"start": 1418,
+					"wordIdx": 3,
+					"audio": "him.mp3",
+					"end": 1580
+				},
+				{
+					"start": 1586,
+					"wordIdx": 4,
+					"audio": "happy.mp3",
+					"end": 2072
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+
+			"pageNumber": 13,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [
+
+				{
+					"id": 0,
+					"posX": -277,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A14-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "RanMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A14",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -27,
+								"finaly": -65,
+								"speed": 25
+							}
+						}]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "Sam the man ran. He ran fast"
+
+			}],
+			"audioFile": "Sam the man ran He ran fast.mp3",
+			"timestamps": [{
+					"start": 49,
+					"wordIdx": 0,
+					"audio": "sam.mp3",
+					"end": 431
+				},
+				{
+					"start": 438,
+					"wordIdx": 1,
+					"audio": "the.mp3",
+					"end": 575
+				},
+				{
+					"start": 575,
+					"wordIdx": 2,
+					"audio": "man.mp3",
+					"end": 973
+				},
+				{
+					"start": 989,
+					"wordIdx": 3,
+					"audio": "ran.mp3",
+					"end": 1329
+				},
+				{
+					"start": 1685,
+					"wordIdx": 4,
+					"audio": "he.mp3",
+					"end": 1904
+				},
+				{
+					"start": 1906,
+					"wordIdx": 5,
+					"audio": "ran.mp3",
+					"end": 2241
+				},
+				{
+					"start": 2267,
+					"wordIdx": 6,
+					"audio": "fast.mp3",
+					"end": 2669
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 3,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+		{
+			"pageNumber": 14,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 133,
+					"posY": -144,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "SlamCatMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 135,
+					"posY": -115,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "A15b-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "SlamCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A15b",
+						"numberOfImages": 2,
+						"onTouch": false,
+						"onStart": true,
+						"secPerFrame": [0.5, 0.5],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 5,
+							"movable": {
+								"speed": 0
+							}
+						}]
+					}]
+				},
+				{
+					"id": 2,
+					"posX": -220,
+					"posY": -62,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "RanMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A15",
+						"numberOfImages": 7,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": 85,
+									"finaly": -62,
+									"speed": 61
+								}
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 6,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": 217,
+									"finaly": -62,
+									"speed": 66
+								}
+							}
+						]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "Sam slams. He is not glad he ran."
+
+			}],
+			"audioFile": "Sam slams He is not glad he ran.mp3",
+			"timestamps": [{
+					"start": 60,
+					"wordIdx": 0,
+					"audio": "sam.mp3",
+					"end": 404
+				},
+				{
+					"start": 405,
+					"wordIdx": 1,
+					"audio": "slams.mp3",
+					"end": 974
+				},
+				{
+					"start": 618,
+					"wordIdx": 2,
+					"audio": "he.mp3",
+					"end": 996
+				},
+				{
+					"start": 1384,
+					"wordIdx": 3,
+					"audio": "is.mp3",
+					"end": 1565
+				},
+				{
+					"start": 1604,
+					"wordIdx": 4,
+					"audio": "not.mp3",
+					"end": 1850
+				},
+				{
+					"start": 1880,
+					"wordIdx": 5,
+					"audio": "glad.mp3",
+					"end": 2296
+				},
+				{
+					"start": 2338,
+					"wordIdx": 6,
+					"audio": "he.mp3",
+					"end": 2522
+				},
+				{
+					"start": 2547,
+					"wordIdx": 7,
+					"audio": "ran.mp3",
+					"end": 2928
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 2,
+				"typeOfLinking": 3
+			}]
+
+
+		},
+		{
+			"pageNumber": 15,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 106,
+					"posY": -39,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15-7",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "SleepMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 0,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "SleepMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+
+				{
+					"id": 2,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A16-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A16",
+							"numberOfImages": 2,
+							"onTouch": true,
+							"onStart": true,
+							"secPerFrame": [0.5, 0.5],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
+				},
+
+				{
+					"id": 3,
+					"posX": -46,
+					"posY": -45,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A16b-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "Sleep",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A16b",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onStart": true,
+							"secPerFrame": [0.4, 0.4, 0.4, 0.4],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
+				}
+
+
+
+
+			],
+			"texts": [{
+				"id": 0,
+				"text": "The cat likes to nap."
+
+			}],
+			"audioFile": "The cat likes to nap.mp3",
+			"timestamps": [{
+					"start": 55,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 268
+				},
+				{
+					"start": 325,
+					"wordIdx": 1,
+					"audio": "cat.mp3",
+					"end": 565
+				},
+				{
+					"start": 617,
+					"wordIdx": 2,
+					"audio": "likes.mp3",
+					"end": 1096
+				},
+				{
+					"start": 1155,
+					"wordIdx": 3,
+					"audio": "to.mp3",
+					"end": 1287
+				},
+				{
+					"start": 1289,
+					"wordIdx": 4,
+					"audio": "nap.mp3",
+					"end": 1577
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 2,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+		{
+			"pageNumber": 16,
+			"script": "L5CatSManager16",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": -32,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "fatMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -46,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A17-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "fatCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A17",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0, 0.5, 0.5, 0.2, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 4,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
+							}
+
+						]
+					}]
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The fat cat had a happy nap"
+
+			}],
+			"audioFile": "The fat cat had a happy nap.mp3",
+			"timestamps": [{
+					"start": 59,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 237
+				},
+				{
+					"start": 244,
+					"wordIdx": 1,
+					"audio": "fat.mp3",
+					"end": 519
+				},
+				{
+					"start": 621,
+					"wordIdx": 2,
+					"audio": "cat.mp3",
+					"end": 940
+				},
+				{
+					"start": 1129,
+					"wordIdx": 3,
+					"audio": "had.mp3",
+					"end": 1311
+				},
+				{
+					"start": 1350,
+					"wordIdx": 4,
+					"audio": "a.mp3",
+					"end": 1495
+				},
+				{
+					"start": 1500,
+					"wordIdx": 5,
+					"audio": "happy.mp3",
+					"end": 1846
+				},
+				{
+					"start": 1851,
+					"wordIdx": 6,
+					"audio": "nap.mp3",
+					"end": 2101
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+		},
+		{
+			"pageNumber": 17,
+			"script": "L5CatSManager18",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 8,
+					"posY": -131,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A18-7",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Jam",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 509,
+					"posY": -57,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A18-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A18",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": true,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0.5],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": -31,
+									"finaly": -57,
+									"speed": -60
+								}
+
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 5,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
+							}
+
+						]
+					}]
+				}
+			],
+
+			"texts": [{
+				"id": 0,
+				"text": "The fat cat in a jam is not happy."
+
+			}],
+			"audioFile": "The fat cat in a jam is not happy.mp3",
+			"timestamps": [{
+					"start": 55,
+					"wordIdx": 0,
+					"audio": "the.mp3",
+					"end": 235
+				},
+				{
+					"start": 268,
+					"wordIdx": 1,
+					"audio": "fat.mp3",
+					"end": 529
+				},
+				{
+					"start": 622,
+					"wordIdx": 2,
+					"audio": "cat.mp3",
+					"end": 925
+				}, {
+					"start": 1072,
+					"wordIdx": 3,
+					"audio": "in.mp3",
+					"end": 1186
+				},
+				{
+					"start": 1204,
+					"wordIdx": 4,
+					"audio": "a.mp3",
+					"end": 1331
+				},
+				{
+					"start": 1358,
+					"wordIdx": 5,
+					"audio": "jam.mp3",
+					"end": 1681
+				},
+				{
+					"start": 1753,
+					"wordIdx": 6,
+					"audio": "is.mp3",
+					"end": 1907
+				},
+				{
+					"start": 1913,
+					"wordIdx": 7,
+					"audio": "not.mp3",
+					"end": 2182
+				},
+				{
+					"start": 2195,
+					"wordIdx": 8,
+					"audio": "happy.mp3",
+					"end": 2597
+				}
+			],
+			"triggers": [{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+		{
+			"pageNumber": 18,
+			"script": "EndPage",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 140,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "ReadAgain",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "ReadAgain",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -160,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "Home",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Home",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				}
+			],
+			"texts": null,
+			"audioFile": null,
+			"timestamps": null,
+			"triggers": null
+
+		}
+
+	]
+}
