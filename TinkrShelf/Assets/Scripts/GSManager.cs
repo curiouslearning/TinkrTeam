@@ -12,7 +12,7 @@ public class GSManager :  MonoBehaviour {
 	[HideInInspector]
 	public GGameManager gameManager;
 	public Canvas myCanvas;
-	static public Color yellow = new Color(237.0f / 255.0f, 243.0f / 255.0f, 0.0f / 255.0f, 249.0f);
+
 
 	// Manager for all TinkerTexts and stanza
 	public GStanzaManager stanzaManager;

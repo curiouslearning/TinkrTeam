@@ -9,13 +9,12 @@ using UnityEngine.UI;
 /// Script responsible for controling scenes,touch events and dropdown menu.
 /// </summary>
 public class GGameManager : MonoBehaviour
-{
-	// Reference to GSManager
-	public GSManager sceneManager;
+{   // Reference to GSManager 
+	public GSManager sceneManager; 
 	public GStanzaManager stanzaManager;
 	public static bool mousepressed = false;
 	public Canvas myCanvas;
-	static public Color yellow = new Color (237.0f / 255.0f, 245.0f / 255.0f, 84.0f / 255.0f, 1.0f);
+	static public Color yellow = new Color(237.0f / 255.0f, 243.0f / 255.0f, 0.0f / 255.0f, 249.0f);
 
 	//Mouse touch event references
 	[HideInInspector]
@@ -26,10 +25,19 @@ public class GGameManager : MonoBehaviour
 		MouseUp
 	}
 
-	// Specific colors that TinkerBook uses
-	
-	static public Color yellow = new Color(237.0f / 255.0f, 245.0f / 255.0f, 84.0f / 255.0f, 1.0f);
-	
+	//Drop down menu references	
+	public bool isOpen=false;
+	public Sprite down;
+	public Sprite up;
+	public Sprite narrateOn;
+	public Sprite narrateOff;
+	public Button upArrow; 
+	public Button home;
+	public Button read;
+	public GameObject dropContainer;
+	public GameObject menuContainer;
+	public int i = 1;
+	public static int j = 1; 
 
 	public static AudioSource[] sounds;
 
@@ -40,162 +48,215 @@ public class GGameManager : MonoBehaviour
 	}
 	// access to the singleton
 	private static GGameManager instance;
-    
-    // Update is called once per frame
-    public void Start()
+	
+
+	public void Start()
 	{
-        
-			if (gameObject != null)
-				sounds = gameObject.GetComponents<AudioSource>();
+		dropContainer.SetActive(true);
+		menuContainer.SetActive(false);
+		if (gameObject != null)
+		  sounds = gameObject.GetComponents<AudioSource>();
+
+		isOpen = false;
+		//Change to narrateon sprite
+		if (j == 1)
+		{
+			if (read != null)
+				read.image.sprite = narrateOn;
 
 
+		}
+		//Change to narrateoff sprite
+		if (j == 0)
+		{
+			if (read != null)
+				read.image.sprite = narrateOff;
+
+		}
+			
 	}
-
+		
 	/// <summary>
 	/// Checks the mouse events and calls the respective scenemanager event.
 	/// </summary>
-	void Update ()
+	void Update()
 	{
 		// Check for mouse input
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown(0)){
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects (Input.mousePosition);
+			List<GameObject> gos = PickGameObjects(Input.mousePosition);
 
 			// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count != 0) {
-				sceneManager.OnMouseDown (gos [0]);
+			if (sceneManager != null && gos.Count!=0) {
+				sceneManager.OnMouseDown (gos[0]);
 			}
-		} else if (Input.GetMouseButton (0)) {
+		} 
+
+		else if (Input.GetMouseButton(0)){
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects (Input.mousePosition);
+			List<GameObject> gos = PickGameObjects(Input.mousePosition);
 			// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count != 0) {
-				sceneManager.OnMouseCurrentlyDown (gos [0]);
-			}
-			if (gos.Count == 0) {
+			if (sceneManager != null && gos.Count!=0){
+				sceneManager.OnMouseCurrentlyDown(gos[0]);
+				}
+			if (gos.Count == 0){
 				// Anytime a mouse currently down event misses any gameobject, update applicable lists in scene manager
-				sceneManager.ResetInputStates (MouseEvents.MouseCurrentlyDown);
-			}
-		} else if (Input.GetMouseButtonUp (0)) {
+				sceneManager.ResetInputStates(MouseEvents.MouseCurrentlyDown);
+			    }
+		} 
+
+		else if (Input.GetMouseButtonUp(0)){
 			// Check what was under mouse down (if anything)
-			List<GameObject> gos = PickGameObjects (Input.mousePosition);
+			List<GameObject> gos = PickGameObjects(Input.mousePosition);
 			// Pass the game object along to the current scene manager (if any) to let it respond
-			if (sceneManager != null && gos.Count != 0) {
-				sceneManager.OnMouseUp (gos [0]);
-			}
+			if (sceneManager != null && gos.Count!=0) {
+				sceneManager.OnMouseUp (gos[0]);
+				}
 			// Anytime there is a mouse up event, update applicable lists in scene manager
-			sceneManager.ResetInputStates (MouseEvents.MouseUp);
-		}
+			sceneManager.ResetInputStates(MouseEvents.MouseUp);
+		} 
 
 		// quit game on exit
-		else if (Input.GetKeyDown (KeyCode.Escape)) {
-			System.Diagnostics.Process.GetCurrentProcess ().Kill ();
-		}
+		else if (Input.GetKeyDown(KeyCode.Escape)){
+			System.Diagnostics.Process.GetCurrentProcess().Kill();
+			}
 	}
-
+		
 	// this is called after Awake() OR after the script is recompiled (Recompile > Disable > Enable)
-	protected virtual void OnEnable ()
+	protected virtual void OnEnable()
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
-		if (instance == null) {
-			Debug.Log ("enable");
+		if (instance == null)
+		{
+			Debug.Log("enable");
 			instance = this;
-		} else if (instance != this) {
-			Debug.LogWarning ("GAME MANAGER: WARNING - THERE IS ALREADY AN INSTANCE OF GAME MANAGER RUNNING - DESTROYING THIS ONE.");
-			Destroy (this.gameObject);
+		}
+		else if (instance != this)
+		{
+			Debug.LogWarning("GAME MANAGER: WARNING - THERE IS ALREADY AN INSTANCE OF GAME MANAGER RUNNING - DESTROYING THIS ONE.");
+			Destroy(this.gameObject);
 			return;
 		}
 	}
 
-	void OnDisable ()
+	void OnDisable()
 	{
 		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 
 	// Called each time a new scene is loaded
-	void OnSceneLoaded (Scene scene, LoadSceneMode mode)
+	void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
-		Debug.Log ("LEVEL WAS LOADED: " + SceneManager.GetActiveScene ().name);
+		Debug.Log("LEVEL WAS LOADED: " + SceneManager.GetActiveScene().name);
 		//AndroidBroadcastIntentHandler.BroadcastJSONData("scene", SceneManager.GetActiveScene().name);
-		LoadSceneManager ();
+		LoadSceneManager();
 	}
 
 
-	private void LoadSceneManager ()
+	private void LoadSceneManager()
 	{
-		sceneManager.Start ();
+		sceneManager.Start(); 
 	}
-
-	/// <summary>
-	///Down button is clicked.
-	/// </summary>
-	public void DownClick ()
-	{
+		
+	public void DownClick()
+	{   
 		DateTime time = DateTime.Now;
 
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+		//DataCollection.AddInTouchData ("Button_DownMenu"", time.ToString());
 
+		FirebaseHelper.LogInAppTouch("Button_DownMenu",time.ToString());
+		dropContainer.SetActive (false);
+		menuContainer.SetActive (true);
+        upArrow.image.sprite = up;
+        if (i == 1) {
+			isOpen = true;
+			
+			i = 0;
+		}
+		else{
+			isOpen = false;
+			i = 1;
+		}
 	}
 
-	/// <summary>
-	///Up button is clicked.
-	/// </summary>
-	public void UpArrowClick ()
-	{
+
+	public void UpArrowClick()
+	{ 
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_UpMenu", time.ToString());
+		FirebaseHelper.LogInAppTouch("Button_UpMenu", time.ToString());
+		menuContainer.SetActive (false);
+		dropContainer.SetActive(true);
 	}
 
-	/// <summary>
-	///When home button is clicked,it goes to the shelf.
-	/// </summary>
-	public void MenuClick ()
+	public void MenuClick()
 	{
 		DateTime time = DateTime.Now;
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//DataCollection.AddInTouchData ("Button_Home", time.ToString());
 		FirebaseHelper.LogInAppTouch("Button_Home",  time.ToString());
-
-        SceneManager.LoadScene ("shelf");
+		SceneManager.LoadScene ("shelf");
 
 	}
-    public void AutoNarrate()
+
+	public void AutoNarrate()
 	{
 		DateTime time = DateTime.Now;
-    
-        if(ShelfManager.autoNarrate)
-        stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
+		if (j == 1) {
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInTouchData ("Button_ReadOn", time.ToString());
+			FirebaseHelper.LogInAppTouch("Button_ReadOn", time.ToString());
+
+			read.image.sprite = narrateOff;
+			j = 0;
+			stanzaManager.RequestCancelAutoPlay();
+			StartCoroutine (SetMenuContainer ());
+		}
+		else
+		{  
+			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
+			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
+			FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
+			read.image.sprite=narrateOn;
+			j = 1;
+			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
+			StartCoroutine (SetMenuContainer ());
+		}
 	}     
 
 
-	/// <summary>
-	/// Raycast to find the gameobject positon
-	/// </summary>
-	/// <param name="screenPos">Mouse click screen position.</param>
-	private List<GameObject> PickGameObjects (Vector3 screenPos)
+	public IEnumerator SetMenuContainer()
 	{
-		List<GameObject> gameObjects = new List<GameObject> ();
+		yield return new WaitForSeconds (0.5f);
+		menuContainer.SetActive (false);
+		dropContainer.SetActive(true);
+	}
+
+	private List<GameObject> PickGameObjects( Vector3 screenPos )
+	{
+		List<GameObject> gameObjects = new List<GameObject>();
 		Vector3 localPos = Camera.main.ScreenToViewportPoint (screenPos);
 		Ray ray = Camera.main.ViewportPointToRay (localPos);
+
 		RaycastHit[] hits;
 		hits = Physics.RaycastAll (ray, Mathf.Infinity);
-		foreach (RaycastHit hit in hits) {
 
-			gameObjects.Add (hit.collider.gameObject);
+		foreach (RaycastHit hit in hits)
+		{
+			
+			gameObjects.Add(hit.collider.gameObject);
 		}
 
 		// Now sort all GameObjects by Z pos ascending
-		gameObjects.Sort (CompareZPosition);
+		gameObjects.Sort(CompareZPosition);
 		return gameObjects;
 	}
 
-	/// <summary>
-	/// Used for gameobject z-sorting ascending.
-	/// </summary>
-	/// <param name="a">first gameobject.</param>
-	/// <param name="b">second gameobject.</param>
-	private static int CompareZPosition (GameObject a, GameObject b)
+
+	// Used for gameobject z-sorting ascending
+	private static int CompareZPosition(GameObject a, GameObject b)
 	{
 		if (a.transform.localPosition.z < b.transform.localPosition.z)
 			return -1;
