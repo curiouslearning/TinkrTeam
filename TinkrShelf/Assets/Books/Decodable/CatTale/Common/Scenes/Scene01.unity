@@ -146,7 +146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 405, y: -5}
+  m_AnchoredPosition: {x: 449, y: -9}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &201930035
@@ -348,7 +348,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -390, y: -5}
+  m_AnchoredPosition: {x: -433, y: -9}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412334969
@@ -549,9 +549,6 @@ MonoBehaviour:
   stanzaObjects: []
   right: {fileID: 201930033}
   left: {fileID: 412334967}
-  endPageHome: {fileID: 0}
-  endPageReadAgain: {fileID: 0}
-  dropdown: {fileID: 0}
 --- !u!114 &455597627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,8 +652,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneManager: {fileID: 0}
-  myCanvas: {fileID: 455597624}
   stanzaManager: {fileID: 455597627}
+  myCanvas: {fileID: 455597624}
+  isOpen: 0
+  down: {fileID: 0}
+  up: {fileID: 0}
+  narrateOn: {fileID: 0}
+  narrateOff: {fileID: 0}
+  upArrow: {fileID: 0}
+  home: {fileID: 0}
+  read: {fileID: 0}
+  dropContainer: {fileID: 0}
+  menuContainer: {fileID: 0}
+  i: 1
 --- !u!4 &834470663
 Transform:
   m_ObjectHideFlags: 0
@@ -741,7 +749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 422.3, y: 219.7}
+  m_AnchoredPosition: {x: 440, y: 215}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464689213

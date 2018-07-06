@@ -187,7 +187,7 @@
 				{
 					"id": 0,
 					"posX": 25,
-					"posY": -65,
+					"posY": -80,
 					"scaleX": 30,
 					"scaleY": 30,
 					"imageName": "A03b-1",
@@ -220,9 +220,9 @@
 								  "noOfLoops":0,
 								  "movable":
 									  {
-										"finalx":494,
-										"finaly":-65,
-										"speed":75
+										"finalx":214,
+										"finaly":-80,
+										"speed":63
 									  }
 								  }
 							]
@@ -231,11 +231,11 @@
 				},
                 {   
 					"id": 1,
-					"posX": -180,
+					"posX": -216,
 					"posY": -54,
 					"scaleX": 40,
 					"scaleY": 40,
-					"imageName": "A03-01",
+					"imageName": "A03-1",
 					"orderInLayer":1,
 					"inText": true,
 					"label": "Ran",
@@ -252,11 +252,11 @@
 							"sequences":
 							[
 								{ "startFrame":0,
-									"endFrame":7,
+									"endFrame":8,
 									"noOfLoops":0,
 									"movable": 
 									{  
-										"finalx":-30,
+										"finalx":-36,
 										"finaly":-54,
 										"speed":15
 									    
@@ -502,7 +502,7 @@
 							"numberOfImages": 4,
                             "onTouch":true,
                              "onstart":false,
-							"secPerFrame":[0,0.2,0.2,0],
+							"secPerFrame":[0.5,0.2,0.2,0],
 							"sequences":
 							[
 								{ "startFrame":0,
@@ -1290,8 +1290,8 @@
             [
 				{
 					"id": 0,
-					"posX": -16,
-					"posY": -100,
+					"posX": 0,
+					"posY": -114,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A15b-3",
@@ -1304,7 +1304,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -16,
+					"posX": 0,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1340,7 +1340,7 @@
 				{ 
 					"id": 2,
 					"posX": -220,
-					"posY": -35,
+					"posY": -39,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A15-1",
@@ -1366,7 +1366,7 @@
 									"movable": 
 									{   
 										"finalx":-85,
-										"finaly":-18,
+										"finaly":-39,
 										"speed":45
 									}	
 								},
@@ -1376,7 +1376,7 @@
 									"movable": 
 									{   
 										"finalx":110,
-										"finaly":-18,
+										"finaly":-39,
 										"speed":65
 									}	
 								}
@@ -1767,50 +1767,48 @@
 
 			]
 		},
-	    {   "pageNumber": 18,
-			"script":"EndPage",
+	    {
+			"pageNumber": 18,
+			"script": "EndPage",
 			"audio": {
 				"audioName": "audio-name",
 				"isAnim": true,
 				"objectId": 1
 			},
-            "gameObjects": 
-            [   {
+			"gameObjects": [{
 					"id": 0,
-					"posX": 4.9,
-					"posY": 81.3,
-					"scaleX": 15,
-					"scaleY": 15,
+					"posX": 140,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
 					"imageName": "ReadAgain",
-					"orderInLayer":1,
-					"inText": false,
-					"label": "readagain",
-					"destroyOnCollision":"NIL",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "ReadAgain",
+					"destroyOnCollision": "NIL",
 					"draggable": false,
-                    "anim": null
+					"anim": null
 				},
 				{
 					"id": 1,
-					"posX": 9,
-					"posY": -39,
-					"scaleX": 15,
-					"scaleY": 15,
+					"posX": -160,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
 					"imageName": "Home",
-					"orderInLayer":1,
-					"inText":false,
-					"label": "home",
-					"destroyOnCollision":"NIL",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Home",
+					"destroyOnCollision": "NIL",
 					"draggable": false,
-                    "anim": null
-                    
+					"anim": null
 				}
 			],
-				
 			"texts": null,
 			"audioFile": null,
-			"timestamps":null,
+			"timestamps": null,
 			"triggers": null
-			
+
 		}
 		
 	]

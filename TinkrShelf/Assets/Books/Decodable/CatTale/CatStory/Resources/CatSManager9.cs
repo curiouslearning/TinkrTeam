@@ -15,7 +15,7 @@ public class CatSManager9 : GSManager {
 
 			ham.SetActive (true);
 		}
-		else if ( go.name == "Text_Jam"){
+		else if ( go.name == "Text_jam"){
 
 			if (ham == null) {
 				ham = GameObject.Find ("Jam");

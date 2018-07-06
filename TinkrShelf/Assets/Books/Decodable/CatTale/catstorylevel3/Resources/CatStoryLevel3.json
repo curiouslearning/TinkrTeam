@@ -1,15 +1,16 @@
 {
 	"id": 4,
 	"fontColor": "black",
-	"textStartPositionX": -261.0,
-	"textStartPositionY": 132.0,
+	"textStartPositionX": -261,
+	"textStartPositionY": 132,
 	"textFontSize": 60,
 	"storyImageFile": null,
 	"backgroundColor": "blue",
 	"arrowColor": "red",
 	"fontFamily": "helvetica",
 	"language": "english",
-	"pages": [{
+	"pages": [
+		{
 			"pageNumber": 0,
 			"script": "GSManager",
 			"audio": {
@@ -17,46 +18,55 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": 25,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A01-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "cat",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A01",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
-					"sequences": [{
-							"startFrame": 0,
-							"endFrame": 3,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
-							}
-
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": 25,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A01-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A01",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-
 					]
-				}]
-			}],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat"
-
-			}],
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat"
+				}
+			],
 			"audioFile": "The cat.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 45,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -68,18 +78,17 @@
 					"audio": "Cat.mp3",
 					"end": 595
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 1,
 			"script": "GSManager",
@@ -88,46 +97,57 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": 25,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A02-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "wag",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A02",
-					"numberOfImages": 6,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
-					"sequences": [{
-							"startFrame": 0,
-							"endFrame": 5,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
-							}
-
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": 25,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A02-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "wag",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A02",
+							"numberOfImages": 6,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.2,
+								0.2,
+								0.2,
+								0.2,
+								0.2,
+								0.2
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 5,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-
 					]
-				}]
-			}],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat wags."
-
-			}],
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat wags."
+				}
+			],
 			"audioFile": "The cat wags.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 145,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -145,19 +165,17 @@
 					"audio": "wags.mp3",
 					"end": 1165
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 2,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 2,
 			"script": "L3CatSManager3",
@@ -166,10 +184,11 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
 					"posX": 25,
-					"posY": -65,
+					"posY": -80,
 					"scaleX": 30,
 					"scaleY": 30,
 					"imageName": "A03b-1",
@@ -178,76 +197,98 @@
 					"label": "Cat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A03b",
-						"numberOfImages": 5,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.5, 0.5, 0.1, 0.1, 0.1],
-						"sequences": [{
-								"startFrame": 0,
-								"endFrame": 2,
-								"noOfLoops": 1,
-								"movable": {
-									"speed": 0
-
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A03b",
+							"numberOfImages": 5,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.5,
+								0.5,
+								0.1,
+								0.1,
+								0.1
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 2,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 3,
+									"endFrame": 4,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 214,
+										"finaly": -80,
+										"speed": 63
+									}
 								}
-							},
-							{
-								"startFrame": 3,
-								"endFrame": 4,
-								"noOfLoops": 0,
-								"movable": {
-									"finalx": 494,
-									"finaly": -65,
-									"speed": 75
-								}
-							}
-						]
-					}]
+							]
+						}
+					]
 				},
 				{
 					"id": 1,
-					"posX": -424,
-					"posY": -65,
+					"posX": -216,
+					"posY": -54,
 					"scaleX": 40,
 					"scaleY": 40,
-					"imageName": "A03-01",
+					"imageName": "A03-1",
 					"orderInLayer": 1,
 					"inText": true,
 					"label": "Ran",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A03",
-						"numberOfImages": 9,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 7,
-							"noOfLoops": 0,
-							"movable": {
-								"finalx": 0,
-								"finaly": -65,
-								"speed": 25
-
-							}
-						}]
-					}]
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A03",
+							"numberOfImages": 9,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 8,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": -36,
+										"finaly": -54,
+										"speed": 15
+									}
+								}
+							]
+						}
+					]
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat ran."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat ran."
+				}
+			],
 			"audioFile": "The cat ran.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 55,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -265,18 +306,17 @@
 					"audio": "Ran.mp3",
 					"end": 1090
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 2,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 3,
 			"script": "GSManager",
@@ -285,43 +325,55 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": -23,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A04-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "Man",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A04",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 1,
-						"movable": {
-							"speed": 0
-
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": -23,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A04-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Man",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A04",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-					}]
-				}]
-			}],
-			"texts": [{
-				"id": 0,
-				"text": "Sam the man."
-
-			}],
+					]
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "Sam the man."
+				}
+			],
 			"audioFile": "Sam the man.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 50,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
@@ -340,19 +392,16 @@
 					"end": 1020
 				}
 			],
-			"triggers": [{
+			"triggers": [
+				{
 					"stnzaId": 0,
 					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
-
 			]
-
 		},
-
-
 		{
 			"pageNumber": 4,
 			"script": "GSManager",
@@ -361,54 +410,63 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": -23,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A05-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "Sam",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A05",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0.2],
-					"sequences": [{
-							"startFrame": 0,
-							"endFrame": 1,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
-
-							}
-						},
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": -23,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A05-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Sam",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
 						{
-							"startFrame": 2,
-							"endFrame": 3,
-							"noOfLoops": 3,
-							"movable": {
-								"speed": 0
-
-							}
+							"id": 1,
+							"animName": "A05",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0.2
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 2,
+									"endFrame": 3,
+									"noOfLoops": 3,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
 					]
-				}]
-			}],
-
-			"texts": [{
-				"id": 0,
-				"text": "Sam waves."
-
-			}],
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "Sam waves."
+				}
+			],
 			"audioFile": "Sam waves.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 50,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
@@ -420,18 +478,17 @@
 					"audio": "waves.mp3",
 					"end": 985
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 5,
 			"script": "GSManager",
@@ -440,42 +497,55 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": 33,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A06-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "sad",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A06",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 1,
-						"movable": {
-							"speed": 0
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": 33,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A06-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "sad",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A06",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.5,
+								0.2,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-					}]
-				}]
-			}],
-			"texts": [{
-				"id": 0,
-				"text": "The cat is sad."
-
-			}],
+					]
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat is sad."
+				}
+			],
 			"audioFile": "The cat is sad.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 40,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -499,18 +569,17 @@
 					"audio": "Sad.mp3",
 					"end": 1215
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 6,
 			"script": "L3CatSManager7",
@@ -519,9 +588,10 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
-					"posX": 500,
+					"posX": 240,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -531,19 +601,29 @@
 					"label": "CatHam",
 					"destroyOnCollision": "Ham",
 					"draggable": false,
-					"anim": [{
+					"anim": [
+						{
 							"id": 1,
 							"animName": "A07",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onStart": true,
-							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4],
-							"sequences": [{
+							"onstart": false,
+							"secPerFrame": [
+								0.2,
+								0.2,
+								0.2,
+								0.2,
+								1,
+								0.4,
+								0.4
+							],
+							"sequences": [
+								{
 									"startFrame": 0,
 									"endFrame": 2,
 									"noOfLoops": 0,
 									"movable": {
-										"finalx": 50,
+										"finalx": 40,
 										"finaly": -65,
 										"speed": -50
 									}
@@ -566,13 +646,12 @@
 								}
 							]
 						}
-
 					]
 				},
 				{
 					"id": 1,
-					"posX": -28,
-					"posY": -120,
+					"posX": -34.2,
+					"posY": -122.9,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A07-8",
@@ -582,16 +661,17 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
-
 				}
 			],
-			"texts": [{
-				"id": 0,
-				"text": "The cat eats ham."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat eats ham."
+				}
+			],
 			"audioFile": "The cat eats ham.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 40,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -615,16 +695,16 @@
 					"audio": "Ham.mp3",
 					"end": 1515
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
 		{
 			"pageNumber": 7,
@@ -634,44 +714,55 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": 43,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A08-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "glad",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A08",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 1,
-						"movable": {
-							"speed": 0
-
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": 43,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A08-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "glad",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A08",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-					}]
-				}]
-			}],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat is glad."
-
-			}],
+					]
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat is glad."
+				}
+			],
 			"audioFile": "The cat is glad.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 40,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -695,19 +786,17 @@
 					"audio": "Glad.mp3",
 					"end": 1350
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 8,
 			"script": "L3CatSManager9",
@@ -716,10 +805,11 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
-					"posX": 502,
-					"posY": -65,
+					"posX": 220,
+					"posY": -64.4,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-1",
@@ -728,21 +818,32 @@
 					"label": "CatJam",
 					"destroyOnCollision": "Jam",
 					"draggable": false,
-					"anim": [{
+					"anim": [
+						{
 							"id": 1,
 							"animName": "A09",
 							"numberOfImages": 8,
 							"onTouch": true,
-							"onStart": true,
-							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.5, 0.3, 0.3],
-							"sequences": [{
+							"onstart": false,
+							"secPerFrame": [
+								0.2,
+								0.2,
+								0.2,
+								0.2,
+								1,
+								0.5,
+								0.3,
+								0.3
+							],
+							"sequences": [
+								{
 									"startFrame": 0,
 									"endFrame": 3,
 									"noOfLoops": 0,
 									"movable": {
-										"finalx": 102,
-										"finaly": -100,
-										"speed": -50
+										"finalx": 82,
+										"finaly": -64.4,
+										"speed": -46
 									}
 								},
 								{
@@ -763,12 +864,11 @@
 								}
 							]
 						}
-
 					]
 				},
 				{
 					"id": 1,
-					"posX": -2,
+					"posX": -23,
 					"posY": -108,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -779,17 +879,17 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
-
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat eats jam."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat eats jam."
+				}
+			],
 			"audioFile": "The cat eats jam.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 40,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -813,18 +913,17 @@
 					"audio": "Jam.mp3",
 					"end": 1665
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 9,
 			"script": "GSManager",
@@ -834,10 +933,9 @@
 				"objectId": 0
 			},
 			"gameObjects": [
-
 				{
 					"id": 0,
-					"posX": 495,
+					"posX": 210,
 					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -847,35 +945,54 @@
 					"label": "FatCatRun",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 0,
-						"animName": "A10",
-						"numberOfImages": 6,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 5,
-							"noOfLoops": 0,
-							"movable": {
-								"finalx": -15,
-								"finaly": -65,
-								"speed": -30
-
-							}
-						}]
-					}]
+					"anim": [
+						{
+							"id": 0,
+							"animName": "A10",
+							"numberOfImages": 6,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.4,
+								0.4,
+								0.4,
+								0.4,
+								0.5,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": -30,
+										"finaly": -65,
+										"speed": -30
+									}
+								},
+								{
+									"startFrame": 4,
+									"endFrame": 5,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+					]
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat is fat."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat is fat."
+				}
+			],
 			"audioFile": "The cat is fat.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 45,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -899,18 +1016,17 @@
 					"audio": "Fat.mp3",
 					"end": 1290
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 10,
 			"script": "GSManager",
@@ -919,7 +1035,8 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
 					"posX": 17,
 					"posY": -33,
@@ -945,33 +1062,49 @@
 					"label": "mat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A11a",
-						"numberOfImages": 2,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.3, 0.3],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 1,
-							"noOfLoops": 3,
-							"movable": {
-								"speed": 0
-
-							}
-						}]
-					}]
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A11a",
+							"numberOfImages": 3,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.3,
+								0.3,
+								0.3
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 3,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 2,
+									"endFrame": 2,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+					]
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat on mat."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat on mat."
+				}
+			],
 			"audioFile": "The cat on mat.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 30,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -995,9 +1128,9 @@
 					"audio": "Mat.mp3",
 					"end": 1475
 				}
-
 			],
-			"triggers": [{
+			"triggers": [
+				{
 					"stnzaId": 0,
 					"textId": 1,
 					"timestamp": null,
@@ -1013,8 +1146,6 @@
 				}
 			]
 		},
-
-
 		{
 			"pageNumber": 11,
 			"script": "GSManager",
@@ -1023,7 +1154,8 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
 					"posX": -4,
 					"posY": -114,
@@ -1049,40 +1181,51 @@
 					"label": "NapCat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A12",
-						"numberOfImages": 5,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0, 0.2, 0.2, 0.5, 0.5],
-						"sequences": [{
-								"startFrame": 0,
-								"endFrame": 2,
-								"noOfLoops": 1,
-								"movable": {
-									"speed": 0
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A12",
+							"numberOfImages": 5,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0.5,
+								0.5
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 2,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 3,
+									"endFrame": 4,
+									"noOfLoops": 2,
+									"movable": {
+										"speed": 0
+									}
 								}
-							},
-							{
-								"startFrame": 3,
-								"endFrame": 4,
-								"noOfLoops": 2,
-								"movable": {
-									"speed": 0
-								}
-							}
-						]
-					}]
+							]
+						}
+					]
 				}
 			],
-			"texts": [{
-				"id": 0,
-				"text": "The cat naps."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat naps."
+				}
+			],
 			"audioFile": "The cat naps.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 50,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -1100,21 +1243,18 @@
 					"audio": "naps.mp3",
 					"end": 1405
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 2,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
-
 			"pageNumber": 12,
 			"script": "GSManager",
 			"audio": {
@@ -1122,42 +1262,55 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": -23,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A13-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "ManHat",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
-					"id": 1,
-					"animName": "A13",
-					"numberOfImages": 4,
-					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 1,
-						"movable": {
-							"speed": 0
+			"gameObjects": [
+				{
+					"id": 0,
+					"posX": -23,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A13-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "ManHat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A13",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.2,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
 						}
-					}]
-				}]
-			}],
-			"texts": [{
-				"id": 0,
-				"text": "Sam's black hat."
-
-			}],
+					]
+				}
+			],
+			"texts": [
+				{
+					"id": 0,
+					"text": "Sam's black hat."
+				}
+			],
 			"audioFile": "Sam_s black hat.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 185,
 					"wordIdx": 0,
 					"audio": "sam_s.mp3",
@@ -1175,20 +1328,18 @@
 					"audio": "Hat.mp3",
 					"end": 801
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 2,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
-
 			"pageNumber": 13,
 			"script": "GSManager",
 			"audio": {
@@ -1197,10 +1348,9 @@
 				"objectId": 1
 			},
 			"gameObjects": [
-
 				{
 					"id": 0,
-					"posX": -277,
+					"posX": -230,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1210,33 +1360,44 @@
 					"label": "RanMan",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A14",
-						"numberOfImages": 4,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.1, 0.1, 0.1, 0.1],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 3,
-							"noOfLoops": 0,
-							"movable": {
-								"finalx": -27,
-								"finaly": -65,
-								"speed": 25
-							}
-						}]
-					}]
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A14",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.1,
+								0.1,
+								0.1,
+								0.1
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": -30,
+										"finaly": -65,
+										"speed": 25
+									}
+								}
+							]
+						}
+					]
 				}
 			],
-			"texts": [{
-				"id": 0,
-				"text": "Sam the man ran."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "Sam the man ran."
+				}
+			],
 			"audioFile": "Sam the man ran.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 55,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
@@ -1260,16 +1421,16 @@
 					"audio": "Ran.mp3",
 					"end": 1475
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+			]
 		},
 		{
 			"pageNumber": 14,
@@ -1279,12 +1440,13 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
-					"posX": 133,
-					"posY": -144,
-					"scaleX": 30,
-					"scaleY": 30,
+					"posX": 0,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
 					"imageName": "A15b-3",
 					"orderInLayer": 1,
 					"inText": true,
@@ -1295,37 +1457,44 @@
 				},
 				{
 					"id": 1,
-					"posX": 135,
-					"posY": -115,
-					"scaleX": 30,
-					"scaleY": 30,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
 					"imageName": "A15b-1",
 					"orderInLayer": 3,
 					"inText": true,
 					"label": "SlamCat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A15b",
-						"numberOfImages": 2,
-						"onTouch": false,
-						"onStart": true,
-						"secPerFrame": [0.5, 0.5],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 1,
-							"noOfLoops": 5,
-							"movable": {
-								"speed": 0
-							}
-						}]
-					}]
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A15b",
+							"numberOfImages": 2,
+							"onTouch": false,
+							"onstart": false,
+							"secPerFrame": [
+								0.5,
+								0.5
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 5,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+					]
 				},
 				{
 					"id": 2,
 					"posX": -220,
-					"posY": -62,
+					"posY": -39,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A15-1",
@@ -1334,44 +1503,57 @@
 					"label": "RanMan",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A15",
-						"numberOfImages": 7,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
-						"sequences": [{
-								"startFrame": 0,
-								"endFrame": 3,
-								"noOfLoops": 0,
-								"movable": {
-									"finalx": 85,
-									"finaly": -62,
-									"speed": 61
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A15",
+							"numberOfImages": 7,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.1,
+								0.5,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx":-85,
+										"finaly": -39,
+										"speed": 45
+									}
+								},
+								{
+									"startFrame": 4,
+									"endFrame": 6,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 110,
+										"finaly": -39,
+										"speed": 65
+									}
 								}
-							},
-							{
-								"startFrame": 4,
-								"endFrame": 6,
-								"noOfLoops": 0,
-								"movable": {
-									"finalx": 217,
-									"finaly": -62,
-									"speed": 66
-								}
-							}
-						]
-					}]
+							]
+						}
+					]
 				}
 			],
-			"texts": [{
-				"id": 0,
-				"text": "Sam the man slams."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "Sam the man slams."
+				}
+			],
 			"audioFile": "Sam the man slams.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 50,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
@@ -1395,17 +1577,16 @@
 					"audio": "slams.mp3",
 					"end": 1635
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 2,
-				"typeOfLinking": 3
-			}]
-
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 2,
+					"typeOfLinking": 3
+				}
+			]
 		},
 		{
 			"pageNumber": 15,
@@ -1415,7 +1596,8 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
 					"posX": 106,
 					"posY": -39,
@@ -1443,7 +1625,6 @@
 					"draggable": false,
 					"anim": null
 				},
-
 				{
 					"id": 2,
 					"posX": 0,
@@ -1456,14 +1637,19 @@
 					"label": "Cat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
+					"anim": [
+						{
 							"id": 1,
 							"animName": "A16",
 							"numberOfImages": 2,
 							"onTouch": true,
-							"onStart": true,
-							"secPerFrame": [0.5, 0.5],
-							"sequences": [{
+							"onstart": false,
+							"secPerFrame": [
+								0.5,
+								0.5
+							],
+							"sequences": [
+								{
 									"startFrame": 0,
 									"endFrame": 1,
 									"noOfLoops": 1,
@@ -1471,14 +1657,10 @@
 										"speed": 0
 									}
 								}
-
 							]
 						}
-
-
 					]
 				},
-
 				{
 					"id": 3,
 					"posX": -46,
@@ -1491,14 +1673,21 @@
 					"label": "Sleep",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
+					"anim": [
+						{
 							"id": 1,
 							"animName": "A16b",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
-							"secPerFrame": [0.4, 0.4, 0.4, 0.4],
-							"sequences": [{
+							"onstart": false,
+							"secPerFrame": [
+								0.4,
+								0.4,
+								0.4,
+								0.4
+							],
+							"sequences": [
+								{
 									"startFrame": 0,
 									"endFrame": 3,
 									"noOfLoops": 1,
@@ -1506,25 +1695,20 @@
 										"speed": 0
 									}
 								}
-
 							]
 						}
-
-
 					]
 				}
-
-
-
-
 			],
-			"texts": [{
-				"id": 0,
-				"text": "The cat still naps."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat still naps."
+				}
+			],
 			"audioFile": "The cat still naps.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 40,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -1548,19 +1732,17 @@
 					"audio": "naps.mp3",
 					"end": 1650
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 2,
-				"typeOfLinking": 3
-			}]
-
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 2,
+					"typeOfLinking": 3
+				}
+			]
 		},
-
-
 		{
 			"pageNumber": 16,
 			"script": "GSManager",
@@ -1569,9 +1751,10 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
-					"posX": -32,
+					"posX": 0,
 					"posY": -114,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1585,7 +1768,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -46,
+					"posX": 0,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1595,35 +1778,43 @@
 					"label": "fatCat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A17",
-						"numberOfImages": 5,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0, 0.5, 0.5, 0.2, 0],
-						"sequences": [{
-								"startFrame": 0,
-								"endFrame": 4,
-								"noOfLoops": 1,
-								"movable": {
-									"speed": 0
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A17",
+							"numberOfImages": 5,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0,
+								0.5,
+								0.5,
+								0.2,
+								0
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 4,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
 								}
-
-							}
-
-						]
-					}]
+							]
+						}
+					]
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat is fat."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat is fat."
+				}
+			],
 			"audioFile": "The cat is fat.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 45,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -1647,15 +1838,16 @@
 					"audio": "Fat.mp3",
 					"end": 1380
 				}
-
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"typeOfLinking": 3
-			}]
+			"triggers": [
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
 		},
 		{
 			"pageNumber": 17,
@@ -1665,7 +1857,8 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
+			"gameObjects": [
+				{
 					"id": 0,
 					"posX": 8,
 					"posY": -131,
@@ -1681,7 +1874,7 @@
 				},
 				{
 					"id": 1,
-					"posX": 509,
+					"posX": 220,
 					"posY": -57,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1691,46 +1884,54 @@
 					"label": "Cat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 1,
-						"animName": "A18",
-						"numberOfImages": 6,
-						"onTouch": true,
-						"onStart": true,
-						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0.5],
-						"sequences": [{
-								"startFrame": 0,
-								"endFrame": 3,
-								"noOfLoops": 0,
-								"movable": {
-									"finalx": -31,
-									"finaly": -57,
-									"speed": -60
+					"anim": [
+						{
+							"id": 1,
+							"animName": "A18",
+							"numberOfImages": 6,
+							"onTouch": true,
+							"onstart": false,
+							"secPerFrame": [
+								0.4,
+								0.4,
+								0.4,
+								0.4,
+								0.5,
+								0.5
+							],
+							"sequences": [
+								{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": -20,
+										"finaly": -57,
+										"speed": -60
+									}
+								},
+								{
+									"startFrame": 4,
+									"endFrame": 5,
+									"noOfLoops": 3,
+									"movable": {
+										"speed": 0
+									}
 								}
-
-							},
-							{
-								"startFrame": 4,
-								"endFrame": 5,
-								"noOfLoops": 3,
-								"movable": {
-									"speed": 0
-								}
-
-							}
-
-						]
-					}]
+							]
+						}
+					]
 				}
 			],
-
-			"texts": [{
-				"id": 0,
-				"text": "The cat is in a jam."
-
-			}],
+			"texts": [
+				{
+					"id": 0,
+					"text": "The cat is in a jam."
+				}
+			],
 			"audioFile": "The cat is in a jam.mp3",
-			"timestamps": [{
+			"timestamps": [
+				{
 					"start": 45,
 					"wordIdx": 0,
 					"audio": "the.mp3",
@@ -1767,16 +1968,17 @@
 					"end": 1540
 				}
 			],
-			"triggers": [{
+			"triggers": [
+				{
 					"stnzaId": 0,
 					"textId": 5,
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"typeOfLinking": 3
 				}
-
 			]
-		}, {
+		},
+		{
 			"pageNumber": 18,
 			"script": "EndPage",
 			"audio": {

@@ -33,7 +33,7 @@
 						"animName": "A01",
 						"numberOfImages": 4,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0, 0.2, 0.2, 0],
 						"sequences": [{
 								"startFrame": 0,
@@ -60,7 +60,38 @@
 					"label": "mat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": null
+					"anim": 
+                    [
+						{
+							"id": 1,
+							"animName": "A11a",
+							"numberOfImages": 3,
+                            "onTouch":true,
+							 "onstart":false,
+							"secPerFrame":[0.3,0.3,0.3],
+							"sequences":
+							[
+								{ "startFrame":0,
+									"endFrame":1,
+									"noOfLoops":3,
+									"movable": 
+									{  
+										"speed":0
+									    
+									}	
+								},
+								{ "startFrame":2,
+									"endFrame":2,
+									"noOfLoops":1,
+									"movable": 
+									{  
+										"speed":0
+									    
+									}	
+								}
+                            ]    
+						}   
+				    ]
 				}
 			],
 
@@ -157,7 +188,7 @@
 					"animName": "A02",
 					"numberOfImages": 6,
 					"onTouch": true,
-					"onStart": true,
+					"onstart":false,
 					"secPerFrame": [0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
 					"sequences": [{
 							"startFrame": 0,
@@ -225,7 +256,7 @@
 			"gameObjects": [{
 					"id": 0,
 					"posX": 25,
-					"posY": -65,
+					"posY": -80,
 					"scaleX": 30,
 					"scaleY": 30,
 					"imageName": "A03b-1",
@@ -239,7 +270,7 @@
 						"animName": "A03b",
 						"numberOfImages": 5,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.5, 0.5, 0.1, 0.1, 0.1],
 						"sequences": [{
 								"startFrame": 0,
@@ -255,9 +286,9 @@
 								"endFrame": 4,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": 494,
-									"finaly": -65,
-									"speed": 75
+									"finalx": 214,
+									"finaly": -80,
+									"speed": 63
 								}
 							}
 						]
@@ -265,8 +296,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -424,
-					"posY": -65,
+					"posX": -216,
+					"posY": -54,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A03-01",
@@ -280,16 +311,16 @@
 						"animName": "A03",
 						"numberOfImages": 9,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0],
 						"sequences": [{
 							"startFrame": 0,
-							"endFrame": 7,
+							"endFrame": 8,
 							"noOfLoops": 0,
 							"movable": {
-								"finalx": 0,
-								"finaly": -65,
-								"speed": 25
+								"finalx":-36,
+								"finaly":-54,
+								"speed": 15
 
 							}
 						}]
@@ -388,7 +419,7 @@
 					"animName": "A04",
 					"numberOfImages": 4,
 					"onTouch": true,
-					"onStart": true,
+					"onstart":false,
 					"secPerFrame": [0, 0.2, 0.2, 0],
 					"sequences": [{
 						"startFrame": 0,
@@ -477,7 +508,7 @@
 					"animName": "A05",
 					"numberOfImages": 4,
 					"onTouch": true,
-					"onStart": true,
+					"onstart":false,
 					"secPerFrame": [0, 0.2, 0.2, 0.2],
 					"sequences": [{
 							"startFrame": 0,
@@ -591,8 +622,8 @@
 					"animName": "A06",
 					"numberOfImages": 4,
 					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
+					"onstart":false,
+					"secPerFrame": [0.5, 0.2, 0.2, 0],
 					"sequences": [{
 						"startFrame": 0,
 						"endFrame": 3,
@@ -673,7 +704,7 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 500,
+					"posX": 240,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -688,14 +719,14 @@
 							"animName": "A07",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onStart": true,
+							"onstart":false,
 							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4],
 							"sequences": [{
 									"startFrame": 0,
 									"endFrame": 2,
 									"noOfLoops": 0,
 									"movable": {
-										"finalx": 50,
+										"finalx": 40,
 										"finaly": -65,
 										"speed": -50
 									}
@@ -723,8 +754,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -28,
-					"posY": -120,
+					"posX": -34.2,
+					"posY": -122.9,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A07-8",
@@ -827,8 +858,8 @@
 					"animName": "A08",
 					"numberOfImages": 4,
 					"onTouch": true,
-					"onStart": true,
-					"secPerFrame": [0, 0.2, 0.2, 0],
+					"onstart":false,
+					"secPerFrame": [0,0.2,0.2,0],
 					"sequences": [{
 						"startFrame": 0,
 						"endFrame": 3,
@@ -899,8 +930,8 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 502,
-					"posY": -65,
+					"posX": 220,
+					"posY": -64.4,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-1",
@@ -914,16 +945,16 @@
 							"animName": "A09",
 							"numberOfImages": 8,
 							"onTouch": true,
-							"onStart": true,
-							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.5, 0.3, 0.3],
+							"onstart":false,
+							"secPerFrame": [0.2,0.2,0.2,0.2,1.0,0.5,0.3,0.3],
 							"sequences": [{
 									"startFrame": 0,
 									"endFrame": 3,
 									"noOfLoops": 0,
 									"movable": {
-										"finalx": 102,
-										"finaly": -100,
-										"speed": -50
+										"finalx": 82,
+										"finaly": -64.4,
+										"speed": -46
 									}
 								},
 								{
@@ -949,7 +980,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -2,
+					"posX": -23,
 					"posY": -108,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -1043,7 +1074,7 @@
 
 				{
 					"id": 0,
-					"posX": 495,
+					"posX": 210,
 					"posY": -65,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -1058,14 +1089,14 @@
 						"animName": "A10",
 						"numberOfImages": 6,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0],
 						"sequences": [{
 							"startFrame": 0,
 							"endFrame": 5,
 							"noOfLoops": 0,
 							"movable": {
-								"finalx": -15,
+								"finalx": -30,
 								"finaly": -65,
 								"speed": -60
 
@@ -1167,7 +1198,7 @@
 						"animName": "A11a",
 						"numberOfImages": 3,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.3, 0.3],
 						"sequences": [{
 							"startFrame": 0,
@@ -1177,6 +1208,14 @@
 								"speed": 0
 
 							}
+						},
+						{ "startFrame":2,
+						  "endFrame":2,
+						  "noOfLoops":1,
+						  "movable": 
+							{  
+							   "speed":0
+							}	
 						}]
 					}]
 				}
@@ -1276,7 +1315,7 @@
 						"animName": "A12",
 						"numberOfImages": 5,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0, 0.2, 0.2, 0.5, 0.5],
 						"sequences": [{
 								"startFrame": 0,
@@ -1380,7 +1419,7 @@
 						"animName": "A13",
 						"numberOfImages": 4,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0, 0.2, 0.2, 0],
 						"sequences": [{
 							"startFrame": 0,
@@ -1454,7 +1493,7 @@
 
 				{
 					"id": 0,
-					"posX": -277,
+					"posX": -230,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1469,14 +1508,14 @@
 						"animName": "A14",
 						"numberOfImages": 4,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.1, 0.1, 0.1, 0.1],
 						"sequences": [{
 							"startFrame": 0,
 							"endFrame": 3,
 							"noOfLoops": 0,
 							"movable": {
-								"finalx": -27,
+								"finalx": -30,
 								"finaly": -65,
 								"speed": 25
 							}
@@ -1553,8 +1592,8 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 133,
-					"posY": -144,
+					"posX": 0,
+					"posY": -114,
 					"scaleX": 30,
 					"scaleY": 30,
 					"imageName": "A15b-3",
@@ -1567,10 +1606,10 @@
 				},
 				{
 					"id": 1,
-					"posX": 135,
-					"posY": -115,
-					"scaleX": 30,
-					"scaleY": 30,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
 					"imageName": "A15b-1",
 					"orderInLayer": 3,
 					"inText": true,
@@ -1582,7 +1621,7 @@
 						"animName": "A15b",
 						"numberOfImages": 2,
 						"onTouch": false,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.5, 0.5],
 						"sequences": [{
 							"startFrame": 0,
@@ -1597,7 +1636,7 @@
 				{
 					"id": 2,
 					"posX": -220,
-					"posY": -62,
+					"posY": -39,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A15-1",
@@ -1611,16 +1650,16 @@
 						"animName": "A15",
 						"numberOfImages": 7,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
 						"sequences": [{
 								"startFrame": 0,
 								"endFrame": 3,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": 85,
-									"finaly": -62,
-									"speed": 61
+									"finalx":-85,
+									"finaly": -39,
+									"speed": 45
 								}
 							},
 							{
@@ -1628,9 +1667,9 @@
 								"endFrame": 6,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": 217,
-									"finaly": -62,
-									"speed": 66
+									"finalx": 110,
+									"finaly": -39,
+									"speed": 65
 								}
 							}
 						]
@@ -1757,7 +1796,7 @@
 							"animName": "A16",
 							"numberOfImages": 2,
 							"onTouch": true,
-							"onStart": true,
+							"onstart":false,
 							"secPerFrame": [0.5, 0.5],
 							"sequences": [{
 									"startFrame": 0,
@@ -1792,7 +1831,7 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onstart":false,
 							"secPerFrame": [0.4, 0.4, 0.4, 0.4],
 							"sequences": [{
 									"startFrame": 0,
@@ -1872,7 +1911,7 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": -32,
+					"posX": 0,
 					"posY": -114,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1886,7 +1925,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -46,
+					"posX": 0,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1901,7 +1940,7 @@
 						"animName": "A17",
 						"numberOfImages": 5,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0, 0.5, 0.5, 0.2, 0],
 						"sequences": [{
 								"startFrame": 0,
@@ -2000,7 +2039,7 @@
 				},
 				{
 					"id": 1,
-					"posX": 509,
+					"posX": 220,
 					"posY": -57,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -2015,14 +2054,14 @@
 						"animName": "A18",
 						"numberOfImages": 6,
 						"onTouch": true,
-						"onStart": true,
+						"onstart":false,
 						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0.5],
 						"sequences": [{
 								"startFrame": 0,
 								"endFrame": 3,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": -31,
+									"finalx": -20,
 									"finaly": -57,
 									"speed": -60
 								}
@@ -2031,7 +2070,7 @@
 							{
 								"startFrame": 4,
 								"endFrame": 5,
-								"noOfLoops": 1,
+								"noOfLoops": 3,
 								"movable": {
 									"speed": 0
 								}
