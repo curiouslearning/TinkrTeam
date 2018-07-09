@@ -68,7 +68,7 @@
 							"animName": "A11a",
 							"numberOfImages": 3,
                             "onTouch":true,
-							 "onStart": true,
+							 "onStart": false,
 							"secPerFrame":[0.3,0.3,0.3],
 							"sequences":
 							[
