@@ -29,21 +29,25 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public Button Right;
     public static bool rotation = false;
 
-    //asset bundle
 
     // assetbundle variable that will contain bundle loaded from assetbundle
     public static AssetBundle bundleLoaded;
-    
+
     //for data collection
     private System.DateTime inTime;
+    //location of hosted json file in amazon s3 bucket
     private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
+
     private string responseJson;
     private bool isServerJson = false;
     public static string selectedBook;
 
     //for readAloud button
-    public GameObject read;
-    public GameObject mute;
+    public GameObject readMuteToggleButton;
+    Image read_mute;
+    public Sprite read;
+    public Sprite mute;
+
     public static bool autoNarrate = true;
 
 
@@ -59,20 +63,36 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         localManifestFileName = "Manifests/manifest";  //set to passed file name
         inTime = System.DateTime.Now;
     }
+
     void Start()
     {
-        if (autoNarrate)
+        if (readMuteToggleButton != null)
         {
+            read_mute = readMuteToggleButton.GetComponent<Image>();
 
-            read.SetActive(true);
-        }
-        else
-        {
-            read.SetActive(false);
-            mute.SetActive(true);
+            if (autoNarrate)
+            {
+                SetImage(read);
+            }
+            else
+            {
+                SetImage(mute);
+
+            }
         }
     }
 
+    public void SetImage(Sprite sp) //method to set our first image
+    {
+        read_mute.sprite = sp;
+    }
+
+
+    /// <summary>
+    /// download file from server with timeout of 1.0sec
+    /// </summary>
+    /// <param name="request">WWW req</param>
+    /// <returns> IEnumerator</returns>
     IEnumerator DownloadFileWithTimeout(WWW request)
     {
         float timer = 0;
@@ -93,7 +113,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             isServerJson = false;
             Debug.Log("timeout");
 
+            //loading assetbundle on shelf scene.
             StartCoroutine(LoadAssetBundle("catstory"));
+
             //load shelf data with local json
             LoadShelfData();
             LoadInitialCenterBook();
@@ -112,21 +134,45 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         //yield break;
     }
 
-
+    /// <summary>
+    /// loads initial center book on shelf 
+    /// </summary>
     private void LoadInitialCenterBook()
     {
-        selectedBook = bookInfos[2].book.fileName;
-        bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
-        //loading inital center book on first time loading of shelf
-        LoadImageandText(bookInfos[2]);
-    }
-    //when asset bundle will be on server
+
+        foreach (BookObject bo in bookInfos) {
+            if (bo.position == 2) {
+                selectedBook = bo.book.fileName;
+                bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
+                LoadImageandText(bo);
+
+            }
+        }
+
+        //if (bookInfos[2] != null)
+        //{
+        //    selectedBook = bookInfos[2].book.fileName;
+        //    bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
+        //    //loading inital center book on first time loading of shelf
+        //    LoadImageandText(bookInfos[2]);
+        //}
+
+
+        }
+
+    /// <summary>
+    /// download asset bundle from server
+    /// </summary>
     public void DownloadAssetBundle()
     {
 
 
     }
-
+    /// <summary>
+    /// coroutine to load asset bundle of selected book 
+    /// </summary>
+    /// <param name="selectedBook">bookname</param>
+    /// <returns></returns>
     IEnumerator LoadAssetBundle(string selectedBook)
     {
         if (!bundleLoaded)
@@ -172,6 +218,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     }
 
 
+
+    /// <summary>
+    /// rotate books anticlockwise by 30deg.
+    /// </summary>
     public void left()
     {
         FirebaseHelper.LogInShelfTouch("Button_Left Arrow", System.DateTime.Now.ToString());
@@ -186,6 +236,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         Left.interactable = false;
 
     }
+    /// <summary>
+    /// rotate books clockwise by 30deg.
+    /// </summary>
 
     public void right()
     {
@@ -201,6 +254,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         Right.interactable = false;
 
     }
+    /// <summary>
+    /// rotate books clockwise by 60deg.
+    /// </summary>
+
     public void right60()
     {
         count = 0;
@@ -214,6 +271,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
 
     }
+
+    /// <summary>
+    /// rotate books anticlockwise by 60deg.
+    /// </summary>
     public void left60()
     {
         count = 0;
@@ -226,24 +287,24 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         arrowright60 = false;
 
     }
-
+    /// <summary>
+    /// uses IPointerClickHandler interface to detect touches without colliders
+    /// </summary>
     public void OnPointerClick(PointerEventData eventData)
     {
         GameObject go = eventData.pointerCurrentRaycast.gameObject;
-        Debug.Log(go);
+        
         DateTime time = DateTime.Now;
-        if (go.name == "read")
+        if (go.GetComponent<Image>().sprite == read)
         {
             FirebaseHelper.LogInAppTouch("Button_ReadOn", time.ToString());
-            mute.SetActive(true);
-            read.SetActive(false);
+            SetImage(mute);
             autoNarrate = false;
         }
-        else if (go.name == "mute")
+        else if (go.GetComponent<Image>().sprite == mute)
         {
             FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-            read.SetActive(true);
-            mute.SetActive(false);
+            SetImage(read);
             autoNarrate = true;
         }
 
@@ -284,7 +345,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             LoadCentreBook();
         }
     }
-
+    /// <summary>
+    /// loads center book asynchronusly
+    /// </summary>
     public void LoadCentreBook()
     {
         System.TimeSpan span = System.DateTime.Now - inTime;
@@ -292,6 +355,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         //SceneManager.LoadScene("Books/Decodable/CatTale/Common/Scenes/Scene01");
         StartCoroutine(LoadYourAsyncScene());
     }
+
+    /// <summary>
+    /// coroutine to load scene async way
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LoadYourAsyncScene()
     {
         // The Application loads the Scene in the background as the current Scene runs.
@@ -305,6 +373,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             yield return null;
         }
     }
+
+    /// <summary>
+    /// loads shelf data from manifest file
+    /// </summary>
     private void LoadShelfData()
     {
         TextAsset file = Resources.Load(localManifestFileName) as TextAsset;
@@ -317,12 +389,12 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             {
                 if (responseJson.Equals(dataAsJson))
                 {
-                    Debug.Log("server manifest same as local manifest");
+                    //Debug.Log("server manifest same as local manifest");
                 }
                 else
                 {
                     //use server manifest
-                    Debug.Log("using server json");
+                    //Debug.Log("using server json");
                     dataAsJson = responseJson;
 
                     // overwrite local manifest with server manifest
@@ -330,7 +402,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
                     string path = Application.dataPath + "/Resources/Manifests/manifest.json";
                     System.IO.File.WriteAllText(path, dataAsJson);
 
-                    Debug.Log("Write complete  " + dataAsJson);
+                    //Debug.Log("Write complete  " + dataAsJson);
                 }
             }
 
@@ -338,15 +410,19 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             //gets array of json string objects
             allBookJsons = JsonHelper.GetJsonObjectArray(dataAsJson, "books");
             j = allBookJsons.Length - 1;
+            
             foreach (string jsonObj in allBookJsons)
             {
-                if (i < 5)
+                if (i >=0 &&i<5)
                 {
                     bookInfos.Add(new BookObject());
-                    bookInfos[i].book = JsonUtility.FromJson<Book>(jsonObj);  //add string object as JSONObject to array of books
+                    if (bookInfos[i] != null)
+                    {
+                        bookInfos[i].book = JsonUtility.FromJson<Book>(jsonObj);  //add string object as JSONObject to array of books
 
-                    bookInfos[i].SetCoverThumbnail();
-                    i++;
+                        bookInfos[i].SetCoverThumbnail();
+                        i++;
+                    }
                 }
 
                 if (i == 5)
@@ -363,9 +439,15 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         }
 
     }
+    /// <summary>
+    /// Loads new book on clicking left arrow 
+    /// </summary>
+    /// <param name="entry">Gameobject: entry collider</param>
+    /// <param name="leaving">Gameobject: leaving collider</param>
 
     public void LoadBookLeftArrow(GameObject entry, GameObject leaving)
     {
+        
         entry.GetComponent<BookObject>().book = JsonUtility.FromJson<Book>(allBookJsons[i]);
         entry.GetComponent<BookObject>().SetCoverThumbnail();
         leaving.GetComponent<BookObject>().RemoveThumbnail();
@@ -382,6 +464,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         }
 
     }
+    /// <summary>
+    /// Loads new book on clicking right arrow 
+    /// </summary>
+    /// <param name="entry">Gameobject: entry collider</param>
+    /// <param name="leaving">Gameobject: leaving collider</param>
     public void LoadBookRightArrow(GameObject entry, GameObject leaving)
     {
 
@@ -400,7 +487,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             i = allBookJsons.Length - 1;
         }
     }
-
+    /// <summary>
+    /// load image and text of book in center of shelf.
+    /// </summary>
+    /// <param name="bo">BookObject</param>
     public void LoadImageandText(BookObject bo)
     {
         // change center text with title

@@ -106,7 +106,6 @@ public class GGameManager : MonoBehaviour
 		SceneManager.sceneLoaded += OnSceneLoaded;
 		if (instance == null)
 		{
-			Debug.Log("enable");
 			instance = this;
 		}
 		else if (instance != this)
