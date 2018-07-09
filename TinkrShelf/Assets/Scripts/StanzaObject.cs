@@ -9,7 +9,7 @@ public class StanzaObject : MonoBehaviour {
 	public TextClass stanzaValue;
 	public List<GTinkerText> tinkerTexts;// The minimum spacing between words
 	public GStanzaManager stanzaManager;
-	public bool stanzaNarrate;
+	//public bool stanzaNarrate;
 
 	// Time delay at end of stanza during autoplay
 	public float endDelay;
@@ -26,8 +26,8 @@ public class StanzaObject : MonoBehaviour {
 	/// zoomin and zoomout of texts with delays acoordinf to the start and end time of texts 
 	/// </summary>
 	/// <param name="startingTinkerText">Starting tinker text.</param>
-	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null)
-	{   stanzaNarrate = true;
+	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null) { 
+	//{   stanzaNarrate = true;
 		int startingTinkerTextIndex = 0;
 
 		if (startingTinkerText != null)
@@ -42,15 +42,15 @@ public class StanzaObject : MonoBehaviour {
             GTinkerText t = null;
             if (tinkerTexts[i]!=null)
              t = tinkerTexts[i];
-			GTinkerGraphic link = t.GetComponent<GTinkerText> ().pairedGraphic;
+			//GTinkerGraphic link = t.GetComponent<GTinkerText> ().pairedGraphic;
 			//if paired graphic is present
-			if (link != null) {
-				GSManager scenescript = stanzaManager.sceneManager;
+			//if (link != null) {
+				//GSManager scenescript = stanzaManager.sceneManager;
 				//call its respective scene onmousedown
-				scenescript.OnMouseDown(t.gameObject);
-				scenescript.OnMouseUp (t.gameObject);
+				//scenescript.OnMouseDown(t.gameObject);
+				//scenescript.OnMouseUp (t.gameObject);
 
-			}
+			//}
 
    
 			Animator anim = t.GetComponent<Animator>();
@@ -60,7 +60,7 @@ public class StanzaObject : MonoBehaviour {
 
 			// If we aren't on last word, delay before playing next word
 			if (i < tinkerTexts.Count - 1)
-			{   Debug.Log ("entered first word");
+			{  
 				// delay according to timing data
 				float pauseDelay = tinkerTexts[i + 1].GetStartTime() - tinkerTexts[i].GetEndTime();
                 if(anim!=null)
@@ -80,7 +80,7 @@ public class StanzaObject : MonoBehaviour {
 				}
 			}
 			else // Delay before next stanza
-			{   Debug.Log("entered else last word");
+			{   
                 if(anim!=null)
 				anim.Play("textzoomout");
 				yield return new WaitForSeconds(t.playTime / 2);
@@ -100,12 +100,12 @@ public class StanzaObject : MonoBehaviour {
 
 			// Abort early?
 			if (stanzaManager.CancelAutoPlay())
-			{   Debug.Log("break");
+			{   
 				yield break;
 			}
 
 		}
-		stanzaNarrate=false;
+		//stanzaNarrate=false;
 
 		// Stop the coroutine
 		yield break;
@@ -117,10 +117,10 @@ public class StanzaObject : MonoBehaviour {
 /// <param name="tinkerText">tinkertext that is pressed</param>
 /// <param name="suppressAnim">bool to check whether animation is to be suppressed</param>
     public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
-	{   Debug.Log ("yes");
+	{   
 		// if we aren't already mouse down on this text
 		if (mouseDownTinkerText !=null && mouseDownTinkerText != tinkerText)
-		{ Debug.Log ("???");
+		{ 
 			// Then reset the old one
 			mouseDownTinkerText.Reset();
 		}
@@ -148,7 +148,7 @@ public class StanzaObject : MonoBehaviour {
 		mouseDownTinkerText = tinkerText;
 
 		// And trigger the tinkerText only if stanza narrate is false 
-		if(stanzaNarrate==false)
+		//if(stanzaNarrate==false)
 		tinkerText.OnPairedMouseDown();
 	}
     /// <summary>
@@ -255,7 +255,7 @@ public class StanzaObject : MonoBehaviour {
     /// </summary>
     /// <param name="tinkerText"></param>
 	public void OnMouseUp(GTinkerText tinkerText)
-	{   Debug.Log ("stanza onmouse up");
+	{   
 		// Assign this new one
 		mouseDownTinkerText = tinkerText;
 		// And signal the tinkerText 

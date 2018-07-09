@@ -142,8 +142,6 @@ public class GTinkerText : MonoBehaviour {
     /// <param name="suppressAnim"></param>
 	public void MyMouseDown(bool suppressAnim = false)
 	{   Debug.Log ("real");
-		if (stanza.stanzaNarrate == false) {
-			Debug.Log ("gtink text entered");
 			System.DateTime time = System.DateTime.Now;
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
@@ -151,7 +149,6 @@ public class GTinkerText : MonoBehaviour {
 			FirebaseHelper.LogInAppTouch (("Text_" + gameObject.GetComponent<Text> ().text), time.ToString ());
 
 			if (!stanza.stanzaManager.sceneManager.disableSounds) {
-				Debug.Log ("sound");
 				PlaySound ();
 			}
 			clipPlay ();
@@ -160,7 +157,7 @@ public class GTinkerText : MonoBehaviour {
 			if (!suppressAnim) {
 				graphicPlay ();
 			}
-		}
+		
 
 			// Is there a TinkerGraphic paired with this TinkerText?
 			if (pairedGraphic) {
