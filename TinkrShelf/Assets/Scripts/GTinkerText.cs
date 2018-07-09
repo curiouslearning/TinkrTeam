@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 //20.3,-18.8 (yellow), 0,-17.4 (white),blue (22.9,-0.4)
 public class GTinkerText : MonoBehaviour {
     //private static bool check=false;
-    public GTinkerGraphic pairedGraphic;
+    public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
 	public GTinkerText pairedText1;
 	public StanzaObject stanza;
     private float startTime;//timings corresponding the timings of stanza auto narrate audio 
@@ -157,17 +157,24 @@ public class GTinkerText : MonoBehaviour {
 			if (!suppressAnim) {
 				graphicPlay ();
 			}
-		
+        CheckPairedGraphic();
 
-			// Is there a TinkerGraphic paired with this TinkerText?
-			if (pairedGraphic) {
-				// Then send the event along!
-				
-				pairedGraphic.OnPairedMouseDown (this);
-			
-			}
-		
+        // Is there a TinkerGraphic paired with this TinkerText?
+        
 	}
+    public void CheckPairedGraphic()
+    {
+        for (int i = 0; i < pairedGraphics.Count; i++)
+        {
+            if (pairedGraphics[i])
+            {
+                // Then send the event along!
+
+                pairedGraphics[i].OnPairedMouseDown(this);
+
+            }
+        }
+    }
 
 	// Paired Mouse Down Event
     /// <summary>

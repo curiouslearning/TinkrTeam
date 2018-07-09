@@ -37,7 +37,7 @@
 							"animName": "A01",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0,0.2,0.2,0],
 							"sequences": [
 								{
@@ -105,7 +105,7 @@
 							"animName": "A02",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0.2,0.2,0.2,0.2,0.2,0.2],
 							"sequences": [
 								{
@@ -179,7 +179,7 @@
 							"animName": "A03b",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0.5,0.5,0.1,0.1,0.1],
 							"sequences": [
 								{
@@ -222,7 +222,7 @@
 							"animName": "A03",
 							"numberOfImages": 9,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0],
 							"sequences": [
 								{
@@ -262,6 +262,13 @@
 				}
 			],
 			"triggers": [
+			    {
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				},
 				{
 					"stnzaId": 0,
 					"textId": 1,
@@ -269,6 +276,7 @@
 					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
+
 			]
 		},
 		{
@@ -298,7 +306,7 @@
 							"animName": "A04",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0,0.2,0.2,0],
 							"sequences": [
 								{
@@ -372,7 +380,7 @@
 							"animName": "A05",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -459,7 +467,7 @@
 							"animName": "A06",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.5,
 								0.2,
@@ -538,7 +546,7 @@
 							"animName": "A07",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.2,
 								0.2,
@@ -652,7 +660,7 @@
 							"animName": "A08",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -731,7 +739,7 @@
 							"animName": "A09",
 							"numberOfImages": 8,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.2,
 								0.2,
@@ -846,7 +854,7 @@
 							"animName": "A10",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.4,
 								0.4,
@@ -937,7 +945,7 @@
 							"animName": "A11a",
 							"numberOfImages": 3,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.3,
 								0.3,
@@ -1037,7 +1045,7 @@
 							"animName": "A12",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -1125,7 +1133,7 @@
 							"animName": "A13",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -1204,7 +1212,7 @@
 							"animName": "A14",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.1,
 								0.1,
@@ -1299,7 +1307,7 @@
 							"animName": "A15b",
 							"numberOfImages": 2,
 							"onTouch": false,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.5,
 								0.5
@@ -1335,7 +1343,7 @@
 							"animName": "A15",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [0.1,0.1,0.1,0.1,0.1,0.5,0],
 							"sequences": [
 								{
@@ -1449,7 +1457,7 @@
 							"animName": "A16",
 							"numberOfImages": 2,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.5,
 								0.5
@@ -1485,7 +1493,7 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.4,
 								0.4,
@@ -1578,7 +1586,7 @@
 							"animName": "A17",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0,
 								0.4,
@@ -1672,7 +1680,7 @@
 							"animName": "A18",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onStart": true,
+							"onStart": false,
 							"secPerFrame": [
 								0.4,
 								0.4,
@@ -1731,7 +1739,7 @@
 					"stnzaId": 0,
 					"textId": 1,
 					"timestamp": null,
-					"sceneObjectId": 0,
+					"sceneObjectId": 1,
 					"typeOfLinking": 3
 				}
 			]
