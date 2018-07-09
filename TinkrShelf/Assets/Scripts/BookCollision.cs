@@ -11,30 +11,28 @@
 	    public string bookName="";
 	    public static GameObject bookenter = null;
 	    public static GameObject bookexit = null;
+        private BookObject bo;
 
-	    public static int count = 0;
+        public static int count = 0;
 	 
 	    void OnTriggerEnter(Collider collider)
 	    {
 
-
-	        if (collider.gameObject.name == "Entry")
-	        {
-	           
+        if (collider.gameObject.name == "Entry")
+	        {      
 	            bookenter = this.gameObject;
 	            count++;
-
 	        }
 	        else if (collider.gameObject.name == "Exit")
 	        {
 	            
 	            bookexit = this.gameObject;
 	            count++;
-	            
-
+	        
 	        }
 	        else if (collider.gameObject.name == "one")
 	        {
+            
 	            this.gameObject.GetComponent<BookObject>().position = 1;
 	            
 	        }
@@ -45,7 +43,7 @@
 	        }
 	        else if (collider.gameObject.name == "three")
 	        {
-	            this.gameObject.GetComponent<BookObject>().position = 3;
+            this.gameObject.GetComponent<BookObject>().position = 3;
 				this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (12, 12, 0);
 				LoadImageandText (this.gameObject.GetComponent<BookObject> ());
 				var bookVar = this.gameObject.GetComponent<BookObject> ();
