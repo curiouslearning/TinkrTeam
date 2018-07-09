@@ -10,7 +10,6 @@ using System;
 /// Script to load the scene based on JSON describing the book.
 /// </summary>
 public class LoadAssetFromJSON : MonoBehaviour {
-    static AssetBundle bundleloaded; // assetbundle variable that will contain bundle loaded from assetbundle
     private string[] allPagesJsons; //
     public static StoryBookJson storyBookJson;
     public static int pageNumber;
@@ -23,9 +22,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
     private string page;
     public GameObject right;
     public GameObject left;
-    //public GameObject endPageHome;
-    //public GameObject endPageReadAgain;
-	//public GameObject dropdown;
     //static float previousTextWidth;
     public static string sceneScript;
     Font font;
@@ -52,11 +48,11 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
         canvasTransform = this.transform;  //if this script is attached to canvas; otherwise update this line to store canvas transform.
 
-        if (!bundleloaded)
+        if (!ShelfManager.bundleLoaded)
         {
 
-            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
-            if (bundleloaded == null)
+            ShelfManager.bundleLoaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/catstory"));  //ShelfManager.selectedBook.ToLower())
+            if (ShelfManager.bundleLoaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
 
@@ -87,7 +83,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
    string fileName = ShelfManager.selectedBook.ToLower() + ".json"; 
        
             pageNumber = 0;
-            TextAsset charDataFile = bundleloaded.LoadAsset(fileName) as TextAsset;// load the book specific json file 
+            TextAsset charDataFile = ShelfManager.bundleLoaded.LoadAsset(fileName) as TextAsset;// load the book specific json file 
         if (charDataFile !=null)
         {
             string json = charDataFile.ToString();
@@ -100,9 +96,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
             FirebaseHelper.AddBook(storyBookJson.id);
             left.SetActive(false);
             right.SetActive(true);
-            //dropdown.SetActive(true);
-            //endPageHome.SetActive(false);
-            //endPageReadAgain.SetActive(false);
             LoadCompletePage();
 
         }
@@ -132,9 +125,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
         if (pageNumber == (noOfPages - 1)) {
             right.SetActive(false);
-            //endPageHome.SetActive(true);
-            //endPageReadAgain.SetActive(true);
-			//dropdown.SetActive (false);
 
         }
 
@@ -167,10 +157,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
         }
         else if (pageNumber == (noOfPages-2))
         {
-            //dropdown.SetActive(true);
             right.SetActive(true);
-            //endPageHome.SetActive(false);
-            //endPageReadAgain.SetActive(false);
         }
         EmptyPage();
         LoadCompletePage();
@@ -277,7 +264,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="name">Name of the audio.</param>
     public AudioClip LoadAudioAsset(string name)
     {if (name != "")
-            return bundleloaded.LoadAsset<AudioClip>(name);
+            return ShelfManager.bundleLoaded.LoadAsset<AudioClip>(name);
         else
             return null; 
     }
@@ -519,7 +506,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
     public void LoadAssetFromBundle(string name)
     {
       
-       var prefab = bundleloaded.LoadAsset<GameObject>(name);
+       var prefab = ShelfManager.bundleLoaded.LoadAsset<GameObject>(name);
         Instantiate(prefab);     
     }
 
@@ -530,7 +517,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="sr">Sprite Renderer.</param>
     public void LoadAssetImage(string name,SpriteRenderer sr)
     {
-        var sprite = bundleloaded.LoadAsset<Sprite>(name);
+        var sprite = ShelfManager.bundleLoaded.LoadAsset<Sprite>(name);
         sr.sprite = sprite;
     }
 
@@ -546,7 +533,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		tinkerGraphic.sprites= new Sprite[length];
 		for (int i = 0; i < length; i++)
 		{
-			var sprite = bundleloaded.LoadAsset<Sprite>(startName+"-"+(i+1));
+			var sprite = ShelfManager.bundleLoaded.LoadAsset<Sprite>(startName+"-"+(i+1));
 			tinkerGraphic.sprites[i] = sprite;
 
 		}     
@@ -555,10 +542,10 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
     public void LoadScene()
     {
-        if (!bundleloaded)
+        if (!ShelfManager.bundleLoaded)
         {
-            bundleloaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/books"));
-            if (bundleloaded == null)
+            ShelfManager.bundleLoaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, "AssetBundles/books"));
+            if (ShelfManager.bundleLoaded == null)
             {
                 Debug.Log("Failed to load AssetBundle!");
                 return;
@@ -567,7 +554,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
         else
         {
 
-            string[] scenes = bundleloaded.GetAllScenePaths();
+            string[] scenes = ShelfManager.bundleLoaded.GetAllScenePaths();
             //SceneManager.LoadScene(scenes[0]);
 
             StartCoroutine(LoadYourAsyncScene(scenes));

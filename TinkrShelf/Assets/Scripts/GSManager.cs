@@ -64,6 +64,7 @@ public class GSManager :  MonoBehaviour {
 				stanzaManager.LoadStanzaJSON();
 			}
 		}
+        if(ShelfManager.autoNarrate == true)
 		StartCoroutine ("PlayStanzaAudio");
 	}
 
@@ -104,7 +105,7 @@ public class GSManager :  MonoBehaviour {
 	/// This function can be overriden by specific scene manager.
 	/// </summary>
 	public virtual void OnMouseDown(GameObject go)
-	{       Debug.Log ("base mouse down ent");
+	{       
             // Lock out other input during auto play?
             if (IsInputAllowed())
             {

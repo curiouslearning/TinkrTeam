@@ -34,8 +34,6 @@ public class GGameManager : MonoBehaviour
 	public Button upArrow; 
 	public Button home;
 	public Button read;
-	public GameObject dropContainer;
-	public GameObject menuContainer;
 	public int i = 1;
 	public static int j = 1; 
 
@@ -52,27 +50,7 @@ public class GGameManager : MonoBehaviour
 
 	public void Start()
 	{
-		dropContainer.SetActive(true);
-		menuContainer.SetActive(false);
-		if (gameObject != null)
-		  sounds = gameObject.GetComponents<AudioSource>();
-
-		isOpen = false;
-		//Change to narrateon sprite
-		if (j == 1)
-		{
-			if (read != null)
-				read.image.sprite = narrateOn;
-
-
-		}
-		//Change to narrateoff sprite
-		if (j == 0)
-		{
-			if (read != null)
-				read.image.sprite = narrateOff;
-
-		}
+		
 			
 	}
 		
@@ -158,38 +136,6 @@ public class GGameManager : MonoBehaviour
 		sceneManager.Start(); 
 	}
 		
-	public void DownClick()
-	{   
-		DateTime time = DateTime.Now;
-
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData ("Button_DownMenu"", time.ToString());
-
-		FirebaseHelper.LogInAppTouch("Button_DownMenu",time.ToString());
-		dropContainer.SetActive (false);
-		menuContainer.SetActive (true);
-        upArrow.image.sprite = up;
-        if (i == 1) {
-			isOpen = true;
-			
-			i = 0;
-		}
-		else{
-			isOpen = false;
-			i = 1;
-		}
-	}
-
-
-	public void UpArrowClick()
-	{ 
-		DateTime time = DateTime.Now;
-		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-		//DataCollection.AddInTouchData ("Button_UpMenu", time.ToString());
-		FirebaseHelper.LogInAppTouch("Button_UpMenu", time.ToString());
-		menuContainer.SetActive (false);
-		dropContainer.SetActive(true);
-	}
 
 	public void MenuClick()
 	{
@@ -204,35 +150,12 @@ public class GGameManager : MonoBehaviour
 	public void AutoNarrate()
 	{
 		DateTime time = DateTime.Now;
-		if (j == 1) {
-			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-			//DataCollection.AddInTouchData ("Button_ReadOn", time.ToString());
-			FirebaseHelper.LogInAppTouch("Button_ReadOn", time.ToString());
+        if (ShelfManager.autoNarrate)
+            stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
 
-			read.image.sprite = narrateOff;
-			j = 0;
-			stanzaManager.RequestCancelAutoPlay();
-			StartCoroutine (SetMenuContainer ());
-		}
-		else
-		{  
-			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
-			//DataCollection.AddInTouchData ("Button_ReadOff",  time.ToString());
-			FirebaseHelper.LogInAppTouch("Button_ReadOff", time.ToString());
-			read.image.sprite=narrateOn;
-			j = 1;
-			stanzaManager.RequestAutoPlay(stanzaManager.stanzas[0], stanzaManager.stanzas[0].tinkerTexts[0]);
-			StartCoroutine (SetMenuContainer ());
-		}
-	}     
+    }
 
 
-	public IEnumerator SetMenuContainer()
-	{
-		yield return new WaitForSeconds (0.5f);
-		menuContainer.SetActive (false);
-		dropContainer.SetActive(true);
-	}
 
 	private List<GameObject> PickGameObjects( Vector3 screenPos )
 	{

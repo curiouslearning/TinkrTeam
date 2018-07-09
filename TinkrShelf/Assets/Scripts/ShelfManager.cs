@@ -30,8 +30,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public static bool rotation = false;
 
     //asset bundle
-    private AssetBundle myLoadedAssetBundle;
-    private string[] scenePaths;
+
+    // assetbundle variable that will contain bundle loaded from assetbundle
+    public static AssetBundle bundleLoaded;
     
     //for data collection
     private System.DateTime inTime;
@@ -57,9 +58,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         StartCoroutine(DownloadFileWithTimeout(request));
         localManifestFileName = "Manifests/manifest";  //set to passed file name
         inTime = System.DateTime.Now;
-
-
-
     }
     void Start()
     {
@@ -95,6 +93,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             isServerJson = false;
             Debug.Log("timeout");
 
+            StartCoroutine(LoadAssetBundle("catstory"));
             //load shelf data with local json
             LoadShelfData();
             LoadInitialCenterBook();
@@ -106,16 +105,43 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         // if internet-> ok
         if (responseJson != "")
             isServerJson = true;
-
+        StartCoroutine(LoadAssetBundle("catstory"));
         LoadShelfData();
         LoadInitialCenterBook();
+
+        //yield break;
     }
+
+
     private void LoadInitialCenterBook()
     {
         selectedBook = bookInfos[2].book.fileName;
         bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
         //loading inital center book on first time loading of shelf
         LoadImageandText(bookInfos[2]);
+    }
+    //when asset bundle will be on server
+    public void DownloadAssetBundle()
+    {
+
+
+    }
+
+    IEnumerator LoadAssetBundle(string selectedBook)
+    {
+        if (!bundleLoaded)
+        {
+            string finalPath = Path.Combine("AssetBundles/", selectedBook.ToLower());
+            bundleLoaded = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, finalPath));  //ShelfManager.selectedBook.ToLower())
+            if (bundleLoaded == null)
+            {
+                Debug.Log("Failed to load AssetBundle!");
+
+            }
+        }
+        yield break;
+
+
     }
 
     public void Update()
@@ -270,8 +296,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
-        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
-        // a sceneBuildIndex of 1 as shown in Build Settings.
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Books/Decodable/CatTale/Common/Scenes/Scene01");
 

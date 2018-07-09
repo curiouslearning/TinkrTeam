@@ -37,7 +37,7 @@
 							"animName": "A01",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -116,7 +116,7 @@
 							"animName": "A02",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.2,
 								0.2,
@@ -203,7 +203,7 @@
 							"animName": "A03b",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.5,
 								0.5,
@@ -252,7 +252,7 @@
 							"animName": "A03",
 							"numberOfImages": 9,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.1,
 								0.1,
@@ -344,7 +344,7 @@
 							"animName": "A04",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -429,7 +429,7 @@
 							"animName": "A05",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -516,7 +516,7 @@
 							"animName": "A06",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.5,
 								0.2,
@@ -607,7 +607,7 @@
 							"animName": "A07",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.2,
 								0.2,
@@ -733,7 +733,7 @@
 							"animName": "A08",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -824,7 +824,7 @@
 							"animName": "A09",
 							"numberOfImages": 8,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.2,
 								0.2,
@@ -951,7 +951,7 @@
 							"animName": "A10",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.4,
 								0.4,
@@ -1068,7 +1068,7 @@
 							"animName": "A11a",
 							"numberOfImages": 3,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.3,
 								0.3,
@@ -1187,7 +1187,7 @@
 							"animName": "A12",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -1281,7 +1281,7 @@
 							"animName": "A13",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.2,
@@ -1366,7 +1366,7 @@
 							"animName": "A14",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.1,
 								0.1,
@@ -1473,7 +1473,7 @@
 							"animName": "A15b",
 							"numberOfImages": 2,
 							"onTouch": false,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.5,
 								0.5
@@ -1509,7 +1509,7 @@
 							"animName": "A15",
 							"numberOfImages": 7,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.1,
 								0.1,
@@ -1643,7 +1643,7 @@
 							"animName": "A16",
 							"numberOfImages": 2,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.5,
 								0.5
@@ -1679,7 +1679,7 @@
 							"animName": "A16b",
 							"numberOfImages": 4,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.4,
 								0.4,
@@ -1784,7 +1784,7 @@
 							"animName": "A17",
 							"numberOfImages": 5,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0,
 								0.5,
@@ -1890,7 +1890,7 @@
 							"animName": "A18",
 							"numberOfImages": 6,
 							"onTouch": true,
-							"onstart": false,
+							"onStart": true,
 							"secPerFrame": [
 								0.4,
 								0.4,
