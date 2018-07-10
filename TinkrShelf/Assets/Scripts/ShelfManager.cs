@@ -141,7 +141,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
 
         foreach (BookObject bo in bookInfos) {
-            if (bo.position == 2) {
+            if (bo.position == 3) {
                 selectedBook = bo.book.fileName;
                 bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
                 LoadImageandText(bo);
