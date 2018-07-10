@@ -311,7 +311,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
             {
                 GameObject text = tinkerTextObjects[triggers[i].textId];
                 GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
-                text.GetComponent<GTinkerText>().pairedGraphic = graphic.GetComponent<GTinkerGraphic>();
+                text.GetComponent<GTinkerText>().pairedGraphics.Add(graphic.GetComponent<GTinkerGraphic>());
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
             }
         }
