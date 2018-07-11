@@ -60,7 +60,7 @@ public class GTinkerGraphic : MonoBehaviour{
         //DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
         Debug.Log(dataTinkerGraphic.label);
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
-		LoadAndPlayAnimation ();
+		//LoadAndPlayAnimation ();
 		sceneManager.OnMouseDown(this);
 	}
 
@@ -74,7 +74,9 @@ public class GTinkerGraphic : MonoBehaviour{
 	public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseDown(tinkerText);
-		LoadAndPlayAnimation ();
+		LoadAndPlayAnimation(tinkerText.pairedAnim);
+		 
+
 	}
 
 	// Mouse Currently Down Event
@@ -130,14 +132,16 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// <summary>
 	/// Loads the animation assets/frames and triggers PlayAnimation().
 	/// </summary>
-	public void LoadAndPlayAnimation(){
+	public void LoadAndPlayAnimation(int pairedAnim){
 
 		if (dataTinkerGraphic.anim.Length > 0) {
 
-			if (dataTinkerGraphic.anim [0].onTouch) {
-				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[0].animName, dataTinkerGraphic.anim[0].numberOfImages);
-				secPerFrame = dataTinkerGraphic.anim [0].secPerFrame;
-				sequences = dataTinkerGraphic.anim [0].sequences;
+			//if (dataTinkerGraphic.anim [pairedAnim].onTouch) 
+			{
+				
+				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[pairedAnim].animName, dataTinkerGraphic.anim[pairedAnim].startIndex,dataTinkerGraphic.anim[pairedAnim].endIndex);
+				secPerFrame = dataTinkerGraphic.anim [pairedAnim].secPerFrame;
+				sequences = dataTinkerGraphic.anim [pairedAnim].sequences;
 				PlayAnimation();
 
 			} 

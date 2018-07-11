@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 //20.3,-18.8 (yellow), 0,-17.4 (white),blue (22.9,-0.4)
 public class GTinkerText : MonoBehaviour {
     //private static bool check=false;
-    public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
-	public GTinkerText pairedText1;
+   // public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
+	public GTinkerGraphic pairedGraphics;
+	public int pairedAnim;
 	public StanzaObject stanza;
     private float startTime;//timings corresponding the timings of stanza auto narrate audio 
     private float endTime;//timings corresponding the timings of stanza auto narrate audio 
@@ -163,18 +164,30 @@ public class GTinkerText : MonoBehaviour {
         
 	}
     public void CheckPairedGraphic()
-    {
-        for (int i = 0; i < pairedGraphics.Count; i++)
-        {
-            if (pairedGraphics[i])
-            {
-                // Then send the event along!
-
-                pairedGraphics[i].OnPairedMouseDown(this);
-
-            }
-        }
-    }
+	{ 
+		if (pairedGraphics != null) 
+		    {   //if animation is present
+			if (pairedAnim>=0) 
+			{
+				pairedGraphics.OnPairedMouseDown (this);
+			} 
+		    else 
+			{
+				if (pairedGraphics.GetComponent<Animator>()) 
+				{
+					pairedGraphics.gameObject.transform.position = new Vector3 (pairedGraphics.dataTinkerGraphic.posX, pairedGraphics.dataTinkerGraphic.posY,0);
+					pairedGraphics.gameObject.GetComponent<SpriteRenderer>().sprite.name = pairedGraphics.dataTinkerGraphic.imageName;
+					Animator graphicanim = pairedGraphics.GetComponent<Animator>();
+					if(graphicanim!=null)
+					{
+						graphicanim.Play("textzoomout");
+						graphicanim.Play ("textzoomin");
+					}
+				}
+			}
+        
+		    }
+	}
 
 	// Paired Mouse Down Event
     /// <summary>

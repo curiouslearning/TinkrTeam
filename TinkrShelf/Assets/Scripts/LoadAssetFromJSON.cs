@@ -311,8 +311,12 @@ public class LoadAssetFromJSON : MonoBehaviour {
             {
                 GameObject text = tinkerTextObjects[triggers[i].textId];
                 GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
-                text.GetComponent<GTinkerText>().pairedGraphics.Add(graphic.GetComponent<GTinkerGraphic>());
+                text.GetComponent<GTinkerText>().pairedGraphics=graphic.GetComponent<GTinkerGraphic>();
+				text.GetComponent<GTinkerText> ().pairedAnim = triggers [i].animId;
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
+				if (text.GetComponent<GTinkerText> ().pairedAnim<0) {
+					graphic.AddComponent<Animator> ().runtimeAnimatorController = Resources.Load ("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;
+				} 
             }
         }
 
@@ -474,14 +478,14 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
 		if (gameObjectData.anim.Length >0)
 		{
-			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].numberOfImages);// call the LoadAssetImages function which load the anim images from bundle and fill the array of sprites with it
+			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].startIndex,gameObjectData.anim[0].endIndex);// call the LoadAssetImages function which load the anim images from bundle and fill the array of sprites with it
 			go.GetComponent<GTinkerGraphic> ().secPerFrame = gameObjectData.anim [0].secPerFrame;// set the secperframe field of tinkergraphic class
 
 			if ( gameObjectData.anim [0].onStart) {// if the animation is set to on start play it
 
 				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
 				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
-				go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
+				//go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
 				LoadAssetImage(gameObjectData.imageName, go.GetComponent<SpriteRenderer>()); // if not anim load the image
 
@@ -527,15 +531,14 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="tinkerGraphic">Tinker graphic.</param>
 	/// <param name="startName">Start name.</param>
 	/// <param name="length">Number of the animation frames.</param>
-	public static void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int length)
+	public static void LoadAssetImages(GTinkerGraphic tinkerGraphic,string startName,int startindex,int endindex)
 	{
-
+		int length = endindex - startindex + 1;
 		tinkerGraphic.sprites= new Sprite[length];
-		for (int i = 0; i < length; i++)
+		for (int i = startindex; i <=endindex; i++)
 		{
 			var sprite = ShelfManager.bundleLoaded.LoadAsset<Sprite>(startName+"-"+(i+1));
 			tinkerGraphic.sprites[i] = sprite;
-
 		}     
 	}
 

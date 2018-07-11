@@ -7,7 +7,7 @@ public class L3CatSManager9 : GSManager {
 	GameObject jam;
 
 	public override void OnMouseDown(GameObject go)
-	{
+	{   Debug.Log ("scenespf");
 		if (go.name == "CatJam") {
 			if (jam == null) {
 				jam = GameObject.Find ("Jam");
