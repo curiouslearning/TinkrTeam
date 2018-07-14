@@ -114,37 +114,43 @@
 					"start": 43,
 					"wordIdx": 0,
 					"audio": "the.mp3",
-					"end": 299
+					"end": 299,
+		            "starWord":"No"
 				},
 				{
 					"start": 299,
 					"wordIdx": 1,
 					"audio": "Cat.mp3",
-					"end": 660
+					"end": 660,
+		            "starWord":"Yes"
 				},
 				{
 					"start": 660,
 					"wordIdx": 2,
 					"audio": "is.mp3",
-					"end": 966
+					"end": 966,
+		            "starWord":"No"
 				},
 				{
 					"start": 966,
 					"wordIdx": 3,
 					"audio": "on.mp3",
-					"end": 1173
+					"end": 1173,
+		            "starWord":"No"
 				},
 				{
 					"start": 1173,
 					"wordIdx": 4,
 					"audio": "a.mp3",
-					"end": 1259
+					"end": 1259,
+		            "starWord":"No"
 				},
 				{
 					"start": 1259,
 					"wordIdx": 5,
 					"audio": "Mat.mp3",
-					"end": 1339
+					"end": 1339,
+		            "starWord":"No"
 				}
 
 			],
@@ -196,7 +202,7 @@
 						"startX":25,
 						"startY":-80,
 					    "startIndex":0,
-						"endIndex":2,
+						"endIndex":4,
 						"onTouch": true,
 						"onStart": false,
 						"secPerFrame": [0.5, 0.5, 0.1, 0.1, 0.1],
@@ -229,7 +235,7 @@
 					"posY": -54,
 					"scaleX": 40,
 					"scaleY": 40,
-					"imageName": "A03-01",
+					"imageName": "A03-1",
 					"orderInLayer": 1,
 					"inText": true,
 					"label": "Ran",
@@ -270,37 +276,43 @@
 					"start": 32,
 					"wordIdx": 0,
 					"audio": "the.mp3",
-					"end": 303
+					"end": 303,
+			        "starWord":"No"
 				},
 				{
 					"start": 303,
 					"wordIdx": 1,
 					"audio": "Cat.mp3",
-					"end": 745
+					"end": 745,
+		            "starWord":"No"
 				},
 				{
 					"start": 745,
 					"wordIdx": 2,
 					"audio": "Ran.mp3",
-					"end": 1145
+					"end": 1145,
+		            "starWord":"Yes"
 				},
 				{
 					"start": 1145,
 					"wordIdx": 3,
 					"audio": "from.mp3",
-					"end": 1491
+					"end": 1491,
+		            "starWord":"No"
 				},
 				{
 					"start": 1491,
 					"wordIdx": 4,
 					"audio": "the.mp3",
-					"end": 1625
+					"end": 1625,
+		            "starWord":"No"
 				},
 				{
 					"start": 1625,
 					"wordIdx": 5,
 					"audio": "Man.mp3",
-					"end": 2038
+					"end": 2038,
+	                "starWord":"No"
 				}
 
 			],
@@ -310,7 +322,7 @@
 					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"animId":null,
+					"animId":-1,
 					"typeOfLinking": 3
 				},
 				{
@@ -334,7 +346,7 @@
 				"textId": 5,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			}
 
@@ -362,7 +374,7 @@
 					"orderInLayer": 1,
 					"inText": true,
 					"label": "CatHam",
-					"destroyOnCollision": "Ham",
+					"destroyOnCollision":"Ham",
 					"draggable": false,
 					"anim": [{
 							"id": 0,
@@ -442,31 +454,36 @@
 					"start": 44,
 					"wordIdx": 0,
 					"audio": "the.mp3",
-					"end": 267
+					"end": 267,
+		            "starWord":"No"
 				},
 				{
 					"start": 267,
 					"wordIdx": 1,
 					"audio": "Cat.mp3",
-					"end": 539
+					"end": 539,
+		            "starWord":"No"
 				},
 				{
 					"start": 539,
 					"wordIdx": 2,
 					"audio": "wants.mp3",
-					"end": 1092
+					"end": 1092,
+		            "starWord":"Yes"
 				},
 				{
 					"start": 1092,
 					"wordIdx": 3,
 					"audio": "the.mp3",
-					"end": 1340
+					"end": 1340,
+		            "starWord":"No"
 				},
 				{
 					"start": 1340,
 					"wordIdx": 4,
 					"audio": "Ham.mp3",
-					"end": 1740
+					"end": 1740,
+		            "starWord":"No"
 				}
 
 			],
@@ -475,7 +492,7 @@
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			},
 			{
@@ -491,7 +508,7 @@
 				"textId": 4,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			}
 		]
@@ -566,37 +583,43 @@
 					"start": 49,
 					"wordIdx": 0,
 					"audio": "the.mp3",
-					"end": 296
+					"end": 296,
+			        "starWord":"No"
 				},
 				{
 					"start": 322,
 					"wordIdx": 1,
 					"audio": "Cat.mp3",
-					"end": 598
+					"end": 598,
+			        "starWord":"No"
 				},
 				{
 					"start": 647,
 					"wordIdx": 2,
 					"audio": "sat.mp3",
-					"end": 1106
+					"end": 1106,
+			        "starWord":"No"
 				},
 				{
 					"start": 1178,
 					"wordIdx": 3,
 					"audio": "on.mp3",
-					"end": 1431
+					"end": 1431,
+			        "starWord":"No"
 				},
 				{
 					"start": 1431,
 					"wordIdx": 4,
 					"audio": "the.mp3",
-					"end": 1534
+					"end": 1534,
+			        "starWord":"No"
 				},
 				{
 					"start": 1534,
 					"wordIdx": 5,
 					"audio": "Mat.mp3",
-					"end": 1949
+					"end": 1949,
+					"starWord":"Yes"
 				}
 
 			],
@@ -605,7 +628,7 @@
 					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"animId":null,
+					"animId":-1,
 					"typeOfLinking": 3
 				},
 				{
@@ -622,7 +645,7 @@
 
 		{
 
-			"pageNumber": 12,
+			"pageNumber": 4,
 			"script": "GSManager",
 			"audio": {
 				"audioName": "audio-name",
@@ -675,31 +698,36 @@
 					"start": 48,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
-					"end": 459
+					"end": 459,
+				    "starWord":"No"
 				},
 				{
 					"start": 519,
 					"wordIdx": 1,
 					"audio": "tips.mp3",
-					"end": 888
+					"end": 888,
+					"starWord":"Yes"
 				},
 				{
 					"start": 888,
 					"wordIdx": 2,
 					"audio": "his.mp3",
-					"end": 1194
+					"end": 1194,
+					"starWord":"No"
 				},
 				{
 					"start": 1194,
 					"wordIdx": 0,
 					"audio": "black.mp3",
-					"end": 1483
+					"end": 1483,
+					"starWord":"No"
 				},
 				{
 					"start": 1483,
 					"wordIdx": 0,
 					"audio": "Hat.mp3",
-					"end": 1789
+					"end": 1789,
+					"starWord":"No"
 				}
 
 			],
@@ -708,7 +736,7 @@
 				"textId": 0,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			},
 			{
@@ -724,7 +752,7 @@
 
 	
 		{
-			"pageNumber": 4,
+			"pageNumber": 5,
 			"script": "GSManager",
 			"audio": {
 				"audioName": "audio-name",
@@ -794,7 +822,7 @@
 					"draggable": false,
 					"anim": [
 					    {
-						"id": 1,
+						"id": 0,
 						"animName": "A15",
 						"startX":-220,
 						"startY":-39,
@@ -802,8 +830,9 @@
 						"endIndex":3,
 						"onTouch": true,
 						"onStart": false,
-					"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
-						"sequences": [{
+				     	"secPerFrame":[0.1,0.1,0.1,0.1,0.1,0.3,0],
+						"sequences": 
+			                   [{
 								"startFrame": 0,
 								"endFrame": 3,
 								"noOfLoops": 0,
@@ -815,7 +844,7 @@
 							}]
 						},
 						{
-						"id": 2,
+						"id": 1,
 						"animName": "A15",
 						"startX":-85,
 						"startY":-39,
@@ -850,37 +879,43 @@
 					"start": 42,
 					"wordIdx": 0,
 					"audio": "Sam.mp3",
-					"end": 483
+					"end": 483,
+					"starWord":"No"
 				},
 				{
 					"start": 483,
 					"wordIdx": 1,
 					"audio": "the.mp3",
-					"end": 618
+					"end": 618,
+					"starWord":"No"
 				},
 				{
 					"start": 618,
 					"wordIdx": 2,
 					"audio": "Man.mp3",
-					"end": 996
+					"end": 996,
+					"starWord":"No"
 				},
 				{
 					"start": 996,
 					"wordIdx": 3,
 					"audio": "Ran.mp3",
-					"end": 1406
+					"end": 1406,
+					"starWord":"No"
 				},
 				{
 					"start": 1819,
 					"wordIdx": 4,
 					"audio": "he.mp3",
-					"end": 1965
+					"end": 1965,
+					"starWord":"No"
 				},
 				{
 					"start": 1966,
 					"wordIdx": 5,
 					"audio": "slams.mp3",
-					"end": 2604
+					"end": 2604,
+					"starWord":"Yes"
 				}
 
 			],
@@ -889,7 +924,7 @@
 				"textId": 0,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			},
 		    {
@@ -897,7 +932,7 @@
 				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId":null,
+				"animId":-1,
 				"typeOfLinking": 3
 			},
 			{
@@ -905,7 +940,7 @@
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId":1,
+				"animId":0,
 				"typeOfLinking": 3
 			},
 			{
@@ -913,14 +948,14 @@
 				"textId": 5,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId":2,
+				"animId":1,
 				"typeOfLinking": 3
 			}
         ]
 		},
           
 		{
-			"pageNumber": 5,
+			"pageNumber": 6,
 			"script": "EndPage",
 			"audio": {
 				"audioName": "audio-name",

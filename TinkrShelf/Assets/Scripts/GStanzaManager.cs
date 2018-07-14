@@ -19,6 +19,7 @@ public class GStanzaManager : MonoBehaviour {
 	public void LoadStanzaJSON()
 	{
 		SetupWordTimings(LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps);
+
 	}
 
 	// Loads up a custom stanza audio mp3 and xml timing data

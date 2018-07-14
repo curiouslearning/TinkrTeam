@@ -17,6 +17,7 @@ public class GTinkerText : MonoBehaviour {
     private Animator graphicanimator;
     public GameObject anim;
     public GameObject anim2;
+	public bool star=false;
 
     void Start()
     {
@@ -37,6 +38,8 @@ public class GTinkerText : MonoBehaviour {
         startTime = timeStamp.start / 1000.0f;
         endTime = timeStamp.end / 1000.0f;
         playTime = endTime - startTime;
+		if (timeStamp.starWord == "Yes")
+			star = true;
     }
     /// <summary>
     /// return the starting time for each word
@@ -169,21 +172,13 @@ public class GTinkerText : MonoBehaviour {
 		    {   //if animation is present
 			if (pairedAnim>=0) 
 			{
-				pairedGraphics.OnPairedMouseDown (this);
+				Debug.Log ("oneeeee");
+				pairedGraphics.OnPairedMouseDown(this);
 			} 
 		    else 
 			{
-				if (pairedGraphics.GetComponent<Animator>()) 
-				{
-					pairedGraphics.gameObject.transform.position = new Vector3 (pairedGraphics.dataTinkerGraphic.posX, pairedGraphics.dataTinkerGraphic.posY,0);
-					pairedGraphics.gameObject.GetComponent<SpriteRenderer>().sprite.name = pairedGraphics.dataTinkerGraphic.imageName;
-					Animator graphicanim = pairedGraphics.GetComponent<Animator>();
-					if(graphicanim!=null)
-					{
-						graphicanim.Play("textzoomout");
-						graphicanim.Play ("textzoomin");
-					}
-				}
+				Debug.Log ("twooooooo");
+				pairedGraphics.ResetandZoom();
 			}
         
 		    }

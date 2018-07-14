@@ -14,30 +14,36 @@ public class L4CatSManager7 : GSManager {
 			}
 
 			ham.SetActive (true);
-		}
-		else if ( go.name == "Text_ham."){
+		} else if (go.name == "Text_ham.") {
 
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
 			}
 
 			ham.SetActive (true);
-			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
+			GTinkerGraphic catHam = GameObject.Find ("CatHam").GetComponent<GTinkerGraphic> ();
+//			if (catHam != null)
+//			{ 
+//				catHam.MyOnMouseDown();
+//			}
+
+		} else if (go.name == "Text_wants") {
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
 			}
 
+			ham.SetActive (true);
+		
 		}
-		else if (go.name == "Ham") 
-		{   
-			ham = go;
-			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
-			}
-		}
+//		else if (go.name == "Ham") 
+//		{   
+//			ham = go;
+//			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+//			if (catHam != null)
+//			{ 
+//				catHam.MyOnMouseDown();
+//			}
+//		}
 
 		base.OnMouseDown (go);
 	}

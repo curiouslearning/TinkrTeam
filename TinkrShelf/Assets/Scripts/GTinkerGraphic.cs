@@ -6,13 +6,23 @@ using UnityEngine.EventSystems;
 
 public class GTinkerGraphic : MonoBehaviour{
 	public GameObjectClass dataTinkerGraphic;
+
 	// private Animator anim;
+	public int size;
 	public GTinkerText pairedText1;
 	public GTinkerText pairedText2;
 	public GSManager sceneManager;
 	public Canvas myCanvas;
-
-	public Sprite[] sprites;
+	private int framecount = 30;
+	private float initial_scale_x;
+	private float initial_scale_y;
+	private float totalchange = 4f;
+	private float deltasize;
+	private int totaltime = 1;
+	private float deltatime;
+	private float final_scale_x;
+	private float final_scale_y;
+	public Sprite[] sprite;
 	private int currentframe=0;
 	public SpriteRenderer spr;
 
@@ -31,7 +41,15 @@ public class GTinkerGraphic : MonoBehaviour{
 	{
 		spr = GetComponent<SpriteRenderer>();
 	}
-
+	private void Start()
+	{
+		initial_scale_x = this.transform.localScale.x;
+		initial_scale_y = this.transform.localScale.y;
+		final_scale_x = initial_scale_x + totalchange;
+		final_scale_y = initial_scale_y + totalchange;
+		deltasize = totalchange / framecount;
+		deltatime = totaltime / framecount;
+	}
     /// <summary>
     /// set the draggable property for that tinkergraphic
     /// </summary>
@@ -60,9 +78,34 @@ public class GTinkerGraphic : MonoBehaviour{
         //DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
         Debug.Log(dataTinkerGraphic.label);
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
-		//LoadAndPlayAnimation ();
-		sceneManager.OnMouseDown(this);
+		int length = dataTinkerGraphic.anim.Length;
+		//for (int i = 0; i < length; i++) {
+			//Debug.Log ("anim_no "+ i);
+			//LoadAndPlayAnimation (i);
+			//StartCoroutine (animdelay());
+		//}
+		PlayCompleteAnim();
+		sceneManager.OnMouseDown (this);
+}
+	public void PlayCompleteAnim()
+	{
+		StartCoroutine (Animdelay ());
 	}
+	public IEnumerator Animdelay()
+	{
+		float sum;
+		for (int i = 0; i < dataTinkerGraphic.anim.Length; i++) {
+			sum = 0f;
+			LoadAndPlayAnimation (i);
+			float[] sec = dataTinkerGraphic.anim [i].secPerFrame;
+			for (int t = 0; t < sec.Length; t++) 
+			{
+				sum = sum + sec[t];
+			}
+			yield return new WaitForSeconds(sum);
+		}
+	}
+
 
 
     /// <summary>
@@ -78,6 +121,14 @@ public class GTinkerGraphic : MonoBehaviour{
 		 
 
 	}
+	/// <summary>
+	/// Raises the paired mouse down event for tinkergraphic.
+	/// </summary>
+	/// <param name="tinkerGraphic">Tinker graphic.</param>
+	public void OnPairedMouseDown(GTinkerGraphic tinkerGraphic)
+	{ sceneManager.OnMouseDown (this);
+
+	} 
 
 	// Mouse Currently Down Event
 	public void OnMouseCurrentlyDown()
@@ -133,15 +184,18 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// Loads the animation assets/frames and triggers PlayAnimation().
 	/// </summary>
 	public void LoadAndPlayAnimation(int pairedAnim){
-
+		Debug.Log (pairedAnim);
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			//if (dataTinkerGraphic.anim [pairedAnim].onTouch) 
 			{
 				
-				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[pairedAnim].animName, dataTinkerGraphic.anim[pairedAnim].startIndex,dataTinkerGraphic.anim[pairedAnim].endIndex);
+				Debug.Log ("x is "+dataTinkerGraphic.anim[pairedAnim].startX);
+				Debug.Log ("y is "+dataTinkerGraphic.anim[pairedAnim].startY);
+				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[pairedAnim].animName, dataTinkerGraphic.anim[pairedAnim].startIndex,dataTinkerGraphic.anim[pairedAnim].endIndex,dataTinkerGraphic.anim[pairedAnim].startX,dataTinkerGraphic.anim[pairedAnim].startY);
 				secPerFrame = dataTinkerGraphic.anim [pairedAnim].secPerFrame;
 				sequences = dataTinkerGraphic.anim [pairedAnim].sequences;
+				Debug.Log (sequences.Length + "leenn");
 				PlayAnimation();
 
 			} 
@@ -149,7 +203,12 @@ public class GTinkerGraphic : MonoBehaviour{
 		}
 
 	}
-
+	public void ResetandZoom()
+	{
+		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
+		LoadAssetFromJSON.LoadAssetImage (this,dataTinkerGraphic.imageName);
+		StartCoroutine (Zoom());
+	}
 	/// <summary>
 	/// Resets the graphic object and triggers the animation play.
 	/// </summary>
@@ -159,7 +218,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		if (destroyObject != null) {
 			StopCoroutine (destroyObject);
 		}
-		transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
+		//transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
 		StartCoroutine("Animate");
 	}
 
@@ -178,7 +237,7 @@ public class GTinkerGraphic : MonoBehaviour{
 				i = 1;       //count the number of loops from start for every sequence!
 				while (i <= sequences [seqIterator].noOfLoops) {
 					for (currentframe = sequences [seqIterator].startFrame; currentframe <= sequences [seqIterator].endFrame; currentframe++) {
-						spr.sprite = sprites [currentframe];
+						spr.sprite = sprite [currentframe];
 						yield return new WaitForSeconds (secPerFrame [currentframe]);
 					}
 					i++;
@@ -189,7 +248,7 @@ public class GTinkerGraphic : MonoBehaviour{
 			else if(transform.position.x < sequences [seqIterator].movable.finalx) {
 				currentframe = sequences [seqIterator].startFrame;
 				while (transform.position.x < sequences [seqIterator].movable.finalx) {
-					spr.sprite = sprites[currentframe];
+					spr.sprite = sprite[currentframe];
 					yield return new WaitForSeconds(secPerFrame[currentframe]);
 					currentframe++;
 					var posx = transform.position.x;
@@ -204,14 +263,14 @@ public class GTinkerGraphic : MonoBehaviour{
 
 				}
 
-				spr.sprite = sprites[sequences [seqIterator].endFrame];
+				spr.sprite = sprite[sequences [seqIterator].endFrame];
 			}
 			//animate for moving sequences of PNGs towards left.
 			else if(transform.position.x > sequences [seqIterator].movable.finalx) 
 			{
 				currentframe = sequences [seqIterator].startFrame;
 				while (transform.position.x > sequences [seqIterator].movable.finalx) {
-					spr.sprite = sprites[currentframe];
+					spr.sprite = sprite[currentframe];
 					yield return new WaitForSeconds(secPerFrame[currentframe]);
 					currentframe++;
 					var posx = transform.position.x;
@@ -226,11 +285,30 @@ public class GTinkerGraphic : MonoBehaviour{
 
 				}
 
-				spr.sprite = sprites[sequences [seqIterator].endFrame];
+				spr.sprite = sprite[sequences [seqIterator].endFrame];
 			}
 
 
 		}
 		yield break;
+	}
+	public IEnumerator Zoom()
+	{
+		while(this.transform.localScale.x<=final_scale_x && this.transform.localScale.y<=final_scale_y)
+		{
+			Vector3 temp = this.transform.localScale;
+			temp.x += deltasize;
+			temp.y += deltasize;
+			this.transform.localScale = temp;
+			yield return new WaitForSeconds(deltatime/2);
+		}
+		while (this.transform.localScale.x >= initial_scale_x && this.transform.localScale.y >= initial_scale_y)
+		{
+			Vector3 temp = this.transform.localScale;
+			temp.x -= deltasize;
+			temp.y -= deltasize;
+			this.transform.localScale = temp;
+			yield return new WaitForSeconds(deltatime/2);
+		}
 	}
 }
