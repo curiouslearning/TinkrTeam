@@ -1,8 +1,27 @@
-# TinkrTeam
-Repository for the Tinkr Player and Tinkr Books in collaboration with DISQ
+# Tinkr Player
+
+<p align="center">
+<img src="https://github.com/curiouslearning/Media/blob/master/Curious%20Reader/shelf.png" height="160" width="300"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/curiouslearning/Media/blob/master/Curious%20Reader/sam_the_man.gif" height="160" width="300"/>
+<img src="https://github.com/curiouslearning/Media/blob/master/Curious%20Reader/why_is_the_cat_sad.gif" height="160" width="300"/>
+</p>
+
 
 # Player Overview
-(Ben will write).
+The Tinkr Player project is a collaborative effort between [Digital Impact Square](https://www.digitalimpactsquare.com/) (DISQ), a TCS Foundation Initiative, and [Curious Learning](https://curiouslearning.org), under the support of the MIT Media Lab.
+
+The effort saw the development of an open-source Unity application, the Tinkr Book Player, as well as an open standard for Tinkr Books, a new type of educational children’s interactive, and 5 Tinkr Books.
+
+This app repo consists of 4 main parts:
+
+1. The Shelf-- where a reader selects a book to read.
+2. The Reader-- where books are read and interacted with.
+3. Data collection-- where usage data is collected and sent to Firebase Analytics.
+4. The Tinkr Books-- the book files themselves.
+
 ## Shelf
 
  Including a list of what scripts and files are used in creating the Shelf and how those interact.
@@ -25,6 +44,8 @@ Path: TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
 ShelfManager.cs -> BookObject.cs -> BookCollision.cs
 
  1. Load initial/local asset bundle on shelf scene
+ 
+ // TODO: Pull manifest and book files from a server. Today they are stored locally.
  2. Call server manifest file with timeout of 1.0sec.
 
  3. if (server manifest is newer than local manifest) 
@@ -128,7 +149,7 @@ LogInAppResponse | Logs the IN_APP_RESPONSE event to firebase. IN_APP_RESPONSE e
 	
 
 ##### Resources
-1. [User defined firebase parameters](https://docs.google.com/document/d/1JYCuHP-1GYdxnnDzkVdkgTE318nCjmsSk5XnNTxM5BE/)
-2. (Ben to include documentation on decisions made in collecting data in this section).
+1. [User defined firebase parameters](https://docs.google.com/document/d/1JYCuHP-1GYdxnnDzkVdkgTE318nCjmsSk5XnNTxM5BE/edit?usp=sharing)
+2. [Implementation Decisions and Issues Faced](https://docs.google.com/document/d/1_1Cg5dhnSQoBERojxd5EFVVm3MZC1yXtxjBBrixcSjE/edit?usp=sharing).
 
 <a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
