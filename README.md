@@ -97,8 +97,17 @@ Step No | Description | How
 3.|books assets path|TinkrTeam\TinkrShelf\Assets\Books\Decodable\xyzTale\xyzTalelevelx
 4.|shelf assets path|TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
 
-#### what led to specific scripts creation
+#### What led to specific scripts creation
 Also detailing what functionality to date has required the creation of separate scripts rather than what is included in the collection of interactive functions.
+
+Scene No |Script Name |Description 
+--- | --- |---
+3|LX PQRTale SManager3|
+7|LX PQRTale SManager7|
+9|LX PQRTale SManager9| 
+10|LX PQRTale SManager10|
+16|LX PQRTale SManager16|
+18|LX PQRTale SManager18|
 
 ## Data Collection
 #### Files Used:
