@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 //20.3,-18.8 (yellow), 0,-17.4 (white),blue (22.9,-0.4)
 public class GTinkerText : MonoBehaviour {
     //private static bool check=false;
-   // public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
-	public GTinkerGraphic pairedGraphics;
+    public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
+	//public GTinkerGraphic pairedGraphics;
 	public int pairedAnim;
 	public StanzaObject stanza;
     private float startTime;//timings corresponding the timings of stanza auto narrate audio 
@@ -153,7 +153,7 @@ public class GTinkerText : MonoBehaviour {
 			FirebaseHelper.LogInAppTouch (("Text_" + gameObject.GetComponent<Text> ().text), time.ToString ());
 
 			if (!stanza.stanzaManager.sceneManager.disableSounds) {
-				PlaySound ();
+				PlaySound();
 			}
 			clipPlay ();
 			iconanimPlay ();
@@ -168,21 +168,25 @@ public class GTinkerText : MonoBehaviour {
 	}
     public void CheckPairedGraphic()
 	{ 
-		if (pairedGraphics != null) 
+		for (int i = 0; i < pairedGraphics.Count; i++){
+		if (pairedGraphics[i]!= null) 
 		    {   //if animation is present
 			if (pairedAnim>=0) 
 			{
 				Debug.Log ("oneeeee");
-				pairedGraphics.OnPairedMouseDown(this);
+					pairedGraphics [i].OnPairedMouseDown (this);
+		
 			} 
 		    else 
 			{
 				Debug.Log ("twooooooo");
-				pairedGraphics.ResetandZoom();
+					pairedGraphics [i].ResetandZoom ();
+			}
 			}
         
-		    }
+		  }
 	}
+
 
 	// Paired Mouse Down Event
     /// <summary>

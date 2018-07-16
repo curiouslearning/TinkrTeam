@@ -284,6 +284,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
                 for (int i = 0; i < gameObjects.Length; i++)
                 {
                     CreateGameObject(gameObjects[i]);
+					Debug.Log (i + "firsttt");
                 }
 
             }
@@ -311,7 +312,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
             {
                 GameObject text = tinkerTextObjects[triggers[i].textId];
                 GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
-                text.GetComponent<GTinkerText>().pairedGraphics=graphic.GetComponent<GTinkerGraphic>();
+				text.GetComponent<GTinkerText> ().pairedGraphics.Add(graphic.GetComponent<GTinkerGraphic> ());
 				text.GetComponent<GTinkerText> ().pairedAnim = triggers [i].animId;
                 graphic.GetComponent<GTinkerGraphic>().pairedText1 = text.GetComponent<GTinkerText>();
             }
@@ -478,22 +479,23 @@ public class LoadAssetFromJSON : MonoBehaviour {
 			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].startIndex,gameObjectData.anim[0].endIndex,gameObjectData.anim[0].startX,gameObjectData.anim[0].startY);// call the LoadAssetImages function which load the anim images from bundle and fill the array of sprites with it
 			go.GetComponent<GTinkerGraphic> ().secPerFrame = gameObjectData.anim [0].secPerFrame;// set the secperframe field of tinkergraphic class
 
-			if ( gameObjectData.anim [0].onStart) {// if the animation is set to on start play it
+			if ( gameObjectData.anim [0].onStart) { // if the animation is set to on start play it
 
 				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
 				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
 				//go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
+				Debug.Log ("anim load page nil");
 				LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName); // if not anim load the image
 
 			}
 		}
 		else
-		{
+		{   Debug.Log ("no anim ");
 			LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName);
 		}
 
-		if(gameObjectData.destroyOnCollision != "NIL"){// what the fuck this is doing
+		if(gameObjectData.destroyOnCollision != "NIL"){
 			var rigidbody = go.AddComponent<Rigidbody> ();
 			rigidbody.isKinematic = true;
 		}
@@ -517,8 +519,9 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="name">Namevof the asset image.</param>
 	/// <param name="sr">Sprite Renderer.</param>
     public  static void LoadAssetImage(GTinkerGraphic tinkergraphic,string name)
-    {
+	{   Debug.Log (name + "okk");
         var sprite = ShelfManager.bundleLoaded.LoadAsset<Sprite>(name);
+		Debug.Log (sprite + "ohh");
 		tinkergraphic.spr.sprite = sprite;
     }
 
