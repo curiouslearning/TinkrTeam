@@ -9,7 +9,7 @@ Repository for the Tinkr Player and Tinkr Books in collaboration with DISQ
 
 #### Files Used:
 1. Shelf Scripts <br>
-Path: TinkrTeam\TinkrShelf\Assets\Scripts
+Path: TinkrTeam\TinkrShelf\Assets\Scripts <br>
 
 Script Name | Description | Attached to which game object 
 --- | --- | ---
@@ -17,10 +17,8 @@ ShelfManager.cs | Main contoller script of shelf and contains all functions perf
 BookObject.cs | Its a book object class for book.cs | Every child of books_wheel game object
 BookCollision.cs | It extends shelf manager and uses colliders to detect position of books in shelf | Every child of books_wheel game object
 
-
 2. Shelf Images <br>
 Path: TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
-
 
 #### Interaction:
 ```javascript 
@@ -81,17 +79,24 @@ GTinkerGraphic.cs|Script responsible for every function of the graphic.|graphic_
 
 ## Creating a New Tinkr Book
 Section for "Creating a New Tinkr Book" to detail what needs to be done in creating a new Tinkr Book
-
-
 ### Recipe to make Tinkrbook 
 
+
+##### 1. Setting the folder hierarchy right. 
+StepNo | Description | How
+--- | --- |---
+1.1|Create a folder at this path with title of the book example "xyzTale" | Path:TinkrTeam\TinkrShelf\Assets\Books\Decodable
+1.2|Create 6 folders at this path with level-wise-name of the book example "xyzTaleLevel0"..and soon.|Path:TinkrTeam\TinkrShelf\Assets\Books\Decodable\xyzTale\
+1.3|Create a folder with name "Common" at the following path(it refers to common assets and ll contain 5 subfolders)|Common/AnimPNGs; Common/Audio; Common/Images; Common/Scenes 
+
+##### 2. Creating book specific json and other scripts
 Step No | Description | How
 --- | --- |---
-1.|Creating Book specific JSON|
+1.|Creating Book specific JSON| Refer any book json at this path "TinkrTeam\TinkrShelf\Assets\Books\Decodable\CatTale\catstorylevel2\Resources" and modify values at R.H.S according to proper value,positioning ,timing, scaling of game object and add corresponding script to it as needed.
 2.|Calling interactive function scripts|
-3.|Updating manifest|
-4.|books assets path|
-5.|shelf assest path|
+3.|Updating manifest|Fill in new book details in shelf manifest at this path: TinkrTeam\TinkrShelf\Assets\Resources\Manifests  
+4.|books assets path|TinkrTeam\TinkrShelf\Assets\Books\Decodable\xyzTale\xyzTalelevelx
+5.|shelf assests path|TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
 
 #### what led to specific scripts creation
 Also detailing what functionality to date has required the creation of separate scripts rather than what is included in the collection of interactive functions.
