@@ -93,10 +93,9 @@ StepNo | Description | How
 Step No | Description | How
 --- | --- |---
 1.|Creating Book specific JSON| Refer any book json at this path "TinkrTeam\TinkrShelf\Assets\Books\Decodable\CatTale\catstorylevel2\Resources" and modify values at R.H.S according to proper value,positioning ,timing, scaling of game object and add corresponding script to it as needed.
-2.|Calling interactive function scripts|
-3.|Updating manifest|Fill in new book details in shelf manifest at this path: TinkrTeam\TinkrShelf\Assets\Resources\Manifests  
-4.|books assets path|TinkrTeam\TinkrShelf\Assets\Books\Decodable\xyzTale\xyzTalelevelx
-5.|shelf assests path|TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
+2.|Updating manifest|Fill in new book details in shelf manifest at this path: TinkrTeam\TinkrShelf\Assets\Resources\Manifests  
+3.|books assets path|TinkrTeam\TinkrShelf\Assets\Books\Decodable\xyzTale\xyzTalelevelx
+4.|shelf assets path|TinkrTeam\TinkrShelf\Assets\Resources\Thumbnail
 
 #### what led to specific scripts creation
 Also detailing what functionality to date has required the creation of separate scripts rather than what is included in the collection of interactive functions.
