@@ -123,10 +123,9 @@ Also detailing what functionality to date has required the creation of separate 
 
 Scene No |Script Name |Description 
 --- | --- |---
-3|LX PQRTale SManager3|
-7|LX PQRTale SManager7|
-9|LX PQRTale SManager9| 
-10|LX PQRTale SManager10|
+3|LX PQRTale SManager3|This script is wriiten to handle the simultanious play of two animations ( runnning of both man and cat) when man,cat or word run is tapped.This type of animation is not handled generically
+7|LX PQRTale SManager7|The page of book to which this script is attached also invovles two seperate gameObjects in the animation so this type odf animation is not handled generically 
+9|LX PQRTale SManager9| This script has the functionally similar to the Smanager 7 
 16|LX PQRTale SManager16|
 18|LX PQRTale SManager18|
 

@@ -1,5 +1,4 @@
-{
-	"id": 6,
+{	"id":6,
 	"fontColor": "black",
 	"textStartPositionX": -420.0,
 	"textStartPositionY": 132.0,
@@ -30,28 +29,23 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A01",
-						"startX": 25,
-						"startY": -65,
-						"startIndex": 0,
-						"endIndex": 3,
+						"numberOfImages": 4,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0,
-							0.2,
-							0.2,
-							0
-						],
+						"secPerFrame": [0, 0.2, 0.2, 0],
 						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 3,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
 							}
-						}]
+
+						]
 					}]
 				},
 				{
@@ -66,29 +60,38 @@
 					"label": "mat",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
-					"anim": [{
-						"id": 0,
-						"animName": "A11a",
-						"startX": -3,
-						"startY": -124,
-						"startIndex": 0,
-						"endIndex": 3,
-						"onTouch": true,
-						"onStart": false,
-						"secPerFrame": [
-							0.3,
-							0.3,
-							0.3
-						],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 2,
-							"noOfLoops": 3,
-							"movable": {
-								"speed": 0
-							}
-						}]
-					}]
+					"anim": 
+                    [
+						{
+							"id": 1,
+							"animName": "A11a",
+							"numberOfImages": 3,
+                            "onTouch":true,
+							 "onStart": false,
+							"secPerFrame":[0.3,0.3,0.3],
+							"sequences":
+							[
+								{ "startFrame":0,
+									"endFrame":1,
+									"noOfLoops":3,
+									"movable": 
+									{  
+										"speed":0
+									    
+									}	
+								},
+								{ "startFrame":2,
+									"endFrame":2,
+									"noOfLoops":1,
+									"movable": 
+									{  
+										"speed":0
+									    
+									}	
+								}
+                            ]    
+						}   
+				    ]
 				}
 			],
 
@@ -147,7 +150,6 @@
 					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"animId": -1,
 					"typeOfLinking": 3
 				},
 				{
@@ -155,18 +157,12 @@
 					"textId": 4,
 					"timestamp": null,
 					"sceneObjectId": 1,
-					"animId": 0,
-					"typeOfLinking": 3
-				}, {
-					"stnzaId": 0,
-					"textId": 6,
-					"timestamp": null,
-					"sceneObjectId": 1,
-					"animId": 0,
 					"typeOfLinking": 3
 				}
 			]
 		},
+
+
 		{
 			"pageNumber": 1,
 			"script": "GSManager",
@@ -188,32 +184,26 @@
 				"destroyOnCollision": "NIL",
 				"draggable": false,
 				"anim": [{
-					"id": 0,
+					"id": 1,
 					"animName": "A02",
-					"startX": 25,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 5,
+					"numberOfImages": 6,
 					"onTouch": true,
 					"onStart": false,
-					"secPerFrame": [
-						0.2,
-						0.2,
-						0.2,
-						0.2,
-						0.2,
-						0.2
-					],
+					"secPerFrame": [0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
 					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 5,
-						"noOfLoops": 100,
-						"movable": {
-							"speed": 0
+							"startFrame": 0,
+							"endFrame": 5,
+							"noOfLoops": 100,
+							"movable": {
+								"speed": 0
+							}
+
 						}
-					}]
+
+					]
 				}]
 			}],
+
 			"texts": [{
 				"id": 0,
 				"text": "The happy cat wags"
@@ -248,17 +238,9 @@
 			],
 			"triggers": [{
 				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
 				"typeOfLinking": 3
 			}]
 		},
@@ -284,27 +266,19 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A03b",
-						"startX": 25,
-						"startY": -80,
-						"startIndex": 0,
-						"endIndex": 4,
+						"numberOfImages": 5,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0.5,
-							0.5,
-							0.1,
-							0.1,
-							0.1
-						],
+						"secPerFrame": [0.5, 0.5, 0.1, 0.1, 0.1],
 						"sequences": [{
 								"startFrame": 0,
 								"endFrame": 2,
 								"noOfLoops": 1,
 								"movable": {
 									"speed": 0
+
 								}
 							},
 							{
@@ -326,45 +300,34 @@
 					"posY": -54,
 					"scaleX": 40,
 					"scaleY": 40,
-					"imageName": "A03-1",
+					"imageName": "A03-01",
 					"orderInLayer": 1,
 					"inText": true,
 					"label": "Ran",
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A03",
-						"startX": -216,
-						"startY": -54,
-						"startIndex": 0,
-						"endIndex": 8,
+						"numberOfImages": 9,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0.1,
-							0.1,
-							0.1,
-							0.1,
-							0.1,
-							0.1,
-							0.1,
-							0.1,
-							0
-						],
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0],
 						"sequences": [{
 							"startFrame": 0,
 							"endFrame": 8,
 							"noOfLoops": 0,
 							"movable": {
-								"finalx": -36,
-								"finaly": -54,
+								"finalx":-36,
+								"finaly":-54,
 								"speed": 15
+
 							}
 						}]
 					}]
 				}
 			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The cat ran. The cat is not happy"
@@ -421,31 +384,21 @@
 				}
 
 			],
-			"triggers": [{
-					"stnzaId": 0,
-					"textId": 4,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": -1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 2,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": -1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 2,
-					"timestamp": null,
-					"sceneObjectId": 1,
-					"animId": 0,
-					"typeOfLinking": 3
-				}
-			]
+			"triggers": [
+			{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			},
+			{
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
 		},
 
 
@@ -457,7 +410,6 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-
 			"gameObjects": [{
 				"id": 0,
 				"posX": -23,
@@ -471,26 +423,19 @@
 				"destroyOnCollision": "NIL",
 				"draggable": false,
 				"anim": [{
-					"id": 0,
+					"id": 1,
 					"animName": "A04",
-					"startX": -23,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
+					"numberOfImages": 4,
 					"onTouch": true,
 					"onStart": false,
-					"secPerFrame": [
-						0,
-						0.2,
-						0.2,
-						0
-					],
+					"secPerFrame": [0, 0.2, 0.2, 0],
 					"sequences": [{
 						"startFrame": 0,
 						"endFrame": 3,
 						"noOfLoops": 1,
 						"movable": {
 							"speed": 0
+
 						}
 					}]
 				}]
@@ -535,17 +480,9 @@
 			],
 			"triggers": [{
 					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 0,
-					"typeOfLinking": 3
-				}, {
-					"stnzaId": 0,
 					"textId": 2,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"animId": -1,
 					"typeOfLinking": 3
 				}
 
@@ -575,26 +512,19 @@
 				"destroyOnCollision": "NIL",
 				"draggable": false,
 				"anim": [{
-					"id": 0,
+					"id": 1,
 					"animName": "A05",
-					"startX": -23,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
+					"numberOfImages": 4,
 					"onTouch": true,
 					"onStart": false,
-					"secPerFrame": [
-						0,
-						0.2,
-						0.2,
-						0.2
-					],
+					"secPerFrame": [0, 0.2, 0.2, 0.2],
 					"sequences": [{
 							"startFrame": 0,
 							"endFrame": 1,
 							"noOfLoops": 1,
 							"movable": {
 								"speed": 0
+
 							}
 						},
 						{
@@ -603,6 +533,7 @@
 							"noOfLoops": 3,
 							"movable": {
 								"speed": 0
+
 							}
 						}
 					]
@@ -668,28 +599,6 @@
 				"stnzaId": 0,
 				"textId": 4,
 				"timestamp": null,
-				"animId": 0,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"animId": -1,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 3,
-				"timestamp": null,
-				"animId": -1,
-				"sceneObjectId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 5,
-				"timestamp": null,
-				"animId": -1,
 				"sceneObjectId": 0,
 				"typeOfLinking": 3
 			}]
@@ -717,20 +626,12 @@
 				"destroyOnCollision": "NIL",
 				"draggable": false,
 				"anim": [{
-					"id": 0,
+					"id": 1,
 					"animName": "A06",
-					"startX": 33,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
+					"numberOfImages": 4,
 					"onTouch": true,
 					"onStart": false,
-					"secPerFrame": [
-						0.5,
-						0.2,
-						0.2,
-						0
-					],
+					"secPerFrame": [0.5, 0.2, 0.2, 0],
 					"sequences": [{
 						"startFrame": 0,
 						"endFrame": 3,
@@ -796,14 +697,6 @@
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
 				"typeOfLinking": 3
 			}]
 		},
@@ -830,21 +723,12 @@
 					"destroyOnCollision": "Ham",
 					"draggable": false,
 					"anim": [{
-							"id": 0,
+							"id": 1,
 							"animName": "A07",
-							"startX": 240,
-							"startY": -65,
-							"startIndex": 0,
-							"endIndex": 4,
+							"numberOfImages": 7,
 							"onTouch": true,
 							"onStart": false,
-							"secPerFrame": [
-								0.2,
-								0.2,
-								0.2,
-								0.2,
-								1.0
-							],
+							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4],
 							"sequences": [{
 									"startFrame": 0,
 									"endFrame": 2,
@@ -862,39 +746,20 @@
 									"movable": {
 										"speed": 0
 									}
-								}
-							]
-						},
-						{
-
-							"id": 1,
-							"animName": "A07",
-							"startX": 40,
-							"startY": -65,
-							"startIndex": 5,
-							"endIndex": 6,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [
-								0.4,
-								0.4
-							],
-							"sequences": [{
-									"startFrame": 0,
-									"endFrame": 1,
+								},
+								{
+									"startFrame": 5,
+									"endFrame": 6,
 									"noOfLoops": 2,
 									"movable": {
 										"speed": 0
 									}
 								}
-
 							]
-
 						}
+
 					]
 				},
-
-
 				{
 					"id": 1,
 					"posX": -34.2,
@@ -908,6 +773,7 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
+
 				}
 			],
 			"texts": [{
@@ -967,29 +833,12 @@
 
 			],
 			"triggers": [{
-					"stnzaId": 0,
-					"textId": 7,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 0,
-					"typeOfLinking": 3
-				}, {
-					"stnzaId": 0,
-					"textId": 1,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": -1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 5,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 1,
-					"typeOfLinking": 3
-				}
-			]
+				"stnzaId": 0,
+				"textId": 7,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
 
 		},
 		{
@@ -1013,30 +862,24 @@
 				"destroyOnCollision": "NIL",
 				"draggable": false,
 				"anim": [{
-					"id": 0,
+					"id": 1,
 					"animName": "A08",
-					"startX": 43,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
+					"numberOfImages": 4,
 					"onTouch": true,
 					"onStart": false,
-					"secPerFrame": [
-						0,
-						0.2,
-						0.2,
-						0
-					],
+					"secPerFrame": [0,0.2,0.2,0],
 					"sequences": [{
 						"startFrame": 0,
 						"endFrame": 3,
 						"noOfLoops": 1,
 						"movable": {
 							"speed": 0
+
 						}
 					}]
 				}]
 			}],
+
 			"texts": [{
 				"id": 0,
 				"text": "The glad cat is happy."
@@ -1079,21 +922,6 @@
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 4,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": 0,
 				"typeOfLinking": 3
 			}]
 
@@ -1121,21 +949,12 @@
 					"destroyOnCollision": "Jam",
 					"draggable": false,
 					"anim": [{
-							"id": 0,
+							"id": 1,
 							"animName": "A09",
-							"startX": 220,
-							"startY": -64.4,
-							"startIndex": 0,
-							"endIndex": 4,
+							"numberOfImages": 8,
 							"onTouch": true,
 							"onStart": false,
-							"secPerFrame": [
-								0.2,
-								0.2,
-								0.2,
-								0.2,
-								1.0
-							],
+							"secPerFrame": [0.2,0.2,0.2,0.2,1.0,0.5,0.3,0.3],
 							"sequences": [{
 									"startFrame": 0,
 									"endFrame": 3,
@@ -1148,36 +967,15 @@
 								},
 								{
 									"startFrame": 4,
-									"endFrame": 4,
-									"noOfLoops": 1,
-									"movable": {
-										"speed": 0
-									}
-								}
-
-							]
-						},
-						{
-							"id": 1,
-							"animName": "A09",
-							"startX": 82,
-							"startY": -64.4,
-							"startIndex": 5,
-							"endIndex": 7,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [0.3, 0.5, 0.5],
-							"sequences": [{
-									"startFrame": 0,
-									"endFrame": 0,
+									"endFrame": 5,
 									"noOfLoops": 1,
 									"movable": {
 										"speed": 0
 									}
 								},
 								{
-									"startFrame": 1,
-									"endFrame": 2,
+									"startFrame": 6,
+									"endFrame": 7,
 									"noOfLoops": 2,
 									"movable": {
 										"speed": 0
@@ -1185,6 +983,7 @@
 								}
 							]
 						}
+
 					]
 				},
 				{
@@ -1200,8 +999,10 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": null
+
 				}
 			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The cat is glad to eat the jam."
@@ -1264,21 +1065,6 @@
 				"textId": 7,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 5,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId": 1,
 				"typeOfLinking": 3
 			}]
 		},
@@ -1292,47 +1078,42 @@
 				"isAnim": true,
 				"objectId": 0
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": 210,
-				"posY": -65,
-				"scaleX": 80,
-				"scaleY": 80,
-				"imageName": "A10-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "FatCatRun",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
+			"gameObjects": [
+
+				{
 					"id": 0,
-					"animName": "A10",
-					"startX": 210,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 5,
-					"onTouch": true,
-					"onStart": false,
-					"secPerFrame": [
-						0.4,
-						0.4,
-						0.4,
-						0.4,
-						0.5,
-						0
-					],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 5,
-						"noOfLoops": 0,
-						"movable": {
-							"finalx": -30,
-							"finaly": -65,
-							"speed": -60
-						}
+					"posX": 210,
+					"posY": -65,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A10-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "FatCatRun",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 0,
+						"animName": "A10",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 5,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -30,
+								"finaly": -65,
+								"speed": -60
+
+							}
+						}]
 					}]
-				}]
-			}],
+				}
+			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The cat is fat and happy."
@@ -1379,20 +1160,14 @@
 			],
 			"triggers": [{
 				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
 				"typeOfLinking": 3
 			}]
 		},
+
+
 		{
 			"pageNumber": 10,
 			"script": "GSManager",
@@ -1417,8 +1192,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -6,
-					"posY": -101,
+					"posX": -11,
+					"posY": -45,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A11a-1",
@@ -1427,30 +1202,33 @@
 					"label": "mat",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A11a",
-						"startX": -11,
-						"startY": -45,
-						"startIndex": 0,
-						"endIndex": 2,
+						"numberOfImages": 3,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0.3,
-							0.3,
-							0.3
-						],
+						"secPerFrame": [0.3, 0.3],
 						"sequences": [{
 							"startFrame": 0,
-							"endFrame": 2,
+							"endFrame": 1,
 							"noOfLoops": 3,
 							"movable": {
 								"speed": 0
+
 							}
+						},
+						{ "startFrame":2,
+						  "endFrame":2,
+						  "noOfLoops":1,
+						  "movable": 
+							{  
+							   "speed":0
+							}	
 						}]
 					}]
 				}
 			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The cat likes the mat."
@@ -1491,10 +1269,9 @@
 			],
 			"triggers": [{
 					"stnzaId": 0,
-					"textId": 4,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 0,
-					"animId": 0,
 					"typeOfLinking": 3
 				},
 				{
@@ -1502,19 +1279,12 @@
 					"textId": 4,
 					"timestamp": null,
 					"sceneObjectId": 1,
-					"animId": 0,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 1,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": -1,
 					"typeOfLinking": 3
 				}
 			]
 		},
+
+
 		{
 			"pageNumber": 11,
 			"script": "GSManager",
@@ -1525,38 +1295,16 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": -19,
+					"posX": -4,
 					"posY": -114,
-					"scaleX": 80,
-					"scaleY": 80,
-					"imageName": "A11a-1",
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
 					"orderInLayer": 1,
 					"inText": true,
 					"label": "NapMat",
 					"draggable": false,
-					"anim": [{
-						"id": 0,
-						"animName": "A11a",
-						"startX": -4,
-						"startY": -114,
-						"startIndex": 0,
-						"endIndex": 2,
-						"onTouch": true,
-						"onStart": false,
-						"secPerFrame": [
-							0.3,
-							0.3,
-							0.3
-						],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 2,
-							"noOfLoops": 3,
-							"movable": {
-								"speed": 0
-							}
-						}]
-					}]
+					"anim": null
 				},
 				{
 					"id": 1,
@@ -1571,21 +1319,12 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A12",
-						"startX": -2,
-						"startY": -65,
-						"startIndex": 0,
-						"endIndex": 4,
+						"numberOfImages": 5,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0,
-							0.2,
-							0.2,
-							0.5,
-							0.5
-						],
+						"secPerFrame": [0, 0.2, 0.2, 0.5, 0.5],
 						"sequences": [{
 								"startFrame": 0,
 								"endFrame": 2,
@@ -1650,31 +1389,16 @@
 
 			],
 			"triggers": [{
-					"stnzaId": 0,
-					"textId": 1,
-					"timestamp": null,
-					"sceneObjectId": 1,
-					"animId": -1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 5,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 0,
-					"typeOfLinking": 3
-				}, {
-					"stnzaId": 0,
-					"textId": 2,
-					"timestamp": null,
-					"animId": 0,
-					"sceneObjectId": 1,
-					"typeOfLinking": 3
-				}
-			]
+				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
 
 		},
+
+
 		{
 
 			"pageNumber": 12,
@@ -1684,43 +1408,38 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": -23,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A13-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "ManHat",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
+			"gameObjects": [
+
+				{
 					"id": 0,
-					"animName": "A13",
-					"startX": -23,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
-					"onTouch": true,
-					"onStart": false,
-					"secPerFrame": [
-						0,
-						0.2,
-						0.2,
-						0
-					],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 1,
-						"movable": {
-							"speed": 0
-						}
+					"posX": -23,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A13-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "ManHat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A13",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0, 0.2, 0.2, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+							}
+						}]
 					}]
-				}]
-			}],
+				}
+			],
 			"texts": [{
 				"id": 0,
 				"text": "Sam’s hat makes him happy"
@@ -1761,20 +1480,14 @@
 			],
 			"triggers": [{
 				"stnzaId": 0,
-				"textId": 0,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
 				"typeOfLinking": 3
 			}]
 		},
+
+
 		{
 
 			"pageNumber": 13,
@@ -1784,45 +1497,40 @@
 				"isAnim": true,
 				"objectId": 1
 			},
-			"gameObjects": [{
-				"id": 0,
-				"posX": -230,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
-				"imageName": "A14-1",
-				"orderInLayer": 1,
-				"inText": true,
-				"label": "RanMan",
-				"destroyOnCollision": "NIL",
-				"draggable": false,
-				"anim": [{
+			"gameObjects": [
+
+				{
 					"id": 0,
-					"animName": "A14",
-					"startX": -230,
-					"startY": -65,
-					"startIndex": 0,
-					"endIndex": 3,
-					"onTouch": true,
-					"onStart": false,
-					"secPerFrame": [
-						0.1,
-						0.1,
-						0.1,
-						0.1
-					],
-					"sequences": [{
-						"startFrame": 0,
-						"endFrame": 3,
-						"noOfLoops": 0,
-						"movable": {
-							"finalx": -30,
-							"finaly": -65,
-							"speed": 25
-						}
+					"posX": -230,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A14-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "RanMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A14",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -30,
+								"finaly": -65,
+								"speed": 25
+							}
+						}]
 					}]
-				}]
-			}],
+				}
+			],
 			"texts": [{
 				"id": 0,
 				"text": "Sam the man ran. He ran fast"
@@ -1878,28 +1586,6 @@
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 5,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 0,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 2,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": -1,
 				"typeOfLinking": 3
 			}]
 
@@ -1916,8 +1602,8 @@
 					"id": 0,
 					"posX": 0,
 					"posY": -114,
-					"scaleX": 40,
-					"scaleY": 40,
+					"scaleX": 30,
+					"scaleY": 30,
 					"imageName": "A15b-3",
 					"orderInLayer": 1,
 					"inText": true,
@@ -1939,18 +1625,12 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A15b",
-						"startX": 0,
-						"startY": -65,
-						"startIndex": 0,
-						"endIndex": 1,
+						"numberOfImages": 2,
 						"onTouch": false,
 						"onStart": false,
-						"secPerFrame": [
-							0.5,
-							0.5
-						],
+						"secPerFrame": [0.5, 0.5],
 						"sequences": [{
 							"startFrame": 0,
 							"endFrame": 1,
@@ -1974,56 +1654,34 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-							"id": 0,
-							"animName": "A15",
-							"startX": -220,
-							"startY": -39,
-							"startIndex": 0,
-							"endIndex": 3,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [
-								0.1,
-								0.1,
-								0.1,
-								0.1,
-								0.1,
-								0.3,
-								0
-							],
-							"sequences": [{
+						"id": 1,
+						"animName": "A15",
+						"numberOfImages": 7,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
+						"sequences": [{
 								"startFrame": 0,
 								"endFrame": 3,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": -85,
+									"finalx":-85,
 									"finaly": -39,
 									"speed": 45
 								}
-							}]
-						},
-						{
-							"id": 1,
-							"animName": "A15",
-							"startX": -85,
-							"startY": -39,
-							"startIndex": 4,
-							"endIndex": 6,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [0.1, 0.5, 0],
-							"sequences": [{
-								"startFrame": 0,
-								"endFrame": 2,
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 6,
 								"noOfLoops": 0,
 								"movable": {
 									"finalx": 110,
 									"finaly": -39,
 									"speed": 65
 								}
-							}]
-						}
-					]
+							}
+						]
+					}]
 				}
 			],
 			"texts": [{
@@ -2087,21 +1745,6 @@
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 0,
-				"timestamp": null,
-				"sceneObjectId": 2,
-				"animId": -1,
-				"typeOfLinking": 3
-			}, {
-				"stnzaId": 0,
-				"textId": 7,
-				"timestamp": null,
-				"sceneObjectId": 2,
-				"animId": 1,
 				"typeOfLinking": 3
 			}]
 
@@ -2143,6 +1786,7 @@
 					"draggable": false,
 					"anim": null
 				},
+
 				{
 					"id": 2,
 					"posX": 0,
@@ -2156,28 +1800,28 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
-						"animName": "A16",
-						"startX": -0,
-						"startY": -65,
-						"startIndex": 0,
-						"endIndex": 1,
-						"onTouch": true,
-						"onStart": false,
-						"secPerFrame": [
-							0.5,
-							0.5
-						],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 1,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
-							}
-						}]
-					}]
+							"id": 1,
+							"animName": "A16",
+							"numberOfImages": 2,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.5, 0.5],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
 				},
+
 				{
 					"id": 3,
 					"posX": -46,
@@ -2191,30 +1835,31 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
-						"animName": "A16b",
-						"startX": -46,
-						"startY": -45,
-						"startIndex": 0,
-						"endIndex": 3,
-						"onTouch": true,
-						"onStart": false,
-						"secPerFrame": [
-							0.4,
-							0.4,
-							0.4,
-							0.4
-						],
-						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 3,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
-							}
-						}]
-					}]
+							"id": 1,
+							"animName": "A16b",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.4, 0.4, 0.4, 0.4],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
 				}
+
+
+
+
 			],
 			"texts": [{
 				"id": 0,
@@ -2255,22 +1900,12 @@
 
 			],
 			"triggers": [{
-					"stnzaId": 0,
-					"textId": 4,
-					"timestamp": null,
-					"sceneObjectId": 2,
-					"animId": 0,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 1,
-					"timestamp": null,
-					"sceneObjectId": 2,
-					"animId": -1,
-					"typeOfLinking": 3
-				}
-			]
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 2,
+				"typeOfLinking": 3
+			}]
 
 		},
 
@@ -2309,32 +1944,27 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-						"id": 0,
+						"id": 1,
 						"animName": "A17",
-						"startX": 0,
-						"startY": -65,
-						"startIndex": 0,
-						"endIndex": 4,
+						"numberOfImages": 5,
 						"onTouch": true,
 						"onStart": false,
-						"secPerFrame": [
-							0,
-							0.5,
-							0.5,
-							0.2,
-							0
-						],
+						"secPerFrame": [0, 0.5, 0.5, 0.2, 0],
 						"sequences": [{
-							"startFrame": 0,
-							"endFrame": 4,
-							"noOfLoops": 1,
-							"movable": {
-								"speed": 0
+								"startFrame": 0,
+								"endFrame": 4,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
 							}
-						}]
+
+						]
 					}]
 				}
 			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The fat cat had a happy nap"
@@ -2390,22 +2020,6 @@
 				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":0,
-				"typeOfLinking": 3
-			},{
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId":-1,
-				"typeOfLinking": 3
-			},
-			{
-				"stnzaId": 0,
-				"textId": 6,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId":0,
 				"typeOfLinking": 3
 			}]
 		},
@@ -2444,48 +2058,38 @@
 					"destroyOnCollision": "NIL",
 					"draggable": false,
 					"anim": [{
-							"id": 0,
-							"animName": "A18",
-							"startX": 220,
-							"startY": -57,
-							"startIndex": 0,
-							"endIndex": 5,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [
-								0.4,
-								0.4,
-								0.4,
-								0.4,
-								0.5,
-								0.5
-
-							],
-							"sequences": [{
-									"startFrame": 0,
-									"endFrame": 3,
-									"noOfLoops": 0,
-									"movable": {
-										"finalx": -20,
-										"finaly": -57,
-										"speed": -60
-									}
-								},
-								{
-									"startFrame": 4,
-									"endFrame": 5,
-									"noOfLoops": 3,
-									"movable": {
-										"speed": 0
-									}
+						"id": 1,
+						"animName": "A18",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0.5],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": -20,
+									"finaly": -57,
+									"speed": -60
 								}
 
-							]
-						}
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 5,
+								"noOfLoops": 3,
+								"movable": {
+									"speed": 0
+								}
 
-					]
+							}
+
+						]
+					}]
 				}
 			],
+
 			"texts": [{
 				"id": 0,
 				"text": "The fat cat in a jam is not happy."
@@ -2546,14 +2150,15 @@
 					"end": 2597
 				}
 			],
-			"triggers": [{
+			"triggers": [
+			{
 				"stnzaId": 0,
-				"textId": 5,
+				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":0,
 				"typeOfLinking": 3
-			}]
+			}
+			]
 		},
 		{
 			"pageNumber": 18,
