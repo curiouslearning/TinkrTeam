@@ -167,17 +167,23 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	void OnTriggerEnter (Collider col)
 	{
-		Debug.Log (""+col.name);
+		Debug.Log ("ooooooooo"+col.name);
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
-		{
+		{    Debug.Log ("yess");
+			
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
 		}
 	}
 
 	public IEnumerator DestroyCollisionObject (GameObject go)
-	{
-			yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
-			go.SetActive (false);
+	{       //for (currentframe = sequences [seqIterator].startFrame; currentframe <= sequences [seqIterator].endFrame; currentframe++) {
+			//spr.sprite = sprite [currentframe];
+			//yield return new WaitForSeconds (secPerFrame [currentframe]);
+		//}
+			//yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
+		yield return new WaitForSecondsRealtime (1.0f);
+		Debug.Log("des");	
+		go.SetActive (false);
 	}
 
 	/// <summary>
@@ -203,6 +209,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		}
 
 	}
+
 	public void ResetandZoom()
 	{
 		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
