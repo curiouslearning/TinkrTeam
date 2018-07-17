@@ -9,6 +9,7 @@ public class L4CatSManager7 : GSManager {
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "CatHam") {
+			Debug.Log ("insise");
 			if (ham == null) {
 				ham = GameObject.Find ("Ham");
 			}
@@ -22,10 +23,11 @@ public class L4CatSManager7 : GSManager {
 
 			ham.SetActive (true);
 			GTinkerGraphic catHam = GameObject.Find ("CatHam").GetComponent<GTinkerGraphic> ();
-//			if (catHam != null)
-//			{ 
+			if (catHam != null)
+			{ catHam.gameObject.transform.position = new Vector3 (catHam.dataTinkerGraphic.posX, catHam.dataTinkerGraphic.posY, 0);
+				LoadAssetFromJSON.LoadAssetImage (catHam, catHam.dataTinkerGraphic.imageName);
 //				catHam.MyOnMouseDown();
-//			}
+			}
 
 		} else if (go.name == "Text_wants") {
 			if (ham == null) {
