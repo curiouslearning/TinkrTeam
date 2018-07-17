@@ -37,7 +37,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private DateTime inTime;
     
     //location of hosted json file in amazon s3 bucket
-    private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
+    private const string url = "https://s3.ap-south-2.amazonaws.com/tinkr2/manifest.json";
 
     private string responseJson;
     private bool isServerJson = false;

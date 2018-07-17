@@ -1,0 +1,1918 @@
+{
+	"id": 1,
+	"fontColor": "black",
+	"textStartPositionX": -70.0,
+	"textStartPositionY": 132.0,
+	"textFontSize": 60,
+	"storyImageFile": null,
+	"backgroundColor": "blue",
+	"arrowColor": "red",
+	"fontFamily": "helvetica",
+	"language": "english",
+	"pages": [{
+			"pageNumber": 0,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 25,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A01-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "cat",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 0,
+					"animName": "A01",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+							}
+
+						}
+
+					]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "c a t"
+
+			}, {
+				"id": 1,
+				"text": "cat"
+
+			}],
+			"audioFile": "k a t.mp3",
+			"timestamps": [{
+					"start": 329,
+					"wordIdx": 0,
+					"audio": "k a t.mp3",
+					"end": 736
+				}, {
+					"start": 956,
+					"wordIdx": 1,
+					"audio": "k a t.mp3",
+					"end": 1394
+				}, {
+					"start": 1755,
+					"wordIdx": 2,
+					"audio": "k a t.mp3",
+					"end": 2117
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "cat.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 1,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 25,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A02-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "wag",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A02",
+					"numberOfImages": 6,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0.2, 0.2, 0.2, 0.2, 0.2, 0.2],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 5,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+							}
+
+						}
+
+					]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "w a g"
+
+			}, {
+				"id": 1,
+				"text": "wag"
+
+			}],
+			"audioFile": "w a g.mp3",
+			"timestamps": [{
+					"start": 207,
+					"wordIdx": 0,
+					"audio": "w a g.mp3",
+					"end": 725
+				},
+				{
+					"start": 1181,
+					"wordIdx": 1,
+					"audio": "w a g.mp3",
+					"end": 1589
+				},
+				{
+					"start": 1939,
+					"wordIdx": 2,
+					"audio": "w a g.mp3",
+					"end": 2314
+				},
+				{
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "wag.mp3",
+					"end": 890
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+
+		{
+			"pageNumber": 2,
+			"script": "L0CatSManager3",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 25,
+					"posY": -80,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "A03b-1",
+					"orderInLayer": 1,
+					"inText": false,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A03b",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.2, 0.2, 0.2, 0.1, 0.1],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 2,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+
+								}
+							},
+							{
+								"startFrame": 3,
+								"endFrame": 4,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": 214,
+									"finaly": -80,
+									"speed": 63
+								}
+							}
+						]
+					}]
+				},
+				{
+					"id": 1,
+					"posX": -216,
+					"posY": -54,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A03-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Ran",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A03",
+						"numberOfImages": 9,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 8,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -36,
+								"finaly": -54,
+								"speed": 15
+
+							}
+						}]
+					}]
+				}
+			],
+
+
+			"texts": [{
+				"id": 0,
+				"text": "r a n"
+
+			}, {
+				"id": 1,
+				"text": "ran"
+
+			}],
+			"audioFile": "r a n.mp3",
+			"timestamps": [{
+					"start": 279,
+					"wordIdx": 0,
+					"audio": "r a n.mp3",
+					"end": 819
+				}, {
+					"start": 1273,
+					"wordIdx": 1,
+					"audio": "r a n.mp3",
+					"end": 1657
+				}, {
+					"start": 1948,
+					"wordIdx": 2,
+					"audio": "r a n.mp3",
+					"end": 2356
+				}, {
+					"start": 49,
+					"wordIdx": 3,
+					"audio": "ran.mp3",
+					"end": 300
+				}
+
+			],
+			"triggers": [{
+					"stnzaId": 1,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 1,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+			]
+		},
+
+
+		{
+			"pageNumber": 3,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -23,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A04-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "Man",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A04",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+					"id": 0,
+					"text": "m a n"
+
+				},
+				{
+					"id": 1,
+					"text": "man"
+				}
+			],
+			"audioFile": "m a n.mp3",
+			"timestamps": [{
+					"start": 343,
+					"wordIdx": 0,
+					"audio": "m a n.mp3",
+					"end": 880
+				}, {
+					"start": 1142,
+					"wordIdx": 1,
+					"audio": "m a n.mp3",
+					"end": 1582
+				}, {
+					"start": 1792,
+					"wordIdx": 2,
+					"audio": "m a n.mp3",
+					"end": 2192
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "man.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+					"stnzaId": 1,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"typeOfLinking": 3
+				}
+
+			]
+
+		},
+
+
+		{
+			"pageNumber": 4,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -23,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A05-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "Sam",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A05",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0, 0.2, 0.2, 0.2],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+
+							}
+						},
+						{
+							"startFrame": 2,
+							"endFrame": 3,
+							"noOfLoops": 3,
+							"movable": {
+								"speed": 0
+
+							}
+						}
+					]
+				}]
+			}],
+			"texts": [{
+					"id": 0,
+					"text": "s a m"
+
+				},
+				{
+					"id": 1,
+					"text": "sam"
+
+				}
+			],
+			"audioFile": "s a m.mp3",
+			"timestamps": [{
+				"start": 244,
+				"wordIdx": 0,
+				"audio": "s a m.mp3",
+				"end": 832
+			}, {
+				"start": 1207,
+				"wordIdx": 1,
+				"audio": "s a m.mp3",
+				"end": 1627
+			}, {
+				"start": 1853,
+				"wordIdx": 2,
+				"audio": "s a m.mp3",
+				"end": 2235
+			}, {
+				"start": 50,
+				"wordIdx": 3,
+				"audio": "sam.mp3",
+				"end": 801
+			}],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 5,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 33,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A06-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "sad",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A06",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0.5, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+					"id": 0,
+					"text": "s a d"
+
+				},
+				{
+					"id": 1,
+					"text": "sad"
+
+				}
+			],
+			"audioFile": "s a d.mp3",
+			"timestamps": [{
+					"start": 276,
+					"wordIdx": 0,
+					"audio": "s a d.mp3",
+					"end": 966
+				}, {
+					"start": 1227,
+					"wordIdx": 1,
+					"audio": "s a d.mp3",
+					"end": 1702
+				}, {
+					"start": 2188,
+					"wordIdx": 2,
+					"audio": "s a d.mp3",
+					"end": 2600
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "sad.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 6,
+			"script": "L0CatSManager7",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 240,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A07-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "CatHam",
+					"destroyOnCollision": "Ham",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A07",
+							"numberOfImages": 7,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.4, 0.4],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 2,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 40,
+										"finaly": -65,
+										"speed": -50
+									}
+								},
+								{
+									"startFrame": 3,
+									"endFrame": 4,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 5,
+									"endFrame": 6,
+									"noOfLoops": 2,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+
+					]
+				},
+				{
+					"id": 1,
+					"posX": -34.2,
+					"posY": -122.9,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A07-8",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Ham",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+
+				}
+			],
+			"texts": [{
+					"id": 0,
+					"text": "h a m"
+
+				},
+				{
+					"id": 1,
+					"text": "ham"
+
+				}
+			],
+			"audioFile": "h a m.mp3",
+			"timestamps": [{
+					"start": 239,
+					"wordIdx": 0,
+					"audio": "h a m.mp3",
+					"end": 743
+				}, {
+					"start": 1235,
+					"wordIdx": 1,
+					"audio": "h a m.mp3",
+					"end": 1642
+				}, {
+					"start": 1996,
+					"wordIdx": 2,
+					"audio": "h a m.mp3",
+					"end": 2351
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "ham.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+		{
+			"pageNumber": 7,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": 43,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A08-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "glad",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A08",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+				"id": 0,
+				"text": "g l a d"
+
+			}, {
+				"id": 1,
+				"text": "glad"
+
+			}],
+			"audioFile": "g l a d.mp3",
+			"timestamps": [{
+					"start": 288,
+					"wordIdx": 0,
+					"audio": "g l a d.mp3",
+					"end": 922
+				}, {
+					"start": 1172,
+					"wordIdx": 1,
+					"audio": "g l a d.mp3",
+					"end": 1730
+				}, {
+					"start": 2077,
+					"wordIdx": 2,
+					"audio": "g l a d.mp3",
+					"end": 2515
+				}, {
+					"start": 2908,
+					"wordIdx": 3,
+					"audio": "g l a d.mp3",
+					"end": 3290
+				}, {
+					"start": 185,
+					"wordIdx": 4,
+					"audio": "glad.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+
+		{
+			"pageNumber": 8,
+			"script": "L0CatSManager9",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 220,
+					"posY": -64.4,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A09-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "CatJam",
+					"destroyOnCollision": "Jam",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A09",
+							"numberOfImages": 8,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.2, 0.2, 0.2, 0.2, 1.0, 0.5, 0.3, 0.3],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 0,
+									"movable": {
+										"finalx": 82,
+										"finaly": -64.4,
+										"speed": -46
+									}
+								},
+								{
+									"startFrame": 4,
+									"endFrame": 5,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+								{
+									"startFrame": 6,
+									"endFrame": 7,
+									"noOfLoops": 2,
+									"movable": {
+										"speed": 0
+									}
+								}
+							]
+						}
+
+					]
+				},
+				{
+					"id": 1,
+					"posX": -23,
+					"posY": -108,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A09-9",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Jam",
+					"destroyOnCollision": "Jam",
+					"draggable": false,
+					"anim": null
+
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "j a m"
+
+			}, {
+				"id": 0,
+				"text": "jam"
+
+			}],
+
+			"audioFile": "j a m.mp3",
+			"timestamps": [{
+					"start": 335,
+					"wordIdx": 0,
+					"audio": "j a m.mp3",
+					"end": 1105
+				}, {
+					"start": 1430,
+					"wordIdx": 1,
+					"audio": "j a m.mp3",
+					"end": 1873
+				}, {
+					"start": 2228,
+					"wordIdx": 2,
+					"audio": "j a m.mp3",
+					"end": 2581
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "jam.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 9,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 0
+			},
+			"gameObjects": [
+
+				{
+					"id": 0,
+					"posX": 210,
+					"posY": -65,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A10-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "FatCatRun",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 0,
+						"animName": "A10",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": -30,
+									"finaly": -65,
+									"speed": -60
+
+								}
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 5,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+
+								}
+							}
+						]
+					}]
+				}
+			],
+			"texts": [{
+					"id": 0,
+					"text": "f a t"
+
+				},
+				{
+					"id": 1,
+					"text": "fat"
+
+				}
+			],
+
+			"audioFile": "f a t.mp3",
+			"timestamps": [{
+					"start": 295,
+					"wordIdx": 0,
+					"audio": "f a t.mp3",
+					"end": 870
+				}, {
+					"start": 1161,
+					"wordIdx": 1,
+					"audio": "f a t.mp3",
+					"end": 1565
+				}, {
+					"start": 2053,
+					"wordIdx": 2,
+					"audio": "f a t.mp3",
+					"end": 2354
+				},
+				{
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "fat.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 10,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -11,
+				"posY": -45,
+				"scaleX": 80,
+				"scaleY": 80,
+				"imageName": "A11a-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "mat",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A11a",
+					"numberOfImages": 3,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0.3, 0.3, 0.3],
+					"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 3,
+							"movable": {
+								"speed": 0
+
+							}
+						},
+						{
+							"startFrame": 2,
+							"endFrame": 2,
+							"noOfLoops": 1,
+							"movable": {
+								"speed": 0
+
+							}
+						}
+					]
+				}]
+			}],
+
+			"texts": [{
+				"id": 0,
+				"text": "m a t"
+
+			}, {
+				"id": 1,
+				"text": "mat"
+
+			}],
+
+			"audioFile": "m a t.mp3",
+			"timestamps": [{
+				"start": 212,
+				"wordIdx": 0,
+				"audio": "m a t.mp3",
+				"end": 816
+			}, {
+				"start": 1112,
+				"wordIdx": 1,
+				"audio": "m a t.mp3",
+				"end": 1542
+			}, {
+				"start": 1924,
+				"wordIdx": 2,
+				"audio": "m a t.mp3",
+				"end": 2170
+			}, {
+				"start": 185,
+				"wordIdx": 3,
+				"audio": "Mat.mp3",
+				"end": 801
+			}],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+
+
+		{
+			"pageNumber": 11,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": -4,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "NapMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -2,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A12-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "NapCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A12",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0, 0.2, 0.2, 0.5, 0.5],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 2,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+							},
+							{
+								"startFrame": 3,
+								"endFrame": 4,
+								"noOfLoops": 2,
+								"movable": {
+									"speed": 0
+								}
+							}
+						]
+					}]
+				}
+			],
+			"texts": [
+				[{
+					"id": 0,
+					"text": "n a p"
+
+				}, {
+					"id": 1,
+					"text": "nap"
+
+				}]
+			],
+
+			"audioFile": "n a p.mp3",
+			"timestamps": [{
+				"start": 88,
+				"wordIdx": 0,
+				"audio": "n a p.mp3",
+				"end": 732
+			}, {
+				"start": 1079,
+				"wordIdx": 1,
+				"audio": "n a p.mp3",
+				"end": 1461
+			}, {
+				"start": 1912,
+				"wordIdx": 2,
+				"audio": "n a p.mp3",
+				"end": 2197
+			}, {
+				"start": 50,
+				"wordIdx": 3,
+				"audio": "nap.mp3",
+				"end": 801
+			}],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+
+		},
+		{
+
+			"pageNumber": 12,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+				"id": 0,
+				"posX": -23,
+				"posY": -65,
+				"scaleX": 40,
+				"scaleY": 40,
+				"imageName": "A13-1",
+				"orderInLayer": 1,
+				"inText": true,
+				"label": "ManHat",
+				"destroyOnCollision": "NIL",
+				"draggable": false,
+				"anim": [{
+					"id": 1,
+					"animName": "A13",
+					"numberOfImages": 4,
+					"onTouch": true,
+					"onStart": false,
+					"secPerFrame": [0, 0.2, 0.2, 0],
+					"sequences": [{
+						"startFrame": 0,
+						"endFrame": 3,
+						"noOfLoops": 1,
+						"movable": {
+							"speed": 0
+						}
+					}]
+				}]
+			}],
+			"texts": [{
+				"id": 0,
+				"text": "h a t"
+
+			}, {
+				"id": 1,
+				"text": "hat"
+
+			}],
+
+			"audioFile": "h a t.mp3",
+			"timestamps": [{
+					"start": 218,
+					"wordIdx": 0,
+					"audio": "h a t.mp3",
+					"end": 637
+				}, {
+					"start": 907,
+					"wordIdx": 1,
+					"audio": "h a t.mp3",
+					"end": 1307
+				}, {
+					"start": 1800,
+					"wordIdx": 2,
+					"audio": "h a t.mp3",
+					"end": 2034
+				},
+				{
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "hat.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+		},
+		{
+
+			"pageNumber": 13,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [
+
+				{
+					"id": 0,
+					"posX": -230,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A14-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "RanMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A14",
+						"numberOfImages": 4,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 3,
+							"noOfLoops": 0,
+							"movable": {
+								"finalx": -30,
+								"finaly": -65,
+								"speed": 25
+							}
+						}]
+					}]
+				}
+			],
+			"texts": [{
+					"id": 0,
+					"text": "r a n"
+
+				},
+				{
+					"id": 1,
+					"text": "ran"
+
+				}
+
+			],
+
+			"audioFile": "r a n 2.mp3",
+			"timestamps": [{
+					"start": 410,
+					"wordIdx": 0,
+					"audio": "r a n 2.mp3",
+					"end": 976
+				}, {
+					"start": 1273,
+					"wordIdx": 1,
+					"audio": "r a n 2.mp3",
+					"end": 1666
+				}, {
+					"start": 1888,
+					"wordIdx": 2,
+					"audio": "r a n 2.mp3",
+					"end": 2219
+				},
+				{
+					"start": 50,
+					"wordIdx": 2,
+					"audio": "ran2.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"typeOfLinking": 3
+			}]
+
+		},
+		{
+			"pageNumber": 14,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 0,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "SlamCatMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "SlamCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A15b",
+						"numberOfImages": 2,
+						"onTouch": false,
+						"onStart": false,
+						"secPerFrame": [0.5, 0.5],
+						"sequences": [{
+							"startFrame": 0,
+							"endFrame": 1,
+							"noOfLoops": 5,
+							"movable": {
+								"speed": 0
+							}
+						}]
+					}]
+				},
+				{
+					"id": 2,
+					"posX": -220,
+					"posY": -39,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "RanMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A15",
+						"numberOfImages": 7,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.1, 0.1, 0.1, 0.1, 0.1, 0.5, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": -85,
+									"finaly": -39,
+									"speed": 45
+								}
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 6,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": 110,
+									"finaly": -39,
+									"speed": 65
+								}
+							}
+						]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "s l a m"
+
+			}, {
+				"id": 1,
+				"text": "slam"
+
+			}],
+
+			"audioFile": "s l a m.mp3",
+			"timestamps": [{
+					"start": 246,
+					"wordIdx": 0,
+					"audio": "s l a m.mp3",
+					"end": 900
+				}, {
+					"start": 1139,
+					"wordIdx": 1,
+					"audio": "s l a m.mp3",
+					"end": 1760
+				}, {
+					"start": 2165,
+					"wordIdx": 2,
+					"audio": "s l a m.mp3",
+					"end": 2623
+				}, {
+					"start": 3051,
+					"wordIdx": 3,
+					"audio": "s l a m.mp3",
+					"end": 3402
+				}, {
+					"start": 50,
+					"wordIdx": 4,
+					"audio": "slam.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 2,
+				"typeOfLinking": 3
+			}]
+
+
+		},
+		{
+			"pageNumber": 15,
+			"script": "L0CatSManager16",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 106,
+					"posY": -39,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15-7",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "SleepMan",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 0,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "SleepMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+
+				{
+					"id": 2,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A16-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A16",
+							"numberOfImages": 2,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.5, 0.5],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 1,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
+				},
+
+				{
+					"id": 3,
+					"posX": -46,
+					"posY": -45,
+					"scaleX": 80,
+					"scaleY": 80,
+					"imageName": "A16b-1",
+					"orderInLayer": 3,
+					"inText": true,
+					"label": "Sleep",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+							"id": 1,
+							"animName": "A16b",
+							"numberOfImages": 4,
+							"onTouch": true,
+							"onStart": false,
+							"secPerFrame": [0.4, 0.4, 0.4, 0.4],
+							"sequences": [{
+									"startFrame": 0,
+									"endFrame": 3,
+									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								}
+
+							]
+						}
+
+
+					]
+				}
+			],
+			"texts": [{
+					"id": 0,
+					"text": "c a t"
+
+				},
+				{
+					"id": 1,
+					"text": "cat"
+
+				}
+
+			],
+			"audioFile": "k a t 2.mp3",
+			"timestamps": [{
+					"start": 255,
+					"wordIdx": 0,
+					"audio": "k a t 2.mp3",
+					"end": 645
+				}, {
+					"start": 1039,
+					"wordIdx": 1,
+					"audio": "k a t 2.mp3",
+					"end": 1436
+				}, {
+					"start": 2004,
+					"wordIdx": 2,
+					"audio": "k a t 2.mp3",
+					"end": 2160
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "cat2.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 2,
+				"typeOfLinking": 3
+			}]
+
+		},
+
+
+		{
+			"pageNumber": 16,
+			"script": "GSManager",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 0,
+					"posY": -114,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A15b-3",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "fatMat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 0,
+					"posY": -65,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A17-1",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "fatCat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A17",
+						"numberOfImages": 5,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0, 0.4, 0.4, 0.2, 0],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 4,
+								"noOfLoops": 1,
+								"movable": {
+									"speed": 0
+								}
+
+							}
+
+						]
+					}]
+				}
+			],
+			"texts": [{
+				"id": 0,
+				"text": "f a t "
+
+			}, {
+				"id": 1,
+				"text": "fat"
+
+			}],
+			"audioFile": "f a t 2.mp3",
+			"timestamps": [{
+					"start": 285,
+					"wordIdx": 0,
+					"audio": "f a t 2.mp3",
+					"end": 990
+				}, {
+					"start": 1181,
+					"wordIdx": 1,
+					"audio": "f a t 2.mp3",
+					"end": 1583
+				}, {
+					"start": 1907,
+					"wordIdx": 2,
+					"audio": "f a t 2.mp3",
+					"end": 2117
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "fat2.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [{
+				"stnzaId": 1,
+				"textId": 0,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"typeOfLinking": 3
+			}]
+		},
+		{
+			"pageNumber": 17,
+			"script": "L0CatSManager18",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 8,
+					"posY": -131,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A18-7",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Jam",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": 220,
+					"posY": -57,
+					"scaleX": 40,
+					"scaleY": 40,
+					"imageName": "A18-1",
+					"orderInLayer": 1,
+					"inText": true,
+					"label": "Cat",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": [{
+						"id": 1,
+						"animName": "A18",
+						"numberOfImages": 6,
+						"onTouch": true,
+						"onStart": false,
+						"secPerFrame": [0.4, 0.4, 0.4, 0.4, 0.5, 0.5],
+						"sequences": [{
+								"startFrame": 0,
+								"endFrame": 3,
+								"noOfLoops": 0,
+								"movable": {
+									"finalx": -20,
+									"finaly": -57,
+									"speed": -60
+								}
+
+							},
+							{
+								"startFrame": 4,
+								"endFrame": 5,
+								"noOfLoops": 3,
+								"movable": {
+									"speed": 0
+								}
+
+							}
+
+						]
+					}]
+				}
+			],
+
+			"texts": [{
+					"id": 0,
+					"text": "j a m"
+
+				},
+				{
+					"id": 1,
+					"text": "jam"
+
+				}
+			],
+			"audioFile": "j a m 2.mp3",
+			"timestamps": [{
+					"start": 330,
+					"wordIdx": 0,
+					"audio": "j a m 2.mp3",
+					"end": 1024
+				}, {
+					"start": 1349,
+					"wordIdx": 1,
+					"audio": "j a m 2.mp3",
+					"end": 1739
+				}, {
+					"start": 1953,
+					"wordIdx": 2,
+					"audio": "j a m 2.mp3",
+					"end": 2313
+				}, {
+					"start": 50,
+					"wordIdx": 3,
+					"audio": "jam2.mp3",
+					"end": 801
+				}
+
+			],
+			"triggers": [
+
+				{
+					"stnzaId": 1,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 1,
+					"typeOfLinking": 3
+				}
+
+			]
+		},
+		{
+			"pageNumber": 18,
+			"script": "EndPage",
+			"audio": {
+				"audioName": "audio-name",
+				"isAnim": true,
+				"objectId": 1
+			},
+			"gameObjects": [{
+					"id": 0,
+					"posX": 140,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "ReadAgain",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "ReadAgain",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				},
+				{
+					"id": 1,
+					"posX": -160,
+					"posY": -5,
+					"scaleX": 30,
+					"scaleY": 30,
+					"imageName": "Home",
+					"orderInLayer": 2,
+					"inText": true,
+					"label": "Home",
+					"destroyOnCollision": "NIL",
+					"draggable": false,
+					"anim": null
+				}
+			],
+			"texts": null,
+			"audioFile": null,
+			"timestamps": null,
+			"triggers": null
+
+		}
+
+	]
+}

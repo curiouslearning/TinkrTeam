@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// Script responsible for controling scenes,touch events and dropdown menu.
+/// Script responsible for controling scenes,touch events and home menu.
 /// </summary>
 public class GGameManager : MonoBehaviour
 {   // Reference to GSManager 

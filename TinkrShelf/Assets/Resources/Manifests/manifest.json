@@ -3,6 +3,20 @@
     "books":[
     {
         "bookId": 0,
+        "title": "Cat's Tale(level 0)",
+        "author": "",
+        "language": "English (U.S.)",
+        "readingLevel": 1, 
+        "tags" : [
+                "frog", 
+                "jump"
+            ],
+	"fileName": "CatStoryLevel0",
+	"pathToThumbnail": "Thumbnail/cat",
+	"version": 1
+        },
+	{
+        "bookId": 1,
         "title": "Cat's Tale(level 1)",
         "author": "",
         "language": "English (U.S.)",
@@ -11,12 +25,12 @@
                 "frog", 
                 "jump"
             ],
-"fileName": "CatStory",
+"fileName": "CatStoryLevel1",
 "pathToThumbnail": "Thumbnail/cat",
 "version": 1
         },
         {
-            "bookId": 1,
+            "bookId": 2,
 			"title": "Cat's Tale(level 2)",
             "author": "",
             "language": "English (U.S.)",
@@ -31,7 +45,7 @@
             
         },
         {
-            "bookId": 2,
+            "bookId": 3,
 			"title": "Cat's Tale(level 3)",
             "author": "",
             "language": "English (U.S.)",
@@ -46,7 +60,7 @@
             
         },
         {
-            "bookId": 3,
+            "bookId": 4,
             "title": "Cat's Tale(level 4)",
             "author": "",
             "language": "English (U.S.)",
@@ -60,7 +74,7 @@
     "version": 1
         },
 		{
-            "bookId": 4,
+            "bookId": 5,
 			"title": "Cat's Tale(level 5)",
             "author": "",
             "language": "English (U.S.)",
@@ -75,7 +89,7 @@
             
         },
 		{
-    "bookId": 5,
+    "bookId": 6,
     "title": "Baby Duck Story",
     "author": "",
     "language": "English (U.S.)",
@@ -89,6 +103,5 @@
 "version": 1
     },
 
-	
 ]
 }

@@ -1,10 +1,4 @@
-﻿	using System.Collections.Generic;
-	using UnityEngine;
-	using System.IO;
-	using UnityEngine.SceneManagement;
-	using UnityEngine.EventSystems;
-	using UnityEngine.UI;
-	using System.Collections;
+﻿	using UnityEngine;
 
 	public class BookCollision : ShelfManager
 	{  
