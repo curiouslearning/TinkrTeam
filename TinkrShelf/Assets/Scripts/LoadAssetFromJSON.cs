@@ -10,7 +10,7 @@ using System;
 /// Script to load the scene based on JSON describing the book.
 /// </summary>
 public class LoadAssetFromJSON : MonoBehaviour {
-    private string[] allPagesJsons; //
+    private string[] allPagesJsons; 
     public static StoryBookJson storyBookJson;
     public static int pageNumber;
     public GStanzaManager stanzaManager;
@@ -214,8 +214,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
         GameObject go = new GameObject();
         go.transform.SetParent(canvasTransform);
         go.name = "SceneManager" + pageNumber;
-        //if (pageNumber != 18)
-        //{
             sceneScript = storyBookJson.pages[pageNumber].script;
             go.AddComponent(Type.GetType(sceneScript));
             GameObject.Find("Canvas").GetComponent<GStanzaManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
@@ -225,14 +223,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
             GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Lbutton = GameObject.FindWithTag("left_arrow");
             GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Rbutton = GameObject.FindWithTag("right_arrow");
             GameObject.Find("GameManager").GetComponent<GGameManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
-        //}
-        //else {
-        //    sceneScript = storyBookJson.pages[pageNumber].script;
-        //    go.AddComponent(Type.GetType(sceneScript));
-
-        //}
-
-
     }
 
 	/// <summary>
@@ -330,9 +320,13 @@ public class LoadAssetFromJSON : MonoBehaviour {
         stanzaManager.stanzas.Clear();
         j = 0;
         stanzaObjects = new List<GameObject>();// stanzaObjects list to keep track of all the stanzaobjects in one page 
+        Debug.Log(storyBookJson.pages[pageNumber].texts);
+
         TextClass[] texts = storyBookJson.pages[pageNumber].texts;
+
 		int length = storyBookJson.pages [pageNumber].timestamps.Length;
-		if(length==1)
+
+        if (length==1)
 			startingX=-95.0f ;
 		else if(length==2)
 			startingX=-175.0f ;
@@ -354,6 +348,9 @@ public class LoadAssetFromJSON : MonoBehaviour {
             startingY = startingY - height - minLineSpace;
             j++;
         }
+
+
+
 
     }
 
