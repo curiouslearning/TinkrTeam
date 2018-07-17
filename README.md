@@ -46,7 +46,7 @@ ShelfManager.cs -> BookObject.cs -> BookCollision.cs
  1. Load initial/local asset bundle on shelf scene
  
  // TODO: Pull manifest and book files from a server. Today they are stored locally.
- 2. Call server manifest file with timeout of 1.0sec.
+ 2. Call server manifest file with timeout of 1.0 sec.
 
  3. if (server manifest is newer than local manifest) 
          use server manifest         
@@ -67,6 +67,7 @@ ShelfManager.cs -> BookObject.cs -> BookCollision.cs
 Section for the "Player" including what scripts parse the Tinkr Book JSON, display the book, and listing all the interactive function scripts.
 
 Json related Scripts:
+
 Script Name | Description 
 --- | --- 
 JsonHelper.cs|all functions needed to parse json
@@ -95,13 +96,10 @@ GTinkerText.cs|Script responsible for every function of the text.|every child of
 GTinkerGraphic.cs|Script responsible for every function of the graphic.|graphic_game_object
 
 
-
-
-
 ## Creating a New Tinkr Book
 Section for "Creating a New Tinkr Book" to detail what needs to be done in creating a new Tinkr Book
-### Recipe to make Tinkrbook 
 
+### Recipe to make Tinkrbook 
 
 ##### 1. Setting the folder hierarchy right. 
 StepNo | Description | How
@@ -128,6 +126,8 @@ Scene No |Script Name |Description
 9|LX PQRTale SManager9| This script has the functionally similar to the Smanager 7 
 16|LX PQRTale SManager16|
 18|LX PQRTale SManager18|
+
+**this section details ll be modified in next sprint due to user story #250.
 
 ## Data Collection
 #### Files Used:
