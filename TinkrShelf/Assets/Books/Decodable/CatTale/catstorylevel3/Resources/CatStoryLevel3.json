@@ -110,7 +110,7 @@
 					"wordIdx": 1,
 					"audio": "Cat.mp3",
 					"end": 595,
-					"starWord": "No"
+					"starWord": "Yes"
 
 				}
 			],
@@ -201,7 +201,7 @@
 					"wordIdx": 2,
 					"audio": "wags.mp3",
 					"end": 1165,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -346,7 +346,7 @@
 					"wordIdx": 2,
 					"audio": "Ran.mp3",
 					"end": 1090,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -444,7 +444,7 @@
 					"wordIdx": 2,
 					"audio": "Man.mp3",
 					"end": 1020,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -534,7 +534,7 @@
 					"wordIdx": 1,
 					"audio": "waves.mp3",
 					"end": 985,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -630,7 +630,7 @@
 					"wordIdx": 3,
 					"audio": "Sad.mp3",
 					"end": 1215,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -774,7 +774,7 @@
 					"wordIdx": 2,
 					"audio": "eats.mp3",
 					"end": 1060,
-					"starWord": "No"
+					"starWord": "Yes"
 				},
 				{
 					"start": 1075,
@@ -883,7 +883,7 @@
 					"wordIdx": 3,
 					"audio": "Glad.mp3",
 					"end": 1350,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1028,7 +1028,7 @@
 					"wordIdx": 2,
 					"audio": "eats.mp3",
 					"end": 1155,
-					"starWord": "No"
+					"starWord": "Yes"
 				},
 				{
 					"start": 1190,
@@ -1141,7 +1141,7 @@
 					"wordIdx": 3,
 					"audio": "Fat.mp3",
 					"end": 1290,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1249,7 +1249,7 @@
 					"wordIdx": 3,
 					"audio": "Mat.mp3",
 					"end": 1475,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1385,7 +1385,7 @@
 					"wordIdx": 2,
 					"audio": "naps.mp3",
 					"end": 1405,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1473,7 +1473,7 @@
 					"wordIdx": 2,
 					"audio": "Hat.mp3",
 					"end": 801,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1570,7 +1570,7 @@
 					"wordIdx": 3,
 					"audio": "Ran.mp3",
 					"end": 1475,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1749,7 +1749,7 @@
 					"wordIdx": 3,
 					"audio": "slams.mp3",
 					"end": 1635,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -1916,7 +1916,7 @@
 					"wordIdx": 3,
 					"audio": "naps.mp3",
 					"end": 1650,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -2027,7 +2027,7 @@
 					"wordIdx": 3,
 					"audio": "Fat.mp3",
 					"end": 1380,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
@@ -2168,7 +2168,7 @@
 					"wordIdx": 5,
 					"audio": "Jam.mp3",
 					"end": 1540,
-					"starWord": "No"
+					"starWord": "Yes"
 				}
 			],
 			"triggers": [{
