@@ -5,39 +5,36 @@ using UnityEngine;
 public class L4CatSManager9 : GSManager {
 
 	GameObject jam;
+	public override void Start ()
+	{   jam = GameObject.Find ("Jam");
+		base.Start ();
+	}
 
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "CatJam") {
-			if (jam == null) {
-				jam = GameObject.Find ("Jam");
-			}
-
 			jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam."){
-
-			if (jam == null) {
-				jam = GameObject.Find ("Jam");
-			}
-
 			jam.SetActive (true);
-			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
+			GTinkerGraphic catJam = GameObject.Find ("CatJam").GetComponent<GTinkerGraphic> ();
+			if (catJam != null)
+			{ catJam.gameObject.transform.position = new Vector3 (catJam.dataTinkerGraphic.posX, catJam.dataTinkerGraphic.posY, 0);
+				LoadAssetFromJSON.LoadAssetImage (catJam, catJam.dataTinkerGraphic.imageName);
+				//				catHam.MyOnMouseDown();
 			}
 
+
 		}
-		else if (go.name == "Jam") 
-		{   
-			jam = go;
-			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
-			if (catJam != null)
-			{ 
-				catJam.MyOnMouseDown();
-			}
-		}
+//		else if (go.name == "Jam") 
+//		{   
+//			jam = go;
+//			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
+//			if (catJam != null)
+//			{ 
+//				catJam.MyOnMouseDown();
+//			}
+//		}
 
 		base.OnMouseDown (go);
 	}

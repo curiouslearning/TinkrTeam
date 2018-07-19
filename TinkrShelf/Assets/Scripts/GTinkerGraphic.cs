@@ -25,7 +25,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	public Sprite[] sprite;
 	private int currentframe=0;
 	public SpriteRenderer spr;
-
+	private Coroutine current_routine;
 	public Sequence[] sequences;
 	private int seqIterator;
 	public float[] secPerFrame;
@@ -89,12 +89,13 @@ public class GTinkerGraphic : MonoBehaviour{
 }
 	public void PlayCompleteAnim()
 	{
-		StartCoroutine (Animdelay ());
+		StartCoroutine (Animdelay());
 	}
 	public IEnumerator Animdelay()
 	{
 		float sum;
 		for (int i = 0; i < dataTinkerGraphic.anim.Length; i++) {
+			
 			sum = 0f;
 			LoadAndPlayAnimation (i);
 			float[] sec = dataTinkerGraphic.anim [i].secPerFrame;
@@ -103,6 +104,7 @@ public class GTinkerGraphic : MonoBehaviour{
 				sum = sum + sec[t];
 			}
 			yield return new WaitForSeconds(sum);
+			//yield return(sum);
 		}
 	}
 
@@ -167,9 +169,9 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	void OnTriggerEnter (Collider col)
 	{
-		Debug.Log ("ooooooooo"+col.name);
+		
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
-		{    Debug.Log ("yess");
+		{   
 			
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
 		}
@@ -182,7 +184,6 @@ public class GTinkerGraphic : MonoBehaviour{
 		//}
 			//yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
 		yield return new WaitForSecondsRealtime (1.0f);
-		Debug.Log("des");	
 		go.SetActive (false);
 	}
 
@@ -190,7 +191,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// Loads the animation assets/frames and triggers PlayAnimation().
 	/// </summary>
 	public void LoadAndPlayAnimation(int pairedAnim){
-		Debug.Log (pairedAnim);
+		
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			//if (dataTinkerGraphic.anim [pairedAnim].onTouch) 
@@ -211,22 +212,37 @@ public class GTinkerGraphic : MonoBehaviour{
 	}
 
 	public void ResetandZoom()
-	{
-		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
+	{   StopCoroutine ("Animdelay");
+		if (current_routine != null) {
+			StopCoroutine (current_routine);
+		}
 		LoadAssetFromJSON.LoadAssetImage (this,dataTinkerGraphic.imageName);
+		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
 		StartCoroutine (Zoom());
+	}
+	public void Reset()
+	{   StopCoroutine("Animdelay");
+		if (current_routine != null) {
+			StopCoroutine (current_routine);
+		}
+		LoadAssetFromJSON.LoadAssetImage (this,dataTinkerGraphic.imageName);
+		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
+
 	}
 	/// <summary>
 	/// Resets the graphic object and triggers the animation play.
 	/// </summary>
 	public void PlayAnimation(){
 		//StopAllCoroutines();
-		StopCoroutine("Animate");
+		if (current_routine != null) {
+			StopCoroutine (current_routine);
+		}
 		if (destroyObject != null) {
 			StopCoroutine (destroyObject);
 		}
 		//transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
-		StartCoroutine("Animate");
+		Debug.Log("helllllllllllo");
+		current_routine=StartCoroutine(Animate());
 	}
 
 	/// <summary>

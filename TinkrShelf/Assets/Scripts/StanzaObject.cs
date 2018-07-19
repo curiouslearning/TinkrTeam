@@ -44,7 +44,7 @@ public class StanzaObject : MonoBehaviour {
              t = tinkerTexts[i];
 			if (t.star) {
 				for (int j = 0; j < t.pairedGraphics.Count; j++) {
-					t.pairedGraphics [j].PlayCompleteAnim ();
+					t.pairedGraphics [j].PlayCompleteAnim();
 				}
 			}
 			//GTinkerGraphic link = t.GetComponent<GTinkerText> ().pairedGraphic;

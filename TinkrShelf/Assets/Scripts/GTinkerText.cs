@@ -173,14 +173,13 @@ public class GTinkerText : MonoBehaviour {
 		    {   //if animation is present
 			if (pairedAnim>=0) 
 			{
-				Debug.Log ("oneeeee");
-					pairedGraphics [i].OnPairedMouseDown (this);
+				pairedGraphics [i].OnPairedMouseDown (this);
 		
 			} 
 		    else 
-			{
-				Debug.Log ("twooooooo");
-					pairedGraphics [i].ResetandZoom ();
+				{   //StopCoroutine ("Animate");
+					//StopCoroutine (pairedGraphics[i].Animdelay ());
+				    pairedGraphics [i].ResetandZoom ();
 			}
 			}
         

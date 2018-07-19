@@ -519,9 +519,8 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="name">Namevof the asset image.</param>
 	/// <param name="sr">Sprite Renderer.</param>
     public  static void LoadAssetImage(GTinkerGraphic tinkergraphic,string name)
-	{   Debug.Log (name + "okk");
+	{   
         var sprite = ShelfManager.bundleLoaded.LoadAsset<Sprite>(name);
-		Debug.Log (sprite + "ohh");
 		tinkergraphic.spr.sprite = sprite;
     }
 

@@ -1435,8 +1435,8 @@
 				{
 					"id": 0,
 					"animName": "A11a",
-					"startX":-11,
-					"startY":-45,
+					"startX":-6,
+					"startY":-101,
 					"startIndex" : 0,
 					"endIndex":2,
 					"onTouch": true,
