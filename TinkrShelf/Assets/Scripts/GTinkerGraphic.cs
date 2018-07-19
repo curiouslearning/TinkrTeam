@@ -25,11 +25,13 @@ public class GTinkerGraphic : MonoBehaviour{
 	public Sprite[] sprite;
 	private int currentframe=0;
 	public SpriteRenderer spr;
-	private Coroutine current_routine;
+    public bool forcestop = false;
+    public bool isanimplaying = false;
 	public Sequence[] sequences;
 	private int seqIterator;
 	public float[] secPerFrame;
-
+    private Coroutine par_routine;
+    private Coroutine current_routine;
 	// Reset and highlight colors defaults (change from scene manager subclasses)
 	public Color resetColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 	public Color highlightColor = GGameManager.yellow;
@@ -50,6 +52,19 @@ public class GTinkerGraphic : MonoBehaviour{
 		deltasize = totalchange / framecount;
 		deltatime = totaltime / framecount;
 	}
+    private void Update()
+    {
+        if(forcestop)
+        {
+            if (isanimplaying)
+
+            {
+                checkandStoproutines();
+                isanimplaying = false;
+            }
+            forcestop = false;
+        }
+    }
     /// <summary>
     /// set the draggable property for that tinkergraphic
     /// </summary>
@@ -79,35 +94,54 @@ public class GTinkerGraphic : MonoBehaviour{
         Debug.Log(dataTinkerGraphic.label);
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
 		int length = dataTinkerGraphic.anim.Length;
-		//for (int i = 0; i < length; i++) {
-			//Debug.Log ("anim_no "+ i);
-			//LoadAndPlayAnimation (i);
-			//StartCoroutine (animdelay());
-		//}
-		PlayCompleteAnim();
+        //for (int i = 0; i < length; i++) {
+        //Debug.Log ("anim_no "+ i);
+        //LoadAndPlayAnimation (i);
+        //StartCoroutine (animdelay());
+        //}
+        Debug.Log(this.name + " " + forcestop + " " +isanimplaying);
+        PlayCompleteAnim();
 		sceneManager.OnMouseDown (this);
 }
 	public void PlayCompleteAnim()
 	{
-		StartCoroutine (Animdelay());
+        checkandStoproutines();
+        isanimplaying = true;
+		par_routine=StartCoroutine(Animdelay());
 	}
 	public IEnumerator Animdelay()
 	{
-		float sum;
-		for (int i = 0; i < dataTinkerGraphic.anim.Length; i++) {
-			
-			sum = 0f;
-			LoadAndPlayAnimation (i);
+        float sum;
+		for (int i = 0; i < dataTinkerGraphic.anim.Length; i++) { 
+            sum = 0f;
+			LoadAndPlayAnimation(i);
 			float[] sec = dataTinkerGraphic.anim [i].secPerFrame;
 			for (int t = 0; t < sec.Length; t++) 
 			{
 				sum = sum + sec[t];
 			}
 			yield return new WaitForSeconds(sum);
-			//yield return(sum);
 		}
 	}
+    public void checkandStoproutines()
+    {
+        if (par_routine != null)
+        {
+            StopCoroutine(par_routine);
+            par_routine = null;
+        }
+        if (current_routine != null)
+        {
+            StopCoroutine(current_routine);
+            current_routine = null;
+        }
+        if (destroyObject != null)
+        {
+            StopCoroutine(destroyObject);
+            destroyObject = null;
+        }
 
+    }
 
 
     /// <summary>
@@ -115,11 +149,13 @@ public class GTinkerGraphic : MonoBehaviour{
     /// and we want have some paired graphical animation for that text
     /// </summary>
     /// <param name="tinkerText"></param>
-	// Paired TinkerText Mouse Down Event
-	public void OnPairedMouseDown(GTinkerText tinkerText)
+    // Paired TinkerText Mouse Down Event
+    public void OnPairedMouseDown(GTinkerText tinkerText)
 	{
 		sceneManager.OnPairedMouseDown(tinkerText);
-		LoadAndPlayAnimation(tinkerText.pairedAnim);
+        isanimplaying = true;
+        checkandStoproutines();
+        LoadAndPlayAnimation(tinkerText.pairedAnim);
 		 
 
 	}
@@ -128,7 +164,8 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// </summary>
 	/// <param name="tinkerGraphic">Tinker graphic.</param>
 	public void OnPairedMouseDown(GTinkerGraphic tinkerGraphic)
-	{ sceneManager.OnMouseDown (this);
+	{
+        sceneManager.OnMouseDown (this);
 
 	} 
 
@@ -169,9 +206,9 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	void OnTriggerEnter (Collider col)
 	{
-		
+		Debug.Log ("ooooooooo"+col.name);
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
-		{   
+		{    Debug.Log ("yess");
 			
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
 		}
@@ -184,6 +221,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		//}
 			//yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
 		yield return new WaitForSecondsRealtime (1.0f);
+		Debug.Log("des");	
 		go.SetActive (false);
 	}
 
@@ -191,7 +229,7 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// Loads the animation assets/frames and triggers PlayAnimation().
 	/// </summary>
 	public void LoadAndPlayAnimation(int pairedAnim){
-		
+		Debug.Log (pairedAnim);
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			//if (dataTinkerGraphic.anim [pairedAnim].onTouch) 
@@ -212,43 +250,39 @@ public class GTinkerGraphic : MonoBehaviour{
 	}
 
 	public void ResetandZoom()
-	{   StopCoroutine ("Animdelay");
-		if (current_routine != null) {
-			StopCoroutine (current_routine);
-		}
+	{
+        forcestop = true;
+        this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
 		LoadAssetFromJSON.LoadAssetImage (this,dataTinkerGraphic.imageName);
-		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
 		StartCoroutine (Zoom());
-	}
-	public void Reset()
-	{   StopCoroutine("Animdelay");
-		if (current_routine != null) {
-			StopCoroutine (current_routine);
-		}
-		LoadAssetFromJSON.LoadAssetImage (this,dataTinkerGraphic.imageName);
-		this.gameObject.transform.position = new Vector3 (dataTinkerGraphic.posX,dataTinkerGraphic.posY,0);
-
+        
 	}
 	/// <summary>
 	/// Resets the graphic object and triggers the animation play.
 	/// </summary>
-	public void PlayAnimation(){
-		//StopAllCoroutines();
-		if (current_routine != null) {
-			StopCoroutine (current_routine);
-		}
+      public void PlayAnimation(){
+        //StopAllCoroutines()
+        if(current_routine!=null)
+        {
+            StopCoroutine(current_routine);
+        }
 		if (destroyObject != null) {
 			StopCoroutine (destroyObject);
 		}
 		//transform.position = new Vector3 (dataTinkerGraphic.posX, dataTinkerGraphic.posY);
-		Debug.Log("helllllllllllo");
-		current_routine=StartCoroutine(Animate());
+		current_routine=StartCoroutine("Animate");
 	}
+    public void reset()
+    {
+        forcestop = true;
+        this.gameObject.transform.position = new Vector3(dataTinkerGraphic.posX, dataTinkerGraphic.posY, 0);
+        LoadAssetFromJSON.LoadAssetImage(this, dataTinkerGraphic.imageName);
+    }
 
-	/// <summary>
-	/// Animate this instance with loaded animation frames.
-	/// </summary>
-	IEnumerator Animate()
+    /// <summary>
+    /// Animate this instance with loaded animation frames.
+    /// </summary>
+    IEnumerator Animate()
 	{
 		currentframe = 0;
 		int i = 1;

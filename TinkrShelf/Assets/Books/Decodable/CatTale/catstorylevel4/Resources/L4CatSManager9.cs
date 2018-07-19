@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class L4CatSManager9 : GSManager {
-
-	GameObject jam;
+    GameObject jam;
 	public override void Start ()
 	{   jam = GameObject.Find ("Jam");
 		base.Start ();
@@ -12,16 +11,15 @@ public class L4CatSManager9 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam") {
+		if (go.name == "CatJam" || go.name == "Text_cat" || go.name == "Text_wants") {
 			jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam."){
 			jam.SetActive (true);
 			GTinkerGraphic catJam = GameObject.Find ("CatJam").GetComponent<GTinkerGraphic> ();
 			if (catJam != null)
-			{ catJam.gameObject.transform.position = new Vector3 (catJam.dataTinkerGraphic.posX, catJam.dataTinkerGraphic.posY, 0);
-				LoadAssetFromJSON.LoadAssetImage (catJam, catJam.dataTinkerGraphic.imageName);
-				//				catHam.MyOnMouseDown();
+			{
+                catJam.reset();
 			}
 
 

@@ -1,4 +1,5 @@
-using System.Collections;
+using System.
+    Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,28 +12,16 @@ public class L4CatSManager7 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam") {
-			Debug.Log ("insise");
-			ham.SetActive (true);
+		if (go.name == "CatHam" || go.name=="Text_cat" || go.name=="Text_wants") {
+
+                ham.SetActive(true);
 		} else if (go.name == "Text_ham.") {
-
-
-
-			ham.SetActive (true);
+             ham.SetActive (true);
 			GTinkerGraphic catHam = GameObject.Find ("CatHam").GetComponent<GTinkerGraphic> ();
 			if (catHam != null) {
-				catHam.Reset();
+				catHam.reset();
 //				catHam.MyOnMouseDown();
 			}
-		}
-			else if (go.name == "Text_cat") {
-			   
-			   ham.SetActive (true);
-
-		} else if (go.name == "Text_wants") {
-			
-			ham.SetActive (true);
-		
 		}
 //		else if (go.name == "Ham") 
 //		{   
