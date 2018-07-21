@@ -796,14 +796,14 @@
 				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
+				"animId": 1,
 				"typeOfLinking": 3
 			}, {
 				"stnzaId": 0,
 				"textId": 3,
 				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": 0,
+				"sceneObjectId": 1,
+				"animId": -1,
 				"typeOfLinking": 3
 			}]
 		},
@@ -1050,13 +1050,13 @@
 				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 0,
-				"animId": 0,
+				"animId": 1,
 				"typeOfLinking": 3
 			}, {
 				"stnzaId": 0,
 				"textId": 3,
 				"timestamp": null,
-				"sceneObjectId": 0,
+				"sceneObjectId": 1,
 				"animId": -1,
 				"typeOfLinking": 3
 			}]
@@ -1196,8 +1196,8 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A11a",
-						"startX": -11,
-						"startY": -45,
+						"startX": -6,
+						"startY": -101,
 						"startIndex": 0,
 						"endIndex": 2,
 						"onTouch": true,
@@ -1771,7 +1771,7 @@
 				"textId": 3,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId": 0,
+				"animId": 1,
 				"typeOfLinking": 3
 			}]
 		},
@@ -2032,7 +2032,7 @@
 			],
 			"triggers": [{
 				"stnzaId": 0,
-				"textId": 0,
+				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 1,
 				"animId": -1,
@@ -2173,15 +2173,7 @@
 			],
 			"triggers": [{
 					"stnzaId": 0,
-					"textId": 0,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": -1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 0,
+					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"animId": -1,
@@ -2191,8 +2183,8 @@
 					"stnzaId": 0,
 					"textId": 5,
 					"timestamp": null,
-					"sceneObjectId": 1,
-					"animId": 0,
+					"sceneObjectId": 0,
+					"animId": -1,
 					"typeOfLinking": 3
 				}
 			]

@@ -168,7 +168,7 @@
 					"stnzaId": 0,
 					"textId": 6,
 					"timestamp": null,
-					"sceneObjectId": 1,
+					"sceneObjectId": 0,
 					"animId": 0,
 					"typeOfLinking": 3
 				}
@@ -462,6 +462,14 @@
 					"timestamp": null,
 					"sceneObjectId": 1,
 					"animId": 0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 1,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"animId": -1,
 					"typeOfLinking": 3
 				}
 			]
@@ -1014,10 +1022,10 @@
 			],
 			"triggers": [{
 					"stnzaId": 0,
-					"textId": 3,
+					"textId": 7,
 					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 0,
+					"sceneObjectId": 1,
+					"animId": -1,
 					"typeOfLinking": 3
 				}, {
 					"stnzaId": 0,
@@ -1033,6 +1041,14 @@
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"animId": 1,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 3,
+					"timestamp": null,
+					"sceneObjectId": 0,
+					"animId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -1320,21 +1336,21 @@
 				"stnzaId": 0,
 				"textId": 1,
 				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId": 0,
+				"sceneObjectId": 0,
+				"animId": -1,
 				"typeOfLinking": 3
 			}, {
 				"stnzaId": 0,
-				"textId": 1,
+				"textId": 7,
 				"timestamp": null,
-				"sceneObjectId": 1,
+				"sceneObjectId":1,
 				"animId": -1,
 				"typeOfLinking": 3
 			}, {
 				"stnzaId": 0,
 				"textId": 5,
 				"timestamp": null,
-				"sceneObjectId": 1,
+				"sceneObjectId":0,
 				"animId": 1,
 				"typeOfLinking": 3
 			}]
@@ -1490,8 +1506,8 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A11a",
-						"startX": -11,
-						"startY": -45,
+						"startX": -6,
+						"startY": -101,
 						"startIndex": 0,
 						"endIndex": 2,
 						"onTouch": true,
@@ -1802,7 +1818,7 @@
 			"timestamps": [{
 					"start": 56,
 					"wordIdx": 0,
-					"audio": "Sam's.mp3",
+					"audio": "Sam_s.mp3",
 					"end": 599,
 					"starWord":"No"
 				},
@@ -2179,7 +2195,7 @@
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId": 0,
+				"animId": 1,
 				"typeOfLinking": 3
 			}, {
 				"stnzaId": 0,
@@ -2193,7 +2209,7 @@
 				"textId": 7,
 				"timestamp": null,
 				"sceneObjectId": 2,
-				"animId": 1,
+				"animId": 0,
 				"typeOfLinking": 3
 			}]
 
@@ -2494,14 +2510,14 @@
 				"textId": 2,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":0,
+				"animId":-1,
 				"typeOfLinking": 3
 			},{
 				"stnzaId": 0,
 				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 1,
-				"animId":-1,
+				"animId":0,
 				"typeOfLinking": 3
 			},
 			{
@@ -2608,7 +2624,7 @@
 					"wordIdx": 1,
 					"audio": "fat.mp3",
 					"end": 529,
-					"starWord":"No"
+					"starWord":"Yes"
 				},
 				{
 					"start": 622,
@@ -2635,7 +2651,7 @@
 					"wordIdx": 5,
 					"audio": "jam.mp3",
 					"end": 1681,
-					"starWord":"Yes"
+					"starWord":"No"
 				},
 				{
 					"start": 1753,
@@ -2661,7 +2677,22 @@
 			],
 			"triggers": [{
 				"stnzaId": 0,
+				"textId": 2,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"animId":-1,
+				"typeOfLinking": 3
+			},
+			{
+				"stnzaId": 0,
 				"textId": 5,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"animId":-1,
+				"typeOfLinking": 3
+			},{
+				"stnzaId": 0,
+				"textId": 1,
 				"timestamp": null,
 				"sceneObjectId": 1,
 				"animId":0,

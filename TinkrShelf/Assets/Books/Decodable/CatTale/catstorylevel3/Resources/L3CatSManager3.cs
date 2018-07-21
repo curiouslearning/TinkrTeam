@@ -4,29 +4,35 @@ using UnityEngine;
 
 
 public class L3CatSManager3 : GSManager {
-
+    GTinkerGraphic ranman;
+    GTinkerGraphic cat;
+    public override void Start()
+    {
+       ranman = GameObject.Find("Ran").GetComponent<GTinkerGraphic>();
+       cat = GameObject.Find("Cat").GetComponent<GTinkerGraphic>();
+    }
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "Cat") {
-			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
-			if (tinkerGraphic != null) {
-				tinkerGraphic.MyOnMouseDown ();
+			if (ranman != null) {
+				ranman.MyOnMouseDown();
 			}
 		} else if (go.name == "Ran") {
-			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
-			if (tinkerGraphic != null) {
-				tinkerGraphic.MyOnMouseDown ();
+			if (cat != null) {
+				cat.MyOnMouseDown();
 			} 
 
 		} else if (go.name == "Text_ran.") {
-			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
-			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
-			if (ranGraphic != null && catGraphic!=null) {
-				ranGraphic.MyOnMouseDown ();
-				catGraphic.MyOnMouseDown ();
+			if (ranman != null && cat!=null) {
+				ranman.MyOnMouseDown ();
+				cat.MyOnMouseDown ();
 			}
 
 		}
+        else if(go.name=="Text_cat")
+        {
+            ranman.reset();
+        }
 		base.OnMouseDown (go);
 	}
 }
