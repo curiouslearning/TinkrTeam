@@ -34,9 +34,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     public static AssetBundle bundleLoaded;
 
     //for data collection
-    private System.DateTime inTime;
+    private DateTime inTime;
+    
     //location of hosted json file in amazon s3 bucket
-    private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
+    private const string url = "https://s3.ap-south-2.amazonaws.com/tinkr2/manifest.json";
 
     private string responseJson;
     private bool isServerJson = false;
@@ -44,7 +45,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     //for readAloud button
     public GameObject readMuteToggleButton;
-    Image read_mute;
+    Image read_mute_image_comp;
     public Sprite read;
     public Sprite mute;
 
@@ -57,6 +58,10 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         Image = GameObject.Find("Image");
         Title = GameObject.Find("Title");
 
+        //loading initial assetbundle on shelf scene.
+        StartCoroutine(LoadAssetBundle("catstory"));
+
+
         //call json file from server
         WWW request = new WWW(url);
         StartCoroutine(DownloadFileWithTimeout(request));
@@ -68,7 +73,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
         if (readMuteToggleButton != null)
         {
-            read_mute = readMuteToggleButton.GetComponent<Image>();
+            read_mute_image_comp = readMuteToggleButton.GetComponent<Image>();
 
             if (autoNarrate)
             {
@@ -84,7 +89,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 
     public void SetImage(Sprite sp) //method to set our first image
     {
-        read_mute.sprite = sp;
+        read_mute_image_comp.sprite = sp;
     }
 
 
@@ -113,9 +118,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             isServerJson = false;
             Debug.Log("timeout");
 
-            //loading assetbundle on shelf scene.
-            StartCoroutine(LoadAssetBundle("catstory"));
-
+   
             //load shelf data with local json
             LoadShelfData();
             LoadInitialCenterBook();
@@ -127,7 +130,8 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         // if internet-> ok
         if (responseJson != "")
             isServerJson = true;
-        StartCoroutine(LoadAssetBundle("catstory"));
+
+        
         LoadShelfData();
         LoadInitialCenterBook();
 
@@ -141,7 +145,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     {
 
         foreach (BookObject bo in bookInfos) {
-            if (bo.position == 2) {
+            if (bo.position == 3) {
                 selectedBook = bo.book.fileName;
                 bookscenePath = "Books/DecodableBook/CatTale/Common/Scenes";
                 LoadImageandText(bo);
