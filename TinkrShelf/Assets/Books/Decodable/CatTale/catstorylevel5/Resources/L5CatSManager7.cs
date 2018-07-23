@@ -15,7 +15,7 @@ public class L5CatSManager7 : GSManager {
 
     public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name=="Text_cat"|| go.name=="Text_glad") {
+		if (go.name == "CatHam" || go.name=="Text_cat"|| go.name=="Text_eat") {
 			
 			ham.SetActive (true);
 		}

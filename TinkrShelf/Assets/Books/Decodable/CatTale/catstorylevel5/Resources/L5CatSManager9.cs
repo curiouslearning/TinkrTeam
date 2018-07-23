@@ -14,7 +14,7 @@ public class L5CatSManager9 : GSManager {
     }
     public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatJam"|| go.name=="Text_cat") {
+		if (go.name == "CatJam"|| go.name=="Text_cat"|| go.name=="Text_eat") {
             jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam."){

@@ -988,7 +988,7 @@
 					"wordIdx": 3,
 					"audio": "glad.mp3",
 					"end": 1132,
-					"starWord":"Yes"
+					"starWord":"No"
 				},
 				{
 					"start": 1297,
@@ -1002,7 +1002,7 @@
 					"wordIdx": 5,
 					"audio": "eat.mp3",
 					"end": 1758,
-					"starWord":"No"
+					"starWord":"Yes"
 				},
 				{
 					"start": 1764,
@@ -1041,14 +1041,6 @@
 					"timestamp": null,
 					"sceneObjectId": 0,
 					"animId": 1,
-					"typeOfLinking": 3
-				},
-				{
-					"stnzaId": 0,
-					"textId": 3,
-					"timestamp": null,
-					"sceneObjectId": 0,
-					"animId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -1315,7 +1307,7 @@
 					"wordIdx": 5,
 					"audio": "eat.mp3",
 					"end": 1721,
-					"starWord":"No"
+					"starWord":"Yes"
 				},
 				{
 					"start": 1725,
@@ -1329,7 +1321,7 @@
 					"wordIdx": 7,
 					"audio": "jam.mp3",
 					"end": 2251,
-					"starWord":"Yes"
+					"starWord":"No"
 				}
 			],
 			"triggers": [{
@@ -2624,7 +2616,7 @@
 					"wordIdx": 1,
 					"audio": "fat.mp3",
 					"end": 529,
-					"starWord":"Yes"
+					"starWord":"No"
 				},
 				{
 					"start": 622,
@@ -2651,7 +2643,7 @@
 					"wordIdx": 5,
 					"audio": "jam.mp3",
 					"end": 1681,
-					"starWord":"No"
+					"starWord":"Yes"
 				},
 				{
 					"start": 1753,
@@ -2675,7 +2667,16 @@
 					"starWord":"No"
 				}
 			],
-			"triggers": [{
+			"triggers": [
+			{
+				"stnzaId": 0,
+				"textId": 5,
+				"timestamp": null,
+				"sceneObjectId": 1,
+				"animId":0,
+				"typeOfLinking": 3
+			},
+			{
 				"stnzaId": 0,
 				"textId": 2,
 				"timestamp": null,
@@ -2684,13 +2685,6 @@
 				"typeOfLinking": 3
 			},
 			{
-				"stnzaId": 0,
-				"textId": 5,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId":-1,
-				"typeOfLinking": 3
-			},{
 				"stnzaId": 0,
 				"textId": 1,
 				"timestamp": null,
