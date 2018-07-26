@@ -326,37 +326,54 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// </summary>
     public void LoadStanzaData()
     {
-        startingX = storyBookJson.textStartPositionX;
-        startingY = storyBookJson.textStartPositionY;
 
-        stanzaManager.stanzas.Clear();
-        j = 0;
-        stanzaObjects = new List<GameObject>();// stanzaObjects list to keep track of all the stanzaobjects in one page 
-        TextClass[] texts = storyBookJson.pages[pageNumber].texts;
-		int length = storyBookJson.pages [pageNumber].timestamps.Length;
-		if(length==1)
-			startingX=-95.0f ;
-		else if(length==2)
-			startingX=-175.0f ;
-		else if(length==3)
-			startingX=-212.0f ;
-		else if(length==4)
-			startingX=-280.0f ;
-		else if(length==5)
-			startingX=-335.0f ;
-		else if(length==6)
-			startingX=-340.0f ;
-		else if(length==7)
-			startingX=-380.0f ;
-        foreach (TextClass text in texts)
-        {
-            stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
-            stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
-            stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
-            startingY = startingY - height - minLineSpace;
-            j++;
-        }
+        
+            startingX = storyBookJson.textStartPositionX;
+            startingY = storyBookJson.textStartPositionY;
 
+            stanzaManager.stanzas.Clear();
+            j = 0;
+            stanzaObjects = new List<GameObject>();// stanzaObjects list to keep track of all the stanzaobjects in one page 
+                                                   //Debug.Log(storyBookJson.pages[pageNumber].texts);
+
+            TextClass[] texts = storyBookJson.pages[pageNumber].texts;
+
+        // bool is level 0
+        if (storyBookJson.id == 1)
+            {
+                //no change
+            }
+            else
+            {
+                int length = storyBookJson.pages[pageNumber].timestamps.Length;
+
+                if (length == 1)
+                    startingX = -95.0f;
+                else if (length == 2)
+                    startingX = -175.0f;
+                else if (length == 3)
+                    startingX = -212.0f;
+                else if (length == 4)
+                    startingX = -280.0f;
+                else if (length == 5)
+                    startingX = -335.0f;
+                else if (length == 6)
+                    startingX = -340.0f;
+                else if (length == 7)
+                    startingX = -380.0f;
+            } 
+            foreach (TextClass text in texts)
+            {
+                stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
+                stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
+                stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
+                if (storyBookJson.id == 1) { startingY = -180; }
+                else {
+                    startingY = startingY - height - minLineSpace;
+                }
+                j++;
+            }
+        
     }
 
     /// <summary>
