@@ -105,7 +105,7 @@ public class GSManager :  MonoBehaviour {
 	/// This function can be overriden by specific scene manager.
 	/// </summary>
 	public virtual void OnMouseDown(GameObject go)
-	{       
+	{       stanzaManager.RequestCancelAutoPlay (); // to stop auto narration when anything is clicked
             // Lock out other input during auto play?
             if (IsInputAllowed())
             {

@@ -28,7 +28,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
     Transform canvasTransform;
     
     private int noOfPages, i, j;
-    float width = 0.0f, startingX, startingY, startingXText, startingYText;
+	float width = 0.0f, fontSize, startingX, startingY, startingXText, startingYText;
     float height = 32.94f;  //height of text:32.94
     private readonly float minWordSpace = 30.0f;
     private readonly float minLineSpace = 30.0f;
@@ -70,6 +70,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		
         startingX = storyBookJson.textStartPositionX;
         startingY = storyBookJson.textStartPositionY;
+		fontSize = storyBookJson.textFontSize;
 
     }
 
@@ -341,7 +342,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
         // bool is level 0
         if (storyBookJson.id == 1)
             {
-                //no change
+			//change
             }
             else
             {
@@ -367,7 +368,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
                 stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
                 stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
                 stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
-                if (storyBookJson.id == 1) { startingY = -180; }
+			if (storyBookJson.id == 1) {fontSize=80;startingX = -81; startingY = -180; }
                 else {
                     startingY = startingY - height - minLineSpace;
                 }
