@@ -285,7 +285,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
                 for (int i = 0; i < gameObjects.Length; i++)
                 {
                     CreateGameObject(gameObjects[i]);
-					Debug.Log (i + "firsttt");
+					
                 }
 
             }
@@ -503,13 +503,12 @@ public class LoadAssetFromJSON : MonoBehaviour {
 				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
 				//go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
 			} else {
-				Debug.Log ("anim load page nil");
 				LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName); // if not anim load the image
 
 			}
 		}
 		else
-		{   Debug.Log ("no anim ");
+		{  
 			LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName);
 		}
 

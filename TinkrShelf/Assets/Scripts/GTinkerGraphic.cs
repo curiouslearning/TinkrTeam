@@ -99,7 +99,6 @@ public class GTinkerGraphic : MonoBehaviour{
         //LoadAndPlayAnimation (i);
         //StartCoroutine (animdelay());
         //}
-        Debug.Log(this.name + " " + forcestop + " " +isanimplaying);
         PlayCompleteAnim();
 		sceneManager.OnMouseDown (this);
 }
@@ -206,9 +205,8 @@ public class GTinkerGraphic : MonoBehaviour{
 
 	void OnTriggerEnter (Collider col)
 	{
-		Debug.Log ("ooooooooo"+col.name);
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
-		{    Debug.Log ("yess");
+		{    
 			
 			destroyObject = StartCoroutine(DestroyCollisionObject (col.gameObject));
 		}
@@ -221,7 +219,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		//}
 			//yield return new WaitForSeconds (secPerFrame[currentframe]+secPerFrame[currentframe+1]+secPerFrame[currentframe+2]+secPerFrame[currentframe + 3]);
 		yield return new WaitForSecondsRealtime (1.0f);
-		Debug.Log("des");	
+		
 		go.SetActive (false);
 	}
 
@@ -229,18 +227,15 @@ public class GTinkerGraphic : MonoBehaviour{
 	/// Loads the animation assets/frames and triggers PlayAnimation().
 	/// </summary>
 	public void LoadAndPlayAnimation(int pairedAnim){
-		Debug.Log (pairedAnim);
+		
 		if (dataTinkerGraphic.anim.Length > 0) {
 
 			//if (dataTinkerGraphic.anim [pairedAnim].onTouch) 
 			{
 				
-				Debug.Log ("x is "+dataTinkerGraphic.anim[pairedAnim].startX);
-				Debug.Log ("y is "+dataTinkerGraphic.anim[pairedAnim].startY);
 				LoadAssetFromJSON.LoadAssetImages(this, dataTinkerGraphic.anim[pairedAnim].animName, dataTinkerGraphic.anim[pairedAnim].startIndex,dataTinkerGraphic.anim[pairedAnim].endIndex,dataTinkerGraphic.anim[pairedAnim].startX,dataTinkerGraphic.anim[pairedAnim].startY);
 				secPerFrame = dataTinkerGraphic.anim [pairedAnim].secPerFrame;
 				sequences = dataTinkerGraphic.anim [pairedAnim].sequences;
-				Debug.Log (sequences.Length + "leenn");
 				PlayAnimation();
 
 			} 
