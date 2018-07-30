@@ -474,54 +474,61 @@ public class LoadAssetFromJSON : MonoBehaviour {
         return UItextGO.GetComponent<GTinkerText>();
 	}
 
-	/// <summary>
-	/// Creates the  graphical game object and play the corresponding animation of that graphic if it is set to onStart
-	/// </summary>
-	/// <param name="gameObjectData">Game object data.</param>
-	public void CreateGameObject(GameObjectClass gameObjectData)
-	{
-		Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
-		Vector3 scale = new Vector3(gameObjectData.scaleX, gameObjectData.scaleY);
-		GameObject go = new GameObject(gameObjectData.label);
-		go.transform.position=position;
-		go.transform.localScale = scale;
-		go.AddComponent<SpriteRenderer>();
-		go.GetComponent<SpriteRenderer>().sortingOrder = gameObjectData.orderInLayer;
-		go.AddComponent<GTinkerGraphic>();
-		go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
-		go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager"+(pageNumber)).GetComponent<GSManager>();
-		go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-		go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
-		if (gameObjectData.anim.Length >0)
-		{
-			LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].startIndex,gameObjectData.anim[0].endIndex,gameObjectData.anim[0].startX,gameObjectData.anim[0].startY);// call the LoadAssetImages function which load the anim images from bundle and fill the array of sprites with it
-			go.GetComponent<GTinkerGraphic> ().secPerFrame = gameObjectData.anim [0].secPerFrame;// set the secperframe field of tinkergraphic class
+    /// <summary>
+    /// Creates the  graphical game object and play the corresponding animation of that graphic if it is set to onStart
+    /// </summary>
+    /// <param name="gameObjectData">Game object data.</param>
 
-			if ( gameObjectData.anim [0].onStart) { // if the animation is set to on start play it
+    public void CreateGameObject(GameObjectClass gameObjectData)
+    {
+        Vector3 position = new Vector3(gameObjectData.posX, gameObjectData.posY);
+        Vector3 scale = new Vector3(gameObjectData.scaleX, gameObjectData.scaleY);
+        GameObject go = new GameObject(gameObjectData.label);
+        go.transform.position = position;
+        go.transform.localScale = scale;
+        go.AddComponent<SpriteRenderer>();
+        go.GetComponent<SpriteRenderer>().sortingOrder = gameObjectData.orderInLayer;
+        go.AddComponent<GTinkerGraphic>();
+        go.GetComponent<GTinkerGraphic>().dataTinkerGraphic = gameObjectData;
+        go.GetComponent<GTinkerGraphic>().sceneManager = GameObject.Find("SceneManager" + (pageNumber)).GetComponent<GSManager>();
+        go.GetComponent<GTinkerGraphic>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        go.GetComponent<GTinkerGraphic>().SetDraggable(gameObjectData.draggable);
+        if (gameObjectData.anim.Length > 0)
+        {
+            LoadAssetImages(go.GetComponent<GTinkerGraphic>(), gameObjectData.anim[0].animName, gameObjectData.anim[0].startIndex, gameObjectData.anim[0].endIndex, gameObjectData.anim[0].startX, gameObjectData.anim[0].startY);// call the LoadAssetImages function which load the anim images from bundle and fill the array of sprites with it
+            go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim[0].secPerFrame;// set the secperframe field of tinkergraphic class
 
-				go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim [0].secPerFrame;
-				go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim [0].sequences;
-				//go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
-			} else {
-				LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName); // if not anim load the image
+            if (gameObjectData.anim[0].onStart)
+            { // if the animation is set to on start play it
 
-			}
-		}
-		else
-		{  
-			LoadAssetImage(go.GetComponent<GTinkerGraphic>(),gameObjectData.imageName);
-		}
+                go.GetComponent<GTinkerGraphic>().secPerFrame = gameObjectData.anim[0].secPerFrame;
+                go.GetComponent<GTinkerGraphic>().sequences = gameObjectData.anim[0].sequences;
+                //go.GetComponent<GTinkerGraphic> ().PlayAnimation ();
+            }
+            else
+            {
+                LoadAssetImage(go.GetComponent<GTinkerGraphic>(), gameObjectData.imageName); // if not anim load the image
 
-		if(gameObjectData.destroyOnCollision != "NIL"){
-			var rigidbody = go.AddComponent<Rigidbody> ();
-			rigidbody.isKinematic = true;
-		}
-		//add BoxCollider after adding the sprite for proper size!
-		BoxCollider col = go.AddComponent<BoxCollider>();
-		col.isTrigger = true;
-		tinkerGraphicObjects.Add(go);
+            }
+        }
+        else
+        {
+            LoadAssetImage(go.GetComponent<GTinkerGraphic>(), gameObjectData.imageName);
+        }
 
-	}
+        if (gameObjectData.destroyOnCollision != "NIL")
+        {
+            var rigidbody = go.AddComponent<Rigidbody>();
+            rigidbody.isKinematic = true;
+        }
+        //add BoxCollider after adding the sprite for proper size!
+        PolygonCollider2D col = go.AddComponent<PolygonCollider2D>();
+        //BoxCollider col = go.AddComponent<BoxCollider>();
+        col.isTrigger = true;
+        tinkerGraphicObjects.Add(go);
+
+    }
+
 
     public void LoadAssetFromBundle(string name)
     {
