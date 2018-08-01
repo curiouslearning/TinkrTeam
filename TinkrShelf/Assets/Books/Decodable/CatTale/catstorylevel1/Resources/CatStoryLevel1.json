@@ -67,7 +67,7 @@
 			[
 				{
 					"id": 0,
-					"text": "Cat"
+					"text": "cat"
 					
 				}
 			],
@@ -1646,6 +1646,14 @@
 					"textId": 0,
 					"timestamp": null,
 					"sceneObjectId": 2,
+					"animId":0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 3,
 					"animId":0,
 					"typeOfLinking": 3
 				}

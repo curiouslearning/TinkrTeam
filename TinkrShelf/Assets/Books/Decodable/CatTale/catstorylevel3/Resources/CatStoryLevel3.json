@@ -323,7 +323,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "The cat ran."
+				"text":"The cat ran."
 			}],
 			"audioFile": "The cat ran.mp3",
 			"timestamps": [{
@@ -1169,8 +1169,8 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 17,
-					"posY": -33,
+					"posX": 19,
+					"posY": -53,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A12-1",
@@ -1183,8 +1183,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -6,
-					"posY": -101,
+					"posX": 8,
+					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A11a-1",
@@ -1195,8 +1195,8 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A11a",
-						"startX": -6,
-						"startY": -101,
+						"startX": 8,
+						"startY": -114,
 						"startIndex": 0,
 						"endIndex": 2,
 						"onTouch": true,
@@ -1279,7 +1279,7 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": -19,
+					"posX": 8,
 					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
@@ -1291,7 +1291,7 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A11a",
-						"startX": -4,
+						"startX": -8,
 						"startY": -114,
 						"startIndex": 0,
 						"endIndex": 2,
@@ -1314,7 +1314,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -2,
+					"posX": -10,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1327,7 +1327,7 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A12",
-						"startX": -2,
+						"startX": -10,
 						"startY": -65,
 						"startIndex": 0,
 						"endIndex": 4,

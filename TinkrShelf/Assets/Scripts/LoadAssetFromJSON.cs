@@ -20,6 +20,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
     private string[] allStanzaJsons;
     private string page;
+	public float stanzaLength;
     public GameObject right;
     public GameObject left;
     //static float previousTextWidth;
@@ -27,9 +28,11 @@ public class LoadAssetFromJSON : MonoBehaviour {
     Font font;
     Transform canvasTransform;
     
-    private int noOfPages, i, j;
-	float width = 0.0f, fontSize, startingX, startingY, startingXText, startingYText;
-    float height = 32.94f;  //height of text:32.94
+    private int noOfPages, i, j,count;
+	float width = 0.0f, fontSize, startingXText, startingYText;
+	public static float startingX, startingY;
+	//private int wordCount = 0;
+    float height = 138.94f;  //height of text:32.94
     private readonly float minWordSpace = 30.0f;
     private readonly float minLineSpace = 30.0f;
 
@@ -68,7 +71,8 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
     void Start() {
 		
-        startingX = storyBookJson.textStartPositionX;
+       //startingX = storyBookJson.textStartPositionX;
+		startingX=0;
         startingY = storyBookJson.textStartPositionY;
 		fontSize = storyBookJson.textFontSize;
 
@@ -107,7 +111,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// Loads the next page on "next" arrow/button click.
 	/// </summary>
     public void LoadNextPage()
-    {
+	{  
         stanzaManager.RequestCancelAutoPlay();
         left.SetActive(true);
         DateTime time = DateTime.Now;
@@ -138,7 +142,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// Loads the previous page on "previous" arrow/button click.
 	/// </summary>
     public void LoadPreviousPage()
-    {
+	{  
         stanzaManager.RequestCancelAutoPlay();
 
         //previousTextWidth = 0;
@@ -180,6 +184,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 			}
 		}
 		stanzaObjects = null;
+		tinkerTextObjects.Clear ();
         //stanzaManager.RequestCancelAutoPlay();
     }
 
@@ -196,15 +201,21 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		LoadSceneSpecificScript ();
 		LoadPageData(pageNumber);
 		LoadStanzaData();
-		TokenizeStanza();
+		//TokenizeStanza();
+		Counttext();
 		LoadStanzaAudio();
 		LoadTriggers();
 		LoadAudios();
 
     }
+	public void Counttext()
+	{
+		for (int i = 0; i < tinkerTextObjects.Count; i++)
+			      {
+			Debug.Log("thisssss"+ tinkerTextObjects[i]);
+		}
+	}
    
-
-
     /// <summary>
     /// this function creates a sceneManager gameObject, adds the scene specific script to it,fill up all the variales of the sceneManager script
     /// and finally add that script to the gameManager's sceneManager variable
@@ -240,7 +251,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// Loads the audio for stanza auto narration to the canvas.
 	/// </summary>
     public void LoadStanzaAudio()
-    {
+	{   Debug.Log ("load audio");
         Destroy(GameObject.Find("Canvas").GetComponent<AudioSource>());
         GameObject.Find("Canvas").AddComponent<AudioSource>().clip = LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
     }
@@ -264,10 +275,13 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <returns>The audio asset.</returns>
 	/// <param name="name">Name of the audio.</param>
     public AudioClip LoadAudioAsset(string name)
-    {if (name != "")
-            return ShelfManager.bundleLoaded.LoadAsset<AudioClip>(name);
-        else
-            return null; 
+    {if (name != "") {
+			
+			return ShelfManager.bundleLoaded.LoadAsset<AudioClip> (name);
+		} else {
+		
+		return null;
+		} 
     }
 
 	/// <summary>
@@ -285,7 +299,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
                 for (int i = 0; i < gameObjects.Length; i++)
                 {
                     CreateGameObject(gameObjects[i]);
-					Debug.Log (i + "firsttt");
                 }
 
             }
@@ -329,50 +342,30 @@ public class LoadAssetFromJSON : MonoBehaviour {
     {
 
         
-            startingX = storyBookJson.textStartPositionX;
+            //startingX = storyBookJson.textStartPositionX;
             startingY = storyBookJson.textStartPositionY;
-
             stanzaManager.stanzas.Clear();
-            j = 0;
+		    count  = 0;
             stanzaObjects = new List<GameObject>();// stanzaObjects list to keep track of all the stanzaobjects in one page 
                                                    //Debug.Log(storyBookJson.pages[pageNumber].texts);
 
             TextClass[] texts = storyBookJson.pages[pageNumber].texts;
+		Debug.Log ("text" + texts);
 
-        // bool is level 0
-        if (storyBookJson.id == 1)
-            {
-			//change
-            }
-            else
-            {
-                int length = storyBookJson.pages[pageNumber].timestamps.Length;
-
-                if (length == 1)
-                    startingX = -95.0f;
-                else if (length == 2)
-                    startingX = -175.0f;
-                else if (length == 3)
-                    startingX = -212.0f;
-                else if (length == 4)
-                    startingX = -280.0f;
-                else if (length == 5)
-                    startingX = -335.0f;
-                else if (length == 6)
-                    startingX = -340.0f;
-                else if (length == 7)
-                    startingX = -380.0f;
-            } 
             foreach (TextClass text in texts)
             {
                 stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
-                stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
-                stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
-			if (storyBookJson.id == 1) {fontSize=80;startingX = -81; startingY = -180; }
-                else {
-                    startingY = startingY - height - minLineSpace;
-                }
-                j++;
+                stanzaManager.stanzas[count].transform.SetParent(canvasTransform);
+                stanzaManager.stanzas[count].stanzaValue = text;//add string object as JSONObject to array of books
+			    TokenizeStanza(count);
+			if (texts.Length > 1) { // if more than one line
+				startingY = startingY - height - minLineSpace;
+				if (storyBookJson.id == 1) {
+					startingY = -198.0f;
+				}
+			} 
+               
+			count++;
             }
         
     }
@@ -380,23 +373,44 @@ public class LoadAssetFromJSON : MonoBehaviour {
     /// <summary>
     /// Tokenizes the stanza into TinkerTexts.
     /// </summary>
-	public void TokenizeStanza ()
-   {
-		tinkerTextObjects.Clear ();
+	public void TokenizeStanza (int i)
+	{   Debug.Log ("i is" + i);
+		//tinkerTextObjects.Clear ();
 		string[] words;
 
-		for (i = 0; i < stanzaManager.stanzas.Count; i++) {
-			words = stanzaManager.stanzas [i].stanzaValue.text.Split (' ');
+		//for (i = 0; i < stanzaManager.stanzas.Count; i++) {
+		words = stanzaManager.stanzas [i].stanzaValue.text.Split (' ');
+		Debug.Log ("words" + words);
 
-			for (j = 0; j < words.Length; j++) {
-				stanzaManager.stanzas[i].tinkerTexts.Add( CreateText (stanzaManager.stanzas[i], startingXText+width, startingYText , words[j], 30, Color.black) );
-			}
+		for (j = 0; j < words.Length; j++) {
+			stanzaManager.stanzas [i].tinkerTexts.Add (CreateText (stanzaManager.stanzas [i], startingXText + width, startingYText, words [j], 30, Color.black));
 
-			UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (stanzaManager.stanzas[i].GetComponent<RectTransform>());
-			width = 0.0f;
 		}
 
+		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (stanzaManager.stanzas [i].GetComponent<RectTransform> ());
+		width = 0.0f;
+		float lineLength = stanzaLength - 30;
+		alignText (lineLength,stanzaManager.stanzas[i]);
+	//}
 
+
+	}
+	public void alignText(float length,StanzaObject parent)
+	{   startingX = -(length / 2);
+		//GameObject [] go=GameObject.FindGameObjectsWithTag("stanzaobject");
+		//Debug.Log (go);
+		parent.transform.localPosition= new Vector3 (startingX, startingY, 0);
+
+		//foreach (GameObject stanza in go)
+			//if (storyBookJson.id != 1)
+				//stanza.GetComponent<RectTransform> ().localPosition = new Vector3 (startingX, startingY, 0);
+			//else 
+			//{ stanza.GetComponent<RectTransform> ().localPosition = new Vector3 (startingX, startingY, 0);
+				
+			//}
+		
+
+		
 	}
 
 	/// <summary>
@@ -406,18 +420,14 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="x">The x coordinate.</param>
 	/// <param name="y">The y coordinate.</param>
 	StanzaObject CreateStanza( float x, float y)
-	{
+	{   
 		GameObject go = Instantiate (Resources.Load ("Prefabs/StanzaObject")) as GameObject;
 		go.transform.SetParent(canvasTransform);
 		go.transform.localScale = new Vector3(1,1,1);
+		go.tag ="stanzaobject";
 		RectTransform trans = go.GetComponent<RectTransform>();
-		//trans.position=new Vector3(0,0,0);
-		trans.position = new Vector3((x+26.59184f),92.0f,0);
-
-		trans.anchoredPosition = new Vector3(x, y,0);
-    
-        go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
-
+		trans.position=new Vector3(0,0,0);
+		go.GetComponent<StanzaObject>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
 		stanzaObjects.Add (go);
 		return go.GetComponent<StanzaObject>();
 	}
@@ -433,7 +443,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <param name="fontSize">Font size.</param>
 	/// <param name="textColor">Text color.</param>
 	GTinkerText CreateText( StanzaObject parent, float x, float y, string textToPrint, int fontSize, Color textColor)
-	{
+	{   
 		GameObject UItextGO = new GameObject("Text_"+textToPrint);
 		UItextGO.transform.SetParent(parent.transform);
        // Debug.Log(anim.runtimeAnimatorController);
@@ -465,6 +475,12 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate (trans);
 
 		width = width+trans.rect.width+minWordSpace;
+		stanzaLength = width;
+
+		 //audio to each word
+//		TimeStampClass[] timeStamps = storyBookJson.pages[pageNumber].timestamps;
+//		UItextGO.AddComponent<AudioSource> ().clip = LoadAudioAsset (timeStamps [wordCount].audio);
+//		wordCount++;
 
 		//add the animator and script to the word.
         UItextGO.AddComponent<Animator>().runtimeAnimatorController = Resources.Load("TextAnimations/textzoomcontroller") as RuntimeAnimatorController;

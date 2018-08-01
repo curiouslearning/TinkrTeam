@@ -3,7 +3,7 @@
 	"fontColor": "black",
 	"textStartPositionX": -111.0,
 	"textStartPositionY": 182.0,
-	"textFontSize": 60,
+	"textFontSize": 80,
 	"storyImageFile": null,
 	"backgroundColor": "blue",
 	"arrowColor": "red",
@@ -586,10 +586,10 @@
 			],
 			"audioFile": "s a d.mp3",
 			"timestamps": [{
-					"start": 276,
+					"start": 240,
 					"wordIdx": 0,
 					"audio": "s_sad.wav",
-					"end": 966,
+					"end": 970,
 					"starWord": "No"
 				}, {
 					"start": 1227,
@@ -713,10 +713,10 @@
 			],
 			"audioFile": "h a m.mp3",
 			"timestamps": [{
-					"start": 239,
+					"start": 220,
 					"wordIdx": 0,
 					"audio": "h_ham.wav",
-					"end": 743,
+					"end": 760,
 					"starWord": "No"
 				}, {
 					"start": 1235,
@@ -804,7 +804,7 @@
 					"start": 288,
 					"wordIdx": 0,
 					"audio": "g_glad.wav",
-					"end": 922,
+					"end": 970,
 					"starWord": "No"
 				}, {
 					"start": 1172,
@@ -1794,7 +1794,15 @@
 				"sceneObjectId": 2,
 				"animId": 0,
 				"typeOfLinking": 3
-			}]
+			},
+				{
+					"stnzaId": 0,
+					"textId": 0,
+					"timestamp": null,
+					"sceneObjectId": 3,
+					"animId":0,
+					"typeOfLinking": 3
+				}]
 
 		},
 
@@ -1993,23 +2001,23 @@
 
 				}
 			],
-			"audioFile": "j a m 2.mp3",
+			"audioFile": "j a m.mp3",
 			"timestamps": [{
 					"start": 330,
 					"wordIdx": 0,
-					"audio": "j_jam2.wav",
+					"audio": "j_jam.wav",
 					"end": 1024,
 					"starWord": "No"
 				}, {
 					"start": 1349,
 					"wordIdx": 1,
-					"audio": "a_jam2.wav",
+					"audio": "a_jam.wav",
 					"end": 1739,
 					"starWord": "No"
 				}, {
 					"start": 1953,
 					"wordIdx": 2,
-					"audio": "m_jam2.wav",
+					"audio": "m_jam.wav",
 					"end": 2313,
 					"starWord": "No"
 				}, {
