@@ -145,7 +145,7 @@ public class GTinkerText : MonoBehaviour {
     /// </summary>
     /// <param name="suppressAnim"></param>
 	public void MyMouseDown(bool suppressAnim = false)
-	{   Debug.Log ("real");
+	{   
 			System.DateTime time = System.DateTime.Now;
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
@@ -196,7 +196,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnPairedMouseDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-      		{   Debug.Log ("sound");
+      		{   
 			PlaySound();
 		}
 
@@ -208,7 +208,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{   Debug.Log ("sound");
+		{   
 			PlaySound();
 		}
 
@@ -227,7 +227,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnPairedMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{    Debug.Log ("sound");
+		{    
 			PlaySound();
 		} 
 
@@ -259,7 +259,7 @@ public class GTinkerText : MonoBehaviour {
     /// this function plays the sound for each tinkrtext
     /// </summary>
 	public void PlaySound()
-	{   Debug.Log ("sound");
+	{   
 		if (!GetComponent<AudioSource>().isPlaying)
 		{
 			GetComponent<AudioSource>().Play();

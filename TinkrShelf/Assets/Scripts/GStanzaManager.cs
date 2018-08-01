@@ -137,9 +137,9 @@ public class GStanzaManager : MonoBehaviour {
 	}
 
 	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
-	{   Debug.Log ("reached");
+	{   
 		if (tinkerText.stanza != null && stanzas.Contains(tinkerText.stanza))
-		{   Debug.Log ("no");
+		{  
 			tinkerText.stanza.OnMouseDown(tinkerText, suppressAnim);
 		}
 

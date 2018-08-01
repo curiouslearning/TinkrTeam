@@ -156,29 +156,35 @@ public class GGameManager : MonoBehaviour
 
 
 
-	private List<GameObject> PickGameObjects( Vector3 screenPos )
-	{
-		List<GameObject> gameObjects = new List<GameObject>();
-		Vector3 localPos = Camera.main.ScreenToViewportPoint (screenPos);
-		Ray ray = Camera.main.ViewportPointToRay (localPos);
 
-		RaycastHit[] hits;
-		hits = Physics.RaycastAll (ray, Mathf.Infinity);
+    private List<GameObject> PickGameObjects(Vector3 screenPos)
+    {
 
-		foreach (RaycastHit hit in hits)
-		{
-			
-			gameObjects.Add(hit.collider.gameObject);
-		}
+        List<GameObject> gameObjects = new List<GameObject>();
 
-		// Now sort all GameObjects by Z pos ascending
-		gameObjects.Sort(CompareZPosition);
-		return gameObjects;
-	}
+        Vector2 localPos = Camera.main.ScreenToViewportPoint(screenPos);
+        Ray ray = Camera.main.ViewportPointToRay(localPos);
 
 
-	// Used for gameobject z-sorting ascending
-	private static int CompareZPosition(GameObject a, GameObject b)
+        RaycastHit2D[] hits;
+
+        hits = Physics2D.RaycastAll(ray.origin, ray.direction);
+
+
+        foreach (RaycastHit2D hit in hits)
+        {
+
+            gameObjects.Add(hit.collider.gameObject);
+        }
+
+        // Now sort all GameObjects by Z pos ascending
+        gameObjects.Sort(CompareZPosition);
+        return gameObjects;
+    }
+
+
+    // Used for gameobject z-sorting ascending
+    private static int CompareZPosition(GameObject a, GameObject b)
 	{
 		if (a.transform.localPosition.z < b.transform.localPosition.z)
 			return -1;

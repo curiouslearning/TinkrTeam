@@ -116,7 +116,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         {
             request.Dispose();
             isServerJson = false;
-            Debug.Log("timeout");
 
    
             //load shelf data with local json
