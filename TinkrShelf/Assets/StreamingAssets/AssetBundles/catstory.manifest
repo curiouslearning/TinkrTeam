@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1403331720
+CRC: 1230443183
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 49c7eaa8a300e5ed3bb158d424966869
+    Hash: afbc00d8992ad8593953f9ddebcc29ec
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -55,6 +55,7 @@ Assets:
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/GLAD/g_glad.wav
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/eat.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A03/A03-9.png
+- Assets/Books/Decodable/CatTale/catstorylevel1/Resources/CatStoryLevel1.json
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/sam_s.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/HAM/m_ham.wav
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A16/A16-1.png
@@ -195,7 +196,6 @@ Assets:
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/RAN2/n_ran2.wav
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/CAT2/a_cat2.wav
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Stanza/m a t.mp3
-- Assets/Books/Decodable/CatTale/CatStory/Resources/CatStory.json
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/not.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A03b/A03b-1.png
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/stops.mp3
@@ -299,6 +299,7 @@ Assets:
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/CAT/t_cat.wav
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A11a/A11a-3.png
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A09/A09-7.png
+- Assets/Resources/Manifests/manifest.json
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/Nap.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/RAN/n_ran.wav
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/HAM/a_ham.wav
