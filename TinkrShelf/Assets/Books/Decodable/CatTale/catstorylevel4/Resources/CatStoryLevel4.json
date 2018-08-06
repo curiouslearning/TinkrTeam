@@ -104,7 +104,7 @@
 			"texts": [
 				{
 					"id": 0,
-					"text": "The cat is on a mat"
+					"text": "The cat is on a mat."
 				}
 			],
 			"audioFile": "The cat is on a mat.mp3",
@@ -227,7 +227,7 @@
 			"texts": [
 				{
 					"id": 0,
-					"text": "The cat is happy"
+					"text": "The cat is happy."
 				}
 			],
 			"audioFile": "The cat is happy.mp3",
@@ -391,7 +391,7 @@
 			"texts": [
 				{
 					"id": 0,
-					"text": "The cat ran from the man"
+					"text": "The cat ran from the man."
 				}
 			],
 			"audioFile": "The cat ran from the man.mp3",
@@ -529,7 +529,7 @@
 			"texts": [
 				{
 					"id": 0,
-					"text": "See Sam the man"
+					"text": "See Sam the man."
 				}
 			],
 			"audioFile": "See Sam the man.mp3",
@@ -644,7 +644,7 @@
 			"texts": [
 				{
 					"id": 0,
-					"text": "Sam the man waves"
+					"text": "Sam the man waves."
 				}
 			],
 			"audioFile": "Sam the man waves.mp3",
@@ -1632,7 +1632,7 @@
 	"texts": [
 		{
 			"id": 0,
-			"text": "Cat naps on the mat"
+			"text": "Cat naps on the mat."
 		}
 	],
 	"audioFile": "Cat naps on the mat.mp3",
@@ -1754,7 +1754,7 @@
 	"texts": [
 		{
 			"id": 0,
-			"text": "Sam tips his black hat"
+			"text": "Sam tips his black hat."
 		}
 	],
 	"audioFile": "Sam tips his black hat.mp3",
@@ -1870,7 +1870,7 @@
 	"texts": [
 		{
 			"id": 0,
-			"text": "See how Sam the man ran"
+			"text": "See how Sam the man ran."
 		}
 	],
 	"audioFile": "See how Sam the man ran.mp3",
@@ -2421,7 +2421,7 @@
 	"texts": [
 		{
 			"id": 0,
-			"text": "The fat cat stops his nap"
+			"text": "The fat cat stops his nap."
 		}
 	],
 	"audioFile": "The fat cat stops his nap.mp3",

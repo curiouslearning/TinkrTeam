@@ -23,7 +23,7 @@
             [
 				{
 					"id": 0,
-					"posX": 25,
+					"posX": 35,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -38,7 +38,7 @@
 						{
 							"id": 0,
 							"animName": "A01",
-							"startX": 25,
+							"startX": 35,
 						    "startY": -65,
 						    "startIndex": 0,
 						    "endIndex": 3,
@@ -67,7 +67,7 @@
 			[
 				{
 					"id": 0,
-					"text": "Cat"
+					"text": "cat"
 					
 				}
 			],
@@ -109,7 +109,7 @@
             [
 				{
 					"id": 0,
-					"posX": 25,
+					"posX": 35,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -124,7 +124,7 @@
 						{
 							"id": 0,
 							"animName": "A02",
-							"startX": 25,
+							"startX": 35,
 					        "startY": -65,
 					        "startIndex": 0,
 					        "endIndex": 5,
@@ -513,7 +513,7 @@
             [
 				{
 					"id": 0,
-					"posX": 33,
+					"posX": 39,
 					"posY": -65,
 					"scaleX":40,
 					"scaleY": 40,
@@ -528,7 +528,7 @@
 						{
 							"id": 0,
 							"animName": "A06",
-							"startX": 33,
+							"startX": 39,
 					        "startY": -65,
 					        "startIndex": 0,
 					        "endIndex": 3,
@@ -712,7 +712,7 @@
             [
 				{
 					"id": 0,
-					"posX": 43,
+					"posX": 35,
 					"posY": -65,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -727,7 +727,7 @@
 						{
 							"id": 0,
 							"animName": "A08",
-							"startX": 43,
+							"startX": 35,
 					        "startY": -65,
 					        "startIndex": 0,
 					        "endIndex": 3,

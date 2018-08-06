@@ -94,7 +94,7 @@
 
 			"texts": [{
 				"id": 0,
-				"text": "The cat on the mat is glad"
+				"text": "The cat on the mat is glad."
 
 			}],
 			"audioFile": "The cat on the mat is glad.mp3",
@@ -223,7 +223,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "The happy cat wags"
+				"text": "The happy cat wags."
 
 			}],
 			"audioFile": "The happy cat wags.mp3",
@@ -378,7 +378,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "The cat ran. The cat is not happy"
+				"text": "The cat ran. The cat is not happy."
 
 			}],
 			"audioFile": "The cat ran The cat is not happy.mp3",
@@ -524,7 +524,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "Sam the man is happy"
+				"text": "Sam the man is happy."
 
 			}],
 			"audioFile": "Sam the man is happy.mp3",
@@ -642,7 +642,7 @@
 
 			"texts": [{
 				"id": 0,
-				"text": "See Sam the man wave. Sam is Happy"
+				"text": "See Sam the man wave. Sam is happy."
 
 			}],
 			"audioFile": "See Sam the man wave Sam is Happy.mp3",
@@ -1682,7 +1682,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "Happy cat naps on the mat"
+				"text": "Happy cat naps on the mat."
 
 			}],
 			"audioFile": "Happy cat naps on the mat.mp3",
@@ -1803,7 +1803,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "Sam’s hat makes him happy"
+				"text": "Sam’s hat makes him happy."
 
 			}],
 			"audioFile": "Sam_s hat makes him happy.mp3",
@@ -1910,7 +1910,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "Sam the man ran. He ran fast"
+				"text": "Sam the man ran. He ran fast."
 
 			}],
 			"audioFile": "Sam the man ran He ran fast.mp3",
@@ -2442,7 +2442,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "The fat cat had a happy nap"
+				"text": "The fat cat had a happy nap."
 
 			}],
 			"audioFile": "The fat cat had a happy nap.mp3",

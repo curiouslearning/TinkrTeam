@@ -93,7 +93,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "Cat"
+				"text": "cat"
 			}],
 			"audioFile": "Cat.mp3",
 			"timestamps": [{
@@ -163,7 +163,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "Cat wags"
+				"text": "cat wags"
 			}],
 			"audioFile": "Cat wags.mp3",
 			"timestamps": [{
@@ -301,7 +301,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "Cat ran"
+				"text": "cat ran"
 			}],
 			"audioFile": "Cat ran.mp3",
 			"timestamps": [{
@@ -560,7 +560,7 @@
 
 			"texts": [{
 				"id": 0,
-				"text": "Sad cat"
+				"text": "sad cat"
 			}],
 			"audioFile": "Sad cat.mp3",
 			"timestamps": [{
@@ -697,7 +697,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "Cat's ham"
+				"text": "cat's ham"
 			}],
 			"audioFile": "Cat_s ham.mp3",
 			"timestamps": [{
@@ -778,7 +778,7 @@
 			}],
 			"texts": [{
 				"id": 0,
-				"text": "Glad cat"
+				"text": "glad cat"
 			}],
 			"audioFile": "Glad cat.mp3",
 			"timestamps": [{
@@ -919,7 +919,7 @@
 			],
 			"texts": [{
 				"id": 0,
-				"text": "Cat's jam"
+				"text": "cat's jam"
 			}],
 			"audioFile": "Cat_s jam.mp3",
 			"timestamps": [{
@@ -1004,7 +1004,7 @@
 				}],
 				"texts": [{
 					"id": 0,
-					"text": "Fat cat"
+					"text": "fat cat"
 				}],
 				"audioFile": "Fat cat.mp3",
 				"timestamps": [{
@@ -1101,7 +1101,7 @@
 				],
 				"texts": [{
 					"id": 0,
-					"text": "Cat's mat"
+					"text": "cat's mat"
 				}],
 				"audioFile": "Cat_s mat.mp3",
 				"timestamps": [{
@@ -1229,7 +1229,7 @@
 				],
 				"texts": [{
 					"id": 0,
-					"text": "Cat naps"
+					"text": "cat naps"
 				}],
 				"audioFile": "Cat naps.mp3",
 				"timestamps": [{
@@ -1691,7 +1691,7 @@
 				],
 				"texts": [{
 					"id": 0,
-					"text": "Cat naps"
+					"text": "cat naps"
 				}],
 				"audioFile": "Cat naps.mp3",
 				"timestamps": [{
@@ -1789,7 +1789,7 @@
 				],
 				"texts": [{
 					"id": 0,
-					"text": "Fat cat"
+					"text": "fat cat"
 				}],
 				"audioFile": "Fat cat.mp3",
 				"timestamps": [{

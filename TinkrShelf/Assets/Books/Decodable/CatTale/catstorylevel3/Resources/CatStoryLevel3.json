@@ -1162,8 +1162,8 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": 17,
-					"posY": -33,
+					"posX": 27,
+					"posY": -56,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A12-1",
@@ -1176,8 +1176,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -6,
-					"posY": -101,
+					"posX": -4,
+					"posY": -114,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A11a-1",

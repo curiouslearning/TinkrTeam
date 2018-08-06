@@ -351,8 +351,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": -23,
-				"posY": 0,
+				"posX": -15,
+				"posY": -15,
 				"scaleX": 40,
 				"scaleY": 40,
 				"imageName": "A04-1",
@@ -364,8 +364,8 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A04",
-					"startX": -23,
-					"startY": 0,
+					"startX": -15,
+					"startY":-15,
 					"startIndex": 0,
 					"endIndex": 3,
 					"onTouch": true,
@@ -444,8 +444,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": -35,
-				"posY": -11,
+				"posX": -15,
+				"posY": -15,
 				"scaleX": 40,
 				"scaleY": 40,
 				"imageName": "A05-1",
@@ -457,8 +457,8 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A05",
-					"startX": -35,
-					"startY": -11,
+					"startX": -15,
+					"startY": -15,
 					"startIndex": 0,
 					"endIndex": 3,
 					"onTouch": true,
@@ -543,8 +543,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": 13,
-				"posY": -0,
+				"posX": 38,
+				"posY": -27,
 				"scaleX": 40,
 				"scaleY": 40,
 				"imageName": "A06-1",
@@ -556,8 +556,8 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A06",
-					"startX": 13,
-					"startY": 0,
+					"startX": 38,
+					"startY": -27,
 					"startIndex": 0,
 					"endIndex": 3,
 					"onTouch": true,
@@ -759,8 +759,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": 11,
-				"posY": 0,
+				"posX": 33,
+				"posY": -27,
 				"scaleX": 40,
 				"scaleY": 40,
 				"imageName": "A08-1",
@@ -772,8 +772,8 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A08",
-					"startX": 11,
-					"startY": 0,
+					"startX": 33,
+					"startY": -27,
 					"startIndex": 0,
 					"endIndex": 3,
 					"onTouch": true,
@@ -856,7 +856,7 @@
 			"gameObjects": [{
 					"id": 0,
 					"posX": 261,
-					"posY": 6,
+					"posY": -15,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-1",
@@ -869,7 +869,7 @@
 							"id": 0,
 							"animName": "A09",
 							"startX": 261,
-							"startY": 6,
+							"startY": -15,
 							"startIndex": 0,
 							"endIndex": 7,
 							"onTouch": true,
@@ -880,9 +880,9 @@
 									"endFrame": 3,
 									"noOfLoops": 0,
 									"movable": {
-										"finalx": 81,
-										"finaly": 6,
-										"speed": -45
+										"finalx": 99,
+										"finaly": -15,
+										"speed": -54
 									}
 								},
 								{
@@ -908,8 +908,8 @@
 				},
 				{
 					"id": 1,
-					"posX": -23,
-					"posY": -37.8,
+					"posX": -5,
+					"posY": -57,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-9",
@@ -984,7 +984,7 @@
 				{
 					"id": 0,
 					"posX": 210,
-					"posY": 6,
+					"posY": -27,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A10-1",
@@ -997,7 +997,7 @@
 						"id": 0,
 						"animName": "A10",
 						"startX": 210,
-						"startY": 6,
+						"startY": -27,
 						"startIndex": 0,
 						"endIndex": 5,
 						"onTouch": true,
@@ -1008,9 +1008,9 @@
 								"endFrame": 3,
 								"noOfLoops": 0,
 								"movable": {
-									"finalx": -30,
-									"finaly": 6,
-									"speed": -60
+									"finalx": -10,
+									"finaly": -27,
+									"speed": -40
 
 								}
 							},
@@ -1089,7 +1089,7 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": -9,
+				"posX": -2,
 				"posY": -66,
 				"scaleX": 80,
 				"scaleY": 80,
@@ -1102,7 +1102,7 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A11a",
-					"startX": -9,
+					"startX": -2,
 					"startY": -66,
 					"startIndex": 0,
 					"endIndex": 2,
@@ -1188,8 +1188,8 @@
 			},
 			"gameObjects": [{
 					"id": 0,
-					"posX": -19,
-					"posY": -71,
+					"posX": -2,
+					"posY": -66,
 					"scaleX": 40,
 					"scaleY": 40,
 					"imageName": "A15b-3",
@@ -1202,7 +1202,7 @@
 				},
 				{
 					"id": 1,
-					"posX": -7,
+					"posX": 15,
 					"posY": -15,
 					"scaleX": 40,
 					"scaleY": 40,
@@ -1215,7 +1215,7 @@
 					"anim": [{
 						"id": 0,
 						"animName": "A12",
-						"startX": -7,
+						"startX": 15,
 						"startY": -15,
 						"startIndex": 0,
 						"endIndex": 4,
@@ -1299,8 +1299,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": -39,
-				"posY": -10,
+				"posX": -15,
+				"posY": -15,
 				"scaleX": 40,
 				"scaleY": 40,
 				"imageName": "A13-1",
@@ -1312,8 +1312,8 @@
 				"anim": [{
 					"id": 0,
 					"animName": "A13",
-					"startX": -39,
-					"startY": -10,
+					"startX": -15,
+					"startY": -15,
 					"startIndex": 0,
 					"endIndex": 3,
 					"onTouch": true,
@@ -1709,8 +1709,8 @@
 					"id": 3,
 					"posX": -48,
 					"posY": -24,
-					"scaleX": 63,
-					"scaleY": 58.6,
+					"scaleX": 80,
+					"scaleY": 80,
 					"imageName": "A16b-1",
 					"orderInLayer": 3,
 					"inText": true,

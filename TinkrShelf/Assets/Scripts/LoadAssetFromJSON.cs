@@ -536,7 +536,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
 		if (gameObjectData.destroyOnCollision != "NIL")
 		{
-			var rigidbody = go.AddComponent<Rigidbody2D>();
+			var rigidbody = go.AddComponent<Rigidbody>();
 			rigidbody.isKinematic = true;
 			//rigidbody.bodyType = RigidbodyType2D.Static;
 			//rigidbody.useFullKinematicContacts = true;
