@@ -67,11 +67,11 @@ public class GTinkerText : MonoBehaviour {
 	private void AddCollider()
 	{
 		// Setup a trigger collider at runtime so it is the same bounds as the text
-		BoxCollider col = gameObject.AddComponent<BoxCollider>();
+		BoxCollider2D col = gameObject.AddComponent<BoxCollider2D>();
 		col.isTrigger = true;
 		RectTransform trans= gameObject.GetComponent<RectTransform>();
 		col.size = new Vector2(trans.sizeDelta.x, trans.sizeDelta.y);
-		col.center = new Vector2( (trans.rect.x +trans.sizeDelta.x/2), (trans.rect.y +trans.sizeDelta.y/2) ) ;
+		col.offset = new Vector2( (trans.rect.x +trans.sizeDelta.x/2), (trans.rect.y +trans.sizeDelta.y/2) ) ;
 		// Check against a collider width that is too small (tough to tap on "I" or "1")
 		if (col.size.x <= 0.055f)
 		{
@@ -174,7 +174,7 @@ public class GTinkerText : MonoBehaviour {
             
                 //if animation is present
 			if (pairedAnim>=0) 
-				{  Debug.Log ("anim present");
+				{ 
 				pairedGraphics [i].OnPairedMouseDown (this);
 		
 			} 

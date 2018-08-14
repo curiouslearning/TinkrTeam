@@ -2359,20 +2359,29 @@
 				}
 
 			],
-			"triggers": [{
-					"stnzaId": 0,
-					"textId": 4,
-					"timestamp": null,
-					"sceneObjectId": 2,
-					"animId": 0,
-					"typeOfLinking": 3
-				},
+			"triggers": [
 				{
 					"stnzaId": 0,
 					"textId": 1,
 					"timestamp": null,
 					"sceneObjectId": 2,
 					"animId": -1,
+					"typeOfLinking": 3
+				},
+	            {
+					"stnzaId": 0,
+					"textId": 4,
+					"timestamp": null,
+					"sceneObjectId": 3,
+					"animId": 0,
+					"typeOfLinking": 3
+				},
+				{
+					"stnzaId": 0,
+					"textId": 4,
+					"timestamp": null,
+					"sceneObjectId": 2,
+					"animId": 0,
 					"typeOfLinking": 3
 				}
 			]
@@ -2682,14 +2691,6 @@
 				"timestamp": null,
 				"sceneObjectId": 1,
 				"animId":-1,
-				"typeOfLinking": 3
-			},
-			{
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 1,
-				"animId":0,
 				"typeOfLinking": 3
 			}]
 		},

@@ -47,7 +47,7 @@ public class GSManager :  MonoBehaviour {
 	/// Calls on Auto stanza play.
 	/// </summary>
 	public virtual void Start() 
-	{  Debug.Log ("start");
+	{  
 
 		// Reset flags
 		// dragActive = false;
@@ -73,7 +73,7 @@ public class GSManager :  MonoBehaviour {
 	/// Plays the stanza narration if sprite is narrateOn and stanzamanager and gamemanager are not null.
 	/// </summary>
 	IEnumerator PlayStanzaAudio(){
-		Debug.Log ("playstanzaaudio");
+		
 		yield return new  WaitForSeconds(1);
 		if (stanzaManager != null && gameManager!= null)
 		{
@@ -107,7 +107,7 @@ public class GSManager :  MonoBehaviour {
 	/// This function can be overriden by specific scene manager.
 	/// </summary>
 	public virtual void OnMouseDown(GameObject go)
-	{   Debug.Log ("mousedown");    
+	{      
 		stanzaManager.RequestCancelAutoPlay (); // to stop auto narration when anything is clicked
             // Lock out other input during auto play?
             if (IsInputAllowed())

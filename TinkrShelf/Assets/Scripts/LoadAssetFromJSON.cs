@@ -195,25 +195,17 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	{   
 		//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 		//dataCollector.AddNewSection ("5PageProxy", pageNumber.ToString() );
-		Debug.Log(pageNumber);
+
 		FirebaseHelper.AddSection(pageNumber);
 		inTime = DateTime.Now;
 		LoadSceneSpecificScript ();
 		LoadPageData(pageNumber);
 		LoadStanzaData();
 		//TokenizeStanza();
-		Counttext();
 		LoadStanzaAudio();
 		LoadTriggers();
 		LoadAudios();
 
-	}
-	public void Counttext()
-	{
-		for (int i = 0; i < tinkerTextObjects.Count; i++)
-		{
-			Debug.Log("thisssss"+ tinkerTextObjects[i]);
-		}
 	}
 
 	/// <summary>
@@ -251,7 +243,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// Loads the audio for stanza auto narration to the canvas.
 	/// </summary>
 	public void LoadStanzaAudio()
-	{   Debug.Log ("load audio");
+	{  
 		Destroy(GameObject.Find("Canvas").GetComponent<AudioSource>());
 		GameObject.Find("Canvas").AddComponent<AudioSource>().clip = LoadAudioAsset(storyBookJson.pages[pageNumber].audioFile);
 	}
@@ -326,7 +318,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
 			if (triggers[i].typeOfLinking == 3)//two way linking of tinker graphic and tinker texts.
 			{
 				GameObject text = tinkerTextObjects[triggers[i].textId];
-				Debug.Log ("textttt" + tinkerTextObjects [triggers [i].textId]);
 				GameObject graphic = tinkerGraphicObjects[triggers[i].sceneObjectId];
 				text.GetComponent<GTinkerText> ().pairedGraphics.Add(graphic.GetComponent<GTinkerGraphic> ());
 				text.GetComponent<GTinkerText> ().pairedAnim = triggers [i].animId;
@@ -352,7 +343,7 @@ public class LoadAssetFromJSON : MonoBehaviour {
 		//Debug.Log(storyBookJson.pages[pageNumber].texts);
 
 		TextClass[] texts = storyBookJson.pages[pageNumber].texts;
-		Debug.Log ("text" + texts);
+
 
 		foreach (TextClass text in texts)
 		{
@@ -376,13 +367,13 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// Tokenizes the stanza into TinkerTexts.
 	/// </summary>
 	public void TokenizeStanza (int i)
-	{   Debug.Log ("i is" + i);
+	{  
 		//tinkerTextObjects.Clear ();
 		string[] words;
 
 		//for (i = 0; i < stanzaManager.stanzas.Count; i++) {
 		words = stanzaManager.stanzas [i].stanzaValue.text.Split (' ');
-		Debug.Log ("words" + words);
+
 
 		for (j = 0; j < words.Length; j++) {
 			stanzaManager.stanzas [i].tinkerTexts.Add (CreateText (stanzaManager.stanzas [i], startingXText + width, startingYText, words [j], 30, Color.black));
@@ -536,14 +527,14 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
 		if (gameObjectData.destroyOnCollision != "NIL")
 		{
-			var rigidbody = go.AddComponent<Rigidbody>();
+			var rigidbody = go.AddComponent<Rigidbody2D>();
 			rigidbody.isKinematic = true;
 			//rigidbody.bodyType = RigidbodyType2D.Static;
 			//rigidbody.useFullKinematicContacts = true;
 		}
 		//add BoxCollider after adding the sprite for proper size!
-		//PolygonCollider2D col = go.AddComponent<PolygonCollider2D>();
-		 BoxCollider col = go.AddComponent<BoxCollider>();
+		PolygonCollider2D col = go.AddComponent<PolygonCollider2D>();
+		// BoxCollider col = go.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		tinkerGraphicObjects.Add(go);
 

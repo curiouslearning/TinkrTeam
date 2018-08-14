@@ -91,7 +91,7 @@ public class GTinkerGraphic : MonoBehaviour{
 
         //sending data directly to firebase using "72 hours rule"! (removed local data storage)
         //DataCollection.AddInTouchData (("Graphic_"+dataTinkerGraphic.label),  time.ToString());
-        Debug.Log(dataTinkerGraphic.label);
+        
 		FirebaseHelper.LogInAppTouch(("Graphic_"+dataTinkerGraphic.label) ,  time.ToString());
 		int length = dataTinkerGraphic.anim.Length;
         //for (int i = 0; i < length; i++) {
@@ -203,7 +203,7 @@ public class GTinkerGraphic : MonoBehaviour{
 		return transform.position;
 	}
 
-	void OnTriggerEnter (Collider col)
+	void OnTriggerEnter2D (Collider2D col)
 	{
 		if(col.gameObject.name == dataTinkerGraphic.destroyOnCollision)
 		{    
@@ -278,12 +278,12 @@ public class GTinkerGraphic : MonoBehaviour{
     /// Animate this instance with loaded animation frames.
     /// </summary>
     IEnumerator Animate()
-	{   Debug.Log ("ANIMATE");
+	{  
 		currentframe = 0;
 		int i = 1;
 
 		for (seqIterator = 0; seqIterator < sequences.Length; seqIterator++) {
-			Debug.Log (sequences.Length+"            "+seqIterator);
+			
 			//animate for non moving sequences of PNGs
 			if (sequences [seqIterator].movable.speed == 0 ) {
 				i = 1;       //count the number of loops from start for every sequence!
@@ -298,7 +298,7 @@ public class GTinkerGraphic : MonoBehaviour{
 			}
 			//animate for moving sequences of PNGs towards right.
 			else if(transform.position.x < sequences [seqIterator].movable.finalx) {
-				Debug.Log ("animate moe");
+				
 				currentframe = sequences [seqIterator].startFrame;
 				while (transform.position.x < sequences [seqIterator].movable.finalx) {
 					spr.sprite = sprite[currentframe];
@@ -320,12 +320,12 @@ public class GTinkerGraphic : MonoBehaviour{
 			}
 			//animate for moving sequences of PNGs towards left.
 			else if(transform.position.x > sequences [seqIterator].movable.finalx) 
-			{   Debug.Log ("animate moe");
+			{   
 				currentframe = sequences [seqIterator].startFrame;
 
 				while (transform.position.x > sequences [seqIterator].movable.finalx) {
 					spr.sprite = sprite[currentframe];
-					Debug.Log (spr.sprite.name);
+
 					yield return new WaitForSeconds(secPerFrame[currentframe]);
 					currentframe++;
 					var posx = transform.position.x;
@@ -345,7 +345,10 @@ public class GTinkerGraphic : MonoBehaviour{
 
 
 		}
-		Debug.Log ("breaaakk");
+		Destroy (spr.gameObject.GetComponent<PolygonCollider2D> ());
+		PolygonCollider2D col = spr.gameObject.AddComponent<PolygonCollider2D>();
+		col.isTrigger = true;
+	
 		yield break;
 
 	}
