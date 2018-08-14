@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2165736827
+CRC: 2681604295
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 2d71c2b1e1f522339f85def04fc29348
+    Hash: 8a115f0907d195ff1c09dc4071eb333e
   TypeTreeHash:
     serializedVersion: 2
     Hash: cfcb18d5c2eb967a34e14942efc353ab
@@ -135,6 +135,7 @@ Assets:
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A13/A13-2.png
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/Jam.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A16/A16-2.png
+- Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/thee.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/GLAD/d_glad.wav
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/a.mp3
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/the.mp3
@@ -144,6 +145,7 @@ Assets:
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A09/A09-3.png
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/JAM/a_jam.wav
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A02/A02-1.png
+- Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/thuh.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/FAT2/t_fat2.wav
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/why.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A12/A12-5.png
@@ -232,7 +234,6 @@ Assets:
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/JAM/m_jam.wav
 - Assets/Books/Decodable/CatTale/catstorylevel3/Audio/Stanza/The cat.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A17/A17-2.png
-- Assets/Books/Decodable/CatTale/catstorylevel3/Audio/Stanza/The cat on mat.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/MAT/a_mat.wav
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A07/A07-5.png
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Stanza/j a m.mp3
@@ -348,6 +349,7 @@ Assets:
 - Assets/Books/Decodable/CatTale/Common/Audio/SingleWord/likes.mp3
 - Assets/Books/Decodable/CatTale/Common/AnimPNGs/A17/A17-5.png
 - Assets/Books/Decodable/CatTale/catstorylevel4/Audio/Stanza/The fat cat is in a jam.mp3
+- Assets/Books/Decodable/CatTale/catstorylevel3/Audio/Stanza/The cat on the mat.mp3
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/JAM/j_jam.wav
 - Assets/Books/Decodable/CatTale/catstorylevel0/Audio/Book0SPLIT/CAT/c_cat.wav
 Dependencies: []

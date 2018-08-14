@@ -1794,6 +1794,14 @@
 				"sceneObjectId": 2,
 				"animId": 0,
 				"typeOfLinking": 3
+			},
+			{
+				"stnzaId": 1,
+				"textId": 3,
+				"timestamp": null,
+				"sceneObjectId": 3,
+				"animId": 0,
+				"typeOfLinking": 3
 			}]
 
 		},
@@ -1873,28 +1881,28 @@
 			}],
 			"audioFile": "f a t 2.mp3",
 			"timestamps": [{
-					"start": 285,
+					"start": 71,
 					"wordIdx": 0,
 					"audio": "f_fat2.wav",
-					"end": 990,
+					"end": 760,
 					"starWord": "No"
 				}, {
-					"start": 1181,
+					"start": 954,
 					"wordIdx": 1,
 					"audio": "a_fat2.wav",
-					"end": 1583,
+					"end": 1373,
 					"starWord": "No"
 				}, {
-					"start": 1907,
+					"start": 1673,
 					"wordIdx": 2,
 					"audio": "t_fat2.wav",
-					"end": 2117,
+					"end": 1893,
 					"starWord": "No"
 				}, {
-					"start": 3150,
+					"start": 2215,
 					"wordIdx": 3,
 					"audio": "fat.mp3",
-					"end": 80142,
+					"end": 2679,
 					"starWord": "Yes"
 				}
 

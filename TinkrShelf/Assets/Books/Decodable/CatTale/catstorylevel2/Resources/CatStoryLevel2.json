@@ -97,7 +97,7 @@
 			}],
 			"audioFile": "Cat.mp3",
 			"timestamps": [{
-				"start": 165,
+				"start": 140,
 				"wordIdx": 0,
 				"audio": "Cat.mp3",
 				"end": 801,
@@ -620,7 +620,7 @@
 							"startX": 240,
 							"startY": -65,
 							"startIndex": 0,
-							"endIndex": 4,
+							"endIndex": 6,
 							"onTouch": true,
 							"onStart": false,
 							"secPerFrame": [
@@ -628,7 +628,9 @@
 								0.2,
 								0.2,
 								0.2,
-								1.0
+								1.0,
+						        0.4,
+						        0.4
 							],
 							"sequences": [{
 									"startFrame": 0,
@@ -647,35 +649,18 @@
 									"movable": {
 										"speed": 0
 									}
-								}
-							]
-						},
-						{
-
-							"id": 1,
-							"animName": "A07",
-							"startX": 40,
-							"startY": -65,
-							"startIndex": 5,
-							"endIndex": 6,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [
-								0.4,
-								0.4
-							],
-							"sequences": [{
-									"startFrame": 0,
-									"endFrame": 1,
+								},
+				                {
+									"startFrame": 5,
+									"endFrame": 6,
 									"noOfLoops": 2,
 									"movable": {
 										"speed": 0
 									}
 								}
-
 							]
-
 						}
+						
 					]
 				},
 
@@ -715,19 +700,21 @@
 					"starWord": "Yes"
 				}
 			],
-			"triggers": [{
-				"stnzaId": 0,
-				"textId": 1,
-				"timestamp": null,
-				"sceneObjectId": 0,
-				"animId": 0,
-				"typeOfLinking": 3
-			}, {
+			"triggers": [ 
+	         {
 				"stnzaId": 0,
 				"textId": 0,
 				"timestamp": null,
 				"sceneObjectId": 0,
 				"animId": -1,
+				"typeOfLinking": 3
+			},
+	         {
+				"stnzaId": 0,
+				"textId": 1,
+				"timestamp": null,
+				"sceneObjectId": 0,
+				"animId": 0,
 				"typeOfLinking": 3
 			}]
 		},
@@ -826,7 +813,7 @@
 			"gameObjects": [{
 					"id": 0,
 					"posX": 220,
-					"posY": -64.4,
+					"posY": -64,
 					"scaleX": 80,
 					"scaleY": 80,
 					"imageName": "A09-1",
@@ -839,9 +826,9 @@
 							"id": 0,
 							"animName": "A09",
 							"startX": 220,
-							"startY": -64.4,
+							"startY": -64,
 							"startIndex": 0,
-							"endIndex": 4,
+							"endIndex": 7,
 							"onTouch": true,
 							"onStart": false,
 							"secPerFrame": [
@@ -849,7 +836,10 @@
 								0.2,
 								0.2,
 								0.2,
-								1.0
+								1.0,
+							    0.3,
+							    0.5,
+							    0.5
 							],
 							"sequences": [{
 									"startFrame": 0,
@@ -857,49 +847,30 @@
 									"noOfLoops": 0,
 									"movable": {
 										"finalx": 82,
-										"finaly": -64.4,
+										"finaly": -64,
 										"speed": -46
 									}
 								},
 								{
 									"startFrame": 4,
-									"endFrame": 4,
+									"endFrame": 5,
 									"noOfLoops": 1,
+									"movable": {
+										"speed": 0
+									}
+								},
+							    {
+									"startFrame": 6,
+									"endFrame": 7,
+									"noOfLoops": 2,
 									"movable": {
 										"speed": 0
 									}
 								}
 
 							]
-						},
-						{
-							"id": 1,
-							"animName": "A09",
-							"startX": 82,
-							"startY": -64.4,
-							"startIndex": 5,
-							"endIndex": 7,
-							"onTouch": true,
-							"onStart": false,
-							"secPerFrame": [0.3, 0.5, 0.5],
-							"sequences": [{
-									"startFrame": 0,
-									"endFrame": 0,
-									"noOfLoops": 1,
-									"movable": {
-										"speed": 0
-									}
-								},
-								{
-									"startFrame": 1,
-									"endFrame": 2,
-									"noOfLoops": 2,
-									"movable": {
-										"speed": 0
-									}
-								}
-							]
 						}
+						
 					]
 				},
 				{
@@ -937,14 +908,16 @@
 					"starWord": "Yes"
 				}
 			],
-			"triggers": [{
+			"triggers": [
+             {
 				"stnzaId": 0,
 				"textId": 0,
 				"timestamp": null,
 				"sceneObjectId": 0,
 				"animId": -1,
 				"typeOfLinking": 3
-			}, {
+			},
+		    {
 				"stnzaId": 0,
 				"textId": 1,
 				"timestamp": null,
@@ -1503,7 +1476,7 @@
 								"startX": -220,
 								"startY": -39,
 								"startIndex": 0,
-								"endIndex": 3,
+								"endIndex": 6,
 								"onTouch": true,
 								"onStart": false,
 								"secPerFrame": [
@@ -1511,9 +1484,6 @@
 									0.1,
 									0.1,
 									0.1,
-									0.1,
-									0.3,
-									0.2,
 								    0.1,
 									0.5,
 									0
@@ -1529,8 +1499,8 @@
 									}
 								},
 									{
-									"startFrame": 0,
-									"endFrame": 2,
+									"startFrame": 4,
+									"endFrame": 6,
 									"noOfLoops": 0,
 									"movable": {
 										"finalx": 110,

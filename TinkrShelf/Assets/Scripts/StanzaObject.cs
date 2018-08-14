@@ -28,6 +28,7 @@ public class StanzaObject : MonoBehaviour {
 	/// <param name="startingTinkerText">Starting tinker text.</param>
 	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null) { 
 	//{   stanzaNarrate = true;
+		Debug.Log("auto play");
 		int startingTinkerTextIndex = 0;
 
 		if (startingTinkerText != null)

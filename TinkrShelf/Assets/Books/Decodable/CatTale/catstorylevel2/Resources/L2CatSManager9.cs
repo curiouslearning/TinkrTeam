@@ -18,7 +18,8 @@ public class L2CatSManager9 : GSManager {
 			jam.SetActive (true);
 			GTinkerGraphic catJam = GameObject.Find ("CatJam").GetComponent<GTinkerGraphic> ();
 			if (catJam != null) {
-				catJam.reset ();
+				//catJam.reset ();
+				catJam.MyOnMouseDown ();
 			}
 
 

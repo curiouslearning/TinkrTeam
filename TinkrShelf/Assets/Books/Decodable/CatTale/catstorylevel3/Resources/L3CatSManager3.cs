@@ -4,35 +4,36 @@ using UnityEngine;
 
 
 public class L3CatSManager3 : GSManager {
-    GTinkerGraphic ranman;
-    GTinkerGraphic cat;
-    public override void Start()
-    {
-       ranman = GameObject.Find("Ran").GetComponent<GTinkerGraphic>();
-       cat = GameObject.Find("Cat").GetComponent<GTinkerGraphic>();
-    }
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "Cat") {
-			if (ranman != null) {
-				ranman.MyOnMouseDown();
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.PlayCompleteAnim ();
 			}
 		} else if (go.name == "Ran") {
-			if (cat != null) {
-				cat.MyOnMouseDown();
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.PlayCompleteAnim ();
 			} 
-
-		} else if (go.name == "Text_ran.") {
-			if (ranman != null && cat!=null) {
-				ranman.MyOnMouseDown ();
-				cat.MyOnMouseDown ();
+		} else if (go.name == "Text_cat") {
+			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			if (tinkerGraphic != null) {
+				tinkerGraphic.gameObject.transform.position = new Vector3 (tinkerGraphic.dataTinkerGraphic.posX, tinkerGraphic.dataTinkerGraphic.posY, 0);
+				LoadAssetFromJSON.LoadAssetImage (tinkerGraphic, tinkerGraphic.dataTinkerGraphic.imageName);
 			}
 
 		}
-        else if(go.name=="Text_cat")
-        {
-            ranman.reset();
-        }
+
+		//		 else if (go.name == "Text_ran") {
+		//			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+		//			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+		//			if (ranGraphic != null && catGraphic!=null) {
+		//				ranGraphic.MyOnMouseDown ();
+		//				catGraphic.MyOnMouseDown ();
+		//			}
+		//
+		//		}
 		base.OnMouseDown (go);
 	}
 }

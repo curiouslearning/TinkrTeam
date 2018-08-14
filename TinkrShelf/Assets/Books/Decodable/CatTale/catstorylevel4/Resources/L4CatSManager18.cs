@@ -10,11 +10,11 @@ public class L4CatSManager18 : GSManager {
 		if (go.name =="Jam"|| go.name == "Text_jam.") 
 		{   
 			GTinkerGraphic cat = GameObject.Find ("Cat").GetComponent<GTinkerGraphic>();
-//			if (cat != null)
-//			{   
-//				cat.MyOnMouseDown();
-//
-//			}
+			if (cat != null)
+			{   
+				cat.MyOnMouseDown();
+
+			}
 		}
 		base.OnMouseDown(go);
 

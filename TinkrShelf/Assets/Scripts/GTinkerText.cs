@@ -167,14 +167,14 @@ public class GTinkerText : MonoBehaviour {
         
 	}
     public void CheckPairedGraphic()
-	{ 
+	{   
 		for (int i = 0; i < pairedGraphics.Count; i++){
 		if (pairedGraphics[i]!= null) 
 		    {
             
                 //if animation is present
 			if (pairedAnim>=0) 
-			{
+				{  Debug.Log ("anim present");
 				pairedGraphics [i].OnPairedMouseDown (this);
 		
 			} 

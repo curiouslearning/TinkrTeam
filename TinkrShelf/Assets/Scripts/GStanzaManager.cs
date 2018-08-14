@@ -76,9 +76,9 @@ public class GStanzaManager : MonoBehaviour {
 
 	// Method to request an auto play starting w/ a stanza
 	public void RequestAutoPlay(StanzaObject startingStanza, GTinkerText startingTinkerText = null)
-	{
+	{   Debug.Log ("request auto play");
 		if (!autoPlaying)  // && !sceneManager.disableAutoplay)
-		{
+		{   Debug.Log("not auto playing");
 			autoPlaying = true;
 			cancelAutoPlay = false; // reset our cancel flag
 			StartCoroutine(StartAutoPlay(startingStanza, startingTinkerText));
@@ -137,7 +137,7 @@ public class GStanzaManager : MonoBehaviour {
 	}
 
 	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
-	{   
+	{   Debug.Log ("mousedown2");
 		if (tinkerText.stanza != null && stanzas.Contains(tinkerText.stanza))
 		{  
 			tinkerText.stanza.OnMouseDown(tinkerText, suppressAnim);

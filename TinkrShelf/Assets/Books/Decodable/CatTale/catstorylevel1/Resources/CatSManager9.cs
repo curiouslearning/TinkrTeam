@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class CatSManager9 : GSManager {
 
-	GameObject ham;
+	GameObject jam;
 
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name == "CatJam") {
-			if (ham == null) {
-				ham = GameObject.Find ("Jam");
+			if (jam == null) {
+				jam = GameObject.Find ("Jam");
 			}
 
-			ham.SetActive (true);
+			jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam"){
 
-			if (ham == null) {
-				ham = GameObject.Find ("Jam");
+			if (jam == null) {
+				jam = GameObject.Find ("Jam");
 			}
 
-			ham.SetActive (true);
+			jam.SetActive (true);
 			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
 			if (catHam != null)
 			{ 
@@ -31,7 +31,7 @@ public class CatSManager9 : GSManager {
 		}
 		else if (go.name == "Jam") 
 		{  
-			ham = go;
+			jam = go;
 			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
 			if (catHam != null)
 			{ 

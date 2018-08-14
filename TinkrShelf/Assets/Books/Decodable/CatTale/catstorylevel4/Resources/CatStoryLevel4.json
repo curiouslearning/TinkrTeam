@@ -112,7 +112,7 @@
 				{
 					"start": 43,
 					"wordIdx": 0,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 299,
 					"starWord":"No"
 				},
@@ -135,7 +135,7 @@
 					"wordIdx": 3,
 					"audio": "on.mp3",
 					"end": 1173,
-					"starWord":"No"
+					"starWord":"No4"
 				},
 				{
 					"start": 1173,
@@ -235,7 +235,7 @@
 				{
 					"start": 32,
 					"wordIdx": 0,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 286,
 					"starWord":"No"
 				},
@@ -399,7 +399,7 @@
 				{
 					"start": 32,
 					"wordIdx": 0,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 303,
 					"starWord":"No"
 				},
@@ -427,7 +427,7 @@
 				{
 					"start": 1491,
 					"wordIdx": 4,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 1625,
 					"starWord":"No"
 				},
@@ -659,7 +659,7 @@
 				{
 					"start": 473,
 					"wordIdx": 1,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 600,
 					"starWord":"No"
 				},
@@ -781,7 +781,7 @@
 				{
 					"start": 580,
 					"wordIdx": 2,
-					"audio": "the.mp3",
+					"audio": "thuh.mp3",
 					"end": 716,
 					"starWord":"No"
 				},
@@ -936,7 +936,7 @@
 		{
 			"start": 44,
 			"wordIdx": 0,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 267,
 			"starWord":"No"
 		},
@@ -957,7 +957,7 @@
 		{
 			"start": 1092,
 			"wordIdx": 3,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 1340,
 			"starWord":"No"
 		},
@@ -1066,7 +1066,7 @@
 		{
 			"start": 273,
 			"wordIdx": 1,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 399,
 			"starWord":"No"
 		},
@@ -1116,7 +1116,7 @@
 		{
 			"id": 0,
 			"posX": 220,
-			"posY": -64.4,
+			"posY": -64,
 			"scaleX": 80,
 			"scaleY": 80,
 			"imageName": "A09-1",
@@ -1130,7 +1130,7 @@
 					"id": 0,
 					"animName": "A09",
 					"startX":220,
-					"startY":-64.4,
+					"startY":-64,
 					"startIndex" : 0,
 					"endIndex":4,
 					"onTouch": true,
@@ -1149,7 +1149,7 @@
 							"noOfLoops": 0,
 							"movable": {
 								"finalx": 82,
-								"finaly": -64.4,
+								"finaly": -64,
 								"speed": -46
 							}
 						},
@@ -1168,7 +1168,7 @@
 					"id": 1,
 					"animName": "A09",
 					"startX":82,
-					"startY":-64.4,
+					"startY":-64,
 					"startIndex" : 5,
 					"endIndex":7,
 					"onTouch": true,
@@ -1219,7 +1219,7 @@
 		{
 			"start": 39,
 			"wordIdx": 0,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 311,
 			"starWord":"No"
 		},
@@ -1240,7 +1240,7 @@
 		{
 			"start": 1108,
 			"wordIdx": 3,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 1345,
 			"starWord":"No"
 		},
@@ -1359,7 +1359,7 @@
 		{
 			"start": 537,
 			"wordIdx": 2,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 690,
 			"starWord":"No"
 		},
@@ -1471,7 +1471,7 @@
 		{
 			"start": 49,
 			"wordIdx": 0,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 296,
 			"starWord":"No"
 		},
@@ -1499,7 +1499,7 @@
 		{
 			"start": 1431,
 			"wordIdx": 4,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 1534,
 			"starWord":"No"
 		},
@@ -1661,7 +1661,7 @@
 		{
 			"start": 1054,
 			"wordIdx": 3,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 1157,
 			"starWord":"No"
 		},
@@ -1899,7 +1899,7 @@
 		{
 			"start": 1102,
 			"wordIdx": 3,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 1195,
 			"starWord":"No"
 		},
@@ -2095,7 +2095,7 @@
 		{
 			"start": 483,
 			"wordIdx": 1,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 618,
 			"starWord":"No"
 		},
@@ -2299,7 +2299,7 @@
 		{
 			"start": 385,
 			"wordIdx": 1,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 522,
 			"starWord":"No"
 		},
@@ -2429,7 +2429,7 @@
 		{
 			"start": 25,
 			"wordIdx": 0,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 255,
 			"starWord":"No"
 		},
@@ -2588,7 +2588,7 @@
 		{
 			"start": 37,
 			"wordIdx": 0,
-			"audio": "the.mp3",
+			"audio": "thuh.mp3",
 			"end": 230,
 			"starWord":"No"
 		},
