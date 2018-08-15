@@ -87,8 +87,26 @@
             "pathToThumbnail": "Thumbnail/cat",
             "version": 1
             
+<<<<<<< HEAD
         }
 
+=======
+        },
+		{
+    "bookId": 6,
+    "title": "Baby Duck Story",
+    "author": "",
+    "language": "English (U.S.)",
+    "readingLevel": 1, 
+    "tags" : [
+            "duck", 
+            "babyD"
+        ],
+"fileName": "BabyD",
+"pathToThumbnail": "Thumbnail/duck",
+"version": 1
+    },
+>>>>>>> master
 
 ]
 }

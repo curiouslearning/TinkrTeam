@@ -38,7 +38,11 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private DateTime inTime;
     
     //location of hosted json file in amazon s3 bucket
+<<<<<<< HEAD
 	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
+=======
+    private const string url = "https://s3.ap-south-2.amazonaws.com/tinkr2/manifest.json";
+>>>>>>> master
 
     private string responseJson;
     private bool isServerJson = false;
@@ -116,8 +120,14 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         {
             request.Dispose();
             isServerJson = false;
+<<<<<<< HEAD
 
 			Debug.Log ("no internet");
+=======
+            Debug.Log("timeout");
+
+   
+>>>>>>> master
             //load shelf data with local json
             LoadShelfData();
             LoadInitialCenterBook();
@@ -127,11 +137,17 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
 		responseJson = request.text;
 
         // if internet-> ok
+<<<<<<< HEAD
 		if (responseJson != "")
 
 		{   Debug.Log ("internet");
 			isServerJson = true;
 		}
+=======
+        if (responseJson != "")
+            isServerJson = true;
+
+>>>>>>> master
         
         LoadShelfData();
         LoadInitialCenterBook();

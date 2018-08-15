@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 256723528}
   - component: {fileID: 256723529}
   m_Layer: 0
-  m_Name: Background
+  m_Name: background_for_canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,8 +348,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 256723527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -3, y: -27, z: 0}
   m_LocalScale: {x: 27.266037, y: 16.298368, z: 22}
+=======
+  m_LocalPosition: {x: 0.1, y: -0.1, z: 0}
+  m_LocalScale: {x: 23.304792, y: 17.018194, z: 0}
+>>>>>>> master
   m_Children: []
   m_Father: {fileID: 482621644}
   m_RootOrder: 0
@@ -1123,7 +1128,7 @@ GameObject:
   - component: {fileID: 848408920}
   - component: {fileID: 848408921}
   m_Layer: 0
-  m_Name: bg
+  m_Name: layer_to_hide_lower_rainbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
