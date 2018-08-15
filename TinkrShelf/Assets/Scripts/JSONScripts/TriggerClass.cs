@@ -7,7 +7,6 @@ public class TriggerClass  {
     public int textId;
     public int timestamp;
     public int sceneObjectId;
-	public int animId;
     public int typeOfLinking;
 	
 }

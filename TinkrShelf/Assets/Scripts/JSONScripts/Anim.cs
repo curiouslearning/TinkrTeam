@@ -5,10 +5,7 @@ using UnityEngine;
 public class Anim  {
     public int id;
     public string animName;
-	public int startX;
-	public int startY;
-	public int startIndex;
-	public int endIndex;
+    public int numberOfImages;
 	public bool onTouch;
 	public bool onStart;
 	public float[] secPerFrame;

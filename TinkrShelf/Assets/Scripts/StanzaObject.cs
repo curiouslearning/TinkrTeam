@@ -28,7 +28,6 @@ public class StanzaObject : MonoBehaviour {
 	/// <param name="startingTinkerText">Starting tinker text.</param>
 	public IEnumerator AutoPlay(GTinkerText startingTinkerText = null) { 
 	//{   stanzaNarrate = true;
-		Debug.Log("auto play");
 		int startingTinkerTextIndex = 0;
 
 		if (startingTinkerText != null)
@@ -43,11 +42,7 @@ public class StanzaObject : MonoBehaviour {
             GTinkerText t = null;
             if (tinkerTexts[i]!=null)
              t = tinkerTexts[i];
-			if (t.star) {
-				for (int j = 0; j < t.pairedGraphics.Count; j++) {
-					t.pairedGraphics [j].PlayCompleteAnim();
-				}
-			}
+            t.CheckPairedGraphic();
 			//GTinkerGraphic link = t.GetComponent<GTinkerText> ().pairedGraphic;
 			//if paired graphic is present
 			//if (link != null) {

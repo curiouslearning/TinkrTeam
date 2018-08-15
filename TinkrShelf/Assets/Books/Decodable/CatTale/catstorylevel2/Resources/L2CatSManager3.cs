@@ -10,23 +10,23 @@ public class L2CatSManager3 : GSManager {
 		if (go.name == "Cat") {
 			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
 			if (tinkerGraphic != null) {
-				tinkerGraphic.PlayCompleteAnim ();
+				tinkerGraphic.MyOnMouseDown ();
 			}
 		} else if (go.name == "Ran") {
 			GTinkerGraphic tinkerGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
 			if (tinkerGraphic != null) {
-				tinkerGraphic.PlayCompleteAnim ();
+				tinkerGraphic.MyOnMouseDown ();
 			} 
-		} else if (go.name == "Text_cat") {
-			GTinkerGraphic tinkerGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
-			if (tinkerGraphic != null) {
-				tinkerGraphic.gameObject.transform.position = new Vector3 (tinkerGraphic.dataTinkerGraphic.posX, tinkerGraphic.dataTinkerGraphic.posY, 0);
-				LoadAssetFromJSON.LoadAssetImage (tinkerGraphic, tinkerGraphic.dataTinkerGraphic.imageName);
+
+		} else if (go.name == "Text_ran") {
+			GTinkerGraphic ranGraphic = GameObject.Find ("Ran").GetComponent<GTinkerGraphic> ();
+			GTinkerGraphic catGraphic = GameObject.Find ("Cat").GetComponent<GTinkerGraphic> ();
+			if (ranGraphic != null && catGraphic!=null) {
+				ranGraphic.MyOnMouseDown ();
+				catGraphic.MyOnMouseDown ();
 			}
 
 		}
-
-
 		base.OnMouseDown (go);
 	}
 }
