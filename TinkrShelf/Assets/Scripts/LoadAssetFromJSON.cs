@@ -10,7 +10,6 @@ using System;
 /// Script to load the scene based on JSON describing the book.
 /// </summary>
 public class LoadAssetFromJSON : MonoBehaviour {
-<<<<<<< HEAD
 	private string[] allPagesJsons; //
 	public static StoryBookJson storyBookJson;
 	public static int pageNumber;
@@ -46,40 +45,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
 	public void Awake()
 	{
-=======
-    private string[] allPagesJsons; 
-    public static StoryBookJson storyBookJson;
-    public static int pageNumber;
-    public GStanzaManager stanzaManager;
-    public List<GameObject> tinkerGraphicObjects;
-    public List<GameObject> tinkerTextObjects;
-    public List<GameObject> stanzaObjects;
-
-    private string[] allStanzaJsons;
-    private string page;
-    public GameObject right;
-    public GameObject left;
-    //static float previousTextWidth;
-    public static string sceneScript;
-    Font font;
-    Transform canvasTransform;
-    
-    private int noOfPages, i, j;
-    float width = 0.0f, startingX, startingY, startingXText, startingYText;
-    float height = 32.94f;  //height of text:32.94
-    private readonly float minWordSpace = 30.0f;
-    private readonly float minLineSpace = 30.0f;
-
-    //variables for logging data
-    public DateTime inTime;
-    int timeSpent;
-
-    //sending data directly to firebase using "72 hours rule"! (removed local data storage)
-    //public DataCollection dataCollector;
-    
-    public void Awake()
-    {
->>>>>>> master
 
 		//font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 		font = Resources.Load<Font>("Font/OpenDyslexic-Regular");
@@ -271,24 +236,8 @@ public class LoadAssetFromJSON : MonoBehaviour {
 
 		//}
 
-<<<<<<< HEAD
 
 	}
-=======
-        GameObject go = new GameObject();
-        go.transform.SetParent(canvasTransform);
-        go.name = "SceneManager" + pageNumber;
-            sceneScript = storyBookJson.pages[pageNumber].script;
-            go.AddComponent(Type.GetType(sceneScript));
-            GameObject.Find("Canvas").GetComponent<GStanzaManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
-            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().gameManager = GameObject.Find("GameManager").GetComponent<GGameManager>();
-            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().stanzaManager = GameObject.Find("Canvas").GetComponent<GStanzaManager>();
-            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().myCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Lbutton = GameObject.FindWithTag("left_arrow");
-            GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>().Rbutton = GameObject.FindWithTag("right_arrow");
-            GameObject.Find("GameManager").GetComponent<GGameManager>().sceneManager = GameObject.Find("SceneManager" + pageNumber).GetComponent<GSManager>();
-    }
->>>>>>> master
 
 	/// <summary>
 	/// Loads the audio for stanza auto narration to the canvas.
@@ -382,7 +331,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	/// <summary>
 	/// Loads all the stanzas on the page and set the initial starting position depending on the number of words 
 	/// </summary>
-<<<<<<< HEAD
 	public void LoadStanzaData()
 	{
 
@@ -421,56 +369,6 @@ public class LoadAssetFromJSON : MonoBehaviour {
 	public void TokenizeStanza (int i)
 	{  
 		//tinkerTextObjects.Clear ();
-=======
-    public void LoadStanzaData()
-    {
-        startingX = storyBookJson.textStartPositionX;
-        startingY = storyBookJson.textStartPositionY;
-
-        stanzaManager.stanzas.Clear();
-        j = 0;
-        stanzaObjects = new List<GameObject>();// stanzaObjects list to keep track of all the stanzaobjects in one page 
-        Debug.Log(storyBookJson.pages[pageNumber].texts);
-
-        TextClass[] texts = storyBookJson.pages[pageNumber].texts;
-
-		int length = storyBookJson.pages [pageNumber].timestamps.Length;
-
-        if (length==1)
-			startingX=-95.0f ;
-		else if(length==2)
-			startingX=-175.0f ;
-		else if(length==3)
-			startingX=-212.0f ;
-		else if(length==4)
-			startingX=-280.0f ;
-		else if(length==5)
-			startingX=-335.0f ;
-		else if(length==6)
-			startingX=-340.0f ;
-		else if(length==7)
-			startingX=-380.0f ;
-        foreach (TextClass text in texts)
-        {
-            stanzaManager.stanzas.Add(CreateStanza(startingX, startingY));
-            stanzaManager.stanzas[j].transform.SetParent(canvasTransform);
-            stanzaManager.stanzas[j].stanzaValue = text;//add string object as JSONObject to array of books
-            startingY = startingY - height - minLineSpace;
-            j++;
-        }
-
-
-
-
-    }
-
-    /// <summary>
-    /// Tokenizes the stanza into TinkerTexts.
-    /// </summary>
-	public void TokenizeStanza ()
-   {
-		tinkerTextObjects.Clear ();
->>>>>>> master
 		string[] words;
 
 		//for (i = 0; i < stanzaManager.stanzas.Count; i++) {
