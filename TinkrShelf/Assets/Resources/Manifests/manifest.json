@@ -87,6 +87,10 @@
             "pathToThumbnail": "Thumbnail/cat",
             "version": 1
             
+<<<<<<< HEAD
+        }
+
+=======
         },
 		{
     "bookId": 6,
@@ -102,6 +106,7 @@
 "pathToThumbnail": "Thumbnail/duck",
 "version": 1
     },
+>>>>>>> master
 
 ]
 }

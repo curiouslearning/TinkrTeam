@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameObjectClass  {
     public int id;
+	public string tag;
     public float posX;
     public float posY;
     public float scaleX;

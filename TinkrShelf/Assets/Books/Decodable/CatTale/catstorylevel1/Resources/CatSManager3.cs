@@ -32,7 +32,6 @@ public class CatSManager3 : GSManager {
 			}
 
 		}*/
-		Debug.Log ("base");
 		base.OnMouseDown (go);
 	}
 }
