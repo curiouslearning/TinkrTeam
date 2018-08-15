@@ -3,7 +3,10 @@
 	using UnityEngine;
 	using UnityEngine.UI;
 
-	public class BookObject : MonoBehaviour {
+ //need for seperate book object class as Book.cs can't use System.serializable and 
+ // monobehaviour at the same time.
+
+   public class BookObject : MonoBehaviour {
 
 		[HideInInspector]
 		public Book book;

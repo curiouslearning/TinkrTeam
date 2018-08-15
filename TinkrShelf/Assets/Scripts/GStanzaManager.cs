@@ -19,7 +19,6 @@ public class GStanzaManager : MonoBehaviour {
 	public void LoadStanzaJSON()
 	{
 		SetupWordTimings(LoadAssetFromJSON.storyBookJson.pages[LoadAssetFromJSON.pageNumber].timestamps);
-
 	}
 
 	// Loads up a custom stanza audio mp3 and xml timing data
@@ -76,9 +75,9 @@ public class GStanzaManager : MonoBehaviour {
 
 	// Method to request an auto play starting w/ a stanza
 	public void RequestAutoPlay(StanzaObject startingStanza, GTinkerText startingTinkerText = null)
-	{   Debug.Log ("request auto play");
+	{
 		if (!autoPlaying)  // && !sceneManager.disableAutoplay)
-		{   Debug.Log("not auto playing");
+		{
 			autoPlaying = true;
 			cancelAutoPlay = false; // reset our cancel flag
 			StartCoroutine(StartAutoPlay(startingStanza, startingTinkerText));
@@ -137,9 +136,9 @@ public class GStanzaManager : MonoBehaviour {
 	}
 
 	public void OnMouseDown(GTinkerText tinkerText, bool suppressAnim = false)
-	{   Debug.Log ("mousedown2");
+	{   Debug.Log ("reached");
 		if (tinkerText.stanza != null && stanzas.Contains(tinkerText.stanza))
-		{  
+		{   Debug.Log ("no");
 			tinkerText.stanza.OnMouseDown(tinkerText, suppressAnim);
 		}
 
