@@ -19,8 +19,8 @@
 			},
 			"gameObjects": [{
 				"id": 0,
-				"posX": 9,
-				"posY": -2,
+				"posX": 25,
+				"posY": -27,
 				"scaleX": 35,
 				"scaleY": 35,
 				"imageName": "A01-1",
