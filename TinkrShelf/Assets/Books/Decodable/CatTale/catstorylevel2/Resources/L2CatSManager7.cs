@@ -6,38 +6,36 @@ public class L2CatSManager7 : GSManager {
 
 	GameObject ham;
 
+	public override void Start ()
+	{   ham = GameObject.Find ("Ham");
+		
+		base.Start ();
+	}
+
 	public override void OnMouseDown(GameObject go)
-	{   Debug.Log ("scene spf entered");
-		if (go.name == "CatHam") {
-			if (ham == null) {
-				ham = GameObject.Find ("Ham");
-			}
+	{
+		if (go.name == "CatHam" || go.name=="Text_cat's") {
 
+			ham.SetActive(true);
+		} else if (go.name == "Text_ham") {
 			ham.SetActive (true);
-		}
-		else if ( go.name == "Text_ham"){
-			Debug.Log ("ham if enterred");
-			if (ham == null) {
-				ham = GameObject.Find ("Ham");
-			}
+			GTinkerGraphic catHam = GameObject.Find ("CatHam").GetComponent<GTinkerGraphic> ();
+			if (catHam != null) {
+				//catHam.reset();
+				catHam.MyOnMouseDown ();
 
-			ham.SetActive (true);
-			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
 			}
 
 		}
-		else if (go.name == "Ham") 
-		{   
-			ham = go;
-			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
-			}
-		}
+		//		else if (go.name == "Ham") 
+		//		{   
+		//			ham = go;
+		//			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+		//			if (catHam != null)
+		//			{ 
+		//				catHam.MyOnMouseDown();
+		//			}
+		//		}
 
 		base.OnMouseDown (go);
 	}

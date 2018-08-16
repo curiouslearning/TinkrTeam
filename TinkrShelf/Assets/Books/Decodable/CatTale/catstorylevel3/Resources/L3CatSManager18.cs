@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class L3CatSManager18 : GSManager {
 
-
 	public override void OnMouseDown(GameObject go)
 	{
 		if (go.name =="Jam"|| go.name == "Text_jam.") 

@@ -5,38 +5,25 @@ using UnityEngine;
 public class L3CatSManager9 : GSManager {
 
 	GameObject jam;
-
-	public override void OnMouseDown(GameObject go)
-	{
-		if (go.name == "CatJam") {
-			if (jam == null) {
-				jam = GameObject.Find ("Jam");
-			}
-
+    GTinkerGraphic catJam;
+    public override void Start()
+    {
+        jam = GameObject.Find("Jam");
+        catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
+        base.Start();
+    }
+    public override void OnMouseDown(GameObject go)
+	{   
+		if (go.name == "CatJam" || go.name=="Text_cat") {
 			jam.SetActive (true);
 		}
 		else if ( go.name == "Text_jam."){
-
-			if (jam == null) {
-				jam = GameObject.Find ("Jam");
-			}
-
-			jam.SetActive (true);
-			GTinkerGraphic catHam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
-			if (catHam != null)
-			{ 
-				catHam.MyOnMouseDown();
-			}
-
+            jam.SetActive(true);
+            catJam.reset();
 		}
-		else if (go.name == "Jam") 
-		{   
-			jam = go;
-			GTinkerGraphic catJam = GameObject.Find("CatJam").GetComponent<GTinkerGraphic>();
-			if (catJam != null)
-			{ 
-				catJam.MyOnMouseDown();
-			}
+		else if (go.name == "Text_eats") 
+		{
+            jam.SetActive(false);
 		}
 
 		base.OnMouseDown (go);

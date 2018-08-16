@@ -7,7 +7,7 @@ public class L2CatSManager10 : GSManager {
 
 	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "Fat"|| go.name == "Text_Fat") 
+		if (go.name == "Fat"|| go.name == "Text_fat?") 
 		{  if (fat == null) {
 				fat = GameObject.Find ("Fat");
 			}
