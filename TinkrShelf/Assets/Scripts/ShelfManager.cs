@@ -2,7 +2,6 @@
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
@@ -38,7 +37,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private DateTime inTime;
     
     //location of hosted json file in amazon s3 bucket
-	private const string url = "https://s3.ap-south-1.amazonaws.com/tinkr2/manifest.json";
+    private const string url = "https://s3.ap-south-2.amazonaws.com/tinkr2/manifest.json";
 
     private string responseJson;
     private bool isServerJson = false;
@@ -71,7 +70,7 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     }
 
     void Start()
-	{
+    {
         if (readMuteToggleButton != null)
         {
             read_mute_image_comp = readMuteToggleButton.GetComponent<Image>();
@@ -102,8 +101,9 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     IEnumerator DownloadFileWithTimeout(WWW request)
     {
         float timer = 0;
-        float timeOut = 5.0f;
+        float timeOut = 1.0f;
         bool failed = false;
+
         while (!request.isDone)
         {
             if (timer > timeOut) { failed = true; break; }
@@ -116,29 +116,27 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
         {
             request.Dispose();
             isServerJson = false;
+            Debug.Log("timeout");
 
-			Debug.Log ("no internet");
+   
             //load shelf data with local json
             LoadShelfData();
             LoadInitialCenterBook();
             yield break;
         }
-		//Debug.Log (request.text + "oooooo");
-		responseJson = request.text;
+
+        responseJson = request.text;
 
         // if internet-> ok
-		if (responseJson != "")
+        if (responseJson != "")
+            isServerJson = true;
 
-		{   Debug.Log ("internet");
-			isServerJson = true;
-		}
         
         LoadShelfData();
         LoadInitialCenterBook();
 
         //yield break;
     }
-
 
     /// <summary>
     /// loads initial center book on shelf 
@@ -386,7 +384,6 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
     private void LoadShelfData()
     {
         TextAsset file = Resources.Load(localManifestFileName) as TextAsset;
-		Debug.Log (file);
         if (file != null)
         {
             // Read the json from the file into a string
@@ -396,12 +393,12 @@ public class ShelfManager : MonoBehaviour, IPointerClickHandler
             {
                 if (responseJson.Equals(dataAsJson))
                 {
-                    Debug.Log("server manifest same as local manifest");
+                    //Debug.Log("server manifest same as local manifest");
                 }
                 else
                 {
                     //use server manifest
-                    Debug.Log("using server json");
+                    //Debug.Log("using server json");
                     dataAsJson = responseJson;
 
                     // overwrite local manifest with server manifest

@@ -7,5 +7,4 @@ public class TimeStampClass {
     public int wordIdx;
     public string audio;
     public int end;
-	public string starWord;
 }

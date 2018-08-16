@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class GTinkerText : MonoBehaviour {
     //private static bool check=false;
     public List<GTinkerGraphic>pairedGraphics=new List<GTinkerGraphic>();
-	//public GTinkerGraphic pairedGraphics;
-	public int pairedAnim;
+	public GTinkerText pairedText1;
 	public StanzaObject stanza;
     private float startTime;//timings corresponding the timings of stanza auto narrate audio 
     private float endTime;//timings corresponding the timings of stanza auto narrate audio 
@@ -17,7 +16,6 @@ public class GTinkerText : MonoBehaviour {
     private Animator graphicanimator;
     public GameObject anim;
     public GameObject anim2;
-	public bool star=false;
 
     void Start()
     {
@@ -38,8 +36,6 @@ public class GTinkerText : MonoBehaviour {
         startTime = timeStamp.start / 1000.0f;
         endTime = timeStamp.end / 1000.0f;
         playTime = endTime - startTime;
-		if (timeStamp.starWord == "Yes")
-			star = true;
     }
     /// <summary>
     /// return the starting time for each word
@@ -67,11 +63,11 @@ public class GTinkerText : MonoBehaviour {
 	private void AddCollider()
 	{
 		// Setup a trigger collider at runtime so it is the same bounds as the text
-		BoxCollider2D col = gameObject.AddComponent<BoxCollider2D>();
+		BoxCollider col = gameObject.AddComponent<BoxCollider>();
 		col.isTrigger = true;
 		RectTransform trans= gameObject.GetComponent<RectTransform>();
 		col.size = new Vector2(trans.sizeDelta.x, trans.sizeDelta.y);
-		col.offset = new Vector2( (trans.rect.x +trans.sizeDelta.x/2), (trans.rect.y +trans.sizeDelta.y/2) ) ;
+		col.center = new Vector2( (trans.rect.x +trans.sizeDelta.x/2), (trans.rect.y +trans.sizeDelta.y/2) ) ;
 		// Check against a collider width that is too small (tough to tap on "I" or "1")
 		if (col.size.x <= 0.055f)
 		{
@@ -145,7 +141,7 @@ public class GTinkerText : MonoBehaviour {
     /// </summary>
     /// <param name="suppressAnim"></param>
 	public void MyMouseDown(bool suppressAnim = false)
-	{   
+	{   Debug.Log ("real");
 			System.DateTime time = System.DateTime.Now;
 			//sending data directly to firebase using "72 hours rule"! (removed local data storage)
 			//DataCollection.AddInTouchData( ("Text_"+gameObject.GetComponent<Text>().text) , time.ToString());
@@ -153,7 +149,7 @@ public class GTinkerText : MonoBehaviour {
 			FirebaseHelper.LogInAppTouch (("Text_" + gameObject.GetComponent<Text> ().text), time.ToString ());
 
 			if (!stanza.stanzaManager.sceneManager.disableSounds) {
-				PlaySound();
+				PlaySound ();
 			}
 			clipPlay ();
 			iconanimPlay ();
@@ -167,27 +163,18 @@ public class GTinkerText : MonoBehaviour {
         
 	}
     public void CheckPairedGraphic()
-	{   
-		for (int i = 0; i < pairedGraphics.Count; i++){
-		if (pairedGraphics[i]!= null) 
-		    {
-            
-                //if animation is present
-			if (pairedAnim>=0) 
-				{ 
-				pairedGraphics [i].OnPairedMouseDown (this);
-		
-			} 
-		    else 
-				{   //StopCoroutine ("Animate");
-					//StopCoroutine (pairedGraphics[i].Animdelay ());
-				    pairedGraphics [i].ResetandZoom ();
-			}
-			}
-        
-		  }
-	}
+    {
+        for (int i = 0; i < pairedGraphics.Count; i++)
+        {
+            if (pairedGraphics[i])
+            {
+                // Then send the event along!
 
+                pairedGraphics[i].OnPairedMouseDown(this);
+
+            }
+        }
+    }
 
 	// Paired Mouse Down Event
     /// <summary>
@@ -196,7 +183,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnPairedMouseDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-      		{   
+      		{   Debug.Log ("sound");
 			PlaySound();
 		}
 
@@ -208,7 +195,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{   
+		{   Debug.Log ("sound");
 			PlaySound();
 		}
 
@@ -227,7 +214,7 @@ public class GTinkerText : MonoBehaviour {
 	public void OnPairedMouseCurrentlyDown()
 	{
 		if (!stanza.stanzaManager.sceneManager.disableSounds)
-		{    
+		{    Debug.Log ("sound");
 			PlaySound();
 		} 
 
@@ -259,7 +246,7 @@ public class GTinkerText : MonoBehaviour {
     /// this function plays the sound for each tinkrtext
     /// </summary>
 	public void PlaySound()
-	{   
+	{   Debug.Log ("sound");
 		if (!GetComponent<AudioSource>().isPlaying)
 		{
 			GetComponent<AudioSource>().Play();

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// Script responsible for controling scenes,touch events and dropdown menu.
+/// Script responsible for controling scenes,touch events and home menu.
 /// </summary>
 public class GGameManager : MonoBehaviour
 {   // Reference to GSManager 
@@ -159,13 +159,13 @@ public class GGameManager : MonoBehaviour
 	private List<GameObject> PickGameObjects( Vector3 screenPos )
 	{
 		List<GameObject> gameObjects = new List<GameObject>();
-		Vector2 localPos = Camera.main.ScreenToViewportPoint (screenPos);
+		Vector3 localPos = Camera.main.ScreenToViewportPoint (screenPos);
 		Ray ray = Camera.main.ViewportPointToRay (localPos);
 
-		RaycastHit2D[] hits;
-		hits = Physics2D.RaycastAll (ray.origin,ray.direction);
+		RaycastHit[] hits;
+		hits = Physics.RaycastAll (ray, Mathf.Infinity);
 
-		foreach (RaycastHit2D hit in hits)
+		foreach (RaycastHit hit in hits)
 		{
 			
 			gameObjects.Add(hit.collider.gameObject);

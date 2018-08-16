@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class L2CatSManager16 : GSManager {
+
 	GTinkerGraphic sleep; 
 
 	public override void OnMouseDown(GameObject go)
@@ -19,6 +20,5 @@ public class L2CatSManager16 : GSManager {
 		base.OnMouseDown (go);
 
 	}
-
 
 }

@@ -5,34 +5,40 @@ using UnityEngine;
 public class L5CatSManager7 : GSManager {
 
 	GameObject ham;
-    GTinkerGraphic catHam;
-    public override void Start()
-    {
-        ham = GameObject.Find("Ham");
-        catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
-        base.Start();
-    }
 
-    public override void OnMouseDown(GameObject go)
+	public override void OnMouseDown(GameObject go)
 	{
-		if (go.name == "CatHam" || go.name == "Text_cat") {
-			
+		if (go.name == "CatHam") {
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
+			}
+
 			ham.SetActive (true);
-		} else if (go.name == "Text_eat") 
-		{  ham.SetActive (false);
 		}
 		else if ( go.name == "Text_ham."){
+
+			if (ham == null) {
+				ham = GameObject.Find ("Ham");
+			}
+
 			ham.SetActive (true);
-            catHam.reset();
+			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+
 		}
-		/*else if (go.name == "Ham") 
+		else if (go.name == "Ham") 
 		{   
-			catHam.MyOnMouseDown();
-		}*/
-        else if(go.name=="Text_eat")
-        {
-            ham.SetActive(false);
-        }
+			ham = go;
+			GTinkerGraphic catHam = GameObject.Find("CatHam").GetComponent<GTinkerGraphic>();
+			if (catHam != null)
+			{ 
+				catHam.MyOnMouseDown();
+			}
+		}
+
 		base.OnMouseDown (go);
 	}
 
