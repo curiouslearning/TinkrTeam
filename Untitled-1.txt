@@ -1,0 +1,29 @@
+Placeholder section for "" (Ben will write).
+Section for the "" 
+Section for the "" 
+Section for "Creating a New Tinkr Book" to detail what needs to be done in creating a new Tinkr Book (creating JSON, how to call interactive function scripts, how to update the manifest, and where to store book files, graphics for Shelf, etc.). Also detailing what functionality to date has required the creation of separate scripts rather than what is included in the collection of interactive functions.
+Section for "Data Collection" including what scripts are used to capture data and send to Firebase (Ben to include documentation on decisions made in collecting data in this section).
+
+ LoadAssetFromJson.cs
+
+
+ Awake(){
+
+     1. Load initial/local asset bundle on shelf scene
+     2. Call server manifest file with timeout of 1.0sec.
+     3. if(server manifest more new than local manifest){
+         then use server manifest
+         else
+         use local manifest
+     } 
+     4.  LoadShelfData();
+         LoadInitialCenterBook();
+          
+     5. Click on Image, Title or center book it ll load scene asynchronusly from : Books/Decodable/CatTale/Common/Scenes/Scene01
+
+     6. click on any other book other than center.
+
+
+
+
+ }

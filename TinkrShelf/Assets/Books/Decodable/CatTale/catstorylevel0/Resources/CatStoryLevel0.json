@@ -20,9 +20,9 @@
 			"gameObjects": [{
 				"id": 0,
 				"posX": 25,
-				"posY": -65,
-				"scaleX": 40,
-				"scaleY": 40,
+				"posY": -27,
+				"scaleX": 35,
+				"scaleY": 35,
 				"imageName": "A01-1",
 				"orderInLayer": 1,
 				"inText": true,
