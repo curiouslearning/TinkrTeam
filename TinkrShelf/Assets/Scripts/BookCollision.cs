@@ -1,4 +1,10 @@
-﻿	using UnityEngine;
+﻿	using System.Collections.Generic;
+	using UnityEngine;
+	using System.IO;
+	using UnityEngine.SceneManagement;
+	using UnityEngine.EventSystems;
+	using UnityEngine.UI;
+	using System.Collections;
 
 	public class BookCollision : ShelfManager
 	{  
@@ -39,14 +45,10 @@
 	        {
             this.gameObject.GetComponent<BookObject>().position = 3;
 				this.gameObject.GetComponent<BookObject> ().transform.localScale = new Vector3 (12, 12, 0);
-
-            LoadImageandText (this.gameObject.GetComponent<BookObject> ());
-
-            var bookVar = this.gameObject.GetComponent<BookObject> ();
-
-            bookName = bookVar.book.fileName;
-			
-            // first store the name to reference while loading the assets of book!
+				LoadImageandText (this.gameObject.GetComponent<BookObject> ());
+				var bookVar = this.gameObject.GetComponent<BookObject> ();
+				bookName = bookVar.book.fileName;
+			    // first store the name to reference while loading the assets of book!
 			    selectedBook = bookName;
             //bookName += "/";
             //string filePath = Path.Combine ("Books/", bookName);
@@ -94,5 +96,4 @@
 			}
 		}
 	    
-
 	}
