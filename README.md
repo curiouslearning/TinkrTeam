@@ -1,4 +1,4 @@
-# Tinkr Player
+# The Curious Reader
 
 <p align="center">
 <img src="https://github.com/curiouslearning/Media/blob/master/Curious%20Reader/shelf.png" height="160" width="300"/>
@@ -10,17 +10,26 @@
 </p>
 
 
-# Player Overview
-The Tinkr Player project is a collaborative effort between [Digital Impact Square](https://www.digitalimpactsquare.com/) (DISQ), a TCS Foundation Initiative, and [Curious Learning](https://curiouslearning.org), under the support of the MIT Media Lab.
+# Overview
+The Curious Reader project is an open source children's platform written in Unity that plays fun and engaging reading and learning content that combines interactive app elements with educational best practices. 
 
-The effort saw the development of an open-source Unity application, the Tinkr Book Player, as well as an open standard for Tinkr Books, a new type of educational children’s interactive, and 5 Tinkr Books.
+We're trying to teach the world to read, one smart device at a time! Find out how you can contribute to the Curious Reader project by reading our contribution guidelines (FORTHCOMING).
+
+If you would like to program your own content using the Curious Reader platform, you can start by reading our [Content Creation Guide for Developers](https://github.com/curiouslearning/TinkrTeam/wiki/Content-Creation-Guide-for-Devs).
+
+The Curious Reader is currently available for Android.
+
+# History
+The Curious Reader project is a collaborative effort between [Curious Learning](https://curiouslearning.org) and [Digital Impact Square](https://www.digitalimpactsquare.com/) (DISQ), a TCS Foundation Initiative, under the support of the MIT Media Lab.
+
+The original collaboration saw the development of an open source Unity application, the Player, as well as an open JSON standard for content.
 
 This app repo consists of 4 main parts:
 
 1. The Shelf-- where a reader selects a book to read.
 2. The Reader-- where books are read and interacted with.
 3. Data collection-- where usage data is collected and sent to Firebase Analytics.
-4. The Tinkr Books-- the book files themselves.
+4. The Books-- the book files themselves.
 
 ## Shelf
 
@@ -96,8 +105,10 @@ GTinkerText.cs|Script responsible for every function of the text.|every child of
 GTinkerGraphic.cs|Script responsible for every function of the graphic.|graphic_game_object
 
 
-## Creating a New Tinkr Book
-Section for "Creating a New Tinkr Book" to detail what needs to be done in creating a new Tinkr Book
+## Creating a New Book
+Section for "Creating a New Book" to detail what needs to be done in creating a new content.
+
+For a more in-depth guide, please refer to the [Content Creation Guide for Developers](https://github.com/curiouslearning/TinkrTeam/wiki/Content-Creation-Guide-for-Devs).
 
 ### Recipe to make Tinkrbook 
 
@@ -152,4 +163,3 @@ LogInAppResponse | Logs the IN_APP_RESPONSE event to firebase. IN_APP_RESPONSE e
 2. [Implementation Decisions and Issues Faced](https://docs.google.com/document/d/1_1Cg5dhnSQoBERojxd5EFVVm3MZC1yXtxjBBrixcSjE/edit?usp=sharing).
 
 <a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
-
